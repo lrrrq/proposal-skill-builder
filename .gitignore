@@ -46,3 +46,16 @@ Thumbs.db
 # Temporary
 *.tmp
 .tmp/
+
+# Agent Runs
+.claude/runs/current/
+
+# Test Artifacts
+skills/draft/test-skill/
+reports/skill_check_test-skill.md
+
+# Compiled Outputs (case-specific, per-run)
+compiled/cases/*/strategies.json
+compiled/cases/*/strategy_dna.md
+compiled/cases/*/descriptions.json
+compiled/cases/*/ai_fragments.json

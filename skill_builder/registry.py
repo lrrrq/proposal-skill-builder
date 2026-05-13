@@ -24,10 +24,25 @@ class SkillRegistry:
             self.save_registry({"skills": [], "updated_at": datetime.now().isoformat()})
 
     def load_registry(self) -> dict:
-        """加载注册表"""
+        """加载注册表，带格式校验和错误处理"""
         self.ensure_registry_file()
-        with open(self.registry_path, "r", encoding="utf-8") as f:
-            return json.load(f)
+        try:
+            with open(self.registry_path, "r", encoding="utf-8") as f:
+                data = json.load(f)
+        except (json.JSONDecodeError, IOError) as e:
+            raise ValueError(f"registry 文件格式错误或无法读取: {e}")
+
+        # 确保必需字段存在且类型正确
+        if not isinstance(data, dict):
+            raise ValueError(f"registry 根对象必须是 dict，实际为 {type(data).__name__}")
+
+        # skills 字段校验：不存在或为 None 时使用空列表
+        if "skills" not in data or data["skills"] is None:
+            data["skills"] = []
+        elif not isinstance(data["skills"], list):
+            raise ValueError(f"registry['skills'] 必须是 list，实际为 {type(data['skills']).__name__}")
+
+        return data
 
     def save_registry(self, data: dict):
         """保存注册表"""

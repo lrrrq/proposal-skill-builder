@@ -24,6 +24,17 @@ REQUIRED_SKILL_MD_SECTIONS = [
     "限制条件", "来源案例",
 ]
 
+# Compression 质量标志
+QUALITY_FLAGS = {
+    "too_short": "文本过短（<20字符）",
+    "duplicate": "重复内容",
+    "low_information": "低信息密度",
+    "normal": "正常质量",
+    "merged": "多个 fragment 合并",
+    "vision_only": "纯视觉来源",
+    "text_only": "纯文本来源",
+}
+
 
 def load_skill_data(skill_id: str) -> Optional[Dict]:
     """加载 Skill 所有相关数据"""
@@ -144,11 +155,109 @@ def check_status(data: Dict) -> Dict:
     else:
         passed.append(f"source_patterns 有 {len(source_patterns)} 个")
 
+    # source_strategies (optional, give warning only)
+    source_strategies = sj.get("source_strategies", [])
+    if not source_strategies:
+        passed.append("⚠️ source_strategies 为空（未运行 build-strategies）")
+    else:
+        passed.append(f"source_strategies 有 {len(source_strategies)} 个")
+
     return {
         "passed_count": len(passed),
         "failed_count": len(issues),
         "passed_items": passed,
         "failed_items": issues,
+    }
+
+
+def check_compression(skill_id: str, data: Dict) -> Dict:
+    """压缩质量检查 - 检查 compressed_fragments.json 是否存在及其质量"""
+    issues = []
+    passed = []
+
+    if not data.get("skill_json"):
+        issues.append("skill.json 为空，无法检查压缩状态")
+        return {"passed_count": 0, "failed_count": len(issues), "passed_items": [], "failed_items": issues}
+
+    sj = data["skill_json"]
+    case_id = sj.get("source_cases", [None])[0] if sj.get("source_cases") else None
+
+    if not case_id:
+        issues.append("无 source_cases，无法检查压缩状态")
+        return {"passed_count": 0, "failed_count": len(issues), "passed_items": [], "failed_items": issues}
+
+    # 检查 compressed_fragments.json 是否存在
+    compressed_path = Config.CASES_DIR / case_id / "compressed_fragments.json"
+
+    if not compressed_path.exists():
+        passed.append("⚠️ 未运行 compress-fragments（compressed_fragments.json 不存在）")
+        return {
+            "passed_count": len(passed),
+            "failed_count": len(issues),
+            "passed_items": passed,
+            "failed_items": issues,
+        }
+
+    # 读取压缩后的 fragments
+    try:
+        with open(compressed_path, "r", encoding="utf-8") as f:
+            compressed = json.load(f)
+    except Exception as e:
+        issues.append(f"compressed_fragments.json 读取失败: {e}")
+        return {"passed_count": 0, "failed_count": len(issues), "passed_items": [], "failed_items": issues}
+
+    if not compressed:
+        issues.append("compressed_fragments.json 为空")
+        return {"passed_count": 0, "failed_count": len(issues), "passed_items": [], "failed_items": issues}
+
+    passed.append(f"compressed_fragments.json 存在（{len(compressed)} 个压缩后 fragments）")
+
+    # 质量分布统计
+    quality_counts = {"normal": 0, "too_short": 0, "duplicate": 0, "low_information": 0, "merged": 0}
+    for cfrag in compressed:
+        flags = cfrag.get("quality_flags", ["normal"])
+        for flag in flags:
+            if flag in quality_counts:
+                quality_counts[flag] += 1
+
+    # 检查低质量比例
+    total = len(compressed)
+    low_quality = quality_counts["too_short"] + quality_counts["duplicate"] + quality_counts["low_information"]
+    low_ratio = low_quality / total if total > 0 else 0
+
+    if low_ratio > 0.5:
+        issues.append(f"⚠️ 低质量 fragments 占比 {low_ratio:.1%}（{low_quality}/{total}），建议检查提取质量")
+    else:
+        passed.append(f"低质量 fragments 占比 {low_ratio:.1%}（可接受）")
+
+    # 检查是否有过多 short fragments
+    if quality_counts["too_short"] > total * 0.3:
+        issues.append(f"⚠️ too_short fragments 过多（{quality_counts['too_short']}/{total}），可能影响 Pattern 质量")
+    else:
+        passed.append(f"too_short fragments 比例正常（{quality_counts['too_short']}/{total}）")
+
+    # 检查合并情况
+    merged_count = quality_counts["merged"]
+    if merged_count > 0:
+        passed.append(f"有 {merged_count} 个 fragments 被合并，提升了抽象层级")
+
+    # 质量分布
+    quality_lines = []
+    for flag, count in quality_counts.items():
+        if count > 0:
+            flag_desc = QUALITY_FLAGS.get(flag, flag)
+            quality_lines.append(f"- **{flag}** ({flag_desc}): {count}")
+
+    return {
+        "passed_count": len(passed),
+        "failed_count": len(issues),
+        "passed_items": passed,
+        "failed_items": issues,
+        "compression_stats": {
+            "total_compressed": total,
+            "quality_distribution": quality_counts,
+            "low_quality_ratio": round(low_ratio, 3),
+        },
     }
 
 
@@ -383,7 +492,8 @@ def determine_quality_level(score: float, data: Dict) -> Dict:
 
 def generate_report(skill_id: str, data: Dict, structure_result: Dict,
                     status_result: Dict, sections_result: Dict,
-                    score_result: Dict, level_result: Dict) -> str:
+                    compression_result: Dict, score_result: Dict,
+                    level_result: Dict) -> str:
     """生成检查报告"""
     sj = data.get("skill_json", {}) or {}
     current_level = sj.get("quality_level", "unknown")
@@ -394,12 +504,14 @@ def generate_report(skill_id: str, data: Dict, structure_result: Dict,
     all_passed.extend(structure_result["passed_items"])
     all_passed.extend(status_result["passed_items"])
     all_passed.extend(sections_result["passed_items"])
+    all_passed.extend(compression_result["passed_items"])
 
     # 失败项
     all_failed = []
     all_failed.extend(structure_result["failed_items"])
     all_failed.extend(status_result["failed_items"])
     all_failed.extend(sections_result["failed_items"])
+    all_failed.extend(compression_result["failed_items"])
 
     lines = [
         f"# Skill Check Report: {skill_id}",
@@ -426,6 +538,7 @@ def generate_report(skill_id: str, data: Dict, structure_result: Dict,
         f"- **结构检查**: {structure_result['passed_count']} 通过 / {structure_result['failed_count']} 失败",
         f"- **状态检查**: {status_result['passed_count']} 通过 / {status_result['failed_count']} 失败",
         f"- **章节检查**: {sections_result['passed_count']} 通过 / {sections_result['failed_count']} 失败",
+        f"- **压缩检查**: {compression_result['passed_count']} 通过 / {compression_result['failed_count']} 失败",
         "",
     ]
 
@@ -475,6 +588,23 @@ def generate_report(skill_id: str, data: Dict, structure_result: Dict,
     if not all_failed:
         lines.append("- 暂无明显风险")
     lines.append("")
+
+    # 压缩质量统计
+    if compression_result.get("compression_stats"):
+        lines.extend([
+            "## Compression Quality",
+            "",
+        ])
+        stats = compression_result["compression_stats"]
+        lines.append(f"- **Total Compressed**: {stats['total_compressed']}")
+        lines.append(f"- **Low Quality Ratio**: {stats['low_quality_ratio']:.1%}")
+        lines.append("")
+        lines.append("**Quality Distribution**:")
+        for flag, count in stats["quality_distribution"].items():
+            if count > 0:
+                flag_desc = QUALITY_FLAGS.get(flag, flag)
+                lines.append(f"- {flag} ({flag_desc}): {count}")
+        lines.append("")
 
     # 是否建议发布
     can_publish = suggested_level != "failed" and score_result["total_score"] >= 60
@@ -528,13 +658,14 @@ def check_skill(skill_id: str) -> Dict:
     structure_result = check_structure(data)
     status_result = check_status(data)
     sections_result = check_skill_md_sections(data)
+    compression_result = check_compression(skill_id, data)
     score_result = calculate_quality_score(data)
     level_result = determine_quality_level(score_result["total_score"], data)
 
     # 生成报告
     report_content = generate_report(
         skill_id, data, structure_result, status_result, sections_result,
-        score_result, level_result
+        compression_result, score_result, level_result
     )
     report_path = save_report(skill_id, report_content)
 
@@ -544,9 +675,11 @@ def check_skill(skill_id: str) -> Dict:
     all_passed.extend(structure_result["passed_items"])
     all_passed.extend(status_result["passed_items"])
     all_passed.extend(sections_result["passed_items"])
+    all_passed.extend(compression_result["passed_items"])
     all_failed.extend(structure_result["failed_items"])
     all_failed.extend(status_result["failed_items"])
     all_failed.extend(sections_result["failed_items"])
+    all_failed.extend(compression_result["failed_items"])
 
     # 风险项
     risk_items = []
@@ -557,6 +690,10 @@ def check_skill(skill_id: str) -> Dict:
         risk_items.append("质量等级为 failed")
     if score_result["total_score"] < 60:
         risk_items.append(f"分数 {score_result['total_score']} < 60")
+    if compression_result["failed_items"]:
+        for item in compression_result["failed_items"]:
+            if item.startswith("⚠️"):
+                risk_items.append(item)
 
     can_publish = level_result["level"] != "failed" and score_result["total_score"] >= 60
 

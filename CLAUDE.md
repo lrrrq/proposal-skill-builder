@@ -1,13 +1,15 @@
 # Proposal Skill Builder - 工程规则
 
-## 项目背景
+## 项目定位
 
-本项目将历史策划案例离线编译成可复用 Skill Registry，供 OpenClaw 或在线生成入口只读调用。
+**离线 Skill 资产编译器 + Registry 资产准备器**
+
+本项目将历史策划案例离线编译成可复用 Skill Registry，供 OpenClaw 只读调用。OpenClaw 负责最终的 Brief 理解和方案输出，本项目不实现该功能。
 
 ## 核心约束
 
 ### 架构顺序
-1. **本地 CLI 优先**：先做本地 CLI 闭环，再考虑钉钉或 Web 服务
+1. **本地 CLI 优先**：先做本地 CLI 闭环，再考虑外部接入
 2. **测试链路优先**：先支持 `md/txt` 测试链路，再支持 `pptx/pdf/docx`
 3. **SQLite 状态库**：所有状态通过 SQLite 管理，不引入额外数据库
 4. **只读发布**：OpenClaw 只读取 `skills/published` 和 `registry`，不修改源案例
@@ -45,9 +47,10 @@ proposal-skill-builder/
 ├── compiled/           # 编译产出
 │   └── cases/         # case_xxxx/
 ├── skills/             # Skill 仓库
-│   ├── draft/         # 草稿
-│   ├── published/      # 已发布
+│   ├── draft/         # 草稿（不进入正式 registry）
+│   ├── published/      # 已发布（正式上线）
 │   └── quarantine/     # 隔离
+├── docs/               # 集成文档（占位）
 └── registry/           # 注册表（只读快照）
 ```
 
@@ -108,17 +111,112 @@ cli.py → commands.py → [db.py, config.py, utils.py]
                      → [case_manager.py, compiler.py, parser.py, extractor.py]
 ```
 
-## 下一步开发优先级
+## 技能存储规则
 
-1. **Pattern 提取**：从 `fragments.json` 提取可复用 Pattern
-2. **Skill 组装**：多个 Pattern + Strategy DNA → Skill
-3. **Skill 发布**：从 `draft` 移动到 `published`
-4. **Registry 更新**：注册新 Skill 到 `skill_registry.json`
+| 目录 | 用途 | 说明 |
+|------|------|------|
+| `skills/draft/` | 草稿区 | compose-skill 生成，**不进入正式 registry** |
+| `skills/published/` | 发布区 | 正式上线后才移动到这里 |
+| `registry/skill_registry.json` | 正式注册表 | **只登记 skills/published** |
+| `compiled/cases/` | 案例编译产出 | fragments/patterns/strategies 等 |
+
+### Registry 规则
+- **draft Skill**：`skills/draft/<skill_id>/` → **不进入正式 registry**
+- **正式 Registry**：`registry/skill_registry.json` → **只在 publish-skill 后更新**
+- **OpenClaw 只读**：只读取 `skills/published/` 和 `registry/`
+
+## 开发阶段划分
+
+| Phase | 内容 | 状态 | 禁止项 |
+|-------|------|------|--------|
+| Phase 1 | Foundation CLI（intake + compile-case）| ✅ 完成 | 无 |
+| Phase 2 | Vision Layer（describe-assets + ai_fragments）| ✅ 完成 | 无 |
+| Phase 3 | Strategy Layer（build-strategies + StrategyUnit）| ✅ 完成 | 无 |
+| Phase 3.5 | Knowledge Quality Consolidation（Fragment Compression）| 🔄 当前 | 无 |
+| Phase 4 | Skill Asset Hardening | ⏳ 待开始 | 无 |
+| Phase 5 | Publish + Registry | ❌ 禁止当前实现 | publish-skill, route |
+| Phase 6 | OpenClaw Integration Support | ❌ 禁止当前实现 | 在线接入 |
+
+### Phase 3.5 当前任务
+**Fragment Compression**：压缩短文本/重复/低信息 fragments，提升 Pattern 质量
+
+### Phase 6 说明
+OpenClaw Integration Support 只提供：
+- Registry 只读访问协议
+- Skill 文档说明
+- 调用协议
+- 示例 Brief
+- 只读说明文档
+
+**不实现**：在线接入、Web 服务、方案输出器
+
+## 项目非目标（绝对禁止）
+
+以下功能在任何阶段都不实现：
+
+1. **❌ 不做前端**：无 Web 界面、无 React/Vue、无在线编辑器
+2. **❌ 不做智能问答**：无聊天系统、无 RAG、无问答 API
+3. **❌ 不做最终提案输出器**：方案生成由 OpenClaw 负责
+4. **❌ 不做完整 SaaS**：纯离线 CLI + Registry 准备
+5. **❌ 不做数据库**：禁止引入 SQLite 以外的数据库
+6. **❌ 不做 Web 服务**：禁止 Flask/Django/FastAPI
+
+## 依赖管理规则
+
+### 允许的依赖
+
+**核心框架**：Python 标准库 + argparse（CLI 入口）
+
+**文档解析与视觉处理**（必要依赖）：
+| 依赖 | 用途 | 阶段 |
+|------|------|------|
+| `pymupdf` | PDF 解析 | Phase 1 |
+| `pillow` | 图片处理 | Phase 2 |
+| `python-pptx` | PPTX 解析 | Phase 1 |
+| `python-docx` | DOCX 解析 | Phase 1 |
+| `openai` | AI API 调用 | Phase 2-3 |
+| `requests` | HTTP 请求 | Phase 2-3 |
+
+### 禁止的依赖
+
+- ❌ 禁止引入 `pandas`、`numpy` 等数据分析库
+- ❌ 禁止引入 Web 框架（Flask/Django/FastAPI 等）
+- ❌ 禁止引入复杂任务队列（Celery 等）
+- ❌ 禁止引入前端框架（React/Vue 等）
+- ❌ 禁止引入非必要的机器学习库
+
+### 新增依赖规则
+
+新增依赖必须满足：
+1. 说明用途
+2. 标注所属 Phase
+3. 说明替代方案（如无替代必须说明理由）
+4. 提供验证命令
 
 ## 禁止事项
 
-- ❌ 不允许引入 `pandas`、`numpy` 等非必要依赖
+### 绝对禁止（任何阶段都不实现）
+
+- ❌ 不允许实现前端界面
+- ❌ 不允许实现智能问答或聊天系统
+- ❌ 不允许实现方案输出器
+- ❌ 不允许实现完整 SaaS
+- ❌ 不允许引入禁止的依赖
 - ❌ 不允许修改 `/Applications/lrq/coding/text-agent/` 下的旧项目
 - ❌ 不允许在 CLI 中直接 `print(source_file.content)`
 - ❌ 不允许跳过 `init_db()` 直接操作数据库
 - ❌ 不允许一次性开发完整解析链路（先跑通 md/txt）
+
+### 当前阶段禁止（Phase 5/6 才考虑）
+
+- ❌ **publish-skill**：禁止当前实现，属于 Phase 5
+- ❌ **route/路由系统**：禁止当前实现，属于 Phase 5
+- ❌ **钉钉接入**：禁止当前实现，属于 Phase 6
+- ❌ **OpenClaw 在线接入**：禁止当前实现，属于 Phase 6
+
+### 当前阶段允许
+
+- ✅ **compress-fragments**：Phase 3.5 当前任务
+- ✅ **compose-skill**：生成 draft Skill
+- ✅ **check-skill**：质量检查
+- ✅ **build-strategies**：StrategyUnit 提取

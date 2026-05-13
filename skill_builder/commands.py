@@ -263,6 +263,37 @@ def cmd_check_skill(args):
         print(f"❌ {result['message']}")
 
 
+def cmd_build_strategies(args):
+    """build-strategies 命令"""
+    from .strategy_engine import build_strategies_for_case
+
+    result = build_strategies_for_case(args.case_id)
+    if result["success"]:
+        print(f"✅ {result['message']}")
+        print(f"   strategies 数量: {result.get('strategies_count', 0)}")
+        print(f"   strategies.json: {result.get('strategies_path', 'N/A')}")
+        print(f"   strategy_dna.md: {result.get('dna_path', 'N/A')}")
+    else:
+        print(f"❌ {result['message']}")
+
+
+def cmd_compress_fragments(args):
+    """compress-fragments 命令"""
+    from .compression import compress_fragments_for_case
+
+    result = compress_fragments_for_case(args.case_id)
+    if result["success"]:
+        print(f"✅ {result['message']}")
+        print(f"   原始 Fragments: {result.get('original_count', 0)}")
+        print(f"   压缩后 Fragments: {result.get('compressed_count', 0)}")
+        print(f"   重复: {result.get('duplicate_count', 0)}")
+        print(f"   低信息: {result.get('low_info_count', 0)}")
+        print(f"   压缩结果: {result.get('compressed_path', 'N/A')}")
+        print(f"   报告: {result.get('report_path', 'N/A')}")
+    else:
+        print(f"❌ {result['message']}")
+
+
 def cmd_batch_compile(args):
     """batch-compile 命令"""
     from .case_manager import list_cases as list_all_cases

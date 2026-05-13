@@ -67,6 +67,10 @@ def process_file(filepath: Path, dataset: str = "prod") -> Dict:
             "message": str,
             "file_id": str,
         }
+
+    错误处理规则：
+    - 如果文件移动成功但数据库记录失败，必须将文件移回 staging
+    - 不能静默失败导致文件丢失
     """
     result = {
         "filename": filepath.name,
@@ -75,17 +79,24 @@ def process_file(filepath: Path, dataset: str = "prod") -> Dict:
         "file_id": None,
     }
 
+    # 用于跟踪是否需要回滚文件移动
+    moved_path = None
+    move_source = None  # 记录原始位置用于回滚
+
     try:
         if not filepath.exists():
             result["message"] = "文件不存在"
+            result["status"] = "error"
             return result
 
         sha256 = calculate_sha256(filepath)
         file_size = filepath.stat().st_size
+        move_source = str(filepath)
 
         ext = filepath.suffix.lower()
         if ext not in ALLOWED_EXTENSIONS:
             dest = safe_move_file(filepath, Config.REJECTED_DIR)
+            moved_path = str(dest)
             record_file(
                 file_id=generate_file_id(),
                 original_filename=filepath.name,
@@ -103,6 +114,7 @@ def process_file(filepath: Path, dataset: str = "prod") -> Dict:
 
         if check_duplicate_sha256(sha256):
             dest = safe_move_file(filepath, Config.DUPLICATES_DIR)
+            moved_path = str(dest)
             record_file(
                 file_id=generate_file_id(),
                 original_filename=filepath.name,
@@ -119,6 +131,7 @@ def process_file(filepath: Path, dataset: str = "prod") -> Dict:
             return result
 
         dest = safe_move_file(filepath, Config.ACCEPTED_DIR)
+        moved_path = str(dest)
         file_id = generate_file_id()
         record_file(
             file_id=file_id,
@@ -136,7 +149,24 @@ def process_file(filepath: Path, dataset: str = "prod") -> Dict:
         return result
 
     except Exception as e:
-        result["message"] = f"处理失败: {str(e)}"
+        # 文件移动成功但数据库失败，必须回滚
+        if moved_path and Path(moved_path).exists():
+            try:
+                # 移回 staging 目录
+                rollback_path = Path(moved_path)
+                import shutil
+                shutil.move(moved_path, str(Config.STAGING_DIR / rollback_path.name))
+                result["message"] = f"处理失败，文件已移回 staging: {str(e)}"
+            except Exception as rollback_error:
+                # 回滚也失败，文件可能丢失，必须报告严重错误
+                result["message"] = (
+                    f"严重错误：文件移动后数据库记录失败，且回滚也失败！\n"
+                    f"文件可能丢失，位置: {moved_path}\n"
+                    f"原始错误: {str(e)}\n"
+                    f"回滚错误: {str(rollback_error)}"
+                )
+        else:
+            result["message"] = f"处理失败: {str(e)}"
         return result
 
 

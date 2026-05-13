@@ -23,6 +23,8 @@ def load_case_data(case_id: str) -> Dict:
         "patterns": [],
         "fragments": [],
         "ai_fragments": [],
+        "strategies": [],
+        "compressed": None,  # 压缩后的 fragments
     }
 
     # source_meta.json
@@ -48,6 +50,18 @@ def load_case_data(case_id: str) -> Dict:
     if ai_path.exists():
         with open(ai_path, "r", encoding="utf-8") as f:
             data["ai_fragments"] = json.load(f)
+
+    # strategies.json (如果存在)
+    strategies_path = case_dir / "strategies.json"
+    if strategies_path.exists():
+        with open(strategies_path, "r", encoding="utf-8") as f:
+            data["strategies"] = json.load(f)
+
+    # compressed_fragments.json (如果存在 - 压缩后的数据)
+    compressed_path = case_dir / "compressed_fragments.json"
+    if compressed_path.exists():
+        with open(compressed_path, "r", encoding="utf-8") as f:
+            data["compressed"] = json.load(f)
 
     return data
 
@@ -171,6 +185,7 @@ def build_skill_content(data: Dict, skill_id: str) -> Dict:
         "source_patterns": source_patterns,
         "source_fragments_count": text_count,
         "source_ai_fragments_count": vision_count,
+        "source_strategies": [s["strategy_id"] for s in data.get("strategies", [])],
         "allowed_tasks": allowed_tasks,
         "created_at": now,
         "updated_at": now,
@@ -273,6 +288,26 @@ def build_skill_md(data: Dict, skill_id: str, display_name: str, quality_level: 
     vision_lines = build_visual_strategy_section(patterns, ai_fragments)
     lines.append(vision_lines)
     lines.append("")
+
+    # 策略 DNA（如果有 strategies）
+    strategies = data.get("strategies", [])
+    if strategies:
+        lines.extend([
+            "## 策略 DNA",
+            "",
+        ])
+        type_to_name = {
+            "positioning_strategy": "定位策略",
+            "audience_strategy": "受众策略",
+            "narrative_strategy": "叙事策略",
+            "visual_strategy": "视觉策略",
+            "execution_strategy": "执行策略",
+            "conversion_strategy": "转化策略",
+        }
+        for s in strategies[:5]:
+            stype_name = type_to_name.get(s["strategy_type"], s["strategy_type"])
+            lines.append(f"- **{s['name']}** ({stype_name}): {s.get('reusable_principle', '')[:80]}...")
+        lines.append("")
 
     # 内容结构策略
     content_patterns = [p for p in patterns if p.get("pattern_type") == "content_structure"]

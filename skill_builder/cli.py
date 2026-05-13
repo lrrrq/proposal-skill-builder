@@ -92,6 +92,10 @@ def main():
     build_ai_parser = subparsers.add_parser("build-ai-fragments", help="从 descriptions.json 生成 ai_fragments.json")
     build_ai_parser.add_argument("case_id", help="Case ID (如 case_0001)")
 
+    # build-strategies 命令
+    strategy_parser = subparsers.add_parser("build-strategies", help="构建 StrategyUnits 和 strategy_dna.md")
+    strategy_parser.add_argument("case_id", help="Case ID (如 case_0001)")
+
     # compose-skill 命令
     compose_parser = subparsers.add_parser("compose-skill", help="合成 draft Skill")
     compose_parser.add_argument("case_id", help="Case ID (如 case_0001)")
@@ -100,6 +104,10 @@ def main():
     # check-skill 命令
     check_parser = subparsers.add_parser("check-skill", help="检查 draft Skill 质量")
     check_parser.add_argument("skill_id", help="Skill ID (如 luxury-hotel-festival)")
+
+    # compress-fragments 命令
+    compress_parser = subparsers.add_parser("compress-fragments", help="压缩 Fragments")
+    compress_parser.add_argument("case_id", help="Case ID (如 case_0004)")
 
     args = parser.parse_args()
 
@@ -148,12 +156,18 @@ def main():
     elif args.command == "build-ai-fragments":
         from .commands import cmd_build_ai_fragments
         cmd_build_ai_fragments(args)
+    elif args.command == "build-strategies":
+        from .commands import cmd_build_strategies
+        cmd_build_strategies(args)
     elif args.command == "compose-skill":
         from .commands import cmd_compose_skill
         cmd_compose_skill(args)
     elif args.command == "check-skill":
         from .commands import cmd_check_skill
         cmd_check_skill(args)
+    elif args.command == "compress-fragments":
+        from .commands import cmd_compress_fragments
+        cmd_compress_fragments(args)
     else:
         parser.print_help()
         sys.exit(1)
