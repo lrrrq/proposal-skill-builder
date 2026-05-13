@@ -252,6 +252,8 @@ def cmd_check_skill(args):
         print(f"   建议等级: {result.get('suggested_level')}")
         print(f"   通过项: {result.get('passed_count')}")
         print(f"   失败项: {result.get('failed_count')}")
+        if result.get('warnings_count', 0) > 0:
+            print(f"   警告项: {result.get('warnings_count')}")
         if result.get('risk_items'):
             print(f"   风险项: {', '.join(result.get('risk_items', []))}")
         print(f"   报告: {result.get('report_path')}")
@@ -606,3 +608,58 @@ def cmd_check_ai_provider(args):
 
     else:
         print(f"❌ 不支持的 provider: {provider}")
+
+
+def cmd_publish_skill(args):
+    """publish-skill 命令"""
+    from .publisher import publish_skill
+
+    result = publish_skill(args.skill_id)
+    if result["success"]:
+        print(f"✅ 发布成功")
+        print(f"   skill_id: {args.skill_id}")
+        print(f"   published_path: {result.get('published_path', 'N/A')}")
+        if result.get("backup_path"):
+            print(f"   backup: {result.get('backup_path')}")
+        if result.get("warnings"):
+            print(f"   警告项: {len(result.get('warnings', []))}")
+        print(f"   报告: {result.get('report_path', 'N/A')}")
+    else:
+        print(f"❌ {result['message']}")
+        if result.get("failed_items"):
+            for item in result.get("failed_items", []):
+                print(f"   - {item}")
+
+
+def cmd_inspect_registry(args):
+    """inspect-registry 命令"""
+    from .publisher import inspect_registry
+
+    result = inspect_registry()
+    if result["success"]:
+        print(f"✅ Registry 检查完成")
+        print(f"   registry: {result.get('registry_path')}")
+        print(f"   updated_at: {result.get('updated_at') or '从未更新'}")
+        print(f"   skills 数量: {result.get('skills_count', 0)}")
+        print()
+
+        skills = result.get("skills", [])
+        if not skills:
+            print("   (no published skills)")
+        else:
+            for s in skills:
+                callable_str = "✅" if s.get("callable") else "❌"
+                print(f"   {callable_str} {s['skill_id']} ({s.get('quality_level', '?')})")
+                print(f"      path: {s.get('path', 'unknown')}")
+                print(f"      source_cases: {len(s.get('source_cases', []))}")
+                print()
+
+        issues = result.get("issues", [])
+        if issues:
+            print("## ⚠️ 问题")
+            for issue in issues:
+                print(f"   - {issue}")
+        else:
+            print("   无问题")
+    else:
+        print(f"❌ {result.get('message')}")

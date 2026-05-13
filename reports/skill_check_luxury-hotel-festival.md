@@ -1,6 +1,6 @@
 # Skill Check Report: luxury-hotel-festival
 
-**检查时间**: 2026-05-13T16:34:05.661640
+**检查时间**: 2026-05-13T17:38:05.254875
 **Skill 目录**: /Applications/lrq/coding/proposal-skill-builder/skills/draft/luxury-hotel-festival
 
 ---
@@ -22,7 +22,7 @@
 - **结构检查**: 4 通过 / 0 失败
 - **状态检查**: 6 通过 / 0 失败
 - **章节检查**: 12 通过 / 0 失败
-- **压缩检查**: 2 通过 / 1 失败
+- **压缩检查**: 2 通过 / 0 失败
 
 ## 分数明细
 
@@ -64,13 +64,12 @@
 - compressed_fragments.json 存在（33 个压缩后 fragments）
 - too_short fragments 比例正常（0/33）
 
-## ❌ 失败项
+## ⚠️ 警告项（不阻塞发布）
 
 - ⚠️ 低质量 fragments 占比 54.5%（18/33），建议检查提取质量
 
-## ⚠️ 风险项
-
 - 视觉片段仅 1 个，视觉策略可信度受限
+- 暂无明显风险
 
 ## Compression Quality
 

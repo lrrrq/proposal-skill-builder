@@ -109,6 +109,13 @@ def main():
     compress_parser = subparsers.add_parser("compress-fragments", help="压缩 Fragments")
     compress_parser.add_argument("case_id", help="Case ID (如 case_0004)")
 
+    # publish-skill 命令
+    publish_parser = subparsers.add_parser("publish-skill", help="发布 draft Skill 到 published")
+    publish_parser.add_argument("skill_id", help="Skill ID (如 luxury-hotel-festival)")
+
+    # inspect-registry 命令
+    inspect_parser = subparsers.add_parser("inspect-registry", help="检查 registry 健康度")
+
     args = parser.parse_args()
 
     if args.command is None:
@@ -168,6 +175,12 @@ def main():
     elif args.command == "compress-fragments":
         from .commands import cmd_compress_fragments
         cmd_compress_fragments(args)
+    elif args.command == "publish-skill":
+        from .commands import cmd_publish_skill
+        cmd_publish_skill(args)
+    elif args.command == "inspect-registry":
+        from .commands import cmd_inspect_registry
+        cmd_inspect_registry(args)
     else:
         parser.print_help()
         sys.exit(1)

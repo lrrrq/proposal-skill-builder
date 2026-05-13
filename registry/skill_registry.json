@@ -1,4 +1,33 @@
 {
-  "skills": [],
-  "updated_at": "2026-05-12T13:27:28.420710"
+  "skills": [
+    {
+      "skill_id": "luxury-hotel-festival",
+      "display_name": "Luxury Hotel Festival",
+      "status": "published",
+      "quality_level": "silver",
+      "callable": true,
+      "path": "/Applications/lrq/coding/proposal-skill-builder/skills/published/luxury-hotel-festival",
+      "source_cases": [
+        "case_0004"
+      ],
+      "source_strategies": [
+        "stg-fbe8623e7c",
+        "stg-f1a90952c7",
+        "stg-611804703e",
+        "stg-e92e0d7255",
+        "stg-57f4680e77",
+        "stg-b4afee92dd"
+      ],
+      "allowed_tasks": [
+        "策略规划",
+        "品牌定位",
+        "差异化分析",
+        "内容策划",
+        "结构设计",
+        "叙事框架"
+      ],
+      "published_at": "2026-05-13T17:38:05.257993"
+    }
+  ],
+  "updated_at": "2026-05-13T17:38:05.258352"
 }

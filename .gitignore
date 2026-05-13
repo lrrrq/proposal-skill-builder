@@ -61,3 +61,9 @@ compiled/cases/*/descriptions.json
 compiled/cases/*/ai_fragments.json
 compiled/cases/*/compressed_fragments.json
 compiled/cases/*/compression_report.md
+
+# Published Skill Backups
+skills/published/*__backup_*/
+
+# Publish Reports
+reports/publish_*.md
