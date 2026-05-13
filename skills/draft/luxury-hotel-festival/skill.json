@@ -2,7 +2,7 @@
   "skill_id": "luxury-hotel-festival",
   "display_name": "Luxury Hotel Festival",
   "description": "从案例 case_0004 提炼的能力，包含 5 个 Patterns（32 文本片段 + 1 视觉片段）",
-  "status": "published",
+  "status": "draft",
   "dataset": "prod",
   "quality_level": "silver",
   "callable": false,
