@@ -1,0 +1,55 @@
+[
+  {
+    "pattern_id": "034506ad0e31",
+    "case_id": "case_0003",
+    "name": "视觉方向_01",
+    "pattern_type": "visual_direction",
+    "description": "ai_skip_0x7f3a9_parse_error_rnd\nCopyright @ M +FILMS . All R | Copyright @ M +FILMS . All Right Reserved\nCreative content   | Copyright @ M +FILMS . All Right Reserved\n无缝转场的一镜到底，快闪快切，特写她",
+    "source_fragment_ids": [
+      {
+        "fragment_id": "3dee24e7c290",
+        "layer": "text"
+      },
+      {
+        "fragment_id": "8754533e99dd",
+        "layer": "text"
+      },
+      {
+        "fragment_id": "3893dece79bb",
+        "layer": "text"
+      },
+      {
+        "fragment_id": "371eea572c21",
+        "layer": "text"
+      },
+      {
+        "fragment_id": "2b3f8c49b7cc",
+        "layer": "text"
+      },
+      {
+        "fragment_id": "54b82bec0267",
+        "layer": "text"
+      },
+      {
+        "fragment_id": "11363c5ced8b",
+        "layer": "text"
+      },
+      {
+        "fragment_id": "0ea6327b4a75",
+        "layer": "text"
+      },
+      {
+        "fragment_id": "05f62671c2a0",
+        "layer": "text"
+      },
+      {
+        "fragment_id": "53c74c42bd80",
+        "layer": "text"
+      }
+    ],
+    "fragment_count": 10,
+    "confidence_score": 1.0,
+    "quality_level": "medium",
+    "source_summary": "文本×10"
+  }
+]
