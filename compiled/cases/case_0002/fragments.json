@@ -1,0 +1,17 @@
+[
+  {
+    "fragment_id": "0d43eb4bb943",
+    "case_id": "case_0002",
+    "index": 1,
+    "fragment_type": "title",
+    "raw_text": "test content",
+    "summary": "test content",
+    "keywords": [
+      "test",
+      "content"
+    ],
+    "quality_flags": [
+      "normal"
+    ]
+  }
+]

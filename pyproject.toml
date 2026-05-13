@@ -1,0 +1,21 @@
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "skill-builder"
+version = "0.1.0"
+description = "离线 AI 辅助案例编译系统"
+requires-python = ">=3.10"
+dependencies = [
+    "pymupdf",
+    "pillow",
+    "python-pptx",
+]
+
+[project.scripts]
+skill-builder = "skill_builder.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["skill_builder*"]

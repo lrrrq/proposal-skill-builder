@@ -1,0 +1,435 @@
+[
+  {
+    "pattern_id": "4d7e892e425b",
+    "case_id": "case_0004",
+    "name": "策略_01",
+    "pattern_type": "strategy",
+    "description": "A 视频内容结构设计（总时长约60分钟）：\n01  开篇（5分钟）\n02  年度大事记（10分钟）\n03  核心议题（4 | 03\nProject ：内容结构\n0 1  开篇：年会开场祝词（5 分钟）\n采访人物：曹志杰 |  美的家用空调事业部总 | ai_skip_0x7f3a9_parse_error_rnd\n04\nProject ：内容结构\n0 2  年度大事记H",
+    "source_fragment_ids": [
+      {
+        "fragment_id": "fe30896acb28",
+        "layer": "text"
+      },
+      {
+        "fragment_id": "b27463876c52",
+        "layer": "text"
+      },
+      {
+        "fragment_id": "b45b0a5a6950",
+        "layer": "text"
+      },
+      {
+        "fragment_id": "7ae2aa8c58ec",
+        "layer": "text"
+      },
+      {
+        "fragment_id": "7b9c638f1021",
+        "layer": "text"
+      },
+      {
+        "fragment_id": "c61a3aa750f6",
+        "layer": "text"
+      },
+      {
+        "fragment_id": "353d0a726d64",
+        "layer": "text"
+      },
+      {
+        "fragment_id": "fddf1d39fbae",
+        "layer": "text"
+      },
+      {
+        "fragment_id": "3d8508b0d051",
+        "layer": "text"
+      },
+      {
+        "fragment_id": "6b44d977a4a3",
+        "layer": "text"
+      },
+      {
+        "fragment_id": "a8afccf72525",
+        "layer": "text"
+      },
+      {
+        "fragment_id": "6b1d39541b92",
+        "layer": "text"
+      },
+      {
+        "fragment_id": "045355b2cb5a",
+        "layer": "text"
+      },
+      {
+        "fragment_id": "c0121e88c2a9",
+        "layer": "text"
+      },
+      {
+        "fragment_id": "03052b7fd875",
+        "layer": "text"
+      },
+      {
+        "fragment_id": "51af012c19ed",
+        "layer": "text"
+      },
+      {
+        "fragment_id": "98345ebeaf2f",
+        "layer": "text"
+      },
+      {
+        "fragment_id": "db1bfd01a0d4",
+        "layer": "text"
+      },
+      {
+        "fragment_id": "89b54b21ed80",
+        "layer": "text"
+      },
+      {
+        "fragment_id": "2511fcc1e5c1",
+        "layer": "text"
+      },
+      {
+        "fragment_id": "ebe6d24b280d",
+        "layer": "text"
+      },
+      {
+        "fragment_id": "feb1e0732ffc",
+        "layer": "text"
+      },
+      {
+        "fragment_id": "a634edc4a2cc",
+        "layer": "text"
+      },
+      {
+        "fragment_id": "ai-4a56ee2c",
+        "layer": "vision"
+      }
+    ],
+    "fragment_count": 24,
+    "confidence_score": 1.0,
+    "quality_level": "medium",
+    "source_summary": "文本×23 | 视觉×1"
+  },
+  {
+    "pattern_id": "2d57bad75cab",
+    "case_id": "case_0004",
+    "name": "内容结构_01",
+    "pattern_type": "content_structure",
+    "description": "共生 / 进化\n2026 美的经销商年会  视频内容结构设计方案概要\nSummary of the Video Cont | A 视频内容结构设计（总时长约60分钟）：\n01  开篇（5分钟）\n02  年度大事记（10分钟）\n03  核心议题（4 | 03\nProject ：内容结构\n0 1  开篇：年会开场祝词（5 分钟）\n采访人物：曹志杰 |  美的家用空调事业部总",
+    "source_fragment_ids": [
+      {
+        "fragment_id": "fe772fad6a52",
+        "layer": "text"
+      },
+      {
+        "fragment_id": "fe30896acb28",
+        "layer": "text"
+      },
+      {
+        "fragment_id": "b27463876c52",
+        "layer": "text"
+      },
+      {
+        "fragment_id": "b45b0a5a6950",
+        "layer": "text"
+      },
+      {
+        "fragment_id": "7ae2aa8c58ec",
+        "layer": "text"
+      },
+      {
+        "fragment_id": "7b9c638f1021",
+        "layer": "text"
+      },
+      {
+        "fragment_id": "c61a3aa750f6",
+        "layer": "text"
+      },
+      {
+        "fragment_id": "353d0a726d64",
+        "layer": "text"
+      },
+      {
+        "fragment_id": "fddf1d39fbae",
+        "layer": "text"
+      },
+      {
+        "fragment_id": "3d8508b0d051",
+        "layer": "text"
+      },
+      {
+        "fragment_id": "6b44d977a4a3",
+        "layer": "text"
+      },
+      {
+        "fragment_id": "a8afccf72525",
+        "layer": "text"
+      },
+      {
+        "fragment_id": "6b1d39541b92",
+        "layer": "text"
+      },
+      {
+        "fragment_id": "045355b2cb5a",
+        "layer": "text"
+      },
+      {
+        "fragment_id": "c0121e88c2a9",
+        "layer": "text"
+      },
+      {
+        "fragment_id": "03052b7fd875",
+        "layer": "text"
+      },
+      {
+        "fragment_id": "51af012c19ed",
+        "layer": "text"
+      },
+      {
+        "fragment_id": "98345ebeaf2f",
+        "layer": "text"
+      },
+      {
+        "fragment_id": "db1bfd01a0d4",
+        "layer": "text"
+      },
+      {
+        "fragment_id": "89b54b21ed80",
+        "layer": "text"
+      },
+      {
+        "fragment_id": "2511fcc1e5c1",
+        "layer": "text"
+      },
+      {
+        "fragment_id": "ebe6d24b280d",
+        "layer": "text"
+      },
+      {
+        "fragment_id": "3177658cf5f3",
+        "layer": "text"
+      },
+      {
+        "fragment_id": "ai-4a56ee2c",
+        "layer": "vision"
+      }
+    ],
+    "fragment_count": 24,
+    "confidence_score": 1.0,
+    "quality_level": "medium",
+    "source_summary": "文本×23 | 视觉×1"
+  },
+  {
+    "pattern_id": "aea714a0c432",
+    "case_id": "case_0004",
+    "name": "视觉方向_01",
+    "pattern_type": "visual_direction",
+    "description": "共生 / 进化\n2026 美的经销商年会  视频内容结构设计方案概要\nSummary of the Video Cont | A 视频内容结构设计（总时长约60分钟）：\n01  开篇（5分钟）\n02  年度大事记（10分钟）\n03  核心议题（4 | 03\nProject ：内容结构\n0 1  开篇：年会开场祝词（5 分钟）\n采访人物：曹志杰 |  美的家用空调事业部总",
+    "source_fragment_ids": [
+      {
+        "fragment_id": "fe772fad6a52",
+        "layer": "text"
+      },
+      {
+        "fragment_id": "fe30896acb28",
+        "layer": "text"
+      },
+      {
+        "fragment_id": "b27463876c52",
+        "layer": "text"
+      },
+      {
+        "fragment_id": "b45b0a5a6950",
+        "layer": "text"
+      },
+      {
+        "fragment_id": "7ae2aa8c58ec",
+        "layer": "text"
+      },
+      {
+        "fragment_id": "7b9c638f1021",
+        "layer": "text"
+      },
+      {
+        "fragment_id": "c61a3aa750f6",
+        "layer": "text"
+      },
+      {
+        "fragment_id": "353d0a726d64",
+        "layer": "text"
+      },
+      {
+        "fragment_id": "fddf1d39fbae",
+        "layer": "text"
+      },
+      {
+        "fragment_id": "3d8508b0d051",
+        "layer": "text"
+      },
+      {
+        "fragment_id": "6b44d977a4a3",
+        "layer": "text"
+      },
+      {
+        "fragment_id": "a8afccf72525",
+        "layer": "text"
+      },
+      {
+        "fragment_id": "6b1d39541b92",
+        "layer": "text"
+      },
+      {
+        "fragment_id": "045355b2cb5a",
+        "layer": "text"
+      },
+      {
+        "fragment_id": "c0121e88c2a9",
+        "layer": "text"
+      },
+      {
+        "fragment_id": "03052b7fd875",
+        "layer": "text"
+      },
+      {
+        "fragment_id": "51af012c19ed",
+        "layer": "text"
+      },
+      {
+        "fragment_id": "98345ebeaf2f",
+        "layer": "text"
+      },
+      {
+        "fragment_id": "db1bfd01a0d4",
+        "layer": "text"
+      },
+      {
+        "fragment_id": "89b54b21ed80",
+        "layer": "text"
+      },
+      {
+        "fragment_id": "2511fcc1e5c1",
+        "layer": "text"
+      },
+      {
+        "fragment_id": "ebe6d24b280d",
+        "layer": "text"
+      },
+      {
+        "fragment_id": "3177658cf5f3",
+        "layer": "text"
+      },
+      {
+        "fragment_id": "a634edc4a2cc",
+        "layer": "text"
+      },
+      {
+        "fragment_id": "3909d95aa9ed",
+        "layer": "text"
+      },
+      {
+        "fragment_id": "32dfa1d737ac",
+        "layer": "text"
+      },
+      {
+        "fragment_id": "306265fa5283",
+        "layer": "text"
+      },
+      {
+        "fragment_id": "6aa63a1ebc61",
+        "layer": "text"
+      },
+      {
+        "fragment_id": "93302b8477bf",
+        "layer": "text"
+      },
+      {
+        "fragment_id": "ai-4a56ee2c",
+        "layer": "vision"
+      }
+    ],
+    "fragment_count": 30,
+    "confidence_score": 1.0,
+    "quality_level": "medium",
+    "source_summary": "文本×29 | 视觉×1"
+  },
+  {
+    "pattern_id": "441b2bb93c84",
+    "case_id": "case_0004",
+    "name": "受众洞察_01",
+    "pattern_type": "audience_insight",
+    "description": "08\nProject ：内容结构\n0 3  核心议题（4 5 分钟）\n采访人物：张崴翰 |  国内营销总经理 |  \n问 | 09\nProject ：内容结构\n0 3  核心议题（4 5 分钟）\n采访人物：罗 彬 |  研发体系主任 |  \n采访 | 16\nProject ：内容结构\n0 3  核心议题（4 5 分钟）\n采访人物：杨鹏宇 |  解决方案与交付总监 |  ",
+    "source_fragment_ids": [
+      {
+        "fragment_id": "353d0a726d64",
+        "layer": "text"
+      },
+      {
+        "fragment_id": "fddf1d39fbae",
+        "layer": "text"
+      },
+      {
+        "fragment_id": "03052b7fd875",
+        "layer": "text"
+      },
+      {
+        "fragment_id": "3177658cf5f3",
+        "layer": "text"
+      }
+    ],
+    "fragment_count": 4,
+    "confidence_score": 0.9,
+    "quality_level": "medium",
+    "source_summary": "文本×4"
+  },
+  {
+    "pattern_id": "6d9575145263",
+    "case_id": "case_0004",
+    "name": "执行方法_01",
+    "pattern_type": "execution_method",
+    "description": "05\nProject ：内容结构\n0 3  核心议题（4 5 分钟）\n采访人物：张崴翰 |  国内营销总经理 |  \n采 | 06\nProject ：内容结构\n0 3  核心议题（4 5 分钟）\n采访人物：张崴翰 |  国内营销总经理 |   \n | 07\nProject ：内容结构\n0 3  核心议题（4 5 分钟）\n采访人物：张崴翰 |  国内营销总经理 |  \n问",
+    "source_fragment_ids": [
+      {
+        "fragment_id": "7ae2aa8c58ec",
+        "layer": "text"
+      },
+      {
+        "fragment_id": "7b9c638f1021",
+        "layer": "text"
+      },
+      {
+        "fragment_id": "c61a3aa750f6",
+        "layer": "text"
+      },
+      {
+        "fragment_id": "353d0a726d64",
+        "layer": "text"
+      },
+      {
+        "fragment_id": "6b44d977a4a3",
+        "layer": "text"
+      },
+      {
+        "fragment_id": "6b1d39541b92",
+        "layer": "text"
+      },
+      {
+        "fragment_id": "c0121e88c2a9",
+        "layer": "text"
+      },
+      {
+        "fragment_id": "51af012c19ed",
+        "layer": "text"
+      },
+      {
+        "fragment_id": "ebe6d24b280d",
+        "layer": "text"
+      },
+      {
+        "fragment_id": "3177658cf5f3",
+        "layer": "text"
+      }
+    ],
+    "fragment_count": 10,
+    "confidence_score": 1.0,
+    "quality_level": "medium",
+    "source_summary": "文本×10"
+  }
+]
