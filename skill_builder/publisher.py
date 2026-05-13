@@ -140,6 +140,15 @@ def publish_skill(skill_id: str) -> Dict:
     with open(skill_json_path, "w", encoding="utf-8") as f:
         json.dump(skill_json, f, ensure_ascii=False, indent=2)
 
+    # 更新 draft skill.json 的 status
+    draft_skill_json_path = draft_dir / "skill.json"
+    with open(draft_skill_json_path, "r", encoding="utf-8") as f:
+        draft_skill_json = json.load(f)
+    draft_skill_json["status"] = "published"
+    draft_skill_json["published_at"] = now_iso()
+    with open(draft_skill_json_path, "w", encoding="utf-8") as f:
+        json.dump(draft_skill_json, f, ensure_ascii=False, indent=2)
+
     # 更新 registry
     registry = load_registry()
 
