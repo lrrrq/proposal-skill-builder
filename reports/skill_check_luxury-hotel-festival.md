@@ -1,6 +1,6 @@
 # Skill Check Report: luxury-hotel-festival
 
-**检查时间**: 2026-05-13T17:38:05.254875
+**检查时间**: 2026-05-13T18:14:27.351689
 **Skill 目录**: /Applications/lrq/coding/proposal-skill-builder/skills/draft/luxury-hotel-festival
 
 ---

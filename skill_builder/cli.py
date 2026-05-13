@@ -116,6 +116,11 @@ def main():
     # inspect-registry 命令
     inspect_parser = subparsers.add_parser("inspect-registry", help="检查 registry 健康度")
 
+    # test-skill-reuse 命令
+    reuse_parser = subparsers.add_parser("test-skill-reuse", help="测试 Skill 重用性")
+    reuse_parser.add_argument("skill_id", help="Skill ID (如 luxury-hotel-festival)")
+    reuse_parser.add_argument("--brief", required=True, help="测试 Brief 描述")
+
     args = parser.parse_args()
 
     if args.command is None:
@@ -181,6 +186,9 @@ def main():
     elif args.command == "inspect-registry":
         from .commands import cmd_inspect_registry
         cmd_inspect_registry(args)
+    elif args.command == "test-skill-reuse":
+        from .commands import cmd_test_skill_reuse
+        cmd_test_skill_reuse(args)
     else:
         parser.print_help()
         sys.exit(1)

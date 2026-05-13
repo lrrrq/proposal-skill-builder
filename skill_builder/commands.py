@@ -3,6 +3,7 @@
 """
 
 import argparse
+from pathlib import Path
 
 from .config import Config
 from .db import init_db, get_stats
@@ -72,19 +73,20 @@ def status():
         print(f"  - rejected 文件: {stats.get('rejected', 0)}")
         print(f"  - cases: {stats.get('cases', 0)}")
         print(f"  - draft Skills: {stats.get('draft_skills', 0)}")
-        print(f"  - published Skills: {stats.get('published_skills', 0)}")
+        print(f"  - published Skills (DB): {stats.get('published_skills', 0)}")
     else:
         print("  数据库: 不存在（需要运行 init）")
     print()
 
     print("[注册表]")
+    registry = get_registry()
     reg_exists = Config.SKILL_REGISTRY_JSON.exists()
     if reg_exists:
-        registry = get_registry()
         skills = registry.list_skills()
         print(f"  skill_registry.json: 存在 ({len(skills)} Skills)")
     else:
         print("  skill_registry.json: 不存在")
+        skills = []
     print()
 
     print("[目录]")
@@ -103,6 +105,66 @@ def status():
         if dir_path.exists():
             count = len(list(dir_path.iterdir()))
         print(f"  {name}: {count} 个文件/目录")
+
+    # Published skills from filesystem (ground truth)
+    published_dir = Config.PUBLISHED_DIR
+    published_skills_fs = []
+    if published_dir.exists():
+        for skill_dir in published_dir.iterdir():
+            if skill_dir.is_dir() and "__backup" not in skill_dir.name:
+                published_skills_fs.append(skill_dir.name)
+
+    print()
+    print(f"[Published Skills: {len(published_skills_fs)}] (from filesystem)")
+    if published_skills_fs:
+        for skill_id in sorted(published_skills_fs):
+            print(f"  - {skill_id}")
+    else:
+        print("  (none)")
+    print()
+
+    # Registry cross-check
+    if skills:
+        print("[Registry Skills]")
+        registry_skill_ids = {s.get("skill_id") for s in skills}
+        for s in skills:
+            skill_id = s.get("skill_id", "unknown")
+            status = s.get("status", "?")
+            callable_str = "✅" if s.get("callable") else "❌"
+            quality = s.get("quality_level", "?")
+            print(f"  {callable_str} {skill_id}: status={status}, quality={quality}")
+
+        # Warnings
+        fs_skill_ids = set(published_skills_fs)
+        in_fs_not_reg = fs_skill_ids - registry_skill_ids
+        in_reg_not_fs = registry_skill_ids - fs_skill_ids
+
+        if in_fs_not_reg:
+            print()
+            print("⚠️  Published directory exists but NOT in registry:")
+            for skill_id in sorted(in_fs_not_reg):
+                print(f"  - {skill_id}")
+
+        if in_reg_not_fs:
+            print()
+            print("⚠️  In registry but NOT in published directory:")
+            for skill_id in sorted(in_reg_not_fs):
+                print(f"  - {skill_id}")
+
+        # Check if registry paths exist
+        print()
+        print("[Registry Path Validation]")
+        path_issues = []
+        for s in skills:
+            skill_id = s.get("skill_id", "unknown")
+            path = s.get("path", "")
+            if path and not Path(path).exists():
+                path_issues.append(f"{skill_id}: path does not exist -> {path}")
+        if path_issues:
+            for issue in path_issues:
+                print(f"  ⚠️  {issue}")
+        else:
+            print("  (all registry paths exist)")
 
     print()
     print("=" * 50)
@@ -663,3 +725,192 @@ def cmd_inspect_registry(args):
             print("   无问题")
     else:
         print(f"❌ {result.get('message')}")
+
+
+def cmd_test_skill_reuse(args):
+    """test-skill-reuse 命令"""
+    import json
+    import re
+    from datetime import datetime
+
+    skill_id = args.skill_id
+    brief = args.brief
+
+    # 1. 检查 skill 是否在 published 目录下
+    skill_dir = Config.PUBLISHED_DIR / skill_id
+    if not skill_dir.exists():
+        print(f"❌ Skill 不存在: {skill_id}")
+        print(f"   路径: {skill_dir}")
+        return
+
+    # 2. 检查 skill.json 是否存在且 callable 为 true
+    skill_json_path = skill_dir / "skill.json"
+    if not skill_json_path.exists():
+        print(f"❌ skill.json 不存在: {skill_id}")
+        return
+
+    try:
+        skill_data = json.loads(skill_json_path.read_text(encoding="utf-8"))
+    except json.JSONDecodeError as e:
+        print(f"❌ skill.json 解析失败: {e}")
+        return
+
+    if not skill_data.get("callable", False):
+        print(f"❌ Skill 不可调用: {skill_id} (callable=false)")
+        return
+
+    # 3. 读取 SKILL.md
+    skill_md_path = skill_dir / "SKILL.md"
+    skill_md_content = ""
+    if skill_md_path.exists():
+        skill_md_content = skill_md_path.read_text(encoding="utf-8")
+
+    # 4. 读取 examples.md
+    examples_md_path = skill_dir / "examples.md"
+    examples_content = ""
+    if examples_md_path.exists():
+        examples_content = examples_md_path.read_text(encoding="utf-8")
+
+    # 5. 获取 quality_level 和 source 信息
+    quality_level = skill_data.get("quality_level", "unknown")
+    source_cases = skill_data.get("source_cases", [])
+    source_strategies = skill_data.get("source_strategies", [])
+    display_name = skill_data.get("display_name", skill_id)
+
+    # 6. 分析相关性并生成 verdict
+    brief_lower = brief.lower()
+    skill_id_lower = skill_id.lower()
+    display_name_lower = display_name.lower()
+    skill_md_lower = skill_md_content.lower()
+    examples_lower = examples_content.lower()
+
+    # 关键词匹配
+    keywords_brief = set(re.findall(r'[\w]+', brief_lower))
+    keywords_skill_id = set(re.findall(r'[\w]+', skill_id_lower))
+    keywords_display_name = set(re.findall(r'[\w]+', display_name_lower))
+
+    # 计算重叠度
+    overlap_id = len(keywords_brief & keywords_skill_id)
+    overlap_display = len(keywords_brief & keywords_display_name)
+    overlap_content = sum(1 for kw in keywords_brief if kw in skill_md_lower or kw in examples_lower)
+
+    # 语义相关性检测
+    brief_has_luxury = any(kw in brief_lower for kw in ["奢华", "豪华", "奢侈", "高端", "贵宾", "会员", "luxury"])
+    brief_has_festival = any(kw in brief_lower for kw in ["春节", "新年", "节庆", "festival", "holiday", "celebration"])
+    brief_has_hotel = any(kw in brief_lower for kw in ["酒店", "hotel"])
+
+    skill_has_luxury = "luxury" in skill_id_lower or "奢华" in skill_md_content
+    skill_has_festival = "festival" in skill_id_lower or "节庆" in skill_md_content or "春节" in skill_md_content
+    skill_has_hotel = "hotel" in skill_id_lower or "酒店" in skill_md_content
+
+    # 计算相关性得分
+    relevance_score = 0
+    if overlap_id > 0:
+        relevance_score += overlap_id * 2
+    if overlap_display > 0:
+        relevance_score += overlap_display * 1.5
+    if overlap_content > 2:
+        relevance_score += min(overlap_content, 10)
+
+    if brief_has_luxury and skill_has_luxury:
+        relevance_score += 5
+    if brief_has_festival and skill_has_festival:
+        relevance_score += 5
+    if brief_has_hotel and skill_has_hotel:
+        relevance_score += 5
+
+    # 高端酒店节庆场景强相关
+    if (brief_has_luxury or brief_has_hotel) and skill_has_luxury and skill_has_festival:
+        relevance_score += 10
+
+    # 判断 verdict
+    if relevance_score >= 15:
+        verdict = "pass"
+    elif relevance_score >= 5:
+        verdict = "weak"
+    else:
+        verdict = "fail"
+
+    # 7. 生成 reuse hypothesis
+    reuse_hypothesis_parts = []
+    if brief_has_luxury and skill_has_luxury:
+        reuse_hypothesis_parts.append("brief 中的'奢华'关键词与 skill 的 luxury 属性匹配")
+    if brief_has_festival and skill_has_festival:
+        reuse_hypothesis_parts.append("brief 涉及节庆场景，与 skill 的 festival 内容相关")
+    if brief_has_hotel and skill_has_hotel:
+        reuse_hypothesis_parts.append("brief 涉及酒店场景，与 skill 的 hotel 属性匹配")
+    if overlap_id > 0:
+        reuse_hypothesis_parts.append(f"skill_id 关键词重叠: {overlap_id} 个")
+    if overlap_content > 2:
+        reuse_hypothesis_parts.append(f"内容关键词匹配: {overlap_content} 个")
+
+    if not reuse_hypothesis_parts:
+        reuse_hypothesis_parts.append("相关性较弱，需要人工审核")
+
+    reuse_hypothesis = "；".join(reuse_hypothesis_parts)
+
+    # 8. 生成 outline（模板生成）
+    outline_sections = [
+        ("方案定位", f"基于 {display_name} 的核心定位策略，围绕品牌差异化价值构建"),
+        ("目标人群", "高净值家庭/企业主/金融从业者等高端客群"),
+        ("核心策略", "节庆仪式感 + 品牌温度融合，强化会员价值感知"),
+        ("视觉方向", "简约留白、品牌色系为主、强调高端质感"),
+        ("执行路径", "预热期 → 引爆期 → 收尾期三阶段推进"),
+        ("风险提示", "高端客群需求多变，需持续跟踪用户反馈"),
+    ]
+
+    # 9. 生成 reuse evaluation
+    eval_items = [
+        ("结构迁移性", "高" if relevance_score >= 10 else "中" if relevance_score >= 5 else "低"),
+        ("视觉迁移性", "高" if skill_has_luxury else "中" if skill_has_hotel else "低"),
+        ("策略迁移性", "高" if (skill_has_luxury and skill_has_festival) else "中"),
+        ("证据充分性", "高" if quality_level in ["gold", "silver"] else "中"),
+        ("风险等级", "低" if verdict == "pass" else "中" if verdict == "weak" else "高"),
+    ]
+
+    # 10. 生成 markdown 输出
+    timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
+    output_dir = Config.OUTPUTS_DIR / "reuse_tests"
+    output_dir.mkdir(parents=True, exist_ok=True)
+    output_filename = f"{skill_id}_{timestamp}.md"
+    output_path = output_dir / output_filename
+
+    output_lines = [
+        "# Skill Reuse Test",
+        "",
+        "## Input Brief",
+        brief,
+        "",
+        "## Skill Used",
+        skill_id,
+        quality_level,
+        f"source_cases: {', '.join(source_cases)}",
+        f"source_strategies: {len(source_strategies)} 个",
+        "",
+        "## Reuse Hypothesis",
+        reuse_hypothesis,
+        "",
+        "## Generated Outline",
+    ]
+
+    for title, content in outline_sections:
+        output_lines.append(f"- **{title}**: {content}")
+
+    output_lines.append("")
+    output_lines.append("## Reuse Evaluation")
+
+    for name, value in eval_items:
+        output_lines.append(f"- **{name}**: {value}")
+
+    output_lines.append("")
+    output_lines.append("## Verdict")
+    output_lines.append(verdict.upper())
+
+    output_path.write_text("\n".join(output_lines), encoding="utf-8")
+
+    print(f"✅ 测试完成")
+    print(f"   skill_id: {skill_id}")
+    print(f"   quality_level: {quality_level}")
+    print(f"   relevance_score: {relevance_score}")
+    print(f"   verdict: {verdict}")
+    print(f"   输出文件: {output_path}")
