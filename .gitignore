@@ -59,3 +59,5 @@ compiled/cases/*/strategies.json
 compiled/cases/*/strategy_dna.md
 compiled/cases/*/descriptions.json
 compiled/cases/*/ai_fragments.json
+compiled/cases/*/compressed_fragments.json
+compiled/cases/*/compression_report.md
