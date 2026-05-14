@@ -193,7 +193,19 @@ def build_skill_content(data: Dict, skill_id: str) -> Dict:
         "output_template": {
             "version_type": "both_internal_and_client",
             "internal_fields": ["预算细节", "供应商信息", "风险详情"],
-            "client_fields": ["策略框架", "执行概要", "视觉效果"]
+            "client_fields": ["策略框架", "执行概要", "视觉效果"],
+            "visual_references": [
+                {"type": "cover", "count": 1, "description": "封面视觉参考"},
+                {"type": "style_guide", "count": 3, "description": "风格示例图"},
+                {"type": "layout_sample", "count": 2, "description": "版式示例图"}
+            ],
+            "sections": [
+                {"name": "项目判断", "min_words": 100, "max_words": 200},
+                {"name": "目标人群", "min_words": 150, "max_words": 300},
+                {"name": "内容结构", "min_words": 200, "max_words": 500},
+                {"name": "视觉方向", "min_words": 100, "max_words": 250},
+                {"name": "执行路径", "min_words": 150, "max_words": 400}
+            ]
         },
     }
 
@@ -299,13 +311,46 @@ def build_skill_md(data: Dict, skill_id: str, display_name: str, quality_level: 
         ">",
     ])
     for p in patterns[:5]:
-        lines.append(f"▶ **{p['name']}** ({p['pattern_type']}): {p.get('description', '')[:80]}...")
+        lines.append(f"▶ **{p['name']}** (*{p['pattern_type']}*): {p.get('description', '')[:80]}...")
     lines.append("")
+
+    # 视觉方向
+    lines.extend([
+        "## 视觉方向",
+        "",
+        "### 色调关键词",
+        "> 主色系：**奢华金**、**深空灰**",
+        "> 辅色系：**象牙白**、**香槟银**",
+        "> 禁忌色：荧光色、高饱和度色",
+        "",
+        "### 风格描述",
+        "> **高端留白**、**质感细节**、**品牌调性统一**",
+        "",
+    ])
 
     # 视觉策略
     vision_lines = build_visual_strategy_section(patterns, ai_fragments)
     lines.append(vision_lines)
     lines.append("")
+
+    # 视觉参考图
+    lines.extend([
+        "## 视觉参考图",
+        "",
+        "| 类型 | 数量 | 说明 |",
+        "|------|------|------|",
+        "| 封面视觉 | 1张 | [占位符] |",
+        "| 风格示例 | 3张 | [占位符] |",
+        "| 版式示例 | 2张 | [占位符] |",
+        "",
+        "### 色彩规范",
+        "| 类型 | 色值 | 说明 |",
+        "|------|------|------|",
+        "| 主色 | #C9A962 | 奢华金 |",
+        "| 辅色 | #1A1A2E | 深空灰 |",
+        "| 点缀 | #F5F5F5 | 象牙白 |",
+        "",
+    ])
 
     # 策略 DNA（如果有 strategies）
     strategies = data.get("strategies", [])
