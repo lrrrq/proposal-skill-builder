@@ -116,6 +116,10 @@ def main():
     # inspect-registry 命令
     inspect_parser = subparsers.add_parser("inspect-registry", help="检查 registry 健康度")
 
+    # case-readiness 命令
+    readiness_parser = subparsers.add_parser("case-readiness", help="检查案例是否适合进入 Skill 生成")
+    readiness_parser.add_argument("case_id", help="Case ID (如 case_0001)")
+
     # test-skill-reuse 命令
     reuse_parser = subparsers.add_parser("test-skill-reuse", help="测试 Skill 重用性")
     reuse_parser.add_argument("skill_id", help="Skill ID (如 luxury-hotel-festival)")
@@ -189,6 +193,9 @@ def main():
     elif args.command == "test-skill-reuse":
         from .commands import cmd_test_skill_reuse
         cmd_test_skill_reuse(args)
+    elif args.command == "case-readiness":
+        from .commands import cmd_case_readiness
+        cmd_case_readiness(args)
     else:
         parser.print_help()
         sys.exit(1)

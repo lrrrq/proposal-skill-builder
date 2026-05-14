@@ -914,3 +914,134 @@ def cmd_test_skill_reuse(args):
     print(f"   relevance_score: {relevance_score}")
     print(f"   verdict: {verdict}")
     print(f"   输出文件: {output_path}")
+
+
+def cmd_case_readiness(args):
+    """case-readiness 命令 - 检查案例是否适合进入 Skill 生成"""
+    import json
+    from .config import Config
+
+    case_id = args.case_id
+    case_dir = Config.CASES_DIR / case_id
+
+    if not case_dir.exists():
+        print(f"❌ Case 不存在: {case_id}")
+        return
+
+    # 1. 读取各项指标
+    fragments = []
+    if (case_dir / "fragments.json").exists():
+        fragments = json.loads((case_dir / "fragments.json").read_text(encoding="utf-8"))
+
+    ai_fragments = []
+    if (case_dir / "ai_fragments.json").exists():
+        ai_fragments = json.loads((case_dir / "ai_fragments.json").read_text(encoding="utf-8"))
+
+    patterns = []
+    if (case_dir / "patterns.json").exists():
+        patterns = json.loads((case_dir / "patterns.json").read_text(encoding="utf-8"))
+
+    strategies = []
+    if (case_dir / "strategies.json").exists():
+        strategies = json.loads((case_dir / "strategies.json").read_text(encoding="utf-8"))
+
+    has_case_card = (case_dir / "case_card.md").exists()
+    has_strategy_dna = (case_dir / "strategy_dna.md").exists()
+
+    # 检查 dataset 标记（从 source_meta.json）
+    source_meta = {}
+    if (case_dir / "source_meta.json").exists():
+        source_meta = json.loads((case_dir / "source_meta.json").read_text(encoding="utf-8"))
+    has_dataset = "dataset" in source_meta and source_meta.get("dataset")
+
+    # 检查视觉证据（visual_assets 目录下有实际文件）
+    visual_evidence = False
+    va_dir = case_dir / "visual_assets"
+    if va_dir.exists():
+        visual_evidence = any(1 for f in va_dir.iterdir() if f.is_file())
+
+    # 2. 计算评分
+    score = 0
+    bonuses = []
+
+    # fragments >= 10
+    if len(fragments) >= 10:
+        score += 1
+        bonuses.append("fragments >= 10")
+
+    # patterns >= 3
+    if len(patterns) >= 3:
+        score += 1
+        bonuses.append("patterns >= 3")
+
+    # strategies >= 3
+    if len(strategies) >= 3:
+        score += 1
+        bonuses.append("strategies >= 3")
+
+    # ai_fragments >= 1
+    if len(ai_fragments) >= 1:
+        score += 1
+        bonuses.append("ai_fragments >= 1")
+
+    # ai_fragments >= 3
+    if len(ai_fragments) >= 3:
+        score += 1
+        bonuses.append("ai_fragments >= 3")
+
+    # case_card.md 存在
+    if has_case_card:
+        score += 1
+        bonuses.append("case_card.md exists")
+
+    # strategy_dna.md 存在
+    if has_strategy_dna:
+        score += 1
+        bonuses.append("strategy_dna.md exists")
+
+    # 3. 输出 verdict
+    # ready: 可以进入 compose-skill 和 check-skill
+    # weak: 可以 compose-skill，但不建议 publish
+    # not_ready: 不要 compose-skill
+
+    # 判断条件：
+    # ready: score >= 5 且 patterns >= 3 且 strategies >= 3
+    # weak: score >= 3 且 patterns >= 1 且 strategies >= 1
+    # not_ready: 其他
+
+    if score >= 5 and len(patterns) >= 3 and len(strategies) >= 3:
+        verdict = "ready"
+    elif score >= 3 and len(patterns) >= 1 and len(strategies) >= 1:
+        verdict = "weak"
+    else:
+        verdict = "not_ready"
+
+    # 4. 打印报告
+    print("=" * 60)
+    print(f"Case Readiness: {case_id}")
+    print("=" * 60)
+    print()
+    print("[指标]")
+    print(f"  fragments:   {len(fragments):>4} {'✅' if len(fragments) >= 10 else '❌'}")
+    print(f"  patterns:    {len(patterns):>4} {'✅' if len(patterns) >= 3 else '❌'}")
+    print(f"  strategies:  {len(strategies):>4} {'✅' if len(strategies) >= 3 else '❌'}")
+    print(f"  ai_fragments: {len(ai_fragments):>4} {'✅' if len(ai_fragments) >= 1 else '❌'}")
+    print(f"  case_card.md:       {'✅' if has_case_card else '❌'}")
+    print(f"  strategy_dna.md:    {'✅' if has_strategy_dna else '❌'}")
+    print(f"  dataset 标记:       {'✅' if has_dataset else '❌'}")
+    print(f"  视觉证据:           {'✅' if visual_evidence else '❌'}")
+    print()
+    print(f"[评分] {score} 分")
+    if bonuses:
+        print("  加分项:")
+        for b in bonuses:
+            print(f"    + {b}")
+    print()
+    print(f"[Verdict] {verdict.upper()}")
+    if verdict == "ready":
+        print("  → 可以进入 compose-skill 和 check-skill")
+    elif verdict == "weak":
+        print("  → 可以 compose-skill，但不建议 publish")
+    else:
+        print("  → 不要 compose-skill")
+    print()
