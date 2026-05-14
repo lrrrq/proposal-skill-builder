@@ -1,0 +1,40 @@
+{
+  "skill_id": "meidi-annual-gala",
+  "display_name": "Meidi Annual Gala",
+  "description": "从案例 case_0004 提炼的能力，包含 5 个 Patterns（32 文本片段 + 1 视觉片段）",
+  "status": "draft",
+  "dataset": "prod",
+  "quality_level": "silver",
+  "callable": false,
+  "source_cases": [
+    "case_0004"
+  ],
+  "source_patterns": [
+    "4d7e892e425b",
+    "2d57bad75cab",
+    "aea714a0c432",
+    "441b2bb93c84",
+    "6d9575145263"
+  ],
+  "source_fragments_count": 32,
+  "source_ai_fragments_count": 1,
+  "source_strategies": [
+    "stg-1a442bef13",
+    "stg-98147313eb",
+    "stg-dc1d96fb5b",
+    "stg-3de1fde523",
+    "stg-0070b3cb08",
+    "stg-5c1925e858"
+  ],
+  "allowed_tasks": [
+    "策略规划",
+    "品牌定位",
+    "差异化分析",
+    "内容策划",
+    "结构设计",
+    "叙事框架"
+  ],
+  "created_at": "2026-05-14T12:44:56.658792",
+  "updated_at": "2026-05-14T12:44:56.658792",
+  "version": "1.0"
+}
