@@ -451,7 +451,7 @@ def build_project_pattern(data: Dict) -> Dict:
         emotional_release.get("release_depth", 0),
         strategic_sequence.get("completeness", 0),
     ]
-    overall_score = round(sum(scores) / len(scores), 2) if scores else 0
+    overall_score = round(sum(scores) / len(scores), 2) * 100 if scores else 0
 
     return {
         "project_pattern_id": f"pp-{uuid.uuid4().hex[:10]}",
