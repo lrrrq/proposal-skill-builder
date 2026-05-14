@@ -190,6 +190,11 @@ def build_skill_content(data: Dict, skill_id: str) -> Dict:
         "created_at": now,
         "updated_at": now,
         "version": "1.0",
+        "output_template": {
+            "version_type": "both_internal_and_client",
+            "internal_fields": ["预算细节", "供应商信息", "风险详情"],
+            "client_fields": ["策略框架", "执行概要", "视觉效果"]
+        },
     }
 
     # SKILL.md
@@ -221,7 +226,8 @@ def build_skill_md(data: Dict, skill_id: str, display_name: str, quality_level: 
     # 适用场景
     lines.extend([
         "## 适用场景",
-        "",
+        "### 本章节核心：场景匹配，一句话概括",
+        ">",
         "- 奢侈品牌营销活动策划",
         "- 高端酒店/文旅项目提案",
         "- 品牌发布会/年会创意设计",
@@ -231,7 +237,8 @@ def build_skill_md(data: Dict, skill_id: str, display_name: str, quality_level: 
     # 输入要求
     lines.extend([
         "## 输入要求",
-        "",
+        "### 本章节核心：信息输入，一句话概括",
+        ">",
         "- 客户品牌背景",
         "- 活动/项目基本信息",
         "- 目标受众描述",
@@ -244,18 +251,20 @@ def build_skill_md(data: Dict, skill_id: str, display_name: str, quality_level: 
     if strategy_patterns:
         lines.extend([
             "## 核心判断逻辑",
-            "",
+            "### 本章节核心：策略判断，一句话概括",
+            ">",
         ])
         for p in strategy_patterns[:2]:
             desc = p.get("description", "")
             if desc:
-                lines.append(f"- {desc[:120]}")
+                lines.append(f"▶ {desc[:120]}")
         lines.append("")
 
     # 处理流程
     lines.extend([
         "## 处理流程",
-        "",
+        "### 本章节核心：步骤执行，一句话概括",
+        ">",
         "1. **品牌定位分析** - 理解客户品牌核心价值与差异化",
         "2. **受众洞察** - 分析目标用户心理与需求",
         "3. **内容结构设计** - 构建叙事框架与信息层次",
@@ -267,21 +276,30 @@ def build_skill_md(data: Dict, skill_id: str, display_name: str, quality_level: 
     # 输出格式
     lines.extend([
         "## 输出格式",
+        "### 本章节核心：交付物结构，一句话概括",
+        ">",
+        "▶ 策略框架：Brand Position / Target Audience / Key Message",
+        "▶ 内容结构：Content Outline / Story Arc",
+        "▶ 视觉方向：Visual Direction / Style Guide",
+        "▶ 执行方案：Timeline / Deliverables / Budget",
         "",
-        "- 策略框架（Brand Position / Target Audience / Key Message）",
-        "- 内容结构（Content Outline / Story Arc）",
-        "- 视觉方向（Visual Direction / Style Guide）",
-        "- 执行方案（Timeline / Deliverables / Budget）",
+    ])
+
+    # 版本类型 (P0-2)
+    lines.extend([
+        "### 版本类型",
+        "> 适用版本：内部版 + 客户版",
         "",
     ])
 
     # 可复用策略
     lines.extend([
         "## 可复用策略",
-        "",
+        "### 本章节核心：模式复用，一句话概括",
+        ">",
     ])
     for p in patterns[:5]:
-        lines.append(f"- **{p['name']}** ({p['pattern_type']}): {p.get('description', '')[:80]}...")
+        lines.append(f"▶ **{p['name']}** ({p['pattern_type']}): {p.get('description', '')[:80]}...")
     lines.append("")
 
     # 视觉策略
@@ -294,7 +312,8 @@ def build_skill_md(data: Dict, skill_id: str, display_name: str, quality_level: 
     if strategies:
         lines.extend([
             "## 策略 DNA",
-            "",
+            "### 本章节核心：策略内核，一句话概括",
+            ">",
         ])
         type_to_name = {
             "positioning_strategy": "定位策略",
@@ -306,7 +325,7 @@ def build_skill_md(data: Dict, skill_id: str, display_name: str, quality_level: 
         }
         for s in strategies[:5]:
             stype_name = type_to_name.get(s["strategy_type"], s["strategy_type"])
-            lines.append(f"- **{s['name']}** ({stype_name}): {s.get('reusable_principle', '')[:80]}...")
+            lines.append(f"▶ **{s['name']}** ({stype_name}): {s.get('reusable_principle', '')[:80]}...")
         lines.append("")
 
     # 内容结构策略
@@ -314,10 +333,11 @@ def build_skill_md(data: Dict, skill_id: str, display_name: str, quality_level: 
     if content_patterns:
         lines.extend([
             "## 内容结构策略",
-            "",
+            "### 本章节核心：内容编排，一句话概括",
+            ">",
         ])
         for p in content_patterns[:2]:
-            lines.append(f"- {p.get('description', '')[:100]}")
+            lines.append(f"▶ {p.get('description', '')[:100]}")
         lines.append("")
 
     # 受众洞察
@@ -325,10 +345,11 @@ def build_skill_md(data: Dict, skill_id: str, display_name: str, quality_level: 
     if audience_patterns:
         lines.extend([
             "## 受众洞察",
-            "",
+            "### 本章节核心：用户理解，一句话概括",
+            ">",
         ])
         for p in audience_patterns[:2]:
-            lines.append(f"- {p.get('description', '')[:100]}")
+            lines.append(f"▶ {p.get('description', '')[:100]}")
         lines.append("")
 
     # 执行方法
@@ -336,29 +357,32 @@ def build_skill_md(data: Dict, skill_id: str, display_name: str, quality_level: 
     if exec_patterns:
         lines.extend([
             "## 执行方法",
-            "",
+            "### 本章节核心：落地执行，一句话概括",
+            ">",
         ])
         for p in exec_patterns[:2]:
-            lines.append(f"- {p.get('description', '')[:100]}")
+            lines.append(f"▶ {p.get('description', '')[:100]}")
         lines.append("")
 
     # 限制条件
     lines.extend([
         "## 限制条件",
-        "",
+        "### 本章节核心：使用边界，一句话概括",
+        ">",
     ])
     if len(ai_fragments) < 3:
         lines.append("⚠️ 当前视觉样本较少，视觉策略仅供初步参考。")
         lines.append("")
-    lines.append(f"- 数据来源案例: {case_id}")
-    lines.append(f"- 质量等级: {quality_level}（{dataset}）")
-    lines.append("- 仅为 draft 状态，不可直接用于生产")
+    lines.append(f"▶ 数据来源案例: {case_id}")
+    lines.append(f"▶ 质量等级: {quality_level}（{dataset}）")
+    lines.append("▶ 仅为 draft 状态，不可直接用于生产")
     lines.append("")
 
     # 来源案例
     lines.extend([
         "## 来源案例",
-        "",
+        "### 本章节核心：数据溯源，一句话概括",
+        ">",
         f"- **case_id**: {case_id}",
         f"- **标题**: {meta.get('title', '未知')}",
         f"- **来源文件**: {meta.get('original_filename', '未知')}",
