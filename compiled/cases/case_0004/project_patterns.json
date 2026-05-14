@@ -1,0 +1,230 @@
+[
+  {
+    "project_pattern_id": "pp-25dceede7b",
+    "case_id": "case_0004",
+    "title": "美的年会访谈视频概念",
+    "dataset": "unknown",
+    "narrative_arc": {
+      "arc_segments": [
+        {
+          "segment": "开场",
+          "function": "建立基调、吸引注意",
+          "position": "opening"
+        },
+        {
+          "segment": "展开",
+          "function": "传递信息、建立关系",
+          "position": "middle"
+        },
+        {
+          "segment": "高潮",
+          "function": "强化记忆、推动决策",
+          "position": "climax"
+        },
+        {
+          "segment": "收尾",
+          "function": "明确行动、留下印象",
+          "position": "ending"
+        }
+      ],
+      "arc_completeness": 1.0,
+      "has_narrative_structure": true,
+      "narrative_depth_score": 1.0
+    },
+    "emotion_curve": {
+      "phases": [
+        {
+          "phase": "开场定调",
+          "emotion": "期待感",
+          "position": "opening",
+          "evidence": "定位策略 + 受众策略"
+        },
+        {
+          "phase": "内容展开",
+          "emotion": "沉浸感",
+          "position": "middle",
+          "evidence": "叙事策略 + 视觉策略"
+        },
+        {
+          "phase": "转化引爆",
+          "emotion": "行动感",
+          "position": "climax",
+          "evidence": "转化策略"
+        },
+        {
+          "phase": "落地执行",
+          "emotion": "确定感",
+          "position": "ending",
+          "evidence": "执行策略"
+        }
+      ],
+      "curve_score": 1.0,
+      "has_emotion_progression": true,
+      "climax_position": "middle"
+    },
+    "persuasion_flow": {
+      "flow": [
+        {
+          "step": 1,
+          "strategy_type": "positioning_strategy",
+          "name": "定位策略_01",
+          "description": "A 视频内容结构设计（总时长约60分钟）：\n01  开篇（5分钟）\n02  年度大事记（10分钟）\n03  核心议题（4 | 03\nProject ：内容结构\n"
+        },
+        {
+          "step": 2,
+          "strategy_type": "narrative_strategy",
+          "name": "叙事策略_01",
+          "description": "共生 / 进化\n2026 美的经销商年会  视频内容结构设计方案概要\nSummary of the Video Cont | A 视频内容结构设计（总时长约60"
+        },
+        {
+          "step": 3,
+          "strategy_type": "visual_strategy",
+          "name": "视觉策略_01",
+          "description": "共生 / 进化\n2026 美的经销商年会  视频内容结构设计方案概要\nSummary of the Video Cont | A 视频内容结构设计（总时长约60"
+        },
+        {
+          "step": 4,
+          "strategy_type": "audience_strategy",
+          "name": "受众策略_01",
+          "description": "08\nProject ：内容结构\n0 3  核心议题（4 5 分钟）\n采访人物：张崴翰 |  国内营销总经理 |  \n问 | 09\nProject ：内容结构\n"
+        },
+        {
+          "step": 5,
+          "strategy_type": "execution_strategy",
+          "name": "执行策略_01",
+          "description": "05\nProject ：内容结构\n0 3  核心议题（4 5 分钟）\n采访人物：张崴翰 |  国内营销总经理 |  \n采 | 06\nProject ：内容结构\n"
+        },
+        {
+          "step": 6,
+          "strategy_type": "conversion_strategy",
+          "name": "转化策略_01",
+          "description": "通过行为引导和激励机制实现目标转化的策略"
+        }
+      ],
+      "coverage": 1.0,
+      "is_smooth": true,
+      "missing_types": [],
+      "flow_length": 6
+    },
+    "visual_progression": {
+      "progression": [
+        {
+          "stage": "视觉基调",
+          "description": "基于 1 个视觉方向 pattern",
+          "confidence": 1.0
+        },
+        {
+          "stage": "视觉策略",
+          "description": "包含 1 个视觉策略",
+          "confidence": 0.9
+        }
+      ],
+      "has_visual_progression": true,
+      "visual_diversity": 1,
+      "progression_score": 0.67
+    },
+    "information_density_curve": {
+      "density_phases": [
+        {
+          "phase": "开场",
+          "density": "低",
+          "reason": "建立基调，吸引注意"
+        },
+        {
+          "phase": "展开",
+          "density": "高",
+          "reason": "共 32 个 fragments，信息量大"
+        },
+        {
+          "phase": "收尾",
+          "density": "低",
+          "reason": "明确行动，减少认知负担"
+        }
+      ],
+      "total_fragments": 32,
+      "fragment_types": {
+        "short": 9,
+        "normal": 23
+      },
+      "density_score": 1.0
+    },
+    "climax_design": {
+      "climax_indicators": [
+        {
+          "indicator": "转化策略",
+          "description": "推动受众做出决定",
+          "strength": 1
+        },
+        {
+          "indicator": "视觉冲击",
+          "description": "强化记忆点",
+          "strength": 1
+        }
+      ],
+      "climax_position": "middle-late",
+      "has_clear_climax": true,
+      "climax_strength": 1.0
+    },
+    "emotional_release": {
+      "release_mechanisms": [
+        {
+          "mechanism": "行动号召",
+          "description": "明确的执行步骤，转化为实际行为",
+          "type": "action"
+        },
+        {
+          "mechanism": "情感收束",
+          "description": "故事收尾，留下情感印象",
+          "type": "emotion"
+        }
+      ],
+      "has_release": true,
+      "release_depth": 1.0
+    },
+    "strategic_sequence": {
+      "sequence": [
+        {
+          "step": 1,
+          "strategy_type": "positioning_strategy",
+          "name": "定位策略",
+          "confidence": 0.9
+        },
+        {
+          "step": 2,
+          "strategy_type": "audience_strategy",
+          "name": "受众策略",
+          "confidence": 0.9
+        },
+        {
+          "step": 3,
+          "strategy_type": "narrative_strategy",
+          "name": "叙事策略",
+          "confidence": 0.9
+        },
+        {
+          "step": 4,
+          "strategy_type": "visual_strategy",
+          "name": "视觉策略",
+          "confidence": 0.9
+        },
+        {
+          "step": 5,
+          "strategy_type": "conversion_strategy",
+          "name": "转化策略",
+          "confidence": 0.8
+        },
+        {
+          "step": 6,
+          "strategy_type": "execution_strategy",
+          "name": "执行策略",
+          "confidence": 0.9
+        }
+      ],
+      "completeness": 1.0,
+      "sequence_length": 6,
+      "is_complete": true
+    },
+    "overall_score": 0.96,
+    "analyzed_at": "2026-05-14T15:24:42.555466"
+  }
+]

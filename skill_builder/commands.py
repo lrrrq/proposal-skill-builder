@@ -1045,3 +1045,52 @@ def cmd_case_readiness(args):
     else:
         print("  → 不要 compose-skill")
     print()
+
+
+def cmd_analyze_project(args):
+    """analyze-project 命令 - 执行项目级分析"""
+    from .project_analyzer import analyze_project
+
+    case_id = args.case_id
+
+    print(f"🔍 执行项目级分析: {case_id}")
+    print()
+
+    result = analyze_project(case_id)
+
+    if not result["success"]:
+        print(f"❌ 分析失败: {result['message']}")
+        return
+
+    pp = result.get("project_pattern", {})
+
+    print("✅ 项目分析完成")
+    print(f"   评分: {pp.get('overall_score', 0):.2f}/100")
+    print(f"   project_patterns.json: {result['project_patterns_path']}")
+    print(f"   project_analysis.md: {result['project_analysis_md_path']}")
+    print()
+
+    # 打印关键指标
+    print("## 关键指标")
+    print()
+
+    ec = pp.get("emotion_curve", {})
+    if ec.get("phases"):
+        print("情绪曲线:")
+        for phase in ec.get("phases", []):
+            print(f"  - {phase.get('phase')}: {phase.get('emotion')}")
+        print()
+
+    pf = pp.get("persuasion_flow", {})
+    if pf.get("flow"):
+        print(f"说服流程 (覆盖率: {pf.get('coverage', 0):.0%}):")
+        for step in pf.get("flow", []):
+            print(f"  - Step {step.get('step')}: {step.get('name')}")
+        print()
+
+    ss = pp.get("strategic_sequence", {})
+    if ss.get("sequence"):
+        print(f"策略序列 (完整度: {ss.get('completeness', 0):.0%}):")
+        for step in ss.get("sequence", []):
+            print(f"  - {step.get('name')} (置信度: {step.get('confidence', 0):.2f})")
+        print()

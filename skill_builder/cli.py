@@ -120,6 +120,10 @@ def main():
     readiness_parser = subparsers.add_parser("case-readiness", help="检查案例是否适合进入 Skill 生成")
     readiness_parser.add_argument("case_id", help="Case ID (如 case_0001)")
 
+    # analyze-project 命令
+    project_parser = subparsers.add_parser("analyze-project", help="执行项目级分析")
+    project_parser.add_argument("case_id", help="Case ID (如 case_0004)")
+
     # test-skill-reuse 命令
     reuse_parser = subparsers.add_parser("test-skill-reuse", help="测试 Skill 重用性")
     reuse_parser.add_argument("skill_id", help="Skill ID (如 luxury-hotel-festival)")
@@ -196,6 +200,9 @@ def main():
     elif args.command == "case-readiness":
         from .commands import cmd_case_readiness
         cmd_case_readiness(args)
+    elif args.command == "analyze-project":
+        from .commands import cmd_analyze_project
+        cmd_analyze_project(args)
     else:
         parser.print_help()
         sys.exit(1)
