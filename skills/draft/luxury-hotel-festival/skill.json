@@ -19,12 +19,12 @@
   "source_fragments_count": 32,
   "source_ai_fragments_count": 1,
   "source_strategies": [
-    "stg-fbe8623e7c",
-    "stg-f1a90952c7",
-    "stg-611804703e",
-    "stg-e92e0d7255",
-    "stg-57f4680e77",
-    "stg-b4afee92dd"
+    "stg-1a442bef13",
+    "stg-98147313eb",
+    "stg-dc1d96fb5b",
+    "stg-3de1fde523",
+    "stg-0070b3cb08",
+    "stg-5c1925e858"
   ],
   "allowed_tasks": [
     "策略规划",
@@ -34,7 +34,64 @@
     "结构设计",
     "叙事框架"
   ],
-  "created_at": "2026-05-13T16:57:23.330332",
-  "updated_at": "2026-05-13T16:57:23.330332",
-  "version": "1.0"
+  "created_at": "2026-05-14T18:12:10.650865",
+  "updated_at": "2026-05-14T18:12:10.650865",
+  "version": "1.0",
+  "output_template": {
+    "version_type": "both_internal_and_client",
+    "internal_fields": [
+      "预算细节",
+      "供应商信息",
+      "风险详情"
+    ],
+    "client_fields": [
+      "策略框架",
+      "执行概要",
+      "视觉效果"
+    ],
+    "visual_references": [
+      {
+        "type": "cover",
+        "count": 1,
+        "description": "封面视觉参考"
+      },
+      {
+        "type": "style_guide",
+        "count": 3,
+        "description": "风格示例图"
+      },
+      {
+        "type": "layout_sample",
+        "count": 2,
+        "description": "版式示例图"
+      }
+    ],
+    "sections": [
+      {
+        "name": "项目判断",
+        "min_words": 100,
+        "max_words": 200
+      },
+      {
+        "name": "目标人群",
+        "min_words": 150,
+        "max_words": 300
+      },
+      {
+        "name": "内容结构",
+        "min_words": 200,
+        "max_words": 500
+      },
+      {
+        "name": "视觉方向",
+        "min_words": 100,
+        "max_words": 250
+      },
+      {
+        "name": "执行路径",
+        "min_words": 150,
+        "max_words": 400
+      }
+    ]
+  }
 }
