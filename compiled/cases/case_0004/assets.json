@@ -494,9 +494,10 @@
     "height": 833.25,
     "format": "PNG",
     "source": "pdf_rendered_page",
-    "description_status": "pending",
+    "description_status": "failed",
     "needs_vision_review": true,
-    "source_text_length": 11
+    "source_text_length": 11,
+    "error_message": "VLM API 返回为空"
   },
   {
     "asset_id": "asset-7877bc7f",
@@ -553,9 +554,10 @@
     "height": 833.25,
     "format": "PNG",
     "source": "pdf_rendered_page",
-    "description_status": "pending",
+    "description_status": "completed",
     "needs_vision_review": true,
-    "source_text_length": 10
+    "source_text_length": 10,
+    "manual_description": "页面左侧展示了一台装配完整的专业摄像机（带遮光罩、监视器和长焦镜头），背景为具有虚化效果的户外自然光场景。右侧为大面积留白区域，包含蓝色标题文字和极简的线条装饰。"
   },
   {
     "asset_id": "asset-9340ea1e",
