@@ -161,6 +161,8 @@ class MiniMaxMCPClient(AIClient):
     def check_environment(self) -> dict:
         return {
             "key_exists": bool(self.api_key),
+            "uvx_exists": True,  # Token Plan 直接 API，不需要 uvx
+            "mcp_available": bool(self.api_key),  # Token Plan 可用
             "can_process_images": bool(self.api_key),
             "supported_formats": list(self.SUPPORTED_FORMATS),
             "max_size_mb": self.MAX_FILE_SIZE // (1024 * 1024),
