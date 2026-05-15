@@ -1094,3 +1094,170 @@ def cmd_analyze_project(args):
         for step in ss.get("sequence", []):
             print(f"  - {step.get('name')} (置信度: {step.get('confidence', 0):.2f})")
         print()
+
+def cmd_batch_validation(args):
+    """batch-validation 命令 - 批量验证所有案例并生成报告"""
+    import json
+    from pathlib import Path
+    from .config import Config
+    from .case_manager import list_cases
+    from .skill_checker import check_skill
+
+    limit = args.limit
+
+    print("=" * 70)
+    print("Batch Validation Report")
+    print("=" * 70)
+    print()
+
+    # 获取所有 case
+    all_cases = list_cases(dataset="all")
+    if limit > 0:
+        all_cases = all_cases[:limit]
+
+    rows = []
+    for case in all_cases:
+        case_id = case.get("case_id")
+        if not case_id:
+            continue
+
+        case_dir = Config.CASES_DIR / case_id
+        source_file = case.get("source_filename", "")
+
+        # 1. compile 是否成功 - 检查 case 状态和 fragments
+        compile_ok = False
+        fragments_count = 0
+        if (case_dir / "fragments.json").exists():
+            try:
+                fragments = json.loads((case_dir / "fragments.json").read_text(encoding="utf-8"))
+                fragments_count = len(fragments)
+                compile_ok = fragments_count > 0
+            except Exception:
+                pass
+
+        # 2. patterns 数量
+        patterns_count = 0
+        if (case_dir / "patterns.json").exists():
+            try:
+                patterns = json.loads((case_dir / "patterns.json").read_text(encoding="utf-8"))
+                patterns_count = len(patterns)
+            except Exception:
+                pass
+
+        # 3. strategies 数量
+        strategies_count = 0
+        if (case_dir / "strategies.json").exists():
+            try:
+                strategies = json.loads((case_dir / "strategies.json").read_text(encoding="utf-8"))
+                strategies_count = len(strategies)
+            except Exception:
+                pass
+
+        # 4. case_card 是否存在
+        has_case_card = (case_dir / "case_card.md").exists()
+
+        # 5. skill 是否生成（从 DB 中查找同 case_id 的 skill）
+        skill_generated = False
+        quality_score = 0
+        suggested_level = ""
+
+        # 检查 skills/draft 目录
+        draft_dir = Config.DRAFT_DIR
+        if draft_dir.exists():
+            for skill_dir in draft_dir.iterdir():
+                if skill_dir.is_dir() and "__backup" not in skill_dir.name:
+                    skill_json_path = skill_dir / "skill.json"
+                    if skill_json_path.exists():
+                        try:
+                            skill_json = json.loads(skill_json_path.read_text(encoding="utf-8"))
+                            if case_id in skill_json.get("source_cases", []):
+                                skill_generated = True
+                                result = check_skill(skill_dir.name)
+                                quality_score = result.get("score", 0)
+                                suggested_level = result.get("suggested_level", "")
+                                break
+                        except Exception:
+                            pass
+
+        # 6. 是否建议发布
+        recommend_publish = (
+            compile_ok and
+            fragments_count > 0 and
+            patterns_count >= 3 and
+            strategies_count >= 3 and
+            quality_score >= 60
+        )
+
+        rows.append({
+            "case_id": case_id,
+            "source_file": source_file,
+            "compile_ok": "✅" if compile_ok else "❌",
+            "fragments": fragments_count,
+            "patterns": patterns_count,
+            "strategies": strategies_count,
+            "case_card": "✅" if has_case_card else "❌",
+            "skill": "✅" if skill_generated else "❌",
+            "quality_score": quality_score,
+            "publish": "✅" if recommend_publish else "❌",
+            "suggested_level": suggested_level or "-",
+        })
+
+    # 打印表头
+    header = f"{'case_id':<14} {'source_file':<25} {'compile':<8} {'frag':<5} {'pat':<4} {'str':<4} {'card':<5} {'skill':<5} {'score':<6} {'level':<8} {'publish'}"
+    print(header)
+    print("-" * 110)
+
+    for r in rows:
+        print(
+            f"{r['case_id']:<14} "
+            f"{r['source_file'][:24]:<25} "
+            f"{r['compile_ok']:<8} "
+            f"{r['fragments']:<5} "
+            f"{r['patterns']:<4} "
+            f"{r['strategies']:<4} "
+            f"{r['case_card']:<5} "
+            f"{r['skill']:<5} "
+            f"{r['quality_score']:<6} "
+            f"{r['suggested_level']:<8} "
+            f"{r['publish']}"
+        )
+
+    print()
+    print(f"总计: {len(rows)} 个案例")
+
+    # 生成报告文件
+    report_lines = [
+        "# Batch Validation Report",
+        "",
+        f"**生成时间**: {__import__('datetime').datetime.now().strftime('%Y-%m-%d %H:%M:%S')}",
+        "",
+        "---",
+        "",
+        "## 汇总",
+        "",
+        f"- **案例总数**: {len(rows)}",
+        f"- **编译成功**: {sum(1 for r in rows if r['compile_ok'] == '✅')}",
+        f"- **Patterns >= 3**: {sum(1 for r in rows if r['patterns'] >= 3)}",
+        f"- **Strategies >= 3**: {sum(1 for r in rows if r['strategies'] >= 3)}",
+        f"- **Skill 已生成**: {sum(1 for r in rows if r['skill'] == '✅')}",
+        f"- **可发布**: {sum(1 for r in rows if r['publish'] == '✅')}",
+        "",
+        "---",
+        "",
+        "## 明细",
+        "",
+        "| case_id | source_file | compile | frag | pat | str | card | skill | score | level | publish |",
+        "|----------|-------------|---------|------|-----|-----|------|-------|-------|-------|---------|"
+    ]
+
+    for r in rows:
+        report_lines.append(
+            f"| {r['case_id']} | {r['source_file']} | {r['compile_ok']} | {r['fragments']} | "
+            f"{r['patterns']} | {r['strategies']} | {r['case_card']} | {r['skill']} | "
+            f"{r['quality_score']} | {r['suggested_level']} | {r['publish']} |"
+        )
+
+    report_path = Config.REPORTS_DIR / "batch_validation_report.md"
+    report_path.parent.mkdir(parents=True, exist_ok=True)
+    report_path.write_text("\n".join(report_lines), encoding="utf-8")
+    print(f"\n报告已保存: {report_path}")

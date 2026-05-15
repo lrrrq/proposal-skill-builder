@@ -129,6 +129,11 @@ def main():
     reuse_parser.add_argument("skill_id", help="Skill ID (如 luxury-hotel-festival)")
     reuse_parser.add_argument("--brief", required=True, help="测试 Brief 描述")
 
+    # batch-validation 命令
+    batchval_parser = subparsers.add_parser("batch-validation", help="批量验证所有案例并生成报告")
+    batchval_parser.add_argument("--limit", type=int, default=0,
+                               help="最多处理数量（默认不限制）")
+
     args = parser.parse_args()
 
     if args.command is None:
@@ -203,6 +208,9 @@ def main():
     elif args.command == "analyze-project":
         from .commands import cmd_analyze_project
         cmd_analyze_project(args)
+    elif args.command == "batch-validation":
+        from .commands import cmd_batch_validation
+        cmd_batch_validation(args)
     else:
         parser.print_help()
         sys.exit(1)

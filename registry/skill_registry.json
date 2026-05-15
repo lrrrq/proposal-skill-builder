@@ -26,7 +26,18 @@
         "结构设计",
         "叙事框架"
       ],
-      "published_at": "2026-05-13T17:38:05.257993"
+      "published_at": "2026-05-13T17:38:05.257993",
+      "version": "1.0",
+      "industries": [],
+      "scenarios": [],
+      "output_types": [
+        "proposal",
+        "brief"
+      ],
+      "strengths": [],
+      "weaknesses": [],
+      "forbidden_use": [],
+      "last_verified_at": null
     },
     {
       "skill_id": "meidi-annual-gala",
@@ -54,7 +65,18 @@
         "结构设计",
         "叙事框架"
       ],
-      "published_at": "2026-05-15T14:51:39.641411"
+      "published_at": "2026-05-15T14:51:39.641411",
+      "version": "1.0",
+      "industries": [],
+      "scenarios": [],
+      "output_types": [
+        "proposal",
+        "brief"
+      ],
+      "strengths": [],
+      "weaknesses": [],
+      "forbidden_use": [],
+      "last_verified_at": null
     }
   ],
   "updated_at": "2026-05-15T14:51:39.641872"

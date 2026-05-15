@@ -205,8 +205,131 @@ def build_skill_content(data: Dict, skill_id: str) -> Dict:
                 {"name": "内容结构", "min_words": 200, "max_words": 500},
                 {"name": "视觉方向", "min_words": 100, "max_words": 250},
                 {"name": "执行路径", "min_words": 150, "max_words": 400}
+            ],
+            "internal_sections": [
+                {
+                    "name": "项目推进总览表",
+                    "required": True,
+                    "fields": ["模块", "目标", "关键动作", "所需素材", "责任方", "待确认信息", "风险", "优先级"],
+                    "description": "项目全链路任务分解表，用于内部推进"
+                },
+                {
+                    "name": "项目判断",
+                    "min_words": 100,
+                    "max_words": 200
+                },
+                {
+                    "name": "目标人群",
+                    "min_words": 150,
+                    "max_words": 300
+                },
+                {
+                    "name": "内容结构",
+                    "min_words": 200,
+                    "max_words": 500
+                },
+                {
+                    "name": "视觉方向",
+                    "min_words": 100,
+                    "max_words": 250,
+                    "visual_placeholders": [
+                        {
+                            "素材名称": "主视觉 KV",
+                            "用途": "封面和传播主图",
+                            "画面描述": "建议以酒店空间、春节礼盒、城市夜景、暖金灯光为核心画面",
+                            "比例规格": "16:9 / 1:1",
+                            "所需客户素材": "品牌 Logo、VI 规范、春节元素图片",
+                            "生成提示词方向": "奢华酒店、春节氛围、暖金色调、高端简约风格"
+                        },
+                        {
+                            "素材名称": "风格示例图 1-3",
+                            "用途": "风格参考",
+                            "画面描述": "品牌调性一致的视觉示例",
+                            "比例规格": "4:3 或 16:9",
+                            "所需客户素材": "参考图或图片授权",
+                            "生成提示词方向": "同上，替换具体元素"
+                        },
+                        {
+                            "素材名称": "版式示例图 1-2",
+                            "用途": "版式参考",
+                            "画面描述": "内容排版版式示例",
+                            "比例规格": "16:9",
+                            "所需客户素材": "无（示意稿）",
+                            "生成提示词方向": "简约高端排版、留白、品牌色块"
+                        }
+                    ]
+                },
+                {
+                    "name": "执行路径",
+                    "min_words": 150,
+                    "max_words": 400
+                },
+                {
+                    "name": "风险提示",
+                    "min_words": 50,
+                    "max_words": 150,
+                    "required": True
+                }
+            ],
+            "client_sections": [
+                {
+                    "name": "项目判断",
+                    "min_words": 100,
+                    "max_words": 200
+                },
+                {
+                    "name": "目标人群",
+                    "min_words": 150,
+                    "max_words": 300
+                },
+                {
+                    "name": "内容结构",
+                    "min_words": 200,
+                    "max_words": 500
+                },
+                {
+                    "name": "视觉方向",
+                    "min_words": 100,
+                    "max_words": 250,
+                    "visual_placeholders": [
+                        {
+                            "素材名称": "主视觉 KV",
+                            "用途": "封面和传播主图",
+                            "画面描述": "建议以酒店空间、春节礼盒、城市夜景、暖金灯光为核心画面",
+                            "比例规格": "16:9 / 1:1",
+                            "所需客户素材": "品牌 Logo、VI 规范、春节元素图片",
+                            "生成提示词方向": "奢华酒店、春节氛围、暖金色调、高端简约风格"
+                        }
+                    ]
+                },
+                {
+                    "name": "执行路径",
+                    "min_words": 100,
+                    "max_words": 300
+                },
+                {
+                    "name": "待确认信息",
+                    "min_words": 80,
+                    "max_words": 200,
+                    "required": True,
+                    "fields": [
+                        "目标会员池",
+                        "礼盒预算",
+                        "线下活动规模",
+                        "CRM 和积分机制",
+                        "社交平台重点渠道"
+                    ]
+                }
             ]
         },
+        "version": "1.0",
+        "industries": [],
+        "scenarios": [],
+        "output_types": ["proposal", "brief"],
+        "strengths": [],
+        "weaknesses": [],
+        "forbidden_use": [],
+        "last_verified_at": None,
     }
 
     # SKILL.md

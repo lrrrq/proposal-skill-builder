@@ -86,17 +86,43 @@ class SkillRegistry:
                 return skill
         return None
 
-    def list_skills(self) -> List[dict]:
-        """列出所有 Skills"""
-        registry = self.load_registry()
-        return registry.get("skills", [])
+    def list_skills(self, callable_only: bool = False) -> List[dict]:
+        """
+        列出所有 Skills
 
-    def search(self, query: str = "", **filters) -> List[dict]:
-        """搜索 Skills"""
+        Args:
+            callable_only: 如果为 True，只返回 callable=True 且 status=published 的 Skills
+        """
+        registry = self.load_registry()
+        skills = registry.get("skills", [])
+
+        if callable_only:
+            skills = [s for s in skills if s.get("callable") is True and s.get("status") == "published"]
+
+        return skills
+
+    def list_callable_skills(self) -> List[dict]:
+        """只返回 callable=True 且 status=published 的 Skills（供 OpenClaw 使用）"""
+        return self.list_skills(callable_only=True)
+
+    def search(self, query: str = "", callable_only: bool = False, **filters) -> List[dict]:
+        """
+        搜索 Skills
+
+        Args:
+            query: 关键词匹配（搜索整个 JSON）
+            callable_only: 如果为 True，只返回 callable=True 且 status=published 的 Skills
+            **filters: 其他字段过滤器
+        """
         registry = self.load_registry()
         results = []
 
         for skill in registry.get("skills", []):
+            # OpenClaw 治理：只返回正式发布的 Skills
+            if callable_only:
+                if skill.get("callable") is not True or skill.get("status") != "published":
+                    continue
+
             # 关键词匹配
             if query:
                 searchable = json.dumps(skill, ensure_ascii=False).lower()
@@ -121,6 +147,28 @@ class SkillRegistry:
                 results.append(skill)
 
         return results
+
+    def get_best_version(self, skill_id: str) -> Optional[dict]:
+        """
+        获取同一 skill_id 的最高版本
+
+        如果有多个版本，选择 published_at 最新的那个。
+        只考虑 status=published 的版本。
+        """
+        registry = self.load_registry()
+        candidates = [
+            s for s in registry.get("skills", [])
+            if s.get("skill_id") == skill_id and s.get("status") == "published"
+        ]
+
+        if not candidates:
+            return None
+        if len(candidates) == 1:
+            return candidates[0]
+
+        # 按 published_at 降序，选择最新
+        best = max(candidates, key=lambda s: s.get("published_at", ""))
+        return best
 
 
 def get_registry():
