@@ -1,6 +1,6 @@
 # Skill Check Report: luxury-hotel-festival
 
-**检查时间**: 2026-05-13T18:14:27.351689
+**检查时间**: 2026-05-15T14:51:29.471785
 **Skill 目录**: /Applications/lrq/coding/proposal-skill-builder/skills/draft/luxury-hotel-festival
 
 ---
@@ -10,10 +10,10 @@
 - **skill_id**: luxury-hotel-festival
 - **dataset**: prod
 - **当前 quality_level**: silver
-- **检查后建议 quality_level**: **silver**
-- **评分**: 76.3/100
+- **检查后建议 quality_level**: **failed**
+- **评分**: 59.3/100
 
-**建议**: 分数 76.3 在 75-89 之间
+**建议**: 分数 59.3 < 60
 
 ---
 
@@ -28,14 +28,14 @@
 
 - **structure**: 15/? - 文件存在(3/3) + 字段完整(12/12)
 - **traceability**: 8.3/? - 案例(2.5/5) + Patterns(2.5/5) + Fragments(3.3000000000000003/5)
-- **abstract**: 10/? - 可复用策略 5 条 (10/20)
+- **abstract**: 0/? - 可复用策略 0 条 (0/20)
 - **process**: 15/? - 处理流程 5 步 (15/15)
-- **output**: 8/? - 输出格式 4 条 (8/10)
+- **output**: 0/? - 输出格式 0 条 (0/10)
 - **visual**: 6/? - 视觉策略 (6/10) [有警告]
 - **examples**: 10/? - Brief(2个) + 输出方向(2个) = 10/10
-- **limits**: 4/? - 限制条件 4 条 (4/5)
+- **limits**: 5/? - 限制条件 5 条 (5/5)
 
-**总分**: 76.3/100
+**总分**: 59.3/100
 
 ## ✅ 通过项
 
@@ -69,6 +69,8 @@
 - ⚠️ 低质量 fragments 占比 54.5%（18/33），建议检查提取质量
 
 - 视觉片段仅 1 个，视觉策略可信度受限
+- 当前等级 (silver) 与建议等级 (failed) 不一致
+- 总分 59.3 < 75，质量有待提升
 - 暂无明显风险
 
 ## Compression Quality
@@ -81,7 +83,7 @@
 
 ## 📋 发布建议
 
-✅ **可以发布**（建议等级: silver，评分: 76.3）
+❌ **不建议发布**（建议等级: failed，评分: 59.3）
 
 ---
 

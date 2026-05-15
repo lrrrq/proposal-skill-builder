@@ -10,6 +10,7 @@ from datetime import datetime
 from typing import Dict, Optional
 
 from .config import Config
+from .db import get_connection
 from .skill_checker import check_skill
 from .utils import now_iso
 
@@ -179,6 +180,16 @@ def publish_skill(skill_id: str) -> Dict:
         })
 
     save_registry(registry)
+
+    # 更新数据库
+    conn = get_connection()
+    cur = conn.cursor()
+    cur.execute(
+        "UPDATE skills SET status = ?, updated_at = ? WHERE skill_id = ?",
+        ("published", now_iso(), skill_id),
+    )
+    conn.commit()
+    conn.close()
 
     # 生成发布报告
     warnings = check_result.get("warnings", [])
