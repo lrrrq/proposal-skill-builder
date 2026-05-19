@@ -335,7 +335,7 @@ def calculate_quality_score(data: Dict) -> Dict:
         if match:
             content = match.group(1).strip()
             # 按行数计算（每行约 2 分，上限 20 分）
-            lines = [l for l in content.split("\n") if l.strip() and l.strip().startswith("-")]
+            lines = [l for l in content.split("\n") if l.strip() and (l.strip().startswith("-") or "▶" in l)]
             abstract_score = min(20, len(lines) * 2)
             scores["abstract"] = abstract_score
             details["abstract"] = f"可复用策略 {len(lines)} 条 ({abstract_score}/20)"
@@ -367,7 +367,7 @@ def calculate_quality_score(data: Dict) -> Dict:
         match = re.search(r"## 输出格式\s*\n(.*?)(?=\n##|\Z)", data["skill_md"], re.DOTALL)
         if match:
             content = match.group(1).strip()
-            lines = [l for l in content.split("\n") if l.strip() and l.strip().startswith("-")]
+            lines = [l for l in content.split("\n") if l.strip() and (l.strip().startswith("-") or "▶" in l)]
             output_score = min(10, len(lines) * 2)
             scores["output"] = output_score
             details["output"] = f"输出格式 {len(lines)} 条 ({output_score}/10)"
