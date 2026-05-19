@@ -229,6 +229,10 @@ def describe_assets_for_case(case_id: str, provider: str = "mock", dry_run: bool
         needs_vision = [a for a in assets if a.get("needs_vision_review") and a.get("description_status") == "pending"]
         asset_id_filter = None
 
+    # 应用 limit
+    if limit > 0:
+        needs_vision = needs_vision[:limit]
+
     needs_vision_count = len(needs_vision)
 
     if needs_vision_count == 0:
