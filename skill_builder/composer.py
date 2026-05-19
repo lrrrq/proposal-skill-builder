@@ -955,6 +955,9 @@ def compose_skill_for_case(case_id: str, skill_id: str) -> Dict:
     if not data["patterns"]:
         return {"success": False, "message": f"Case 没有 Patterns，请先运行 extract-patterns"}
 
+    if data["compressed"] is None:
+        return {"success": False, "message": f"Case 没有压缩后的 Fragments，请先运行 compress-fragments"}
+
     # 构建 Skill 内容
     content = build_skill_content(data, skill_id)
 
