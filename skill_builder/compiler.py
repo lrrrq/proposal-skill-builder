@@ -17,6 +17,22 @@ from .case_manager import get_case_by_id
 from .office_converter import convert_pptx_to_pdf, is_libreoffice_available
 
 
+def filter_pdf_parse_garbage(text: str) -> str:
+    """过滤 PDF 解析产生的垃圾文本
+
+    PyMuPDF 有时会插入 ai_skip_0x[hex]_parse_error_rnd 标记，
+    这些需要被清理。
+    """
+    import re
+    # 过滤 ai_skip_* 模式
+    text = re.sub(r'ai_skip_0x[0-9a-f]+_parse_error_rnd', '', text)
+    # 过滤控制字符 (\x00-\x1f except \x09\x0a\x0d)
+    text = re.sub(r'[\x00-\x08\x0b-\x0c\x0e-\x1f]', '', text)
+    # 清理多余换行
+    text = re.sub(r'\n{3,}', '\n\n', text)
+    return text.strip()
+
+
 # 支持的文件格式
 TEXT_EXTENSIONS = {".md", ".txt"}
 IMAGE_EXTENSIONS = {".jpg", ".jpeg", ".png"}
@@ -169,6 +185,7 @@ def compile_pdf_case(case_id: str, file_path: Path, case_dir: Path) -> Dict:
 
         # 提取文本
         text = page.get_text()
+        text = filter_pdf_parse_garbage(text)
         text = text.strip()
         text_length = len(text)
 
