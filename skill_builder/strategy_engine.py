@@ -284,42 +284,54 @@ def extract_strategies(data: Dict) -> List[Dict]:
     }
 
     # 第一遍：基于 pattern_type 聚合
+    # 按 strategy_type 分组，避免对同一类型重复收集证据
+    strategy_type_patterns = {}
     for p in patterns:
         ptype = p.get("pattern_type", "")
         stype = pattern_to_strategy.get(ptype)
-
         if not stype:
             continue
+        if stype not in strategy_type_patterns:
+            strategy_type_patterns[stype] = []
+        strategy_type_patterns[stype].append(p)
 
-        counters[stype] += 1
-        strategy_id = generate_strategy_id()
-        strategy_name = build_strategy_name(stype, counters[stype])
+    # 预收集证据：每个 strategy_type 只收集一次
+    evidence_cache = {}
+    for stype in strategy_type_patterns:
+        evidence_cache[stype] = collect_evidence(patterns, fragments, ai_fragments, stype)
 
-        # 收集证据
-        evidence = collect_evidence(patterns, fragments, ai_fragments, stype)
+    # 第二遍：生成策略，复用已收集的证据
+    for stype, patterns_in_type in strategy_type_patterns.items():
+        for p in patterns_in_type:
+            counters[stype] += 1
+            strategy_id = generate_strategy_id()
+            strategy_name = build_strategy_name(stype, counters[stype])
 
-        # 置信度：基于证据数量
-        evidence_total = len(evidence["evidence_patterns"]) + len(evidence["evidence_fragments"])
-        confidence = min(0.9, 0.5 + evidence_total * 0.1)
+            # 复用预收集的证据
+            evidence = evidence_cache[stype]
 
-        strategy = {
-            "strategy_id": strategy_id,
-            "case_id": case_id,
-            "name": strategy_name,
-            "strategy_type": stype,
-            "description": build_description(evidence["evidence_patterns"], patterns,
-                                            evidence["evidence_fragments"], fragments),
-            "evidence_patterns": evidence["evidence_patterns"],
-            "evidence_fragments": evidence["evidence_fragments"],
-            "source_layers": evidence["source_layers"],
-            "reusable_principle": build_reusable_principle(stype, evidence_total),
-            "applicable_scenarios": build_applicable_scenarios(stype),
-            "risk_notes": build_risk_notes(stype, evidence["evidence_patterns"],
-                                          evidence["evidence_fragments"]),
-            "confidence_score": round(confidence, 2),
-        }
+            # 置信度：基于证据数量
+            evidence_total = len(evidence["evidence_patterns"]) + len(evidence["evidence_fragments"])
+            confidence = min(0.9, 0.5 + evidence_total * 0.1)
 
-        strategies.append(strategy)
+            strategy = {
+                "strategy_id": strategy_id,
+                "case_id": case_id,
+                "name": strategy_name,
+                "strategy_type": stype,
+                "description": build_description(evidence["evidence_patterns"], patterns,
+                                                evidence["evidence_fragments"], fragments),
+                "evidence_patterns": evidence["evidence_patterns"],
+                "evidence_fragments": evidence["evidence_fragments"],
+                "source_layers": evidence["source_layers"],
+                "reusable_principle": build_reusable_principle(stype, evidence_total),
+                "applicable_scenarios": build_applicable_scenarios(stype),
+                "risk_notes": build_risk_notes(stype, evidence["evidence_patterns"],
+                                              evidence["evidence_fragments"]),
+                "confidence_score": round(confidence, 2),
+            }
+
+            strategies.append(strategy)
 
     # 第二遍：检测 conversion_strategy（跨类型关键词检测）
     conversion_evidence = collect_evidence(patterns, fragments, ai_fragments, "conversion_strategy")
