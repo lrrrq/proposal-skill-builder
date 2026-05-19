@@ -76,8 +76,8 @@ def calculate_quality_level(patterns: List[Dict], fragments: List[Dict], ai_frag
     if pattern_count >= 5 and text_count >= 20 and vision_count >= 3:
         return "gold"
 
-    # Silver: patterns >= 5, with both text and vision fragments
-    if pattern_count >= 5 and text_count > 0 and vision_count > 0:
+    # Silver: patterns >= 5, with text OR vision fragments
+    if pattern_count >= 5 and (text_count > 0 or vision_count > 0):
         return "silver"
 
     # Bronze: patterns >= 3
