@@ -225,10 +225,6 @@ def compress_fragments(data: Dict) -> List[Dict]:
                 quality_flags.append("text_only")
 
         # 如果有多个 quality_flags，检查是否混合来源
-        if frag.get("fragment_id", "").startswith("ai-"):
-            quality_flags.append("vision_only")
-        else:
-            quality_flags.append("text_only")
 
         # 构建 compressed fragment
         keywords = frag.get("keywords", [])
