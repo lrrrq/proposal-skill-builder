@@ -300,11 +300,11 @@ def generate_case_card(case_id: str, patterns: List[Dict], meta: Dict = None,
     return "\n".join(lines)
 
 
-def load_fragments(case_id: str) -> Optional[List[Dict]]:
+def load_fragments(case_id: str) -> List[Dict]:
     """加载 case 的 fragments"""
     fragments_path = Config.CASES_DIR / case_id / "fragments.json"
     if not fragments_path.exists():
-        return None
+        return []
 
     with open(fragments_path, "r", encoding="utf-8") as f:
         return json.load(f)
@@ -382,7 +382,7 @@ def extract_patterns_for_case(case_id: str) -> Dict:
 
     # 加载文本 fragments
     fragments = load_fragments(case_id)
-    if fragments is None:
+    if not fragments:
         return {"success": False, "message": f"Fragments 不存在，请先运行 compile-case"}
 
     # 加载视觉 ai_fragments（如果存在）
