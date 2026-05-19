@@ -183,7 +183,7 @@ def create_case(source_file_id: str, title: str) -> Dict:
     now = now_iso()
 
     # 继承 source_file 的 dataset
-    dataset = source_file.get("dataset", "prod")
+    dataset = dict(source_file).get("dataset", "prod")
 
     # 准备 source_meta 数据
     source_meta = {
