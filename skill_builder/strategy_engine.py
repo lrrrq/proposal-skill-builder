@@ -10,17 +10,8 @@ from typing import List, Dict, Optional
 
 from .config import Config
 from .db import get_connection
+from .domain import STRATEGY_TYPES, PATTERN_TO_STRATEGY
 from .utils import now_iso
-
-
-STRATEGY_TYPES = {
-    "positioning_strategy": ["定位", "品牌", "差异化", "核心价值", "竞争优势", "战略"],
-    "audience_strategy": ["用户", "客户", "受众", "人群", "会员", "消费者", "目标群体", "画像"],
-    "narrative_strategy": ["叙事", "故事", "内容", "结构", "章节", "节奏", "弧线", "线索"],
-    "visual_strategy": ["视觉", "风格", "画面", "色彩", "设计", "图形", "排版", "色调", "留白"],
-    "execution_strategy": ["执行", "落地", "排期", "预算", "物料", "实施", "步骤", "时间节点"],
-    "conversion_strategy": ["转化", "传播", "会员", "销售", "报名", "邀约", "注册", "购买", "成交"],
-}
 
 
 def load_case_for_strategy(case_id: str) -> Dict:
@@ -90,13 +81,7 @@ def collect_evidence(patterns: List[Dict], fragments: List[Dict],
         source_sum = p.get("source_summary", "")
 
         # 类型映射
-        type_to_strategy = {
-            "strategy": "positioning_strategy",
-            "content_structure": "narrative_strategy",
-            "audience_insight": "audience_strategy",
-            "visual_direction": "visual_strategy",
-            "execution_method": "execution_strategy",
-        }
+        PATTERN_TO_STRATEGY
 
         expected_strategy = type_to_strategy.get(ptype, "")
 

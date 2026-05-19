@@ -10,17 +10,8 @@ from typing import List, Dict, Optional
 
 from .config import Config
 from .db import get_connection
+from .domain import PATTERN_TYPES
 from .utils import now_iso
-
-
-# Pattern 类型定义
-PATTERN_TYPES = {
-    "strategy": ["目标", "目的", "策略", "定位", "核心", "价值", "品牌", "差异化", "优势"],
-    "content_structure": ["目录", "流程", "章节", "结构", "框架", "模块", "层次", "逻辑"],
-    "visual_direction": ["视觉", "风格", "画面", "色彩", "设计", "图形", "排版", "字体", "色调"],
-    "audience_insight": ["用户", "客户", "人群", "受众", "会员", "消费者", "目标群体", "画像"],
-    "execution_method": ["执行", "落地", "排期", "预算", "物料", "实施", "步骤", "时间节点", "资源"],
-}
 
 
 def generate_pattern_id() -> str:

@@ -8,32 +8,8 @@ from pathlib import Path
 from typing import Dict, List, Optional
 
 from .config import Config
+from .domain import REQUIRED_SKILL_JSON_FIELDS, REQUIRED_SKILL_MD_SECTIONS, QUALITY_FLAGS
 from .utils import now_iso
-
-
-REQUIRED_SKILL_JSON_FIELDS = [
-    "skill_id", "display_name", "description", "status", "dataset",
-    "quality_level", "callable", "source_cases", "source_patterns",
-    "source_fragments_count", "source_ai_fragments_count", "allowed_tasks",
-    "created_at", "updated_at", "version",
-]
-
-REQUIRED_SKILL_MD_SECTIONS = [
-    "适用场景", "输入要求", "核心判断逻辑", "处理流程", "输出格式",
-    "可复用策略", "视觉策略", "内容结构策略", "受众洞察", "执行方法",
-    "限制条件", "来源案例",
-]
-
-# Compression 质量标志
-QUALITY_FLAGS = {
-    "too_short": "文本过短（<20字符）",
-    "duplicate": "重复内容",
-    "low_information": "低信息密度",
-    "normal": "正常质量",
-    "merged": "多个 fragment 合并",
-    "vision_only": "纯视觉来源",
-    "text_only": "纯文本来源",
-}
 
 
 def load_skill_data(skill_id: str) -> Optional[Dict]:
