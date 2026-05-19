@@ -63,6 +63,12 @@ def load_case_data(case_id: str) -> Dict:
         with open(compressed_path, "r", encoding="utf-8") as f:
             data["compressed"] = json.load(f)
 
+    # project_patterns.json (如果存在)
+    project_patterns_path = case_dir / "project_patterns.json"
+    if project_patterns_path.exists():
+        with open(project_patterns_path, "r", encoding="utf-8") as f:
+            data["project_patterns"] = json.load(f)
+
     return data
 
 
@@ -139,6 +145,142 @@ def build_visual_strategy(ai_fragments: List[Dict], patterns: List[Dict]) -> str
     return "\n".join(lines)
 
 
+def build_ppt_structure(data: Dict) -> Dict:
+    """从 project_patterns 和 patterns 构建 PPT 结构信息
+
+    Returns:
+        {
+            "ppt_structure": {...},
+            "layout_rules": {...},
+            "typography": {...}
+        }
+    """
+    patterns = data.get("patterns", [])
+    project_patterns = data.get("project_patterns", [])
+    ai_fragments = data.get("ai_fragments", [])
+
+    # 页面序列 - 从 narrative_arc 推断
+    page_sequence = []
+    if project_patterns:
+        pp = project_patterns[0]
+        arc = pp.get("narrative_arc", {})
+        arc_segments = arc.get("arc_segments", [])
+
+        position = 1
+        for seg in arc_segments:
+            seg_type = seg.get("position", "")
+            seg_name = seg.get("segment", "")
+            page_types = {
+                "opening": ["cover", "brand_intro"],
+                "middle": ["content", "narrative", "strategy"],
+                "climax": ["highlight", "key_message"],
+                "ending": ["cta", "summary", "contact"]
+            }
+            types = page_types.get(seg_type, ["content"])
+            page_sequence.append({
+                "position": position,
+                "type": types[0],
+                "name": f"{seg_name}",
+                "function": seg.get("function", "")
+            })
+            position += 1
+    else:
+        # 默认结构
+        page_sequence = [
+            {"position": 1, "type": "cover", "name": "封面", "function": "建立基调、吸引注意"},
+            {"position": 2, "type": "toc", "name": "目录", "function": "信息导航"},
+            {"position": 3, "type": "brand_intro", "name": "品牌解读", "function": "品牌认知"},
+            {"position": 4, "type": "content", "name": "核心创意", "function": "传递核心信息"},
+            {"position": 5, "type": "highlight", "name": "高潮", "function": "强化记忆"},
+            {"position": 6, "type": "summary", "name": "总结", "function": "明确行动"}
+        ]
+
+    # 推断总页数
+    total_pages = len(page_sequence) + 4  # 加上额外内容页
+
+    # 布局规则
+    layout_rules = {
+        "cover": {
+            "background": "full_screen",
+            "elements": ["主标题", "副标题", "品牌Logo", "日期/地点"],
+            "ratio": "16:9"
+        },
+        "toc": {
+            "layout": "left_list",
+            "elements": ["标题", "目录项列表"],
+            "ratio": "16:9"
+        },
+        "brand_intro": {
+            "layout": "two_column",
+            "elements": ["品牌名称", "品牌故事/定位", "品牌视觉"],
+            "ratio": "16:9"
+        },
+        "content": {
+            "layout": "three_column",
+            "elements": ["页面标题", "核心内容", "配图/视觉支撑"],
+            "ratio": "16:9"
+        },
+        "highlight": {
+            "layout": "center_focus",
+            "elements": ["核心信息", "视觉冲击", "行动号召"],
+            "ratio": "16:9"
+        },
+        "summary": {
+            "layout": "list",
+            "elements": ["总结要点", "CTA", "联系方式"],
+            "ratio": "16:9"
+        }
+    }
+
+    # 排版规范
+    typography = {
+        "fonts": {
+            "primary": "思源黑体 / Noto Sans SC",
+            "secondary": " Arial / Helvetica",
+            "chinese": "微软雅黑 / Microsoft YaHei"
+        },
+        "sizes": {
+            "title": "36-48pt",
+            "subtitle": "24-36pt",
+            "body": "16-20pt",
+            "caption": "12-14pt"
+        },
+        "weights": {
+            "title": "Bold",
+            "subtitle": "Medium",
+            "body": "Regular"
+        }
+    }
+
+    # 视觉色彩（从视觉 patterns 和 ai_fragments 收集）
+    color_keywords = set()
+    for af in ai_fragments:
+        color_keywords.update(af.get("keywords", []))
+
+    # 从 SKILL.md 现有色彩规范
+    color_map = {
+        "奢华金": "#C9A962",
+        "深空灰": "#1A1A2E",
+        "象牙白": "#F5F5F5",
+        "香槟银": "#D4C5A9",
+        "黑色": "#000000",
+        "白色": "#FFFFFF"
+    }
+
+    ppt_structure = {
+        "total_pages": total_pages,
+        "page_sequence": page_sequence,
+        "information_density": "递进式（开场低，展开高，收尾低）"
+    }
+
+    return {
+        "ppt_structure": ppt_structure,
+        "layout_rules": layout_rules,
+        "typography": typography,
+        "color_map": color_map
+    }
+
+
 def build_skill_content(data: Dict, skill_id: str) -> Dict:
     """构建 Skill 内容（SKILL.md, skill.json, examples.md）"""
 
@@ -169,6 +311,9 @@ def build_skill_content(data: Dict, skill_id: str) -> Dict:
     # 统计
     text_count = len(fragments)
     vision_count = len(ai_fragments)
+
+    # 构建 PPT 结构信息
+    ppt_info = build_ppt_structure(data)
 
     now = now_iso()
 
@@ -206,6 +351,10 @@ def build_skill_content(data: Dict, skill_id: str) -> Dict:
                 {"name": "视觉方向", "min_words": 100, "max_words": 250},
                 {"name": "执行路径", "min_words": 150, "max_words": 400}
             ],
+            "ppt_structure": ppt_info["ppt_structure"],
+            "layout_rules": ppt_info["layout_rules"],
+            "typography": ppt_info["typography"],
+            "color_system": ppt_info["color_map"],
             "internal_sections": [
                 {
                     "name": "项目推进总览表",
@@ -332,8 +481,8 @@ def build_skill_content(data: Dict, skill_id: str) -> Dict:
         "last_verified_at": None,
     }
 
-    # SKILL.md
-    skill_md = build_skill_md(data, skill_id, display_name, quality_level, case_dataset)
+    # SKILL.md (传入 ppt_info 用于生成 PPT 结构章节)
+    skill_md = build_skill_md(data, skill_id, display_name, quality_level, case_dataset, ppt_info)
 
     # examples.md
     examples_md = build_examples_md(data, skill_id)
@@ -345,13 +494,16 @@ def build_skill_content(data: Dict, skill_id: str) -> Dict:
     }
 
 
-def build_skill_md(data: Dict, skill_id: str, display_name: str, quality_level: str, dataset: str) -> str:
+def build_skill_md(data: Dict, skill_id: str, display_name: str, quality_level: str, dataset: str, ppt_info: Dict = None) -> str:
     """构建 SKILL.md 内容"""
     meta = data.get("meta", {}) or {}
     patterns = data.get("patterns", [])
     fragments = data.get("fragments", [])
     ai_fragments = data.get("ai_fragments", [])
     case_id = data["case_id"]
+
+    if ppt_info is None:
+        ppt_info = build_ppt_structure(data)
 
     lines = [
         f"# {display_name}",
@@ -427,6 +579,49 @@ def build_skill_md(data: Dict, skill_id: str, display_name: str, quality_level: 
         "",
     ])
 
+    # PPT 结构（新增）- 使用传入的 ppt_info
+    ppt_structure = ppt_info["ppt_structure"]
+    layout_rules = ppt_info["layout_rules"]
+
+    lines.extend([
+        "## PPT 结构规范",
+        "### 本章节核心：页面结构，一句话概括",
+        ">",
+        f"- 总页数：约 {ppt_structure['total_pages']} 页",
+        f"- 信息密度：{ppt_structure['information_density']}",
+        "",
+    ])
+
+    # 页面序列
+    lines.extend([
+        "### 页面序列",
+        "| 位置 | 类型 | 名称 | 功能 |",
+        "|------|------|------|------|",
+    ])
+    for page in ppt_structure["page_sequence"]:
+        lines.append(f"| {page['position']} | {page['type']} | {page['name']} | {page['function']} |")
+    lines.append("")
+
+    # 布局规则
+    lines.extend([
+        "### 布局规则",
+    ])
+    for page_type, rule in layout_rules.items():
+        layout_type = rule.get('layout', rule.get('background', 'standard'))
+        elements = "、".join(rule["elements"])
+        lines.append(f"- **{page_type}**：{layout_type} - {elements}")
+    lines.append("")
+
+    # 排版规范
+    typography = ppt_info["typography"]
+    lines.extend([
+        "### 排版规范",
+        f"- 标题：{typography['sizes']['title']} / {typography['weights']['title']}",
+        f"- 副标题：{typography['sizes']['subtitle']} / {typography['weights']['subtitle']}",
+        f"- 正文：{typography['sizes']['body']} / {typography['weights']['body']}",
+        "",
+    ])
+
     # 可复用策略
     lines.extend([
         "## 可复用策略",
@@ -457,6 +652,7 @@ def build_skill_md(data: Dict, skill_id: str, display_name: str, quality_level: 
     lines.append("")
 
     # 视觉参考图
+    color_map = ppt_info["color_map"]
     lines.extend([
         "## 视觉参考图",
         "",
@@ -467,13 +663,10 @@ def build_skill_md(data: Dict, skill_id: str, display_name: str, quality_level: 
         "| 版式示例 | 2张 | [占位符] |",
         "",
         "### 色彩规范",
-        "| 类型 | 色值 | 说明 |",
-        "|------|------|------|",
-        "| 主色 | #C9A962 | 奢华金 |",
-        "| 辅色 | #1A1A2E | 深空灰 |",
-        "| 点缀 | #F5F5F5 | 象牙白 |",
-        "",
     ])
+    for color_name, color_hex in color_map.items():
+        lines.append(f"| {color_name} | {color_hex} | - |")
+    lines.append("")
 
     # 策略 DNA（如果有 strategies）
     strategies = data.get("strategies", [])
