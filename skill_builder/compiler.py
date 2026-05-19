@@ -340,6 +340,7 @@ def compile_pptx_case(case_id: str, file_path: Path, case_dir: Path) -> Dict:
                 text_parts.append(shape.text.strip())
 
         text = "\n".join(text_parts)
+        text = filter_pdf_parse_garbage(text)
         needs_vision_review = len(text.strip()) < 30
 
         # 生成 page 记录（先创建，asset_id 待定）
