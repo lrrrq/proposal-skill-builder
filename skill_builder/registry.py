@@ -170,6 +170,85 @@ class SkillRegistry:
         best = max(candidates, key=lambda s: s.get("published_at", ""))
         return best
 
+    def repair_registry(self) -> dict:
+        """
+        修复 filesystem 和 JSON registry 之间的 drift
+
+        - 发现 filesystem (skills/published/) 中存在但 JSON registry 中不存在的 skill → 添加
+        - 发现 JSON registry 中存在但 filesystem 中不存在的 skill → 移除
+
+        Returns:
+            {
+                "success": bool,
+                "added": list,      # 新增到 registry 的 skill_id 列表
+                "removed": list,    # 从 registry 移除的 skill_id 列表
+                "message": str,
+            }
+        """
+        from .config import Config
+
+        registry = self.load_registry()
+        registry_skills = registry.get("skills", [])
+
+        # 获取 filesystem 中 published skills (排除 backup 目录)
+        filesystem_skill_ids = set()
+        if Config.PUBLISHED_DIR.exists():
+            for item in Config.PUBLISHED_DIR.iterdir():
+                if item.is_dir() and "__backup_" not in item.name:
+                    skill_json_path = item / "skill.json"
+                    if skill_json_path.exists():
+                        filesystem_skill_ids.add(item.name)
+
+        # 获取 registry 中的 skill_ids
+        registry_skill_ids = set(s.get("skill_id") for s in registry_skills if s.get("skill_id"))
+
+        # 计算 drift
+        to_add = filesystem_skill_ids - registry_skill_ids  # 在 fs 但不在 registry
+        to_remove = registry_skill_ids - filesystem_skill_ids  # 在 registry 但不在 fs
+
+        added = []
+        removed = []
+
+        # 添加 filesystem 中存在但 registry 中不存在的 skills
+        for skill_id in to_add:
+            skill_json_path = Config.PUBLISHED_DIR / skill_id / "skill.json"
+            try:
+                with open(skill_json_path, "r", encoding="utf-8") as f:
+                    skill_json = json.load(f)
+
+                skill_data = {
+                    "skill_id": skill_id,
+                    "display_name": skill_json.get("display_name", skill_id),
+                    "status": skill_json.get("status", "published"),
+                    "quality_level": skill_json.get("quality_level", "unknown"),
+                    "callable": skill_json.get("callable", True),
+                    "path": str(Config.PUBLISHED_DIR / skill_id),
+                    "source_cases": skill_json.get("source_cases", []),
+                    "source_strategies": skill_json.get("source_strategies", []),
+                    "allowed_tasks": skill_json.get("allowed_tasks", []),
+                    "published_at": skill_json.get("published_at"),
+                }
+                registry["skills"].append(skill_data)
+                added.append(skill_id)
+            except (json.JSONDecodeError, IOError):
+                pass
+
+        # 移除 registry 中存在但 filesystem 中不存在的 skills
+        for skill_id in to_remove:
+            registry["skills"] = [s for s in registry["skills"] if s.get("skill_id") != skill_id]
+            removed.append(skill_id)
+
+        # 保存更新后的 registry
+        if added or removed:
+            self.save_registry(registry)
+
+        return {
+            "success": True,
+            "added": sorted(added),
+            "removed": sorted(removed),
+            "message": f"added {len(added)}, removed {len(removed)}",
+        }
+
 
 def get_registry():
     """获取注册表实例"""

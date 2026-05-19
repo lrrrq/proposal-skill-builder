@@ -116,6 +116,9 @@ def main():
     # inspect-registry 命令
     inspect_parser = subparsers.add_parser("inspect-registry", help="检查 registry 健康度")
 
+    # repair-registry 命令
+    subparsers.add_parser("repair-registry", help="修复 filesystem 和 JSON registry 之间的 drift")
+
     # case-readiness 命令
     readiness_parser = subparsers.add_parser("case-readiness", help="检查案例是否适合进入 Skill 生成")
     readiness_parser.add_argument("case_id", help="Case ID (如 case_0001)")
@@ -199,6 +202,9 @@ def main():
     elif args.command == "inspect-registry":
         from .commands import cmd_inspect_registry
         cmd_inspect_registry(args)
+    elif args.command == "repair-registry":
+        from .commands import cmd_repair_registry
+        cmd_repair_registry(args)
     elif args.command == "test-skill-reuse":
         from .commands import cmd_test_skill_reuse
         cmd_test_skill_reuse(args)

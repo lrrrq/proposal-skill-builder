@@ -727,6 +727,32 @@ def cmd_inspect_registry(args):
         print(f"❌ {result.get('message')}")
 
 
+def cmd_repair_registry(args):
+    """repair-registry 命令"""
+    from .registry import get_registry
+
+    registry = get_registry()
+    result = registry.repair_registry()
+
+    if result["success"]:
+        added = result.get("added", [])
+        removed = result.get("removed", [])
+
+        print(f"✅ Registry 修复完成")
+        print(f"   新增: {len(added)}")
+        for skill_id in added:
+            print(f"      + {skill_id}")
+
+        print(f"   移除: {len(removed)}")
+        for skill_id in removed:
+            print(f"      - {skill_id}")
+
+        if not added and not removed:
+            print("   (无 drift，无需修复)")
+    else:
+        print(f"❌ {result.get('message')}")
+
+
 def cmd_test_skill_reuse(args):
     """test-skill-reuse 命令"""
     import json
