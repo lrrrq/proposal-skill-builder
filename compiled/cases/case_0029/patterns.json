@@ -1,0 +1,126 @@
+[
+  {
+    "pattern_id": "5d9ca0971a91",
+    "case_id": "case_0029",
+    "name": "策略_01",
+    "pattern_type": "strategy",
+    "description": "画面中央是一张具有撕裂质感的白色纸片，带有部分印刷痕迹。一个亮绿色的圆形色块位于纸片上方边缘。巨大的黑色粗体“Thank | OUR SERVICES 业务服务领域 公关活动... | SERVICE BRAND 服务品牌 etc…",
+    "source_fragment_ids": [
+      {
+        "fragment_id": "a47fee8df802",
+        "layer": "text"
+      },
+      {
+        "fragment_id": "6206d94849d8",
+        "layer": "text"
+      },
+      {
+        "fragment_id": "c51c2c6b322e",
+        "layer": "text"
+      },
+      {
+        "fragment_id": "00f135270a34",
+        "layer": "text"
+      },
+      {
+        "fragment_id": "c4cb1ca590ed",
+        "layer": "text"
+      },
+      {
+        "fragment_id": "95214c3bf1d5",
+        "layer": "text"
+      },
+      {
+        "fragment_id": "c20d128696b3",
+        "layer": "text"
+      },
+      {
+        "fragment_id": "1a43a7eb5185",
+        "layer": "text"
+      },
+      {
+        "fragment_id": "a5b88f718775",
+        "layer": "text"
+      },
+      {
+        "fragment_id": "cd76e8b09dbf",
+        "layer": "text"
+      },
+      {
+        "fragment_id": "b2732593f417",
+        "layer": "text"
+      },
+      {
+        "fragment_id": "ai-32c5d635",
+        "layer": "vision"
+      }
+    ],
+    "fragment_count": 12,
+    "confidence_score": 1.0,
+    "quality_level": "medium",
+    "source_summary": "文本×11 | 视觉×1"
+  },
+  {
+    "pattern_id": "d85eca1052c9",
+    "case_id": "case_0029",
+    "name": "视觉方向_01",
+    "pattern_type": "visual_direction",
+    "description": "画面中央是一张具有撕裂质感的白色纸片，带有部分印刷痕迹。一个亮绿色的圆形色块位于纸片上方边缘。巨大的黑色粗体“Thank | PHILOSOPHY 公司理念 M+F I L M S , a young, energetic，creative te | EVENT PHOTO & VIDEO 2021 # DRESS THE WAY # UR 裙装上阵-设计师联名系列发布",
+    "source_fragment_ids": [
+      {
+        "fragment_id": "0e2fe2e7b44f",
+        "layer": "text"
+      },
+      {
+        "fragment_id": "42d56a3223cd",
+        "layer": "text"
+      },
+      {
+        "fragment_id": "6d6ef2099778",
+        "layer": "text"
+      },
+      {
+        "fragment_id": "ai-32c5d635",
+        "layer": "vision"
+      }
+    ],
+    "fragment_count": 4,
+    "confidence_score": 0.9,
+    "quality_level": "medium",
+    "source_summary": "文本×3 | 视觉×1"
+  },
+  {
+    "pattern_id": "50d63bdfc5b6",
+    "case_id": "case_0029",
+    "name": "受众洞察_01",
+    "pattern_type": "audience_insight",
+    "description": "服务企业品牌 AUDI, TRINNITY GROUP, MIDEA GROUP, TRENDY INTERNATION",
+    "source_fragment_ids": [
+      {
+        "fragment_id": "cd76e8b09dbf",
+        "layer": "text"
+      }
+    ],
+    "fragment_count": 1,
+    "confidence_score": 0.6,
+    "quality_level": "high",
+    "source_summary": "文本×1"
+  },
+  {
+    "pattern_id": "a7043205f853",
+    "case_id": "case_0029",
+    "name": "执行方法_01",
+    "pattern_type": "execution_method",
+    "description": "服务企业品牌 AUDI, TRINNITY GROUP, MIDEA GROUP, TRENDY INTERNATION",
+    "source_fragment_ids": [
+      {
+        "fragment_id": "cd76e8b09dbf",
+        "layer": "text"
+      }
+    ],
+    "fragment_count": 1,
+    "confidence_score": 0.6,
+    "quality_level": "high",
+    "source_summary": "文本×1"
+  }
+]

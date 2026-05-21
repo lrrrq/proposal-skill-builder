@@ -1,0 +1,134 @@
+[
+  {
+    "pattern_id": "ee04cb27e4a8",
+    "case_id": "case_0043",
+    "name": "策略_01",
+    "pattern_type": "strategy",
+    "description": "C o n t en t s 创意概要 Crea... | ORGANIC AND BEYOND Strategy background 策略背景 | Strategy background ：策略...",
+    "source_fragment_ids": [
+      {
+        "fragment_id": "c75be6ff59c3",
+        "layer": "text"
+      },
+      {
+        "fragment_id": "67c46d1c93cc",
+        "layer": "text"
+      },
+      {
+        "fragment_id": "823d7e85c7a4",
+        "layer": "text"
+      },
+      {
+        "fragment_id": "19b8143859bf",
+        "layer": "text"
+      },
+      {
+        "fragment_id": "f270d249f398",
+        "layer": "text"
+      },
+      {
+        "fragment_id": "8580765660cb",
+        "layer": "text"
+      },
+      {
+        "fragment_id": "69cf9ba4591e",
+        "layer": "text"
+      }
+    ],
+    "fragment_count": 7,
+    "confidence_score": 1.0,
+    "quality_level": "medium",
+    "source_summary": "文本×7"
+  },
+  {
+    "pattern_id": "0c275895dd40",
+    "case_id": "case_0043",
+    "name": "内容结构_01",
+    "pattern_type": "content_structure",
+    "description": "Creative outline ：创意概要 ...",
+    "source_fragment_ids": [
+      {
+        "fragment_id": "fe00d35e9b60",
+        "layer": "text"
+      }
+    ],
+    "fragment_count": 1,
+    "confidence_score": 0.6,
+    "quality_level": "high",
+    "source_summary": "文本×1"
+  },
+  {
+    "pattern_id": "8b658a579ebf",
+    "case_id": "case_0043",
+    "name": "视觉方向_01",
+    "pattern_type": "visual_direction",
+    "description": "Creative outline ：创意概要 ... | Creative outline ：创意概要 ... | Creative Split Shot ：创意分镜 片头，自然万物，各种生命力元素爆闪混剪，转黑场出字幕 我能够理解为什",
+    "source_fragment_ids": [
+      {
+        "fragment_id": "d3940496a924",
+        "layer": "text"
+      },
+      {
+        "fragment_id": "fe00d35e9b60",
+        "layer": "text"
+      },
+      {
+        "fragment_id": "8c03f7fda7ad",
+        "layer": "text"
+      },
+      {
+        "fragment_id": "3f4995b060ee",
+        "layer": "text"
+      },
+      {
+        "fragment_id": "b4dc70cae6b1",
+        "layer": "text"
+      },
+      {
+        "fragment_id": "84c4dd1a8b63",
+        "layer": "text"
+      },
+      {
+        "fragment_id": "3de7d0cae0e6",
+        "layer": "text"
+      },
+      {
+        "fragment_id": "e623219361eb",
+        "layer": "text"
+      },
+      {
+        "fragment_id": "13fe53ea7e77",
+        "layer": "text"
+      },
+      {
+        "fragment_id": "f8253a0a6d20",
+        "layer": "text"
+      }
+    ],
+    "fragment_count": 10,
+    "confidence_score": 1.0,
+    "quality_level": "medium",
+    "source_summary": "文本×10"
+  },
+  {
+    "pattern_id": "105b2af4e478",
+    "case_id": "case_0043",
+    "name": "受众洞察_01",
+    "pattern_type": "audience_insight",
+    "description": "Strategy background ：策略... | Creative Split Shot ：创意分镜 片头，自然万物，各种生命力元素爆闪混剪，转黑场出字幕 我能够理解为什",
+    "source_fragment_ids": [
+      {
+        "fragment_id": "19b8143859bf",
+        "layer": "text"
+      },
+      {
+        "fragment_id": "8c03f7fda7ad",
+        "layer": "text"
+      }
+    ],
+    "fragment_count": 2,
+    "confidence_score": 0.7,
+    "quality_level": "medium",
+    "source_summary": "文本×2"
+  }
+]

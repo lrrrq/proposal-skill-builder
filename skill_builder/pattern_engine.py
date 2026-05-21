@@ -19,6 +19,32 @@ def generate_pattern_id() -> str:
     return uuid.uuid4().hex[:12]
 
 
+# Text patterns that are boilerplate and should be cleaned from descriptions
+BOILERPLATE_PATTERNS = [
+    r'Copyright\s*@\s*M\s*\+\s*FILMS.*?Right Reserved',
+    r'\d+\s*M\s*\+\s*FILMS\s*PR\s*VID[^\s]*.*?(?=TVC|DOCUMENTARY|Crea|$)',
+    r'TVC\s*BRANDING\s*VIDEOS\s*DOCUMENTARY',
+    r'PR\s*VIDEOS?\s*TVC',
+    r'\bCrea\s*$',  # Trailing "Crea" fragment
+    r'^Crea\s+',    # Leading "Crea" fragment
+]
+
+# Compiled patterns for efficiency
+_COMPILED_BOILERPLATE = [re.compile(p, re.IGNORECASE | re.DOTALL) for p in BOILERPLATE_PATTERNS]
+
+
+def clean_fragment_text(text: str) -> str:
+    """清洗 fragment 文本中的 boilerplate 内容"""
+    if not text:
+        return text
+    cleaned = text
+    for pattern in _COMPILED_BOILERPLATE:
+        cleaned = pattern.sub('', cleaned)
+    # Clean up excessive whitespace
+    cleaned = re.sub(r'\s+', ' ', cleaned).strip()
+    return cleaned
+
+
 def detect_pattern_types(text: str) -> List[str]:
     """检测文本中包含的 pattern 类型"""
     detected = []
@@ -51,10 +77,25 @@ def build_pattern_description(pattern_type: str, fragments: List[Dict]) -> str:
     if not fragments:
         return ""
 
-    # 取所有片段的 summary 拼接
-    summaries = [f.get("summary", "")[:60] for f in fragments if f.get("summary")]
+    # Prefer AI-generated fragments (source_layer=vision) over text fragments
+    # AI descriptions are more semantically meaningful
+    def fragment_priority(f):
+        # AI fragments get higher priority
+        return 0 if f.get("source_layer") == "vision" else 1
+
+    sorted_frags = sorted(fragments, key=fragment_priority)
+
+    summaries = []
+    for f in sorted_frags:
+        summary = f.get("summary", "")
+        if summary:
+            cleaned = clean_fragment_text(summary)
+            if cleaned and len(cleaned) > 10:  # Skip very short/meaningless fragments
+                summaries.append(cleaned[:60])
+                if len(summaries) >= 3:
+                    break
     if summaries:
-        return " | ".join(summaries[:3])
+        return " | ".join(summaries)
     return ""
 
 

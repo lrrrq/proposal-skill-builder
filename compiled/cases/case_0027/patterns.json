@@ -1,0 +1,109 @@
+[
+  {
+    "pattern_id": "284157ab56b2",
+    "case_id": "case_0027",
+    "name": "策略_01",
+    "pattern_type": "strategy",
+    "description": "活动创意背景说明 美的始终以 “用科技创造美好”... | 活动回顾视频结构（建议总时长：1 分 3 0 ... | 第三阶段：输出活动情绪价值 20 秒 画面（加入...",
+    "source_fragment_ids": [
+      {
+        "fragment_id": "1784c87afb2d",
+        "layer": "text"
+      },
+      {
+        "fragment_id": "93ba6e623379",
+        "layer": "text"
+      },
+      {
+        "fragment_id": "ffeb1598f32d",
+        "layer": "text"
+      },
+      {
+        "fragment_id": "72babb9979d9",
+        "layer": "text"
+      },
+      {
+        "fragment_id": "c25fa319ca01",
+        "layer": "text"
+      }
+    ],
+    "fragment_count": 5,
+    "confidence_score": 1.0,
+    "quality_level": "medium",
+    "source_summary": "文本×5"
+  },
+  {
+    "pattern_id": "721a58941ad9",
+    "case_id": "case_0027",
+    "name": "内容结构_01",
+    "pattern_type": "content_structure",
+    "description": "活动回顾视频结构（建议总时长：1 分 3 0 ...",
+    "source_fragment_ids": [
+      {
+        "fragment_id": "93ba6e623379",
+        "layer": "text"
+      }
+    ],
+    "fragment_count": 1,
+    "confidence_score": 0.6,
+    "quality_level": "high",
+    "source_summary": "文本×1"
+  },
+  {
+    "pattern_id": "df6be0317ae7",
+    "case_id": "case_0027",
+    "name": "视觉方向_01",
+    "pattern_type": "visual_direction",
+    "description": "第一阶段：20秒 画面： 镜头01（快闪快切UGC感镜头）： 特写主人手机屏幕弹出 电子动态邀请函（需要镜头特写一下这个 | 第一阶段：20秒 画面： 镜头02：快闪快切，UGC感镜头记录主人带萌宠过活动现场的 路途上，主人与萌宠的各种趣致表现  | 第一阶段：20秒 画面： 镜头03：快闪快切，特写萌宠主人与萌宠在签到背景板前的合 影，（凸显双方气质相仿），比如，美的",
+    "source_fragment_ids": [
+      {
+        "fragment_id": "6b99b598582a",
+        "layer": "text"
+      },
+      {
+        "fragment_id": "b8b172288807",
+        "layer": "text"
+      },
+      {
+        "fragment_id": "f8c556e3f2da",
+        "layer": "text"
+      },
+      {
+        "fragment_id": "e0472a94c62f",
+        "layer": "text"
+      },
+      {
+        "fragment_id": "1bafffc00322",
+        "layer": "text"
+      },
+      {
+        "fragment_id": "3db4e63bb9ea",
+        "layer": "text"
+      },
+      {
+        "fragment_id": "ffeb1598f32d",
+        "layer": "text"
+      },
+      {
+        "fragment_id": "72babb9979d9",
+        "layer": "text"
+      },
+      {
+        "fragment_id": "c25fa319ca01",
+        "layer": "text"
+      },
+      {
+        "fragment_id": "801e26913cd7",
+        "layer": "text"
+      },
+      {
+        "fragment_id": "f191a2f7b19f",
+        "layer": "text"
+      }
+    ],
+    "fragment_count": 11,
+    "confidence_score": 1.0,
+    "quality_level": "medium",
+    "source_summary": "文本×11"
+  }
+]

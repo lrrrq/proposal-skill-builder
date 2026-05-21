@@ -2,11 +2,18 @@
 
 **标题**: W酒店中秋活动案例
 **来源文件**: test1.md
+**数据集**: test
 **创建时间**: 2026-05-12T14:04:47.905639
 
 ---
 
-## Patterns
+## Fragment 统计
+
+- **文本 Fragments**: 1
+- **视觉 AI Fragments**: 0
+- **Patterns 总数**: 0
+
+## Patterns 详情
 
 *暂无提取到 Patterns（源内容太少）*
 

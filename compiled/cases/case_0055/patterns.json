@@ -1,0 +1,113 @@
+[
+  {
+    "pattern_id": "ff42934c0bc8",
+    "case_id": "case_0055",
+    "name": "策略_01",
+    "pattern_type": "strategy",
+    "description": "这是一张深色调的致谢幻灯片。画面右侧是一组充满动态感、如流体或纤维般的蓝色发光波纹，点缀着如繁星般的金色光点。左上方有一 | Licht / Offenbart das Außergewöhnliche 光 / 见不凡 蔡司光学品牌 · 180周 | 光 / 见不凡 本片以「光学」为基石，以“蔡司蓝光条”为视觉脉络，串联 蔡司光学品牌180年征程；一切缘起1846年卡尔",
+    "source_fragment_ids": [
+      {
+        "fragment_id": "9574180bf374",
+        "layer": "text"
+      },
+      {
+        "fragment_id": "336482eb4e96",
+        "layer": "text"
+      },
+      {
+        "fragment_id": "e72ce9d35e58",
+        "layer": "text"
+      },
+      {
+        "fragment_id": "57f06870da41",
+        "layer": "text"
+      },
+      {
+        "fragment_id": "3ef48fc20a0b",
+        "layer": "text"
+      },
+      {
+        "fragment_id": "58a60f23f87f",
+        "layer": "text"
+      },
+      {
+        "fragment_id": "ai-dc12b7a4",
+        "layer": "vision"
+      }
+    ],
+    "fragment_count": 7,
+    "confidence_score": 1.0,
+    "quality_level": "medium",
+    "source_summary": "文本×6 | 视觉×1"
+  },
+  {
+    "pattern_id": "7edfa8bdc7fa",
+    "case_id": "case_0055",
+    "name": "内容结构_01",
+    "pattern_type": "content_structure",
+    "description": "Creative outline ：创意概要 光 / 见不凡 Licht / Offenbart das Außerge",
+    "source_fragment_ids": [
+      {
+        "fragment_id": "0d04ac8667d8",
+        "layer": "text"
+      }
+    ],
+    "fragment_count": 1,
+    "confidence_score": 0.6,
+    "quality_level": "high",
+    "source_summary": "文本×1"
+  },
+  {
+    "pattern_id": "c11b3d425ce4",
+    "case_id": "case_0055",
+    "name": "视觉方向_01",
+    "pattern_type": "visual_direction",
+    "description": "这是一张深色调的致谢幻灯片。画面右侧是一组充满动态感、如流体或纤维般的蓝色发光波纹，点缀着如繁星般的金色光点。左上方有一 | 光 / 见不凡 本片以「光学」为基石，以“蔡司蓝光条”为视觉脉络，串联 蔡司光学品牌180年征程；一切缘起1846年卡尔 | Creative outline ：创意概要 光 / 见不凡 Licht / Offenbart das Außerge",
+    "source_fragment_ids": [
+      {
+        "fragment_id": "336482eb4e96",
+        "layer": "text"
+      },
+      {
+        "fragment_id": "0d04ac8667d8",
+        "layer": "text"
+      },
+      {
+        "fragment_id": "9cab7d268112",
+        "layer": "text"
+      },
+      {
+        "fragment_id": "7c1d1f76406e",
+        "layer": "text"
+      },
+      {
+        "fragment_id": "382d03ec5f48",
+        "layer": "text"
+      },
+      {
+        "fragment_id": "e72ce9d35e58",
+        "layer": "text"
+      },
+      {
+        "fragment_id": "57f06870da41",
+        "layer": "text"
+      },
+      {
+        "fragment_id": "3ef48fc20a0b",
+        "layer": "text"
+      },
+      {
+        "fragment_id": "58a60f23f87f",
+        "layer": "text"
+      },
+      {
+        "fragment_id": "ai-dc12b7a4",
+        "layer": "vision"
+      }
+    ],
+    "fragment_count": 10,
+    "confidence_score": 1.0,
+    "quality_level": "medium",
+    "source_summary": "文本×9 | 视觉×1"
+  }
+]

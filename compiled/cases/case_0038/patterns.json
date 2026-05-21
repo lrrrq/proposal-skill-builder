@@ -1,0 +1,355 @@
+[
+  {
+    "pattern_id": "48654379eac7",
+    "case_id": "case_0038",
+    "name": "策略_01",
+    "pattern_type": "strategy",
+    "description": "这是一张商业策划案的封面。左侧是紫色的品牌侧边栏，印有“领展广场”Logo。背景是一张充满活力的户外生活方式照片，一名戴 | 这是一张简洁现代的策划案目录页。左侧占据近一半画幅的是一张充满活力的生活方式摄影图，展现了三位年轻女性在户外欢笑并做出构 | 这是一张项目策划案的创意概要页。页面左侧为文字说明，介绍了以“由用户写就”为核心的年度回顾视频创意，强调真实场景和温情运",
+    "source_fragment_ids": [
+      {
+        "fragment_id": "e598326f349f",
+        "layer": "text"
+      },
+      {
+        "fragment_id": "c276a038b1ca",
+        "layer": "text"
+      },
+      {
+        "fragment_id": "7d57fd69d57f",
+        "layer": "text"
+      },
+      {
+        "fragment_id": "640aaeb48622",
+        "layer": "text"
+      },
+      {
+        "fragment_id": "79292ae27fa2",
+        "layer": "text"
+      },
+      {
+        "fragment_id": "4fe886e13c0f",
+        "layer": "text"
+      },
+      {
+        "fragment_id": "2734e905d9f4",
+        "layer": "text"
+      },
+      {
+        "fragment_id": "934c7e64da50",
+        "layer": "text"
+      },
+      {
+        "fragment_id": "31317a8fde62",
+        "layer": "text"
+      },
+      {
+        "fragment_id": "165dd69aa25e",
+        "layer": "text"
+      },
+      {
+        "fragment_id": "ai-cee8748c",
+        "layer": "vision"
+      },
+      {
+        "fragment_id": "ai-1ef5f50a",
+        "layer": "vision"
+      },
+      {
+        "fragment_id": "ai-2b729a8f",
+        "layer": "vision"
+      },
+      {
+        "fragment_id": "ai-cfbcc788",
+        "layer": "vision"
+      },
+      {
+        "fragment_id": "ai-1b3f1967",
+        "layer": "vision"
+      },
+      {
+        "fragment_id": "ai-8c77a274",
+        "layer": "vision"
+      },
+      {
+        "fragment_id": "ai-b3852264",
+        "layer": "vision"
+      },
+      {
+        "fragment_id": "ai-e97f9ed6",
+        "layer": "vision"
+      },
+      {
+        "fragment_id": "ai-ca56766c",
+        "layer": "vision"
+      }
+    ],
+    "fragment_count": 19,
+    "confidence_score": 1.0,
+    "quality_level": "medium",
+    "source_summary": "文本×10 | 视觉×9"
+  },
+  {
+    "pattern_id": "918a37633c14",
+    "case_id": "case_0038",
+    "name": "内容结构_01",
+    "pattern_type": "content_structure",
+    "description": "这是一张简洁现代的策划案目录页。左侧占据近一半画幅的是一张充满活力的生活方式摄影图，展现了三位年轻女性在户外欢笑并做出构 | 这是一张黑色背景的视频创意脚本页面。左侧是详尽的文字脚本和时间戳，描述了视频B1层的拍摄内容和转场逻辑。右侧分布着四张参 | 这是一张名为“创意脚本”的视频策划页面。页面左侧包含详细的镜头描述和时间段（1:25-1:40），右侧则是画外音文案。视",
+    "source_fragment_ids": [
+      {
+        "fragment_id": "3d1f72d57df2",
+        "layer": "text"
+      },
+      {
+        "fragment_id": "04ab55d1134c",
+        "layer": "text"
+      },
+      {
+        "fragment_id": "ai-1ef5f50a",
+        "layer": "vision"
+      },
+      {
+        "fragment_id": "ai-abad33d0",
+        "layer": "vision"
+      },
+      {
+        "fragment_id": "ai-56c1509c",
+        "layer": "vision"
+      }
+    ],
+    "fragment_count": 5,
+    "confidence_score": 1.0,
+    "quality_level": "medium",
+    "source_summary": "文本×2 | 视觉×3"
+  },
+  {
+    "pattern_id": "5dfdd29fccc3",
+    "case_id": "case_0038",
+    "name": "视觉方向_01",
+    "pattern_type": "visual_direction",
+    "description": "这是一张商业策划案的封面。左侧是紫色的品牌侧边栏，印有“领展广场”Logo。背景是一张充满活力的户外生活方式照片，一名戴 | 这是一张项目策划案的创意概要页。页面左侧为文字说明，介绍了以“由用户写就”为核心的年度回顾视频创意，强调真实场景和温情运 | 这是一张黑色背景的策划案页面，采用了明亮的荧光绿作为点缀色。画面右侧和下方分布着三张具有生活气息的摄影图片：上方是一对在",
+    "source_fragment_ids": [
+      {
+        "fragment_id": "e598326f349f",
+        "layer": "text"
+      },
+      {
+        "fragment_id": "8f97e7d0a54a",
+        "layer": "text"
+      },
+      {
+        "fragment_id": "47eb3f461bf7",
+        "layer": "text"
+      },
+      {
+        "fragment_id": "0d5de7415aa7",
+        "layer": "text"
+      },
+      {
+        "fragment_id": "c276a038b1ca",
+        "layer": "text"
+      },
+      {
+        "fragment_id": "7d57fd69d57f",
+        "layer": "text"
+      },
+      {
+        "fragment_id": "7e82e2b11615",
+        "layer": "text"
+      },
+      {
+        "fragment_id": "640aaeb48622",
+        "layer": "text"
+      },
+      {
+        "fragment_id": "79292ae27fa2",
+        "layer": "text"
+      },
+      {
+        "fragment_id": "fbfc604c1c14",
+        "layer": "text"
+      },
+      {
+        "fragment_id": "4fe886e13c0f",
+        "layer": "text"
+      },
+      {
+        "fragment_id": "30148cedf696",
+        "layer": "text"
+      },
+      {
+        "fragment_id": "2734e905d9f4",
+        "layer": "text"
+      },
+      {
+        "fragment_id": "73d26db33095",
+        "layer": "text"
+      },
+      {
+        "fragment_id": "934c7e64da50",
+        "layer": "text"
+      },
+      {
+        "fragment_id": "31317a8fde62",
+        "layer": "text"
+      },
+      {
+        "fragment_id": "1b66ef409ed7",
+        "layer": "text"
+      },
+      {
+        "fragment_id": "0be26de75d49",
+        "layer": "text"
+      },
+      {
+        "fragment_id": "165dd69aa25e",
+        "layer": "text"
+      },
+      {
+        "fragment_id": "ai-cee8748c",
+        "layer": "vision"
+      },
+      {
+        "fragment_id": "ai-2b729a8f",
+        "layer": "vision"
+      },
+      {
+        "fragment_id": "ai-cfb58cb8",
+        "layer": "vision"
+      },
+      {
+        "fragment_id": "ai-cfbcc788",
+        "layer": "vision"
+      },
+      {
+        "fragment_id": "ai-da6c5509",
+        "layer": "vision"
+      },
+      {
+        "fragment_id": "ai-1b3f1967",
+        "layer": "vision"
+      },
+      {
+        "fragment_id": "ai-ce944815",
+        "layer": "vision"
+      },
+      {
+        "fragment_id": "ai-d5046799",
+        "layer": "vision"
+      },
+      {
+        "fragment_id": "ai-2694493e",
+        "layer": "vision"
+      },
+      {
+        "fragment_id": "ai-8c77a274",
+        "layer": "vision"
+      },
+      {
+        "fragment_id": "ai-60f78807",
+        "layer": "vision"
+      },
+      {
+        "fragment_id": "ai-e93cf889",
+        "layer": "vision"
+      },
+      {
+        "fragment_id": "ai-1da36743",
+        "layer": "vision"
+      },
+      {
+        "fragment_id": "ai-545be1be",
+        "layer": "vision"
+      },
+      {
+        "fragment_id": "ai-56c1509c",
+        "layer": "vision"
+      },
+      {
+        "fragment_id": "ai-e97f9ed6",
+        "layer": "vision"
+      },
+      {
+        "fragment_id": "ai-afe6259b",
+        "layer": "vision"
+      },
+      {
+        "fragment_id": "ai-205e7164",
+        "layer": "vision"
+      },
+      {
+        "fragment_id": "ai-8937f52d",
+        "layer": "vision"
+      },
+      {
+        "fragment_id": "ai-9f896440",
+        "layer": "vision"
+      },
+      {
+        "fragment_id": "ai-7a951e8a",
+        "layer": "vision"
+      },
+      {
+        "fragment_id": "ai-ca56766c",
+        "layer": "vision"
+      },
+      {
+        "fragment_id": "ai-125c8b5e",
+        "layer": "vision"
+      }
+    ],
+    "fragment_count": 42,
+    "confidence_score": 1.0,
+    "quality_level": "medium",
+    "source_summary": "文本×19 | 视觉×23"
+  },
+  {
+    "pattern_id": "9b7a282e712e",
+    "case_id": "case_0038",
+    "name": "受众洞察_01",
+    "pattern_type": "audience_insight",
+    "description": "这是一张项目策划案的创意概要页。页面左侧为文字说明，介绍了以“由用户写就”为核心的年度回顾视频创意，强调真实场景和温情运 | Creative outline ：创意概要 此刻，正好！ 这是一部“ 由用户写就” 的年度回顾。我们从1 9 0 0  | Creative outline ：创意概要 此刻，正好！ 综上，本片是“ 天河领展广场” 品牌与用户的心灵对话。在\" ",
+    "source_fragment_ids": [
+      {
+        "fragment_id": "1007c6547043",
+        "layer": "text"
+      },
+      {
+        "fragment_id": "e598326f349f",
+        "layer": "text"
+      },
+      {
+        "fragment_id": "47eb3f461bf7",
+        "layer": "text"
+      },
+      {
+        "fragment_id": "0d5de7415aa7",
+        "layer": "text"
+      },
+      {
+        "fragment_id": "ai-2b729a8f",
+        "layer": "vision"
+      }
+    ],
+    "fragment_count": 5,
+    "confidence_score": 1.0,
+    "quality_level": "medium",
+    "source_summary": "文本×4 | 视觉×1"
+  },
+  {
+    "pattern_id": "fe8d738d4d5c",
+    "case_id": "case_0038",
+    "name": "执行方法_01",
+    "pattern_type": "execution_method",
+    "description": "Creative outline ：创意概要 此刻，正好！ 综上，本片是“ 天河领展广场” 品牌与用户的心灵对话。在\" ",
+    "source_fragment_ids": [
+      {
+        "fragment_id": "e598326f349f",
+        "layer": "text"
+      }
+    ],
+    "fragment_count": 1,
+    "confidence_score": 0.6,
+    "quality_level": "high",
+    "source_summary": "文本×1"
+  }
+]

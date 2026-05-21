@@ -1,0 +1,31 @@
+[
+  {
+    "pattern_id": "dbc833cf3de2",
+    "case_id": "case_0049",
+    "name": "视觉方向_01",
+    "pattern_type": "visual_direction",
+    "description": "当下与未来 本片拟采访20位科学家，每个人大概1... | Reference ：参考 参考点： 以采访人主观视角访谈拍摄专家， 当中视视觉需求穿插专家个人工 作生活片段，将专家的 | Reference ：参考 参考点： 以隐蔽访谈...",
+    "source_fragment_ids": [
+      {
+        "fragment_id": "e841450423a9",
+        "layer": "text"
+      },
+      {
+        "fragment_id": "38092b9cde27",
+        "layer": "text"
+      },
+      {
+        "fragment_id": "8f3a9f395575",
+        "layer": "text"
+      },
+      {
+        "fragment_id": "96e8bcc0ef92",
+        "layer": "text"
+      }
+    ],
+    "fragment_count": 4,
+    "confidence_score": 0.9,
+    "quality_level": "medium",
+    "source_summary": "文本×4"
+  }
+]

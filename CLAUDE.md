@@ -193,6 +193,34 @@ OpenClaw Integration Support 只提供：
 3. 说明替代方案（如无替代必须说明理由）
 4. 提供验证命令
 
+## 环境配置
+
+### 必须配置的环境变量
+
+项目根目录下的 `.env` 文件（已加入 .gitignore）：
+
+```bash
+# MiniMax Token Plan API Key
+# 获取地址: https://platform.minimaxi.com/user-center/payment/token-plan
+MINIMAX_API_KEY=your_key_here
+
+# MiniMax API Host（默认 https://api.minimaxi.com）
+MINIMAX_API_HOST=https://api.minimaxi.com
+```
+
+**重要**：
+- `.env` 文件不会被 git 追踪（已加入 .gitignore）
+- 运行任何 AI 相关命令前必须先 `source .env` 或导出环境变量
+- Token Plan Key 与 Claude Code 的 ANTHROPIC_AUTH_TOKEN 是不同的 key
+
+### 验证环境配置
+
+```bash
+export MINIMAX_API_KEY=your_key
+export MINIMAX_API_HOST=https://api.minimaxi.com
+python3 -m skill_builder.cli check-ai-provider --provider minimax-mcp
+```
+
 ## 禁止事项
 
 ### 绝对禁止（任何阶段都不实现）

@@ -15,23 +15,20 @@
 
 ### 文本 Patterns
 
-- **视觉方向_01** (visual_direction): ai_skip_0x7f3a9_parse_error_rnd
-Copyright @ M +FILMS . All R...
+- **视觉方向_01** (visual_direction): 模特走过前厅水幕，水幕上流光溢彩，画面切换，水幕一侧镜面闪烁，折影水面 一道彩光划过模特的面颊，特写彩光划过时模特的眼神...
 
 ## 核心摘要
 
-ai_skip_0x7f3a9_parse_error_rnd
-Copyright @ M +FILMS . All R | Copyright @ M +FI
+模特走过前厅水幕，水幕上流光溢彩，画面切换，水幕一侧镜面闪烁，折影水面 一道彩光划过模特的面颊，特写彩光划过时模特的眼神 | Creative content 
 
 ## Patterns 详情
 
 ### 视觉方向_01 (visual_direction)
-- **ID**: `034506ad0e31`
+- **ID**: `f02f8f5c2b46`
 - **置信度**: 1.0
 - **质量**: medium
 - **片段数**: 10
-- **描述**: ai_skip_0x7f3a9_parse_error_rnd
-Copyright @ M +FILMS . All R | Copyright @ M +FILMS . All Right Rese
+- **描述**: 模特走过前厅水幕，水幕上流光溢彩，画面切换，水幕一侧镜面闪烁，折影水面 一道彩光划过模特的面颊，特写彩光划过时模特的眼神 | Creative content ：创意脚本 画面切换，W酒店中秋包装特写
 
 ## 可复用价值
 

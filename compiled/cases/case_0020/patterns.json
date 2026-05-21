@@ -1,0 +1,191 @@
+[
+  {
+    "pattern_id": "e345de2ea3a8",
+    "case_id": "case_0020",
+    "name": "策略_01",
+    "pattern_type": "strategy",
+    "description": "画面左侧为纯黑色背景色块，印有白色大字标题；右侧为一张充满都市时尚感的街头摄影，画面中心是一位穿着粉色上衣、格子裤和夸张 | 页面左侧是一张充满动感的摄影图，画面中一名女性身着绿色外套和黄色裙子在石墙前跃起，手中杯子溅出液体。图片上方覆盖着白色的 | 页面采用深黑色背景，左侧为排版整齐的绿色与白色文字，右侧是一张纵向的时尚人像摄影。模特身着薄荷绿大衣，佩戴浅棕色头套（巴",
+    "source_fragment_ids": [
+      {
+        "fragment_id": "ai-20237173",
+        "layer": "vision"
+      },
+      {
+        "fragment_id": "ai-4ba6f913",
+        "layer": "vision"
+      },
+      {
+        "fragment_id": "ai-3e6c9717",
+        "layer": "vision"
+      },
+      {
+        "fragment_id": "ai-c8b6bda8",
+        "layer": "vision"
+      },
+      {
+        "fragment_id": "ai-5b1d8436",
+        "layer": "vision"
+      },
+      {
+        "fragment_id": "ai-0606eccf",
+        "layer": "vision"
+      },
+      {
+        "fragment_id": "ai-52196df6",
+        "layer": "vision"
+      },
+      {
+        "fragment_id": "ai-5ab9bfa0",
+        "layer": "vision"
+      }
+    ],
+    "fragment_count": 8,
+    "confidence_score": 1.0,
+    "quality_level": "medium",
+    "source_summary": "视觉×8"
+  },
+  {
+    "pattern_id": "8d881c55c836",
+    "case_id": "case_0020",
+    "name": "内容结构_01",
+    "pattern_type": "content_structure",
+    "description": "页面左侧是一张充满动感的摄影图，画面中一名女性身着绿色外套和黄色裙子在石墙前跃起，手中杯子溅出液体。图片上方覆盖着白色的 | 页面采用深黑色背景，左侧为排版整齐的绿色与白色文字，右侧是一张纵向的时尚人像摄影。模特身着薄荷绿大衣，佩戴浅棕色头套（巴 | 这是一张黑色背景的创意策划案页面。页面左侧为文字描述，详细说明了一个视频场景的拍摄手法（手机放置地面、竖屏视角）及内容（",
+    "source_fragment_ids": [
+      {
+        "fragment_id": "ai-4ba6f913",
+        "layer": "vision"
+      },
+      {
+        "fragment_id": "ai-3e6c9717",
+        "layer": "vision"
+      },
+      {
+        "fragment_id": "ai-c8b6bda8",
+        "layer": "vision"
+      },
+      {
+        "fragment_id": "ai-0606eccf",
+        "layer": "vision"
+      },
+      {
+        "fragment_id": "ai-52196df6",
+        "layer": "vision"
+      }
+    ],
+    "fragment_count": 5,
+    "confidence_score": 1.0,
+    "quality_level": "medium",
+    "source_summary": "视觉×5"
+  },
+  {
+    "pattern_id": "f2515e4a0750",
+    "case_id": "case_0020",
+    "name": "视觉方向_01",
+    "pattern_type": "visual_direction",
+    "description": "画面左侧为纯黑色背景色块，印有白色大字标题；右侧为一张充满都市时尚感的街头摄影，画面中心是一位穿着粉色上衣、格子裤和夸张 | 页面左侧是一张充满动感的摄影图，画面中一名女性身着绿色外套和黄色裙子在石墙前跃起，手中杯子溅出液体。图片上方覆盖着白色的 | 页面采用深黑色背景，左侧为排版整齐的绿色与白色文字，右侧是一张纵向的时尚人像摄影。模特身着薄荷绿大衣，佩戴浅棕色头套（巴",
+    "source_fragment_ids": [
+      {
+        "fragment_id": "dac421309c4b",
+        "layer": "text"
+      },
+      {
+        "fragment_id": "0c8bf5771f16",
+        "layer": "text"
+      },
+      {
+        "fragment_id": "ai-20237173",
+        "layer": "vision"
+      },
+      {
+        "fragment_id": "ai-4ba6f913",
+        "layer": "vision"
+      },
+      {
+        "fragment_id": "ai-3e6c9717",
+        "layer": "vision"
+      },
+      {
+        "fragment_id": "ai-c8b6bda8",
+        "layer": "vision"
+      },
+      {
+        "fragment_id": "ai-5b1d8436",
+        "layer": "vision"
+      },
+      {
+        "fragment_id": "ai-0606eccf",
+        "layer": "vision"
+      },
+      {
+        "fragment_id": "ai-52196df6",
+        "layer": "vision"
+      },
+      {
+        "fragment_id": "ai-5ab9bfa0",
+        "layer": "vision"
+      }
+    ],
+    "fragment_count": 10,
+    "confidence_score": 1.0,
+    "quality_level": "medium",
+    "source_summary": "文本×2 | 视觉×8"
+  },
+  {
+    "pattern_id": "48559288b595",
+    "case_id": "case_0020",
+    "name": "受众洞察_01",
+    "pattern_type": "audience_insight",
+    "description": "页面采用深黑色背景，左侧为排版整齐的绿色与白色文字，右侧是一张纵向的时尚人像摄影。模特身着薄荷绿大衣，佩戴浅棕色头套（巴 | 页面右侧是由五张不同风格的摄影作品组成的拼贴画，展现了多种生活方式场景：一名穿着灰色卫衣的人在街头奔跑，一名少女手持滑板 | 这是一张黑色背景的创意策划页面。左侧是场景描述文本，右侧配有三张参考图：上方是一张极具氛围感的户外人像（人物穿着长裙和头",
+    "source_fragment_ids": [
+      {
+        "fragment_id": "e26d2d096825",
+        "layer": "text"
+      },
+      {
+        "fragment_id": "1f20ee218f51",
+        "layer": "text"
+      },
+      {
+        "fragment_id": "ai-3e6c9717",
+        "layer": "vision"
+      },
+      {
+        "fragment_id": "ai-5b1d8436",
+        "layer": "vision"
+      },
+      {
+        "fragment_id": "ai-0606eccf",
+        "layer": "vision"
+      },
+      {
+        "fragment_id": "ai-52196df6",
+        "layer": "vision"
+      }
+    ],
+    "fragment_count": 6,
+    "confidence_score": 1.0,
+    "quality_level": "medium",
+    "source_summary": "文本×2 | 视觉×4"
+  },
+  {
+    "pattern_id": "cbb77ce8319e",
+    "case_id": "case_0020",
+    "name": "执行方法_01",
+    "pattern_type": "execution_method",
+    "description": "这是一张黑色背景的创意策划案页面。页面左侧为文字描述，详细说明了一个视频场景的拍摄手法（手机放置地面、竖屏视角）及内容（ | 这是一张黑色背景的创意策划页面。左侧是场景描述文本，右侧配有三张参考图：上方是一张极具氛围感的户外人像（人物穿着长裙和头",
+    "source_fragment_ids": [
+      {
+        "fragment_id": "ai-c8b6bda8",
+        "layer": "vision"
+      },
+      {
+        "fragment_id": "ai-0606eccf",
+        "layer": "vision"
+      }
+    ],
+    "fragment_count": 2,
+    "confidence_score": 0.7,
+    "quality_level": "medium",
+    "source_summary": "视觉×2"
+  }
+]

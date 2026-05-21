@@ -1,376 +1,364 @@
 [
   {
-    "pattern_id": "4d7e892e425b",
+    "pattern_id": "9d0132880a82",
     "case_id": "case_0004",
     "name": "策略_01",
     "pattern_type": "strategy",
-    "description": "A 视频内容结构设计（总时长约60分钟）：\n01  开篇（5分钟）\n02  年度大事记（10分钟）\n03  核心议题（4 | 03\nProject ：内容结构\n0 1  开篇：年会开场祝词（5 分钟）\n采访人物：曹志杰 |  美的家用空调事业部总 | ai_skip_0x7f3a9_parse_error_rnd\n04\nProject ：内容结构\n0 2  年度大事记H",
+    "description": "A 视频内容结构设计（总时长约60分钟）： 01 开篇（5分钟） 02 年度大事记（10分钟） 03 核心议题（45分钟 | 03 Project ：内容结构 0 1 开篇：年会开场祝词（5 分钟） 采访人物：曹志杰 | 美的家用空调事业部总裁  | 04 Project ：内容结构 0 2 年度大事记H 5 （1 0 分钟） - - - - - - - - - - -",
     "source_fragment_ids": [
       {
-        "fragment_id": "fe30896acb28",
+        "fragment_id": "0761aed2b1e0",
         "layer": "text"
       },
       {
-        "fragment_id": "b27463876c52",
+        "fragment_id": "84bb8875f94f",
         "layer": "text"
       },
       {
-        "fragment_id": "b45b0a5a6950",
+        "fragment_id": "40bcce47bae2",
         "layer": "text"
       },
       {
-        "fragment_id": "7ae2aa8c58ec",
+        "fragment_id": "c5a53d635b8c",
         "layer": "text"
       },
       {
-        "fragment_id": "7b9c638f1021",
+        "fragment_id": "efcbe803221a",
         "layer": "text"
       },
       {
-        "fragment_id": "c61a3aa750f6",
+        "fragment_id": "c0e367956bf9",
         "layer": "text"
       },
       {
-        "fragment_id": "353d0a726d64",
+        "fragment_id": "f3d1e0891547",
         "layer": "text"
       },
       {
-        "fragment_id": "fddf1d39fbae",
+        "fragment_id": "930a827a0fa7",
         "layer": "text"
       },
       {
-        "fragment_id": "3d8508b0d051",
+        "fragment_id": "01b1db44e462",
         "layer": "text"
       },
       {
-        "fragment_id": "6b44d977a4a3",
+        "fragment_id": "192f6ee51b41",
         "layer": "text"
       },
       {
-        "fragment_id": "a8afccf72525",
+        "fragment_id": "1fa0572a2243",
         "layer": "text"
       },
       {
-        "fragment_id": "6b1d39541b92",
+        "fragment_id": "0670e78cbed4",
         "layer": "text"
       },
       {
-        "fragment_id": "045355b2cb5a",
+        "fragment_id": "3c8d121dd652",
         "layer": "text"
       },
       {
-        "fragment_id": "c0121e88c2a9",
+        "fragment_id": "9fdd0ecd1df0",
         "layer": "text"
       },
       {
-        "fragment_id": "03052b7fd875",
+        "fragment_id": "ca84cc073bb8",
         "layer": "text"
       },
       {
-        "fragment_id": "51af012c19ed",
+        "fragment_id": "d7c366a40d99",
         "layer": "text"
       },
       {
-        "fragment_id": "98345ebeaf2f",
+        "fragment_id": "2c046f969b94",
         "layer": "text"
       },
       {
-        "fragment_id": "db1bfd01a0d4",
+        "fragment_id": "dd29f516cf39",
         "layer": "text"
       },
       {
-        "fragment_id": "89b54b21ed80",
+        "fragment_id": "7b2d9dc2eb8d",
         "layer": "text"
       },
       {
-        "fragment_id": "2511fcc1e5c1",
+        "fragment_id": "099a5d50f9ac",
         "layer": "text"
       },
       {
-        "fragment_id": "ebe6d24b280d",
+        "fragment_id": "73203ca8da10",
         "layer": "text"
       },
       {
-        "fragment_id": "feb1e0732ffc",
+        "fragment_id": "fc4ce5df23e8",
         "layer": "text"
       },
       {
-        "fragment_id": "a634edc4a2cc",
+        "fragment_id": "72c7d6c9e147",
         "layer": "text"
-      },
-      {
-        "fragment_id": "ai-4a56ee2c",
-        "layer": "vision"
       }
     ],
-    "fragment_count": 24,
+    "fragment_count": 23,
     "confidence_score": 1.0,
     "quality_level": "medium",
-    "source_summary": "文本×23 | 视觉×1"
+    "source_summary": "文本×23"
   },
   {
-    "pattern_id": "2d57bad75cab",
+    "pattern_id": "e3c82a04eabd",
     "case_id": "case_0004",
     "name": "内容结构_01",
     "pattern_type": "content_structure",
-    "description": "共生 / 进化\n2026 美的经销商年会  视频内容结构设计方案概要\nSummary of the Video Cont | A 视频内容结构设计（总时长约60分钟）：\n01  开篇（5分钟）\n02  年度大事记（10分钟）\n03  核心议题（4 | 03\nProject ：内容结构\n0 1  开篇：年会开场祝词（5 分钟）\n采访人物：曹志杰 |  美的家用空调事业部总",
+    "description": "共生 / 进化 2026 美的经销商年会 视频内容结构设计方案概要 Summary of the Video Conte | A 视频内容结构设计（总时长约60分钟）： 01 开篇（5分钟） 02 年度大事记（10分钟） 03 核心议题（45分钟 | 03 Project ：内容结构 0 1 开篇：年会开场祝词（5 分钟） 采访人物：曹志杰 | 美的家用空调事业部总裁 ",
     "source_fragment_ids": [
       {
-        "fragment_id": "fe772fad6a52",
+        "fragment_id": "c6c046c36f72",
         "layer": "text"
       },
       {
-        "fragment_id": "fe30896acb28",
+        "fragment_id": "0761aed2b1e0",
         "layer": "text"
       },
       {
-        "fragment_id": "b27463876c52",
+        "fragment_id": "84bb8875f94f",
         "layer": "text"
       },
       {
-        "fragment_id": "b45b0a5a6950",
+        "fragment_id": "40bcce47bae2",
         "layer": "text"
       },
       {
-        "fragment_id": "7ae2aa8c58ec",
+        "fragment_id": "c5a53d635b8c",
         "layer": "text"
       },
       {
-        "fragment_id": "7b9c638f1021",
+        "fragment_id": "efcbe803221a",
         "layer": "text"
       },
       {
-        "fragment_id": "c61a3aa750f6",
+        "fragment_id": "c0e367956bf9",
         "layer": "text"
       },
       {
-        "fragment_id": "353d0a726d64",
+        "fragment_id": "f3d1e0891547",
         "layer": "text"
       },
       {
-        "fragment_id": "fddf1d39fbae",
+        "fragment_id": "930a827a0fa7",
         "layer": "text"
       },
       {
-        "fragment_id": "3d8508b0d051",
+        "fragment_id": "01b1db44e462",
         "layer": "text"
       },
       {
-        "fragment_id": "6b44d977a4a3",
+        "fragment_id": "192f6ee51b41",
         "layer": "text"
       },
       {
-        "fragment_id": "a8afccf72525",
+        "fragment_id": "1fa0572a2243",
         "layer": "text"
       },
       {
-        "fragment_id": "6b1d39541b92",
+        "fragment_id": "0670e78cbed4",
         "layer": "text"
       },
       {
-        "fragment_id": "045355b2cb5a",
+        "fragment_id": "3c8d121dd652",
         "layer": "text"
       },
       {
-        "fragment_id": "c0121e88c2a9",
+        "fragment_id": "9fdd0ecd1df0",
         "layer": "text"
       },
       {
-        "fragment_id": "03052b7fd875",
+        "fragment_id": "ca84cc073bb8",
         "layer": "text"
       },
       {
-        "fragment_id": "51af012c19ed",
+        "fragment_id": "d7c366a40d99",
         "layer": "text"
       },
       {
-        "fragment_id": "98345ebeaf2f",
+        "fragment_id": "2c046f969b94",
         "layer": "text"
       },
       {
-        "fragment_id": "db1bfd01a0d4",
+        "fragment_id": "dd29f516cf39",
         "layer": "text"
       },
       {
-        "fragment_id": "89b54b21ed80",
+        "fragment_id": "7b2d9dc2eb8d",
         "layer": "text"
       },
       {
-        "fragment_id": "2511fcc1e5c1",
+        "fragment_id": "099a5d50f9ac",
         "layer": "text"
       },
       {
-        "fragment_id": "ebe6d24b280d",
+        "fragment_id": "73203ca8da10",
         "layer": "text"
       },
       {
-        "fragment_id": "3177658cf5f3",
+        "fragment_id": "030cccaa636e",
         "layer": "text"
-      },
-      {
-        "fragment_id": "ai-4a56ee2c",
-        "layer": "vision"
       }
     ],
-    "fragment_count": 24,
+    "fragment_count": 23,
     "confidence_score": 1.0,
     "quality_level": "medium",
-    "source_summary": "文本×23 | 视觉×1"
+    "source_summary": "文本×23"
   },
   {
-    "pattern_id": "aea714a0c432",
+    "pattern_id": "30415bc0d9e0",
     "case_id": "case_0004",
     "name": "视觉方向_01",
     "pattern_type": "visual_direction",
-    "description": "共生 / 进化\n2026 美的经销商年会  视频内容结构设计方案概要\nSummary of the Video Cont | A 视频内容结构设计（总时长约60分钟）：\n01  开篇（5分钟）\n02  年度大事记（10分钟）\n03  核心议题（4 | 03\nProject ：内容结构\n0 1  开篇：年会开场祝词（5 分钟）\n采访人物：曹志杰 |  美的家用空调事业部总",
+    "description": "共生 / 进化 2026 美的经销商年会 视频内容结构设计方案概要 Summary of the Video Conte | A 视频内容结构设计（总时长约60分钟）： 01 开篇（5分钟） 02 年度大事记（10分钟） 03 核心议题（45分钟 | 03 Project ：内容结构 0 1 开篇：年会开场祝词（5 分钟） 采访人物：曹志杰 | 美的家用空调事业部总裁 ",
     "source_fragment_ids": [
       {
-        "fragment_id": "fe772fad6a52",
+        "fragment_id": "c6c046c36f72",
         "layer": "text"
       },
       {
-        "fragment_id": "fe30896acb28",
+        "fragment_id": "0761aed2b1e0",
         "layer": "text"
       },
       {
-        "fragment_id": "b27463876c52",
+        "fragment_id": "84bb8875f94f",
         "layer": "text"
       },
       {
-        "fragment_id": "b45b0a5a6950",
+        "fragment_id": "40bcce47bae2",
         "layer": "text"
       },
       {
-        "fragment_id": "7ae2aa8c58ec",
+        "fragment_id": "c5a53d635b8c",
         "layer": "text"
       },
       {
-        "fragment_id": "7b9c638f1021",
+        "fragment_id": "efcbe803221a",
         "layer": "text"
       },
       {
-        "fragment_id": "c61a3aa750f6",
+        "fragment_id": "c0e367956bf9",
         "layer": "text"
       },
       {
-        "fragment_id": "353d0a726d64",
+        "fragment_id": "f3d1e0891547",
         "layer": "text"
       },
       {
-        "fragment_id": "fddf1d39fbae",
+        "fragment_id": "930a827a0fa7",
         "layer": "text"
       },
       {
-        "fragment_id": "3d8508b0d051",
+        "fragment_id": "01b1db44e462",
         "layer": "text"
       },
       {
-        "fragment_id": "6b44d977a4a3",
+        "fragment_id": "192f6ee51b41",
         "layer": "text"
       },
       {
-        "fragment_id": "a8afccf72525",
+        "fragment_id": "1fa0572a2243",
         "layer": "text"
       },
       {
-        "fragment_id": "6b1d39541b92",
+        "fragment_id": "0670e78cbed4",
         "layer": "text"
       },
       {
-        "fragment_id": "045355b2cb5a",
+        "fragment_id": "3c8d121dd652",
         "layer": "text"
       },
       {
-        "fragment_id": "c0121e88c2a9",
+        "fragment_id": "9fdd0ecd1df0",
         "layer": "text"
       },
       {
-        "fragment_id": "03052b7fd875",
+        "fragment_id": "ca84cc073bb8",
         "layer": "text"
       },
       {
-        "fragment_id": "51af012c19ed",
+        "fragment_id": "d7c366a40d99",
         "layer": "text"
       },
       {
-        "fragment_id": "98345ebeaf2f",
+        "fragment_id": "2c046f969b94",
         "layer": "text"
       },
       {
-        "fragment_id": "db1bfd01a0d4",
+        "fragment_id": "dd29f516cf39",
         "layer": "text"
       },
       {
-        "fragment_id": "89b54b21ed80",
+        "fragment_id": "7b2d9dc2eb8d",
         "layer": "text"
       },
       {
-        "fragment_id": "2511fcc1e5c1",
+        "fragment_id": "099a5d50f9ac",
         "layer": "text"
       },
       {
-        "fragment_id": "ebe6d24b280d",
+        "fragment_id": "73203ca8da10",
         "layer": "text"
       },
       {
-        "fragment_id": "3177658cf5f3",
+        "fragment_id": "030cccaa636e",
         "layer": "text"
       },
       {
-        "fragment_id": "a634edc4a2cc",
+        "fragment_id": "72c7d6c9e147",
         "layer": "text"
       },
       {
-        "fragment_id": "3909d95aa9ed",
+        "fragment_id": "8f942c08b1b1",
         "layer": "text"
       },
       {
-        "fragment_id": "32dfa1d737ac",
+        "fragment_id": "882c0073ea4c",
         "layer": "text"
       },
       {
-        "fragment_id": "306265fa5283",
+        "fragment_id": "54092b7fc258",
         "layer": "text"
       },
       {
-        "fragment_id": "6aa63a1ebc61",
+        "fragment_id": "742a19f5de2c",
         "layer": "text"
       },
       {
-        "fragment_id": "93302b8477bf",
+        "fragment_id": "4836a59c3465",
         "layer": "text"
-      },
-      {
-        "fragment_id": "ai-4a56ee2c",
-        "layer": "vision"
       }
     ],
-    "fragment_count": 30,
+    "fragment_count": 29,
     "confidence_score": 1.0,
     "quality_level": "medium",
-    "source_summary": "文本×29 | 视觉×1"
+    "source_summary": "文本×29"
   },
   {
-    "pattern_id": "441b2bb93c84",
+    "pattern_id": "b34582cee2b2",
     "case_id": "case_0004",
     "name": "受众洞察_01",
     "pattern_type": "audience_insight",
-    "description": "08\nProject ：内容结构\n0 3  核心议题（4 5 分钟）\n采访人物：张崴翰 |  国内营销总经理 |  \n问 | 09\nProject ：内容结构\n0 3  核心议题（4 5 分钟）\n采访人物：罗 彬 |  研发体系主任 |  \n采访 | 16\nProject ：内容结构\n0 3  核心议题（4 5 分钟）\n采访人物：杨鹏宇 |  解决方案与交付总监 |  ",
+    "description": "08 Project ：内容结构 0 3 核心议题（4 5 分钟） 采访人物：张崴翰 | 国内营销总经理 | 问题4 ： | 09 Project ：内容结构 0 3 核心议题（4 5 分钟） 采访人物：罗 彬 | 研发体系主任 | 采访拍摄场地 | 16 Project ：内容结构 0 3 核心议题（4 5 分钟） 采访人物：杨鹏宇 | 解决方案与交付总监 | 采访拍",
     "source_fragment_ids": [
       {
-        "fragment_id": "353d0a726d64",
+        "fragment_id": "f3d1e0891547",
         "layer": "text"
       },
       {
-        "fragment_id": "fddf1d39fbae",
+        "fragment_id": "930a827a0fa7",
         "layer": "text"
       },
       {
-        "fragment_id": "03052b7fd875",
+        "fragment_id": "ca84cc073bb8",
         "layer": "text"
       },
       {
-        "fragment_id": "3177658cf5f3",
+        "fragment_id": "030cccaa636e",
         "layer": "text"
       }
     ],
@@ -380,50 +368,50 @@
     "source_summary": "文本×4"
   },
   {
-    "pattern_id": "6d9575145263",
+    "pattern_id": "dfb161ea3b42",
     "case_id": "case_0004",
     "name": "执行方法_01",
     "pattern_type": "execution_method",
-    "description": "05\nProject ：内容结构\n0 3  核心议题（4 5 分钟）\n采访人物：张崴翰 |  国内营销总经理 |  \n采 | 06\nProject ：内容结构\n0 3  核心议题（4 5 分钟）\n采访人物：张崴翰 |  国内营销总经理 |   \n | 07\nProject ：内容结构\n0 3  核心议题（4 5 分钟）\n采访人物：张崴翰 |  国内营销总经理 |  \n问",
+    "description": "05 Project ：内容结构 0 3 核心议题（4 5 分钟） 采访人物：张崴翰 | 国内营销总经理 | 采访拍摄场 | 06 Project ：内容结构 0 3 核心议题（4 5 分钟） 采访人物：张崴翰 | 国内营销总经理 | 问题2 ： | 07 Project ：内容结构 0 3 核心议题（4 5 分钟） 采访人物：张崴翰 | 国内营销总经理 | 问题3 ：",
     "source_fragment_ids": [
       {
-        "fragment_id": "7ae2aa8c58ec",
+        "fragment_id": "c5a53d635b8c",
         "layer": "text"
       },
       {
-        "fragment_id": "7b9c638f1021",
+        "fragment_id": "efcbe803221a",
         "layer": "text"
       },
       {
-        "fragment_id": "c61a3aa750f6",
+        "fragment_id": "c0e367956bf9",
         "layer": "text"
       },
       {
-        "fragment_id": "353d0a726d64",
+        "fragment_id": "f3d1e0891547",
         "layer": "text"
       },
       {
-        "fragment_id": "6b44d977a4a3",
+        "fragment_id": "192f6ee51b41",
         "layer": "text"
       },
       {
-        "fragment_id": "6b1d39541b92",
+        "fragment_id": "0670e78cbed4",
         "layer": "text"
       },
       {
-        "fragment_id": "c0121e88c2a9",
+        "fragment_id": "9fdd0ecd1df0",
         "layer": "text"
       },
       {
-        "fragment_id": "51af012c19ed",
+        "fragment_id": "d7c366a40d99",
         "layer": "text"
       },
       {
-        "fragment_id": "ebe6d24b280d",
+        "fragment_id": "73203ca8da10",
         "layer": "text"
       },
       {
-        "fragment_id": "3177658cf5f3",
+        "fragment_id": "030cccaa636e",
         "layer": "text"
       }
     ],

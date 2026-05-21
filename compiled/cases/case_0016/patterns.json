@@ -1,0 +1,190 @@
+[
+  {
+    "pattern_id": "e24bd2afea38",
+    "case_id": "case_0016",
+    "name": "策略_01",
+    "pattern_type": "strategy",
+    "description": "页面左侧是一张现代建筑的实景照片，展示了带有百叶窗结构和发光绿色植生墙的建筑立面，上方有Snow Peak的品牌Logo | 这张页面是为Snow Peak品牌制作的一份创意提案的目录页。页面左侧是一张具有现代建筑感的夜景图片，展示了玻璃幕墙下的 | 页面背景是一张夜间拍摄的建筑摄影作品，画面中心呈现的是具有工业感和现代感的砖红色建筑，前景停放着一排白色的小型接驳车。画",
+    "source_fragment_ids": [
+      {
+        "fragment_id": "ad2654a32e9b",
+        "layer": "text"
+      },
+      {
+        "fragment_id": "0518e9e1915d",
+        "layer": "text"
+      },
+      {
+        "fragment_id": "a70bb2af6fd2",
+        "layer": "text"
+      },
+      {
+        "fragment_id": "4888a4dd8d9f",
+        "layer": "text"
+      },
+      {
+        "fragment_id": "ai-7c49ff12",
+        "layer": "vision"
+      },
+      {
+        "fragment_id": "ai-317b9024",
+        "layer": "vision"
+      },
+      {
+        "fragment_id": "ai-59aad990",
+        "layer": "vision"
+      },
+      {
+        "fragment_id": "ai-86976673",
+        "layer": "vision"
+      },
+      {
+        "fragment_id": "ai-f9cc9e3e",
+        "layer": "vision"
+      },
+      {
+        "fragment_id": "ai-994a66b7",
+        "layer": "vision"
+      },
+      {
+        "fragment_id": "ai-36da409c",
+        "layer": "vision"
+      },
+      {
+        "fragment_id": "ai-9d415c91",
+        "layer": "vision"
+      }
+    ],
+    "fragment_count": 12,
+    "confidence_score": 1.0,
+    "quality_level": "medium",
+    "source_summary": "文本×4 | 视觉×8"
+  },
+  {
+    "pattern_id": "0dd13a89eee5",
+    "case_id": "case_0016",
+    "name": "内容结构_01",
+    "pattern_type": "content_structure",
+    "description": "页面左侧是一张现代建筑的实景照片，展示了带有百叶窗结构和发光绿色植生墙的建筑立面，上方有Snow Peak的品牌Logo | 这张页面是为Snow Peak品牌制作的一份创意提案的目录页。页面左侧是一张具有现代建筑感的夜景图片，展示了玻璃幕墙下的 | 页面左侧为品牌Logo及创意文案描述，右侧为三张高质量实景图片组成的拼贴。图片包含：上方一张开阔的城市商业街区实拍图，显",
+    "source_fragment_ids": [
+      {
+        "fragment_id": "c2dce38ed457",
+        "layer": "text"
+      },
+      {
+        "fragment_id": "ai-7c49ff12",
+        "layer": "vision"
+      },
+      {
+        "fragment_id": "ai-317b9024",
+        "layer": "vision"
+      },
+      {
+        "fragment_id": "ai-86976673",
+        "layer": "vision"
+      },
+      {
+        "fragment_id": "ai-03e5b713",
+        "layer": "vision"
+      }
+    ],
+    "fragment_count": 5,
+    "confidence_score": 1.0,
+    "quality_level": "medium",
+    "source_summary": "文本×1 | 视觉×4"
+  },
+  {
+    "pattern_id": "7dd031793051",
+    "case_id": "case_0016",
+    "name": "视觉方向_01",
+    "pattern_type": "visual_direction",
+    "description": "页面左侧是一张现代建筑的实景照片，展示了带有百叶窗结构和发光绿色植生墙的建筑立面，上方有Snow Peak的品牌Logo | 这张页面是为Snow Peak品牌制作的一份创意提案的目录页。页面左侧是一张具有现代建筑感的夜景图片，展示了玻璃幕墙下的 | 页面背景是一张夜间拍摄的建筑摄影作品，画面中心呈现的是具有工业感和现代感的砖红色建筑，前景停放着一排白色的小型接驳车。画",
+    "source_fragment_ids": [
+      {
+        "fragment_id": "ad2654a32e9b",
+        "layer": "text"
+      },
+      {
+        "fragment_id": "0518e9e1915d",
+        "layer": "text"
+      },
+      {
+        "fragment_id": "c2dce38ed457",
+        "layer": "text"
+      },
+      {
+        "fragment_id": "a70bb2af6fd2",
+        "layer": "text"
+      },
+      {
+        "fragment_id": "4888a4dd8d9f",
+        "layer": "text"
+      },
+      {
+        "fragment_id": "ai-7c49ff12",
+        "layer": "vision"
+      },
+      {
+        "fragment_id": "ai-317b9024",
+        "layer": "vision"
+      },
+      {
+        "fragment_id": "ai-59aad990",
+        "layer": "vision"
+      },
+      {
+        "fragment_id": "ai-86976673",
+        "layer": "vision"
+      },
+      {
+        "fragment_id": "ai-479df29b",
+        "layer": "vision"
+      },
+      {
+        "fragment_id": "ai-03e5b713",
+        "layer": "vision"
+      },
+      {
+        "fragment_id": "ai-f9cc9e3e",
+        "layer": "vision"
+      },
+      {
+        "fragment_id": "ai-4e404c07",
+        "layer": "vision"
+      },
+      {
+        "fragment_id": "ai-36da409c",
+        "layer": "vision"
+      },
+      {
+        "fragment_id": "ai-9d415c91",
+        "layer": "vision"
+      }
+    ],
+    "fragment_count": 15,
+    "confidence_score": 1.0,
+    "quality_level": "medium",
+    "source_summary": "文本×5 | 视觉×10"
+  },
+  {
+    "pattern_id": "997930c4f764",
+    "case_id": "case_0016",
+    "name": "受众洞察_01",
+    "pattern_type": "audience_insight",
+    "description": "页面左侧为文字脚本，详细描述了视频的节奏、画面内容（涉及连廊、楼梯、露台、水系景观等）、音效及整体调性。右侧是一个不规则 | Creative outline ：创意概要 ...",
+    "source_fragment_ids": [
+      {
+        "fragment_id": "ad2654a32e9b",
+        "layer": "text"
+      },
+      {
+        "fragment_id": "ai-4e404c07",
+        "layer": "vision"
+      }
+    ],
+    "fragment_count": 2,
+    "confidence_score": 0.7,
+    "quality_level": "medium",
+    "source_summary": "文本×1 | 视觉×1"
+  }
+]

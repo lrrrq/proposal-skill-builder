@@ -1,0 +1,71 @@
+[
+  {
+    "pattern_id": "b5034ba182bc",
+    "case_id": "case_0030",
+    "name": "视觉方向_01",
+    "pattern_type": "visual_direction",
+    "description": "大全景航拍，校园整体的轮廓造型在光 影中格外清晰，混剪快切，绕着多个不 同的单体建筑飞多几个不同角度的航拍， 教学楼、综 | Creative：创意概要 大致镜头画面 ( 镜头画面描述) 中景拍摄，镜头缓缓推近，特写聚焦在 学校大门以及校牌名称上 | 全景拍摄，通过学门口绿植无缝转场至 校区中庭绿化休闲区，在这里绿植更为 繁茂，高低错落有致，光影透过植被枝 叶的缝隙洒下",
+    "source_fragment_ids": [
+      {
+        "fragment_id": "c02dbe0bb45e",
+        "layer": "text"
+      },
+      {
+        "fragment_id": "26a9b9406a23",
+        "layer": "text"
+      },
+      {
+        "fragment_id": "30f251347e9b",
+        "layer": "text"
+      },
+      {
+        "fragment_id": "9765b6cc6c12",
+        "layer": "text"
+      },
+      {
+        "fragment_id": "aacba4e8de48",
+        "layer": "text"
+      },
+      {
+        "fragment_id": "d9629e0be5b1",
+        "layer": "text"
+      },
+      {
+        "fragment_id": "508d2d7915f5",
+        "layer": "text"
+      },
+      {
+        "fragment_id": "86744701c990",
+        "layer": "text"
+      },
+      {
+        "fragment_id": "2abcc11069c1",
+        "layer": "text"
+      },
+      {
+        "fragment_id": "5f89b02209e2",
+        "layer": "text"
+      },
+      {
+        "fragment_id": "57f1457be5b5",
+        "layer": "text"
+      },
+      {
+        "fragment_id": "0759d1b472b5",
+        "layer": "text"
+      },
+      {
+        "fragment_id": "cfde5a424b19",
+        "layer": "text"
+      },
+      {
+        "fragment_id": "fe80759e3bcc",
+        "layer": "text"
+      }
+    ],
+    "fragment_count": 14,
+    "confidence_score": 1.0,
+    "quality_level": "medium",
+    "source_summary": "文本×14"
+  }
+]

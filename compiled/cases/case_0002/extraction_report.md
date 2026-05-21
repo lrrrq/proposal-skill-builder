@@ -1,20 +1,25 @@
 # Extraction Report
 
 **Case ID**: case_0002
-**生成时间**: 2026-05-12T14:56:04.538353
+**生成时间**: 2026-05-21T16:50:37.045862
 
 ## 统计
 
 - **Pages**: 1
 - **Fragments**: 1
+- **Assets**: 0
+- **需要视觉审查**: 0
+- **纯文本页面**: 1
+- **图像为主页面**: 0
 
-## Fragment 概览
+## Assets
 
-### 0d43eb4bb943 (title)
+*无视觉资产（仅文本）*
+
+## Fragments
+
+### fe705a2bab6f (title)
 - **Summary**: test content...
-- **Keywords**: test, content
-- **Quality**: normal
-- **Raw length**: 12 chars
 
 ---
 

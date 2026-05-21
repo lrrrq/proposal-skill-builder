@@ -1,0 +1,191 @@
+[
+  {
+    "pattern_id": "5cc10f92d20a",
+    "case_id": "case_0023",
+    "name": "策略_01",
+    "pattern_type": "strategy",
+    "description": "这是一张典型的项目策划案封面。页面以白色为底，背景层是一张浅灰色的建筑平面设计图（显示为“80m连接桥”）。页面上方显著 | 页面顶部左右分布着品牌Logo和项目类别文字。中间是一个横向的长条形风景背景图，展示了从空中俯瞰的海滨山脉景观，伴有云雾 | 页面背景为深色调，带有紫色和蓝色的抽象流动纹理。左侧上方是Snow Peak的品牌Logo，下方为项目创意概要的文字描述",
+    "source_fragment_ids": [
+      {
+        "fragment_id": "688603d850ae",
+        "layer": "text"
+      },
+      {
+        "fragment_id": "b73233179a76",
+        "layer": "text"
+      },
+      {
+        "fragment_id": "ai-c8dd3571",
+        "layer": "vision"
+      },
+      {
+        "fragment_id": "ai-38332149",
+        "layer": "vision"
+      },
+      {
+        "fragment_id": "ai-5c40a902",
+        "layer": "vision"
+      },
+      {
+        "fragment_id": "ai-33f967f6",
+        "layer": "vision"
+      },
+      {
+        "fragment_id": "ai-cc320409",
+        "layer": "vision"
+      },
+      {
+        "fragment_id": "ai-648c6d1f",
+        "layer": "vision"
+      },
+      {
+        "fragment_id": "ai-bcfda3ff",
+        "layer": "vision"
+      },
+      {
+        "fragment_id": "ai-75d9446b",
+        "layer": "vision"
+      }
+    ],
+    "fragment_count": 10,
+    "confidence_score": 1.0,
+    "quality_level": "medium",
+    "source_summary": "文本×2 | 视觉×8"
+  },
+  {
+    "pattern_id": "d5368b04fb6d",
+    "case_id": "case_0023",
+    "name": "内容结构_01",
+    "pattern_type": "content_structure",
+    "description": "这是一张典型的项目策划案封面。页面以白色为底，背景层是一张浅灰色的建筑平面设计图（显示为“80m连接桥”）。页面上方显著 | 页面顶部左右分布着品牌Logo和项目类别文字。中间是一个横向的长条形风景背景图，展示了从空中俯瞰的海滨山脉景观，伴有云雾 | 页面背景为深色调，带有紫色和蓝色的抽象流动纹理。左侧上方是Snow Peak的品牌Logo，下方为项目创意概要的文字描述",
+    "source_fragment_ids": [
+      {
+        "fragment_id": "ai-c8dd3571",
+        "layer": "vision"
+      },
+      {
+        "fragment_id": "ai-38332149",
+        "layer": "vision"
+      },
+      {
+        "fragment_id": "ai-5c40a902",
+        "layer": "vision"
+      },
+      {
+        "fragment_id": "ai-33f967f6",
+        "layer": "vision"
+      },
+      {
+        "fragment_id": "ai-cc320409",
+        "layer": "vision"
+      },
+      {
+        "fragment_id": "ai-bcfda3ff",
+        "layer": "vision"
+      }
+    ],
+    "fragment_count": 6,
+    "confidence_score": 1.0,
+    "quality_level": "medium",
+    "source_summary": "视觉×6"
+  },
+  {
+    "pattern_id": "2c0ef7ec0366",
+    "case_id": "case_0023",
+    "name": "视觉方向_01",
+    "pattern_type": "visual_direction",
+    "description": "这是一张典型的项目策划案封面。页面以白色为底，背景层是一张浅灰色的建筑平面设计图（显示为“80m连接桥”）。页面上方显著 | 页面顶部左右分布着品牌Logo和项目类别文字。中间是一个横向的长条形风景背景图，展示了从空中俯瞰的海滨山脉景观，伴有云雾 | 页面背景为深色调，带有紫色和蓝色的抽象流动纹理。左侧上方是Snow Peak的品牌Logo，下方为项目创意概要的文字描述",
+    "source_fragment_ids": [
+      {
+        "fragment_id": "688603d850ae",
+        "layer": "text"
+      },
+      {
+        "fragment_id": "ai-c8dd3571",
+        "layer": "vision"
+      },
+      {
+        "fragment_id": "ai-38332149",
+        "layer": "vision"
+      },
+      {
+        "fragment_id": "ai-5c40a902",
+        "layer": "vision"
+      },
+      {
+        "fragment_id": "ai-33f967f6",
+        "layer": "vision"
+      },
+      {
+        "fragment_id": "ai-cc320409",
+        "layer": "vision"
+      },
+      {
+        "fragment_id": "ai-648c6d1f",
+        "layer": "vision"
+      },
+      {
+        "fragment_id": "ai-bcfda3ff",
+        "layer": "vision"
+      },
+      {
+        "fragment_id": "ai-75d9446b",
+        "layer": "vision"
+      }
+    ],
+    "fragment_count": 9,
+    "confidence_score": 1.0,
+    "quality_level": "medium",
+    "source_summary": "文本×1 | 视觉×8"
+  },
+  {
+    "pattern_id": "f9aa27ec8415",
+    "case_id": "case_0023",
+    "name": "受众洞察_01",
+    "pattern_type": "audience_insight",
+    "description": "页面背景为深色调，带有紫色和蓝色的抽象流动纹理。左侧上方是Snow Peak的品牌Logo，下方为项目创意概要的文字描述 | 这是一张Snow Peak品牌的创意视频脚本策划页。页面左侧为详细的文字分镜脚本，描述了五个镜头序列；右侧是视觉参考图组 | 这是一张黑色背景的创意策划案页面。左侧是绿色的文字标题和详细的视频脚本大纲（编号006-013）。右侧由三张图片组成：上",
+    "source_fragment_ids": [
+      {
+        "fragment_id": "ai-5c40a902",
+        "layer": "vision"
+      },
+      {
+        "fragment_id": "ai-33f967f6",
+        "layer": "vision"
+      },
+      {
+        "fragment_id": "ai-cc320409",
+        "layer": "vision"
+      },
+      {
+        "fragment_id": "ai-648c6d1f",
+        "layer": "vision"
+      },
+      {
+        "fragment_id": "ai-bcfda3ff",
+        "layer": "vision"
+      }
+    ],
+    "fragment_count": 5,
+    "confidence_score": 1.0,
+    "quality_level": "medium",
+    "source_summary": "视觉×5"
+  },
+  {
+    "pattern_id": "f1759ce924b7",
+    "case_id": "case_0023",
+    "name": "执行方法_01",
+    "pattern_type": "execution_method",
+    "description": "这是一张典型的项目策划案封面。页面以白色为底，背景层是一张浅灰色的建筑平面设计图（显示为“80m连接桥”）。页面上方显著",
+    "source_fragment_ids": [
+      {
+        "fragment_id": "ai-c8dd3571",
+        "layer": "vision"
+      }
+    ],
+    "fragment_count": 1,
+    "confidence_score": 0.6,
+    "quality_level": "high",
+    "source_summary": "视觉×1"
+  }
+]

@@ -1,0 +1,122 @@
+[
+  {
+    "pattern_id": "2bd7698f3c15",
+    "case_id": "case_0046",
+    "name": "策略_01",
+    "pattern_type": "strategy",
+    "description": "设问（以字幕方式呈现提问）： 1. 变，与不变 ... | Reference ：参考片 有些话想说给你听 ... | Reference ：参考片 你永远可以相信自己...",
+    "source_fragment_ids": [
+      {
+        "fragment_id": "5c0d0fb22aeb",
+        "layer": "text"
+      },
+      {
+        "fragment_id": "4286561e4427",
+        "layer": "text"
+      },
+      {
+        "fragment_id": "5dca163d2faf",
+        "layer": "text"
+      }
+    ],
+    "fragment_count": 3,
+    "confidence_score": 0.8,
+    "quality_level": "medium",
+    "source_summary": "文本×3"
+  },
+  {
+    "pattern_id": "88c040d5059a",
+    "case_id": "case_0046",
+    "name": "视觉方向_01",
+    "pattern_type": "visual_direction",
+    "description": "恰同学少年 本片以毕业生初入职场多个命题为主线，... | 多角度航拍美的总部，切换地面仰拍美 的总部大楼，空镜特写，办公园区林荫 细微处树影婆娑，B G M 渐起，出片头 字幕“ | Creative：分镜概要 分镜头画面 出手写体...",
+    "source_fragment_ids": [
+      {
+        "fragment_id": "f4192686ae9f",
+        "layer": "text"
+      },
+      {
+        "fragment_id": "67870e94b526",
+        "layer": "text"
+      },
+      {
+        "fragment_id": "7a83a8053e6f",
+        "layer": "text"
+      },
+      {
+        "fragment_id": "bd5de8101af1",
+        "layer": "text"
+      },
+      {
+        "fragment_id": "ca8d00658785",
+        "layer": "text"
+      },
+      {
+        "fragment_id": "cde9033470c4",
+        "layer": "text"
+      },
+      {
+        "fragment_id": "487522334973",
+        "layer": "text"
+      },
+      {
+        "fragment_id": "04aae9653a5d",
+        "layer": "text"
+      },
+      {
+        "fragment_id": "078352f61f93",
+        "layer": "text"
+      },
+      {
+        "fragment_id": "4286561e4427",
+        "layer": "text"
+      },
+      {
+        "fragment_id": "fea7d84104a3",
+        "layer": "text"
+      }
+    ],
+    "fragment_count": 11,
+    "confidence_score": 1.0,
+    "quality_level": "medium",
+    "source_summary": "文本×11"
+  },
+  {
+    "pattern_id": "367a2372f680",
+    "case_id": "case_0046",
+    "name": "受众洞察_01",
+    "pattern_type": "audience_insight",
+    "description": "Creative：分镜概要 分镜头画面 出手写体... | Reference ：参考片 有些话想说给你听 ...",
+    "source_fragment_ids": [
+      {
+        "fragment_id": "487522334973",
+        "layer": "text"
+      },
+      {
+        "fragment_id": "4286561e4427",
+        "layer": "text"
+      }
+    ],
+    "fragment_count": 2,
+    "confidence_score": 0.7,
+    "quality_level": "medium",
+    "source_summary": "文本×2"
+  },
+  {
+    "pattern_id": "469686ef9e89",
+    "case_id": "case_0046",
+    "name": "执行方法_01",
+    "pattern_type": "execution_method",
+    "description": "Reference ：参考片 有些话想说给你听 ...",
+    "source_fragment_ids": [
+      {
+        "fragment_id": "4286561e4427",
+        "layer": "text"
+      }
+    ],
+    "fragment_count": 1,
+    "confidence_score": 0.6,
+    "quality_level": "high",
+    "source_summary": "文本×1"
+  }
+]

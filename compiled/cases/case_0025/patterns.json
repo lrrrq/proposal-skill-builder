@@ -1,0 +1,158 @@
+[
+  {
+    "pattern_id": "788a1b36d48d",
+    "case_id": "case_0025",
+    "name": "策略_01",
+    "pattern_type": "strategy",
+    "description": "这是一张简洁现代的PPT目录页。左侧占据约三分之一画幅的是一张具有纵深感的现代建筑内部摄影图，表现出银灰色金属质感的立柱 | 画面背景采用了一张极具科技感与未来感的人像抽象艺术图，人物轮廓由明亮的霓虹线条（洋红、翠绿、宝蓝）交织构成，呈现出流动与 | 这是一张酒店品牌营销策划方案的视觉展示页。背景为纯黑色，文字采用亮绿色和白色。页面右侧展示了四张图片：上方是广州琶洲万怡",
+    "source_fragment_ids": [
+      {
+        "fragment_id": "22b2e237d436",
+        "layer": "text"
+      },
+      {
+        "fragment_id": "dff985e226cf",
+        "layer": "text"
+      },
+      {
+        "fragment_id": "048c1ca82493",
+        "layer": "text"
+      },
+      {
+        "fragment_id": "ai-3392c103",
+        "layer": "vision"
+      },
+      {
+        "fragment_id": "ai-2d013d2a",
+        "layer": "vision"
+      },
+      {
+        "fragment_id": "ai-e0d8e17a",
+        "layer": "vision"
+      },
+      {
+        "fragment_id": "ai-7af77e9c",
+        "layer": "vision"
+      }
+    ],
+    "fragment_count": 7,
+    "confidence_score": 1.0,
+    "quality_level": "medium",
+    "source_summary": "文本×3 | 视觉×4"
+  },
+  {
+    "pattern_id": "637d67207ad2",
+    "case_id": "case_0025",
+    "name": "内容结构_01",
+    "pattern_type": "content_structure",
+    "description": "这是一张简洁现代的PPT目录页。左侧占据约三分之一画幅的是一张具有纵深感的现代建筑内部摄影图，表现出银灰色金属质感的立柱",
+    "source_fragment_ids": [
+      {
+        "fragment_id": "ai-3392c103",
+        "layer": "vision"
+      }
+    ],
+    "fragment_count": 1,
+    "confidence_score": 0.6,
+    "quality_level": "high",
+    "source_summary": "视觉×1"
+  },
+  {
+    "pattern_id": "1beca06860a6",
+    "case_id": "case_0025",
+    "name": "视觉方向_01",
+    "pattern_type": "visual_direction",
+    "description": "画面以一名长发女性的侧影为中心，采用了极具动感的红蓝撞色光影效果。背景中流动的红色光影线条营造出一种“光绘”或“流光溢彩 | 这是一张简洁现代的PPT目录页。左侧占据约三分之一画幅的是一张具有纵深感的现代建筑内部摄影图，表现出银灰色金属质感的立柱 | 画面背景采用了一张极具科技感与未来感的人像抽象艺术图，人物轮廓由明亮的霓虹线条（洋红、翠绿、宝蓝）交织构成，呈现出流动与",
+    "source_fragment_ids": [
+      {
+        "fragment_id": "22b2e237d436",
+        "layer": "text"
+      },
+      {
+        "fragment_id": "dff985e226cf",
+        "layer": "text"
+      },
+      {
+        "fragment_id": "048c1ca82493",
+        "layer": "text"
+      },
+      {
+        "fragment_id": "b4af1346af42",
+        "layer": "text"
+      },
+      {
+        "fragment_id": "c45f6c341dca",
+        "layer": "text"
+      },
+      {
+        "fragment_id": "a2f15ff890dd",
+        "layer": "text"
+      },
+      {
+        "fragment_id": "a5d021f8537f",
+        "layer": "text"
+      },
+      {
+        "fragment_id": "e89c769b1bb9",
+        "layer": "text"
+      },
+      {
+        "fragment_id": "2f7ecacd8fe4",
+        "layer": "text"
+      },
+      {
+        "fragment_id": "e64248bc6381",
+        "layer": "text"
+      },
+      {
+        "fragment_id": "ai-b96675a0",
+        "layer": "vision"
+      },
+      {
+        "fragment_id": "ai-3392c103",
+        "layer": "vision"
+      },
+      {
+        "fragment_id": "ai-2d013d2a",
+        "layer": "vision"
+      },
+      {
+        "fragment_id": "ai-e0d8e17a",
+        "layer": "vision"
+      },
+      {
+        "fragment_id": "ai-7af77e9c",
+        "layer": "vision"
+      },
+      {
+        "fragment_id": "ai-93fc8f9d",
+        "layer": "vision"
+      }
+    ],
+    "fragment_count": 16,
+    "confidence_score": 1.0,
+    "quality_level": "medium",
+    "source_summary": "文本×10 | 视觉×6"
+  },
+  {
+    "pattern_id": "044ab1575fcf",
+    "case_id": "case_0025",
+    "name": "执行方法_01",
+    "pattern_type": "execution_method",
+    "description": "Creative outline ：创意脚本 ... | Creative content ：创意脚本 ...",
+    "source_fragment_ids": [
+      {
+        "fragment_id": "a5d021f8537f",
+        "layer": "text"
+      },
+      {
+        "fragment_id": "2f7ecacd8fe4",
+        "layer": "text"
+      }
+    ],
+    "fragment_count": 2,
+    "confidence_score": 0.7,
+    "quality_level": "medium",
+    "source_summary": "文本×2"
+  }
+]

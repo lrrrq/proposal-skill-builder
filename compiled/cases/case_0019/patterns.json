@@ -1,0 +1,251 @@
+[
+  {
+    "pattern_id": "f7de249891e3",
+    "case_id": "case_0019",
+    "name": "策略_01",
+    "pattern_type": "strategy",
+    "description": "画面以一位戴墨镜、手举橙色购物袋的活力女性为视觉主体，背景是现代感的户外街区。图像右侧有一个巨大的细线白色圆形色块进行构 | 页面左侧有一张摄影作品，画面中几位年轻女性在户外街道背景下展示出活力，前景中的女性用双手比出一个取景框。图片下方叠放了一 | 页面采用深黑色背景，左侧为文字说明，配有荧光绿的装饰线条和进度条样式的色块。右侧和底部排列了四张摄影图片：上方一张较大的",
+    "source_fragment_ids": [
+      {
+        "fragment_id": "0253c08bbc2a",
+        "layer": "text"
+      },
+      {
+        "fragment_id": "eee681e5dbc1",
+        "layer": "text"
+      },
+      {
+        "fragment_id": "ai-f28f3149",
+        "layer": "vision"
+      },
+      {
+        "fragment_id": "ai-134fdf26",
+        "layer": "vision"
+      },
+      {
+        "fragment_id": "ai-1292a806",
+        "layer": "vision"
+      },
+      {
+        "fragment_id": "ai-9c67d9bd",
+        "layer": "vision"
+      },
+      {
+        "fragment_id": "ai-92fd6d67",
+        "layer": "vision"
+      },
+      {
+        "fragment_id": "ai-229b0a6b",
+        "layer": "vision"
+      },
+      {
+        "fragment_id": "ai-5da7a4de",
+        "layer": "vision"
+      },
+      {
+        "fragment_id": "ai-cde6a676",
+        "layer": "vision"
+      },
+      {
+        "fragment_id": "ai-7f1abeed",
+        "layer": "vision"
+      },
+      {
+        "fragment_id": "ai-bdf07c59",
+        "layer": "vision"
+      }
+    ],
+    "fragment_count": 12,
+    "confidence_score": 1.0,
+    "quality_level": "medium",
+    "source_summary": "文本×2 | 视觉×10"
+  },
+  {
+    "pattern_id": "a08d8a3537d5",
+    "case_id": "case_0019",
+    "name": "内容结构_01",
+    "pattern_type": "content_structure",
+    "description": "页面左侧有一张摄影作品，画面中几位年轻女性在户外街道背景下展示出活力，前景中的女性用双手比出一个取景框。图片下方叠放了一 | 页面采用深黑色背景，左侧为文字说明，配有荧光绿的装饰线条和进度条样式的色块。右侧和底部排列了四张摄影图片：上方一张较大的 | 页面采用深色背景（全黑），配以高饱和度的荧光绿作为点缀色。左右两侧排布了四张生活方式类实拍照片：左侧包含女性吹泡泡和开怀",
+    "source_fragment_ids": [
+      {
+        "fragment_id": "ai-134fdf26",
+        "layer": "vision"
+      },
+      {
+        "fragment_id": "ai-1292a806",
+        "layer": "vision"
+      },
+      {
+        "fragment_id": "ai-9c67d9bd",
+        "layer": "vision"
+      },
+      {
+        "fragment_id": "ai-92fd6d67",
+        "layer": "vision"
+      },
+      {
+        "fragment_id": "ai-229b0a6b",
+        "layer": "vision"
+      },
+      {
+        "fragment_id": "ai-5da7a4de",
+        "layer": "vision"
+      },
+      {
+        "fragment_id": "ai-cde6a676",
+        "layer": "vision"
+      },
+      {
+        "fragment_id": "ai-7f1abeed",
+        "layer": "vision"
+      }
+    ],
+    "fragment_count": 8,
+    "confidence_score": 1.0,
+    "quality_level": "medium",
+    "source_summary": "视觉×8"
+  },
+  {
+    "pattern_id": "40416847ba8e",
+    "case_id": "case_0019",
+    "name": "视觉方向_01",
+    "pattern_type": "visual_direction",
+    "description": "画面以一位戴墨镜、手举橙色购物袋的活力女性为视觉主体，背景是现代感的户外街区。图像右侧有一个巨大的细线白色圆形色块进行构 | 页面左侧有一张摄影作品，画面中几位年轻女性在户外街道背景下展示出活力，前景中的女性用双手比出一个取景框。图片下方叠放了一 | 页面采用深黑色背景，左侧为文字说明，配有荧光绿的装饰线条和进度条样式的色块。右侧和底部排列了四张摄影图片：上方一张较大的",
+    "source_fragment_ids": [
+      {
+        "fragment_id": "0253c08bbc2a",
+        "layer": "text"
+      },
+      {
+        "fragment_id": "ai-f28f3149",
+        "layer": "vision"
+      },
+      {
+        "fragment_id": "ai-134fdf26",
+        "layer": "vision"
+      },
+      {
+        "fragment_id": "ai-1292a806",
+        "layer": "vision"
+      },
+      {
+        "fragment_id": "ai-9c67d9bd",
+        "layer": "vision"
+      },
+      {
+        "fragment_id": "ai-92fd6d67",
+        "layer": "vision"
+      },
+      {
+        "fragment_id": "ai-229b0a6b",
+        "layer": "vision"
+      },
+      {
+        "fragment_id": "ai-5da7a4de",
+        "layer": "vision"
+      },
+      {
+        "fragment_id": "ai-cde6a676",
+        "layer": "vision"
+      },
+      {
+        "fragment_id": "ai-7f1abeed",
+        "layer": "vision"
+      },
+      {
+        "fragment_id": "ai-bdf07c59",
+        "layer": "vision"
+      }
+    ],
+    "fragment_count": 11,
+    "confidence_score": 1.0,
+    "quality_level": "medium",
+    "source_summary": "文本×1 | 视觉×10"
+  },
+  {
+    "pattern_id": "8c24bd6d089a",
+    "case_id": "case_0019",
+    "name": "受众洞察_01",
+    "pattern_type": "audience_insight",
+    "description": "画面以一位戴墨镜、手举橙色购物袋的活力女性为视觉主体，背景是现代感的户外街区。图像右侧有一个巨大的细线白色圆形色块进行构 | 页面采用深黑色背景，左侧为文字说明，配有荧光绿的装饰线条和进度条样式的色块。右侧和底部排列了四张摄影图片：上方一张较大的 | 页面采用深色背景（全黑），配以高饱和度的荧光绿作为点缀色。左右两侧排布了四张生活方式类实拍照片：左侧包含女性吹泡泡和开怀",
+    "source_fragment_ids": [
+      {
+        "fragment_id": "cdf86163a622",
+        "layer": "text"
+      },
+      {
+        "fragment_id": "7dad3bce3786",
+        "layer": "text"
+      },
+      {
+        "fragment_id": "eee681e5dbc1",
+        "layer": "text"
+      },
+      {
+        "fragment_id": "ai-f28f3149",
+        "layer": "vision"
+      },
+      {
+        "fragment_id": "ai-1292a806",
+        "layer": "vision"
+      },
+      {
+        "fragment_id": "ai-9c67d9bd",
+        "layer": "vision"
+      },
+      {
+        "fragment_id": "ai-92fd6d67",
+        "layer": "vision"
+      },
+      {
+        "fragment_id": "ai-229b0a6b",
+        "layer": "vision"
+      },
+      {
+        "fragment_id": "ai-5da7a4de",
+        "layer": "vision"
+      },
+      {
+        "fragment_id": "ai-cde6a676",
+        "layer": "vision"
+      },
+      {
+        "fragment_id": "ai-7f1abeed",
+        "layer": "vision"
+      }
+    ],
+    "fragment_count": 11,
+    "confidence_score": 1.0,
+    "quality_level": "medium",
+    "source_summary": "文本×3 | 视觉×8"
+  },
+  {
+    "pattern_id": "007016ab1bb8",
+    "case_id": "case_0019",
+    "name": "执行方法_01",
+    "pattern_type": "execution_method",
+    "description": "页面采用深黑色背景，左侧为文字说明，配有荧光绿的装饰线条和进度条样式的色块。右侧和底部排列了四张摄影图片：上方一张较大的 | 页面右侧由五张反映都市生活方式的摄影作品组成，包括三位女性在咖啡馆自拍、两位女性在录音室弹奏电吉他、一位女性轻嗅鲜花、一 | 页面左侧为绿色与黑色文字构成的创意脚本大纲，右侧是由五张高质量摄影作品组成的拼贴画。图片展示了多元的生活方式场景：一名在",
+    "source_fragment_ids": [
+      {
+        "fragment_id": "ai-1292a806",
+        "layer": "vision"
+      },
+      {
+        "fragment_id": "ai-229b0a6b",
+        "layer": "vision"
+      },
+      {
+        "fragment_id": "ai-5da7a4de",
+        "layer": "vision"
+      },
+      {
+        "fragment_id": "ai-cde6a676",
+        "layer": "vision"
+      }
+    ],
+    "fragment_count": 4,
+    "confidence_score": 0.9,
+    "quality_level": "medium",
+    "source_summary": "视觉×4"
+  }
+]

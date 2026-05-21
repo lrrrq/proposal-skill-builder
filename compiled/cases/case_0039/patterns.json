@@ -1,0 +1,158 @@
+[
+  {
+    "pattern_id": "e745c16857aa",
+    "case_id": "case_0039",
+    "name": "策略_01",
+    "pattern_type": "strategy",
+    "description": "概要 古有大禹治水，今有智慧水务，全片贯穿“智慧排水”专项 三大核心项目，通过对各项目实地实景拍摄，后期将影像素 材汇编 | Creative Brief：创意纲要（旁白文案） “智慧排水9+2” （字幕） （旁白） 广州市水务局“智慧排水”专项 | Creative Brief：创意纲要（镜头画面） 12 摆拍核心技术人员工作场景，根据智能数据开会，讨论 决策场景，间",
+    "source_fragment_ids": [
+      {
+        "fragment_id": "5f9d89f8d017",
+        "layer": "text"
+      },
+      {
+        "fragment_id": "b125627da837",
+        "layer": "text"
+      },
+      {
+        "fragment_id": "6f7bd2c8837b",
+        "layer": "text"
+      },
+      {
+        "fragment_id": "12ead430907f",
+        "layer": "text"
+      }
+    ],
+    "fragment_count": 4,
+    "confidence_score": 0.9,
+    "quality_level": "medium",
+    "source_summary": "文本×4"
+  },
+  {
+    "pattern_id": "ce9f48105fcd",
+    "case_id": "case_0039",
+    "name": "内容结构_01",
+    "pattern_type": "content_structure",
+    "description": "Creative Brief：创意纲要（镜头画面） 3 出章节转切过渡片头，背景动态画面是流动的水面上闪动 着数字科技元 | Creative Brief：创意纲要（镜头画面） 5 出章节转切过渡片头，背景动态画面是流动的水面上闪动 着数字科技元 | Creative Brief：创意纲要（镜头画面） 8 出章节转切过渡片头，背景动态画面是流动的水面上闪动 着数字科技元",
+    "source_fragment_ids": [
+      {
+        "fragment_id": "9398a2478965",
+        "layer": "text"
+      },
+      {
+        "fragment_id": "96b1b8e6f2f6",
+        "layer": "text"
+      },
+      {
+        "fragment_id": "54f4ad4afabb",
+        "layer": "text"
+      },
+      {
+        "fragment_id": "20d0e91a4231",
+        "layer": "text"
+      },
+      {
+        "fragment_id": "d2112d40b31b",
+        "layer": "text"
+      }
+    ],
+    "fragment_count": 5,
+    "confidence_score": 1.0,
+    "quality_level": "medium",
+    "source_summary": "文本×5"
+  },
+  {
+    "pattern_id": "cc0b9fe07009",
+    "case_id": "case_0039",
+    "name": "视觉方向_01",
+    "pattern_type": "visual_direction",
+    "description": "概要 古有大禹治水，今有智慧水务，全片贯穿“智慧排水”专项 三大核心项目，通过对各项目实地实景拍摄，后期将影像素 材汇编 | Creative Brief：创意纲要（镜头画面） 1 透过一滴水出广州城市大景，放大拉阔，出广州城市航拍 大景，猎德大 | Creative Brief：创意纲要（镜头画面） GUANGZHOU WATER BUREAU",
+    "source_fragment_ids": [
+      {
+        "fragment_id": "5f9d89f8d017",
+        "layer": "text"
+      },
+      {
+        "fragment_id": "9c2863ba0523",
+        "layer": "text"
+      },
+      {
+        "fragment_id": "6bdd2d85f119",
+        "layer": "text"
+      },
+      {
+        "fragment_id": "9398a2478965",
+        "layer": "text"
+      },
+      {
+        "fragment_id": "dace84251458",
+        "layer": "text"
+      },
+      {
+        "fragment_id": "96b1b8e6f2f6",
+        "layer": "text"
+      },
+      {
+        "fragment_id": "bdd17efabc2b",
+        "layer": "text"
+      },
+      {
+        "fragment_id": "54f4ad4afabb",
+        "layer": "text"
+      },
+      {
+        "fragment_id": "05e61e654edf",
+        "layer": "text"
+      },
+      {
+        "fragment_id": "20d0e91a4231",
+        "layer": "text"
+      },
+      {
+        "fragment_id": "6f7bd2c8837b",
+        "layer": "text"
+      },
+      {
+        "fragment_id": "d2112d40b31b",
+        "layer": "text"
+      },
+      {
+        "fragment_id": "b0e20edd345a",
+        "layer": "text"
+      }
+    ],
+    "fragment_count": 13,
+    "confidence_score": 1.0,
+    "quality_level": "medium",
+    "source_summary": "文本×13"
+  },
+  {
+    "pattern_id": "28c245b8f988",
+    "case_id": "case_0039",
+    "name": "执行方法_01",
+    "pattern_type": "execution_method",
+    "description": "Creative Brief：创意纲要（旁白文案） “智慧排水9+2” （字幕） （旁白） 广州市水务局“智慧排水”专项 | Creative Brief：创意纲要（旁白文案） “智理汛涝 防灾减灾” 项目二：广州市三防指挥信息化建设项目（字幕） | Creative Brief：创意纲要（旁白文案） “云上水务 数据智享” 项目三：广州水务一体化平台（字幕） （旁白）",
+    "source_fragment_ids": [
+      {
+        "fragment_id": "b125627da837",
+        "layer": "text"
+      },
+      {
+        "fragment_id": "00dffe1ca1ac",
+        "layer": "text"
+      },
+      {
+        "fragment_id": "b50a308adf2a",
+        "layer": "text"
+      },
+      {
+        "fragment_id": "12ead430907f",
+        "layer": "text"
+      }
+    ],
+    "fragment_count": 4,
+    "confidence_score": 0.9,
+    "quality_level": "medium",
+    "source_summary": "文本×4"
+  }
+]

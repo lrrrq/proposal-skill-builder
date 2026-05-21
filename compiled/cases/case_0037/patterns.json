@@ -1,0 +1,235 @@
+[
+  {
+    "pattern_id": "4ce3680c09dc",
+    "case_id": "case_0037",
+    "name": "策略_01",
+    "pattern_type": "strategy",
+    "description": "这是一张极简主义风格的项目策划案目录页。左侧展示一张带有威斯汀酒店品牌名称的黑白风景照片，画面呈现一种静谧、高端的艺术质 | 页面中心是一幅具有流动感的流体艺术背景图，呈现深绿、翠绿与黑色的交织纹理。左侧叠加了深蓝色的半透明几何图层，并通过一条醒 | 页面右侧由两张图片组成：上方是一张彩色照片，描绘一位女性身着白色无袖上衣，优雅地坐在现代风格的酒店室内喝咖啡；下方是一张",
+    "source_fragment_ids": [
+      {
+        "fragment_id": "8b9c1b7dc6f5",
+        "layer": "text"
+      },
+      {
+        "fragment_id": "56872a0dde10",
+        "layer": "text"
+      },
+      {
+        "fragment_id": "f84176684b66",
+        "layer": "text"
+      },
+      {
+        "fragment_id": "f67f628c6137",
+        "layer": "text"
+      },
+      {
+        "fragment_id": "ai-c1fc9d82",
+        "layer": "vision"
+      },
+      {
+        "fragment_id": "ai-33b1f767",
+        "layer": "vision"
+      },
+      {
+        "fragment_id": "ai-417abb9c",
+        "layer": "vision"
+      },
+      {
+        "fragment_id": "ai-88d96288",
+        "layer": "vision"
+      },
+      {
+        "fragment_id": "ai-3dd54d7d",
+        "layer": "vision"
+      },
+      {
+        "fragment_id": "ai-d15a5b05",
+        "layer": "vision"
+      }
+    ],
+    "fragment_count": 10,
+    "confidence_score": 1.0,
+    "quality_level": "medium",
+    "source_summary": "文本×4 | 视觉×6"
+  },
+  {
+    "pattern_id": "9bdea86af6d4",
+    "case_id": "case_0037",
+    "name": "内容结构_01",
+    "pattern_type": "content_structure",
+    "description": "这是一张极简主义风格的项目策划案目录页。左侧展示一张带有威斯汀酒店品牌名称的黑白风景照片，画面呈现一种静谧、高端的艺术质 | 页面中心是一幅具有流动感的流体艺术背景图，呈现深绿、翠绿与黑色的交织纹理。左侧叠加了深蓝色的半透明几何图层，并通过一条醒 | 页面背景采用具有纹理感的暗调单色图像，表现出某种工业或原始建筑的质感。右侧嵌入了两张高质量的实景照片：上方是威斯汀酒店标",
+    "source_fragment_ids": [
+      {
+        "fragment_id": "ai-c1fc9d82",
+        "layer": "vision"
+      },
+      {
+        "fragment_id": "ai-33b1f767",
+        "layer": "vision"
+      },
+      {
+        "fragment_id": "ai-88d96288",
+        "layer": "vision"
+      },
+      {
+        "fragment_id": "ai-3dd54d7d",
+        "layer": "vision"
+      }
+    ],
+    "fragment_count": 4,
+    "confidence_score": 0.9,
+    "quality_level": "medium",
+    "source_summary": "视觉×4"
+  },
+  {
+    "pattern_id": "f28a594e5538",
+    "case_id": "case_0037",
+    "name": "视觉方向_01",
+    "pattern_type": "visual_direction",
+    "description": "画面背景是一张广交会威斯汀酒店建筑入口处的夜景摄影作品，展现了现代化的玻璃幕墙、开阔的广场和建筑灯光效果。左侧有一条黑色 | 这是一张极简主义风格的项目策划案目录页。左侧展示一张带有威斯汀酒店品牌名称的黑白风景照片，画面呈现一种静谧、高端的艺术质 | 页面中心是一幅具有流动感的流体艺术背景图，呈现深绿、翠绿与黑色的交织纹理。左侧叠加了深蓝色的半透明几何图层，并通过一条醒",
+    "source_fragment_ids": [
+      {
+        "fragment_id": "9cabc3ce0731",
+        "layer": "text"
+      },
+      {
+        "fragment_id": "b065df813325",
+        "layer": "text"
+      },
+      {
+        "fragment_id": "5bf7c3108cd4",
+        "layer": "text"
+      },
+      {
+        "fragment_id": "0ae5267b8024",
+        "layer": "text"
+      },
+      {
+        "fragment_id": "dd8ce55d9e70",
+        "layer": "text"
+      },
+      {
+        "fragment_id": "5c9a26216cc0",
+        "layer": "text"
+      },
+      {
+        "fragment_id": "1fc5bcf36273",
+        "layer": "text"
+      },
+      {
+        "fragment_id": "56872a0dde10",
+        "layer": "text"
+      },
+      {
+        "fragment_id": "75e4b4b5c0b2",
+        "layer": "text"
+      },
+      {
+        "fragment_id": "89fdd2d6aecc",
+        "layer": "text"
+      },
+      {
+        "fragment_id": "b38792961b7f",
+        "layer": "text"
+      },
+      {
+        "fragment_id": "e5f0c37553ce",
+        "layer": "text"
+      },
+      {
+        "fragment_id": "f84176684b66",
+        "layer": "text"
+      },
+      {
+        "fragment_id": "f67f628c6137",
+        "layer": "text"
+      },
+      {
+        "fragment_id": "ai-0203b11d",
+        "layer": "vision"
+      },
+      {
+        "fragment_id": "ai-c1fc9d82",
+        "layer": "vision"
+      },
+      {
+        "fragment_id": "ai-33b1f767",
+        "layer": "vision"
+      },
+      {
+        "fragment_id": "ai-417abb9c",
+        "layer": "vision"
+      },
+      {
+        "fragment_id": "ai-88d96288",
+        "layer": "vision"
+      },
+      {
+        "fragment_id": "ai-3dd54d7d",
+        "layer": "vision"
+      },
+      {
+        "fragment_id": "ai-d15a5b05",
+        "layer": "vision"
+      }
+    ],
+    "fragment_count": 21,
+    "confidence_score": 1.0,
+    "quality_level": "medium",
+    "source_summary": "文本×14 | 视觉×7"
+  },
+  {
+    "pattern_id": "fbca92dc1060",
+    "case_id": "case_0037",
+    "name": "受众洞察_01",
+    "pattern_type": "audience_insight",
+    "description": "页面中心是一幅具有流动感的流体艺术背景图，呈现深绿、翠绿与黑色的交织纹理。左侧叠加了深蓝色的半透明几何图层，并通过一条醒 | 页面右侧由两张图片组成：上方是一张彩色照片，描绘一位女性身着白色无袖上衣，优雅地坐在现代风格的酒店室内喝咖啡；下方是一张 | 页面背景采用具有纹理感的暗调单色图像，表现出某种工业或原始建筑的质感。右侧嵌入了两张高质量的实景照片：上方是威斯汀酒店标",
+    "source_fragment_ids": [
+      {
+        "fragment_id": "ai-33b1f767",
+        "layer": "vision"
+      },
+      {
+        "fragment_id": "ai-417abb9c",
+        "layer": "vision"
+      },
+      {
+        "fragment_id": "ai-88d96288",
+        "layer": "vision"
+      },
+      {
+        "fragment_id": "ai-3dd54d7d",
+        "layer": "vision"
+      }
+    ],
+    "fragment_count": 4,
+    "confidence_score": 0.9,
+    "quality_level": "medium",
+    "source_summary": "视觉×4"
+  },
+  {
+    "pattern_id": "19c7b543b271",
+    "case_id": "case_0037",
+    "name": "执行方法_01",
+    "pattern_type": "execution_method",
+    "description": "这是一张极简主义风格的项目策划案目录页。左侧展示一张带有威斯汀酒店品牌名称的黑白风景照片，画面呈现一种静谧、高端的艺术质 | 页面背景采用具有纹理感的暗调单色图像，表现出某种工业或原始建筑的质感。右侧嵌入了两张高质量的实景照片：上方是威斯汀酒店标 | | 0:46-1:00 | 空间交织： 转场切换...",
+    "source_fragment_ids": [
+      {
+        "fragment_id": "e5f0c37553ce",
+        "layer": "text"
+      },
+      {
+        "fragment_id": "ai-c1fc9d82",
+        "layer": "vision"
+      },
+      {
+        "fragment_id": "ai-88d96288",
+        "layer": "vision"
+      }
+    ],
+    "fragment_count": 3,
+    "confidence_score": 0.8,
+    "quality_level": "medium",
+    "source_summary": "文本×1 | 视觉×2"
+  }
+]

@@ -1,0 +1,706 @@
+[
+  {
+    "page_id": "case_0035_page_0001",
+    "case_id": "case_0035",
+    "page_number": 1,
+    "page_type": "text",
+    "text_content": [
+      "2 0 2 2 . 0 5 . 1 7",
+      "Kindergar     ten ",
+      "grad   uation ",
+      "photos",
+      "我们毕业啦",
+      "CREATIVE SCRIPT PLANNING OF KINDERGARTEN GRADUATION PHOTOS ",
+      "幼儿园毕业照 创意摄影纲要"
+    ],
+    "text_length": 140,
+    "raw_text": "2 0 2 2 . 0 5 . 1 7\nKindergar     ten \ngrad   uation \nphotos\n我们毕业啦\nCREATIVE SCRIPT PLANNING OF KINDERGARTEN GRADUATION PHOTOS \n幼儿园毕业照 创意摄影纲要",
+    "image_path": "/Applications/lrq/coding/proposal-skill-builder/compiled/cases/case_0035/page_images/page_001.png",
+    "has_text": true,
+    "needs_vision_review": false,
+    "summary": "2 0 2 2 . 0 5 . 1 7\nKindergar     ten \ngrad   uation \nphotos\n我们毕业啦\nCREATIVE SCRIPT PLANNING OF KINDERGARTEN GRADUATION P",
+    "quality_flags": [
+      "normal"
+    ],
+    "asset_id": "asset-296806ee"
+  },
+  {
+    "page_id": "case_0035_page_0002",
+    "case_id": "case_0035",
+    "page_number": 2,
+    "page_type": "text",
+    "text_content": [
+      "C o n t en t s",
+      "•",
+      "创意图示",
+      "•",
+      "创意说明",
+      "Kindergarten graduation photos"
+    ],
+    "text_length": 59,
+    "raw_text": "C o n t en t s\n•\n创意图示\n•\n创意说明\nKindergarten graduation photos",
+    "image_path": "/Applications/lrq/coding/proposal-skill-builder/compiled/cases/case_0035/page_images/page_002.png",
+    "has_text": true,
+    "needs_vision_review": false,
+    "summary": "C o n t en t s\n•\n创意图示\n•\n创意说明\nKindergarten graduation photos",
+    "quality_flags": [
+      "normal"
+    ],
+    "asset_id": "asset-e5873278"
+  },
+  {
+    "page_id": "case_0035_page_0003",
+    "case_id": "case_0035",
+    "page_number": 3,
+    "page_type": "text",
+    "text_content": [
+      "拍摄服装建议",
+      "学士服（毕业照）",
+      "Kindergarten graduation photos",
+      "班服（创意照&毕业照）"
+    ],
+    "text_length": 58,
+    "raw_text": "拍摄服装建议\n学士服（毕业照）\nKindergarten graduation photos\n班服（创意照&毕业照）",
+    "image_path": "/Applications/lrq/coding/proposal-skill-builder/compiled/cases/case_0035/page_images/page_003.png",
+    "has_text": true,
+    "needs_vision_review": false,
+    "summary": "拍摄服装建议\n学士服（毕业照）\nKindergarten graduation photos\n班服（创意照&毕业照）",
+    "quality_flags": [
+      "normal"
+    ],
+    "asset_id": "asset-c93363cd"
+  },
+  {
+    "page_id": "case_0035_page_0004",
+    "case_id": "case_0035",
+    "page_number": 4,
+    "page_type": "text",
+    "text_content": [
+      "Kindergarten graduation photos",
+      "创意拍摄描述及图示"
+    ],
+    "text_length": 40,
+    "raw_text": "Kindergarten graduation photos\n创意拍摄描述及图示",
+    "image_path": "/Applications/lrq/coding/proposal-skill-builder/compiled/cases/case_0035/page_images/page_004.png",
+    "has_text": true,
+    "needs_vision_review": false,
+    "summary": "Kindergarten graduation photos\n创意拍摄描述及图示",
+    "quality_flags": [
+      "normal"
+    ],
+    "asset_id": "asset-ab401f2d"
+  },
+  {
+    "page_id": "case_0035_page_0005",
+    "case_id": "case_0035",
+    "page_number": 5,
+    "page_type": "text",
+    "text_content": [
+      "拍摄类型 01",
+      "单人照（笑脸照）",
+      "毕业之际，来张正式的个人毕业照还是很有必要的，从刚到幼儿园的",
+      "小不点们一点一点长大，回想他们第一天来天和幼儿园，有哭、有闹",
+      "的小模样。而今，他们一个个长大了，要飞向更广阔的蓝天，这张单",
+      "人照是非常有纪念意义的。…… ……",
+      "以下，Enjoy",
+      "Kindergarten graduation photos"
+    ],
+    "text_length": 167,
+    "raw_text": "拍摄类型 01\n单人照（笑脸照）\n毕业之际，来张正式的个人毕业照还是很有必要的，从刚到幼儿园的\n小不点们一点一点长大，回想他们第一天来天和幼儿园，有哭、有闹\n的小模样。而今，他们一个个长大了，要飞向更广阔的蓝天，这张单\n人照是非常有纪念意义的。…… ……\n以下，Enjoy\nKindergarten graduation photos",
+    "image_path": "/Applications/lrq/coding/proposal-skill-builder/compiled/cases/case_0035/page_images/page_005.png",
+    "has_text": true,
+    "needs_vision_review": false,
+    "summary": "拍摄类型 01\n单人照（笑脸照）\n毕业之际，来张正式的个人毕业照还是很有必要的，从刚到幼儿园的\n小不点们一点一点长大，回想他们第一天来天和幼儿园，有哭、有闹\n的小模样。而今，他们一个个长大了，要飞向更广阔的蓝天，这张单\n人照是非常有纪念意义",
+    "quality_flags": [
+      "normal"
+    ],
+    "asset_id": "asset-92b792e7"
+  },
+  {
+    "page_id": "case_0035_page_0006",
+    "case_id": "case_0035",
+    "page_number": 6,
+    "page_type": "text",
+    "text_content": [
+      "拍摄类型 01  图示",
+      "Kindergarten graduation photos"
+    ],
+    "text_length": 42,
+    "raw_text": "拍摄类型 01  图示\nKindergarten graduation photos",
+    "image_path": "/Applications/lrq/coding/proposal-skill-builder/compiled/cases/case_0035/page_images/page_006.png",
+    "has_text": true,
+    "needs_vision_review": false,
+    "summary": "拍摄类型 01  图示\nKindergarten graduation photos",
+    "quality_flags": [
+      "normal"
+    ],
+    "asset_id": "asset-2b037c51"
+  },
+  {
+    "page_id": "case_0035_page_0007",
+    "case_id": "case_0035",
+    "page_number": 7,
+    "page_type": "text",
+    "text_content": [
+      "拍摄类型 01  图示",
+      "Kindergarten graduation photos"
+    ],
+    "text_length": 42,
+    "raw_text": "拍摄类型 01  图示\nKindergarten graduation photos",
+    "image_path": "/Applications/lrq/coding/proposal-skill-builder/compiled/cases/case_0035/page_images/page_007.png",
+    "has_text": true,
+    "needs_vision_review": false,
+    "summary": "拍摄类型 01  图示\nKindergarten graduation photos",
+    "quality_flags": [
+      "normal"
+    ],
+    "asset_id": "asset-67ff278f"
+  },
+  {
+    "page_id": "case_0035_page_0008",
+    "case_id": "case_0035",
+    "page_number": 8,
+    "page_type": "text",
+    "text_content": [
+      "拍摄类型 01  图示",
+      "Kindergarten graduation photos"
+    ],
+    "text_length": 42,
+    "raw_text": "拍摄类型 01  图示\nKindergarten graduation photos",
+    "image_path": "/Applications/lrq/coding/proposal-skill-builder/compiled/cases/case_0035/page_images/page_008.png",
+    "has_text": true,
+    "needs_vision_review": false,
+    "summary": "拍摄类型 01  图示\nKindergarten graduation photos",
+    "quality_flags": [
+      "normal"
+    ],
+    "asset_id": "asset-ab6391f2"
+  },
+  {
+    "page_id": "case_0035_page_0009",
+    "case_id": "case_0035",
+    "page_number": 9,
+    "page_type": "text",
+    "text_content": [
+      "拍摄类型 01  图示",
+      "Kindergarten graduation photos"
+    ],
+    "text_length": 42,
+    "raw_text": "拍摄类型 01  图示\nKindergarten graduation photos",
+    "image_path": "/Applications/lrq/coding/proposal-skill-builder/compiled/cases/case_0035/page_images/page_009.png",
+    "has_text": true,
+    "needs_vision_review": false,
+    "summary": "拍摄类型 01  图示\nKindergarten graduation photos",
+    "quality_flags": [
+      "normal"
+    ],
+    "asset_id": "asset-37d45fef"
+  },
+  {
+    "page_id": "case_0035_page_0010",
+    "case_id": "case_0035",
+    "page_number": 10,
+    "page_type": "text",
+    "text_content": [
+      "拍摄类型 02",
+      "团体合影（集体照）",
+      "三年的幼儿园生活即将结束，和可爱的小朋友、亲爱的园长老师阿姨",
+      "一起来张正式的毕业照，这个还是很有还是很必要的哦，穿上毕业服",
+      "（园服），正儿八经的给孩子们拍一张团体合影毕业照，通过具有仪",
+      "式感的环节，让孩子体验毕业的神圣与自豪。…… ……",
+      "以下，Enjoy",
+      "Kindergarten graduation photos"
+    ],
+    "text_length": 176,
+    "raw_text": "拍摄类型 02\n团体合影（集体照）\n三年的幼儿园生活即将结束，和可爱的小朋友、亲爱的园长老师阿姨\n一起来张正式的毕业照，这个还是很有还是很必要的哦，穿上毕业服\n（园服），正儿八经的给孩子们拍一张团体合影毕业照，通过具有仪\n式感的环节，让孩子体验毕业的神圣与自豪。…… ……\n以下，Enjoy\nKindergarten graduation photos",
+    "image_path": "/Applications/lrq/coding/proposal-skill-builder/compiled/cases/case_0035/page_images/page_010.png",
+    "has_text": true,
+    "needs_vision_review": false,
+    "summary": "拍摄类型 02\n团体合影（集体照）\n三年的幼儿园生活即将结束，和可爱的小朋友、亲爱的园长老师阿姨\n一起来张正式的毕业照，这个还是很有还是很必要的哦，穿上毕业服\n（园服），正儿八经的给孩子们拍一张团体合影毕业照，通过具有仪\n式感的环节，让孩子",
+    "quality_flags": [
+      "normal"
+    ],
+    "asset_id": "asset-a6640226"
+  },
+  {
+    "page_id": "case_0035_page_0011",
+    "case_id": "case_0035",
+    "page_number": 11,
+    "page_type": "text",
+    "text_content": [
+      "拍摄类型 02  图示",
+      "Kindergarten graduation photos"
+    ],
+    "text_length": 42,
+    "raw_text": "拍摄类型 02  图示\nKindergarten graduation photos",
+    "image_path": "/Applications/lrq/coding/proposal-skill-builder/compiled/cases/case_0035/page_images/page_011.png",
+    "has_text": true,
+    "needs_vision_review": false,
+    "summary": "拍摄类型 02  图示\nKindergarten graduation photos",
+    "quality_flags": [
+      "normal"
+    ],
+    "asset_id": "asset-68ba97b5"
+  },
+  {
+    "page_id": "case_0035_page_0012",
+    "case_id": "case_0035",
+    "page_number": 12,
+    "page_type": "text",
+    "text_content": [
+      "拍摄类型 02  图示",
+      "Kindergarten graduation photos"
+    ],
+    "text_length": 42,
+    "raw_text": "拍摄类型 02  图示\nKindergarten graduation photos",
+    "image_path": "/Applications/lrq/coding/proposal-skill-builder/compiled/cases/case_0035/page_images/page_012.png",
+    "has_text": true,
+    "needs_vision_review": false,
+    "summary": "拍摄类型 02  图示\nKindergarten graduation photos",
+    "quality_flags": [
+      "normal"
+    ],
+    "asset_id": "asset-132acdd8"
+  },
+  {
+    "page_id": "case_0035_page_0013",
+    "case_id": "case_0035",
+    "page_number": 13,
+    "page_type": "text",
+    "text_content": [
+      "拍摄类型 02  图示",
+      "Kindergarten graduation photos"
+    ],
+    "text_length": 42,
+    "raw_text": "拍摄类型 02  图示\nKindergarten graduation photos",
+    "image_path": "/Applications/lrq/coding/proposal-skill-builder/compiled/cases/case_0035/page_images/page_013.png",
+    "has_text": true,
+    "needs_vision_review": false,
+    "summary": "拍摄类型 02  图示\nKindergarten graduation photos",
+    "quality_flags": [
+      "normal"
+    ],
+    "asset_id": "asset-93288545"
+  },
+  {
+    "page_id": "case_0035_page_0014",
+    "case_id": "case_0035",
+    "page_number": 14,
+    "page_type": "text",
+    "text_content": [
+      "拍摄类型 02  图示",
+      "Kindergarten graduation photos"
+    ],
+    "text_length": 42,
+    "raw_text": "拍摄类型 02  图示\nKindergarten graduation photos",
+    "image_path": "/Applications/lrq/coding/proposal-skill-builder/compiled/cases/case_0035/page_images/page_014.png",
+    "has_text": true,
+    "needs_vision_review": false,
+    "summary": "拍摄类型 02  图示\nKindergarten graduation photos",
+    "quality_flags": [
+      "normal"
+    ],
+    "asset_id": "asset-de15a58d"
+  },
+  {
+    "page_id": "case_0035_page_0015",
+    "case_id": "case_0035",
+    "page_number": 15,
+    "page_type": "text",
+    "text_content": [
+      "拍摄类型 02  图示",
+      "Kindergarten graduation photos"
+    ],
+    "text_length": 42,
+    "raw_text": "拍摄类型 02  图示\nKindergarten graduation photos",
+    "image_path": "/Applications/lrq/coding/proposal-skill-builder/compiled/cases/case_0035/page_images/page_015.png",
+    "has_text": true,
+    "needs_vision_review": false,
+    "summary": "拍摄类型 02  图示\nKindergarten graduation photos",
+    "quality_flags": [
+      "normal"
+    ],
+    "asset_id": "asset-90b984c7"
+  },
+  {
+    "page_id": "case_0035_page_0016",
+    "case_id": "case_0035",
+    "page_number": 16,
+    "page_type": "text",
+    "text_content": [
+      "拍摄类型 03",
+      "借助道具，体现童真（组合照）",
+      "当然如果照片能有一些道具配合肯定最好，譬如五颜六色的气球，多",
+      "能体现童真快乐。道具准备：每人带一张写有自己名字的纯色纸；还",
+      "有写上我们毕业了几个大字的纸等。…… ……",
+      "以下，Enjoy",
+      "Kindergarten graduation photos"
+    ],
+    "text_length": 146,
+    "raw_text": "拍摄类型 03\n借助道具，体现童真（组合照）\n当然如果照片能有一些道具配合肯定最好，譬如五颜六色的气球，多\n能体现童真快乐。道具准备：每人带一张写有自己名字的纯色纸；还\n有写上我们毕业了几个大字的纸等。…… ……\n以下，Enjoy\nKindergarten graduation photos",
+    "image_path": "/Applications/lrq/coding/proposal-skill-builder/compiled/cases/case_0035/page_images/page_016.png",
+    "has_text": true,
+    "needs_vision_review": false,
+    "summary": "拍摄类型 03\n借助道具，体现童真（组合照）\n当然如果照片能有一些道具配合肯定最好，譬如五颜六色的气球，多\n能体现童真快乐。道具准备：每人带一张写有自己名字的纯色纸；还\n有写上我们毕业了几个大字的纸等。…… ……\n以下，Enjoy\nKind",
+    "quality_flags": [
+      "normal"
+    ],
+    "asset_id": "asset-9900ea4d"
+  },
+  {
+    "page_id": "case_0035_page_0017",
+    "case_id": "case_0035",
+    "page_number": 17,
+    "page_type": "text",
+    "text_content": [
+      "拍摄类型 03  图示",
+      "Kindergarten graduation photos"
+    ],
+    "text_length": 42,
+    "raw_text": "拍摄类型 03  图示\nKindergarten graduation photos",
+    "image_path": "/Applications/lrq/coding/proposal-skill-builder/compiled/cases/case_0035/page_images/page_017.png",
+    "has_text": true,
+    "needs_vision_review": false,
+    "summary": "拍摄类型 03  图示\nKindergarten graduation photos",
+    "quality_flags": [
+      "normal"
+    ],
+    "asset_id": "asset-c8f0e2c4"
+  },
+  {
+    "page_id": "case_0035_page_0018",
+    "case_id": "case_0035",
+    "page_number": 18,
+    "page_type": "text",
+    "text_content": [
+      "拍摄类型 03  图示",
+      "Kindergarten graduation photos"
+    ],
+    "text_length": 42,
+    "raw_text": "拍摄类型 03  图示\nKindergarten graduation photos",
+    "image_path": "/Applications/lrq/coding/proposal-skill-builder/compiled/cases/case_0035/page_images/page_018.png",
+    "has_text": true,
+    "needs_vision_review": false,
+    "summary": "拍摄类型 03  图示\nKindergarten graduation photos",
+    "quality_flags": [
+      "normal"
+    ],
+    "asset_id": "asset-d3102b00"
+  },
+  {
+    "page_id": "case_0035_page_0019",
+    "case_id": "case_0035",
+    "page_number": 19,
+    "page_type": "text",
+    "text_content": [
+      "拍摄类型 03  图示",
+      "Kindergarten graduation photos"
+    ],
+    "text_length": 42,
+    "raw_text": "拍摄类型 03  图示\nKindergarten graduation photos",
+    "image_path": "/Applications/lrq/coding/proposal-skill-builder/compiled/cases/case_0035/page_images/page_019.png",
+    "has_text": true,
+    "needs_vision_review": false,
+    "summary": "拍摄类型 03  图示\nKindergarten graduation photos",
+    "quality_flags": [
+      "normal"
+    ],
+    "asset_id": "asset-075aaa23"
+  },
+  {
+    "page_id": "case_0035_page_0020",
+    "case_id": "case_0035",
+    "page_number": 20,
+    "page_type": "text",
+    "text_content": [
+      "拍摄类型 03  图示",
+      "Kindergarten graduation photos"
+    ],
+    "text_length": 42,
+    "raw_text": "拍摄类型 03  图示\nKindergarten graduation photos",
+    "image_path": "/Applications/lrq/coding/proposal-skill-builder/compiled/cases/case_0035/page_images/page_020.png",
+    "has_text": true,
+    "needs_vision_review": false,
+    "summary": "拍摄类型 03  图示\nKindergarten graduation photos",
+    "quality_flags": [
+      "normal"
+    ],
+    "asset_id": "asset-a98c3ed4"
+  },
+  {
+    "page_id": "case_0035_page_0021",
+    "case_id": "case_0035",
+    "page_number": 21,
+    "page_type": "text",
+    "text_content": [
+      "拍摄类型 04",
+      "各种的放飞自我（男女同学组合照）",
+      "譬如：扔帽子、跳跃、大笑，爸爸妈妈可以在身旁引导，让孩子自由",
+      "自在的欢笑，摄影师用相机记录下孩子们天真活泼的样",
+      "子。…… ……",
+      "以下，Enjoy",
+      "Kindergarten graduation photos"
+    ],
+    "text_length": 128,
+    "raw_text": "拍摄类型 04\n各种的放飞自我（男女同学组合照）\n譬如：扔帽子、跳跃、大笑，爸爸妈妈可以在身旁引导，让孩子自由\n自在的欢笑，摄影师用相机记录下孩子们天真活泼的样\n子。…… ……\n以下，Enjoy\nKindergarten graduation photos",
+    "image_path": "/Applications/lrq/coding/proposal-skill-builder/compiled/cases/case_0035/page_images/page_021.png",
+    "has_text": true,
+    "needs_vision_review": false,
+    "summary": "拍摄类型 04\n各种的放飞自我（男女同学组合照）\n譬如：扔帽子、跳跃、大笑，爸爸妈妈可以在身旁引导，让孩子自由\n自在的欢笑，摄影师用相机记录下孩子们天真活泼的样\n子。…… ……\n以下，Enjoy\nKindergarten graduatio",
+    "quality_flags": [
+      "normal"
+    ],
+    "asset_id": "asset-44f45161"
+  },
+  {
+    "page_id": "case_0035_page_0022",
+    "case_id": "case_0035",
+    "page_number": 22,
+    "page_type": "text",
+    "text_content": [
+      "拍摄类型 04  图示",
+      "Kindergarten graduation photos"
+    ],
+    "text_length": 42,
+    "raw_text": "拍摄类型 04  图示\nKindergarten graduation photos",
+    "image_path": "/Applications/lrq/coding/proposal-skill-builder/compiled/cases/case_0035/page_images/page_022.png",
+    "has_text": true,
+    "needs_vision_review": false,
+    "summary": "拍摄类型 04  图示\nKindergarten graduation photos",
+    "quality_flags": [
+      "normal"
+    ],
+    "asset_id": "asset-6a254f66"
+  },
+  {
+    "page_id": "case_0035_page_0023",
+    "case_id": "case_0035",
+    "page_number": 23,
+    "page_type": "text",
+    "text_content": [
+      "拍摄类型 04  图示",
+      "Kindergarten graduation photos"
+    ],
+    "text_length": 42,
+    "raw_text": "拍摄类型 04  图示\nKindergarten graduation photos",
+    "image_path": "/Applications/lrq/coding/proposal-skill-builder/compiled/cases/case_0035/page_images/page_023.png",
+    "has_text": true,
+    "needs_vision_review": false,
+    "summary": "拍摄类型 04  图示\nKindergarten graduation photos",
+    "quality_flags": [
+      "normal"
+    ],
+    "asset_id": "asset-38e71f9c"
+  },
+  {
+    "page_id": "case_0035_page_0024",
+    "case_id": "case_0035",
+    "page_number": 24,
+    "page_type": "text",
+    "text_content": [
+      "拍摄类型 04  图示",
+      "Kindergarten graduation photos"
+    ],
+    "text_length": 42,
+    "raw_text": "拍摄类型 04  图示\nKindergarten graduation photos",
+    "image_path": "/Applications/lrq/coding/proposal-skill-builder/compiled/cases/case_0035/page_images/page_024.png",
+    "has_text": true,
+    "needs_vision_review": false,
+    "summary": "拍摄类型 04  图示\nKindergarten graduation photos",
+    "quality_flags": [
+      "normal"
+    ],
+    "asset_id": "asset-31ae1650"
+  },
+  {
+    "page_id": "case_0035_page_0025",
+    "case_id": "case_0035",
+    "page_number": 25,
+    "page_type": "text",
+    "text_content": [
+      "拍摄类型 05",
+      "好朋友组合照",
+      "好朋友，一起走，一起跑，一起笑。即使离开了幼儿园，这份情谊依",
+      "然永存。孩子的笑容是世界上最动人的语言，拍照时不妨来几张动感",
+      "的毕业照吧，让孩子们在欢声笑语中定格多彩的童年，在奔跑中迎接",
+      "更灿烂的未来。…… ……",
+      "以下，Enjoy",
+      "Kindergarten graduation photos"
+    ],
+    "text_length": 160,
+    "raw_text": "拍摄类型 05\n好朋友组合照\n好朋友，一起走，一起跑，一起笑。即使离开了幼儿园，这份情谊依\n然永存。孩子的笑容是世界上最动人的语言，拍照时不妨来几张动感\n的毕业照吧，让孩子们在欢声笑语中定格多彩的童年，在奔跑中迎接\n更灿烂的未来。…… ……\n以下，Enjoy\nKindergarten graduation photos",
+    "image_path": "/Applications/lrq/coding/proposal-skill-builder/compiled/cases/case_0035/page_images/page_025.png",
+    "has_text": true,
+    "needs_vision_review": false,
+    "summary": "拍摄类型 05\n好朋友组合照\n好朋友，一起走，一起跑，一起笑。即使离开了幼儿园，这份情谊依\n然永存。孩子的笑容是世界上最动人的语言，拍照时不妨来几张动感\n的毕业照吧，让孩子们在欢声笑语中定格多彩的童年，在奔跑中迎接\n更灿烂的未来。…… ……",
+    "quality_flags": [
+      "normal"
+    ],
+    "asset_id": "asset-f71f4900"
+  },
+  {
+    "page_id": "case_0035_page_0026",
+    "case_id": "case_0035",
+    "page_number": 26,
+    "page_type": "text",
+    "text_content": [
+      "拍摄类型 05  图示",
+      "Kindergarten graduation photos"
+    ],
+    "text_length": 42,
+    "raw_text": "拍摄类型 05  图示\nKindergarten graduation photos",
+    "image_path": "/Applications/lrq/coding/proposal-skill-builder/compiled/cases/case_0035/page_images/page_026.png",
+    "has_text": true,
+    "needs_vision_review": false,
+    "summary": "拍摄类型 05  图示\nKindergarten graduation photos",
+    "quality_flags": [
+      "normal"
+    ],
+    "asset_id": "asset-580066dd"
+  },
+  {
+    "page_id": "case_0035_page_0027",
+    "case_id": "case_0035",
+    "page_number": 27,
+    "page_type": "text",
+    "text_content": [
+      "拍摄类型 05  图示",
+      "Kindergarten graduation photos"
+    ],
+    "text_length": 42,
+    "raw_text": "拍摄类型 05  图示\nKindergarten graduation photos",
+    "image_path": "/Applications/lrq/coding/proposal-skill-builder/compiled/cases/case_0035/page_images/page_027.png",
+    "has_text": true,
+    "needs_vision_review": false,
+    "summary": "拍摄类型 05  图示\nKindergarten graduation photos",
+    "quality_flags": [
+      "normal"
+    ],
+    "asset_id": "asset-a67e56ea"
+  },
+  {
+    "page_id": "case_0035_page_0028",
+    "case_id": "case_0035",
+    "page_number": 28,
+    "page_type": "text",
+    "text_content": [
+      "拍摄类型 05  图示",
+      "Kindergarten graduation photos"
+    ],
+    "text_length": 42,
+    "raw_text": "拍摄类型 05  图示\nKindergarten graduation photos",
+    "image_path": "/Applications/lrq/coding/proposal-skill-builder/compiled/cases/case_0035/page_images/page_028.png",
+    "has_text": true,
+    "needs_vision_review": false,
+    "summary": "拍摄类型 05  图示\nKindergarten graduation photos",
+    "quality_flags": [
+      "normal"
+    ],
+    "asset_id": "asset-b6e2117a"
+  },
+  {
+    "page_id": "case_0035_page_0029",
+    "case_id": "case_0035",
+    "page_number": 29,
+    "page_type": "text",
+    "text_content": [
+      "拍摄类型 06",
+      "创意类",
+      "每一个班集体都是温馨的大家庭，大家一起做游戏、听故事、唱歌、",
+      "跳舞等，从陌生人变成了最好的伙伴，就用一张创意的集体照来给这",
+      "三年的美好时光画上一个圆满的句号吧。…… ……",
+      "以下，Enjoy",
+      "Kindergarten graduation photos"
+    ],
+    "text_length": 137,
+    "raw_text": "拍摄类型 06\n创意类\n每一个班集体都是温馨的大家庭，大家一起做游戏、听故事、唱歌、\n跳舞等，从陌生人变成了最好的伙伴，就用一张创意的集体照来给这\n三年的美好时光画上一个圆满的句号吧。…… ……\n以下，Enjoy\nKindergarten graduation photos",
+    "image_path": "/Applications/lrq/coding/proposal-skill-builder/compiled/cases/case_0035/page_images/page_029.png",
+    "has_text": true,
+    "needs_vision_review": false,
+    "summary": "拍摄类型 06\n创意类\n每一个班集体都是温馨的大家庭，大家一起做游戏、听故事、唱歌、\n跳舞等，从陌生人变成了最好的伙伴，就用一张创意的集体照来给这\n三年的美好时光画上一个圆满的句号吧。…… ……\n以下，Enjoy\nKindergarten ",
+    "quality_flags": [
+      "normal"
+    ],
+    "asset_id": "asset-219727da"
+  },
+  {
+    "page_id": "case_0035_page_0030",
+    "case_id": "case_0035",
+    "page_number": 30,
+    "page_type": "text",
+    "text_content": [
+      "拍摄类型 06  图示",
+      "Kindergarten graduation photos"
+    ],
+    "text_length": 42,
+    "raw_text": "拍摄类型 06  图示\nKindergarten graduation photos",
+    "image_path": "/Applications/lrq/coding/proposal-skill-builder/compiled/cases/case_0035/page_images/page_030.png",
+    "has_text": true,
+    "needs_vision_review": false,
+    "summary": "拍摄类型 06  图示\nKindergarten graduation photos",
+    "quality_flags": [
+      "normal"
+    ],
+    "asset_id": "asset-64762b95"
+  },
+  {
+    "page_id": "case_0035_page_0031",
+    "case_id": "case_0035",
+    "page_number": 31,
+    "page_type": "text",
+    "text_content": [
+      "拍摄类型 06  图示",
+      "Kindergarten graduation photos"
+    ],
+    "text_length": 42,
+    "raw_text": "拍摄类型 06  图示\nKindergarten graduation photos",
+    "image_path": "/Applications/lrq/coding/proposal-skill-builder/compiled/cases/case_0035/page_images/page_031.png",
+    "has_text": true,
+    "needs_vision_review": false,
+    "summary": "拍摄类型 06  图示\nKindergarten graduation photos",
+    "quality_flags": [
+      "normal"
+    ],
+    "asset_id": "asset-cf5a5d2e"
+  },
+  {
+    "page_id": "case_0035_page_0032",
+    "case_id": "case_0035",
+    "page_number": 32,
+    "page_type": "text",
+    "text_content": [
+      "拍摄类型 06  图示",
+      "Kindergarten graduation photos"
+    ],
+    "text_length": 42,
+    "raw_text": "拍摄类型 06  图示\nKindergarten graduation photos",
+    "image_path": "/Applications/lrq/coding/proposal-skill-builder/compiled/cases/case_0035/page_images/page_032.png",
+    "has_text": true,
+    "needs_vision_review": false,
+    "summary": "拍摄类型 06  图示\nKindergarten graduation photos",
+    "quality_flags": [
+      "normal"
+    ],
+    "asset_id": "asset-c0f1bcbc"
+  },
+  {
+    "page_id": "case_0035_page_0033",
+    "case_id": "case_0035",
+    "page_number": 33,
+    "page_type": "text",
+    "text_content": [
+      "THANKS",
+      "Kindergarten graduation photos"
+    ],
+    "text_length": 37,
+    "raw_text": "THANKS\nKindergarten graduation photos",
+    "image_path": "/Applications/lrq/coding/proposal-skill-builder/compiled/cases/case_0035/page_images/page_033.png",
+    "has_text": true,
+    "needs_vision_review": false,
+    "summary": "THANKS\nKindergarten graduation photos",
+    "quality_flags": [
+      "normal"
+    ],
+    "asset_id": "asset-c159fda6"
+  }
+]

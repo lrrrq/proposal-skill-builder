@@ -585,16 +585,16 @@ def cmd_check_ai_provider(args):
     print("=" * 50)
 
     if provider == "minimax-text":
-        api_key = os.environ.get("MINIMAX_TOKEN_PLAN_KEY", "")
+        api_key = os.environ.get("MINIMAX_API_KEY", "")
         base_url = os.environ.get("MINIMAX_TEXT_BASE_URL", "https://api.minimaxi.com/v1")
         model = os.environ.get("MINIMAX_TEXT_MODEL", "MiniMax-M2.7")
 
-        print(f"MINIMAX_TOKEN_PLAN_KEY: {'已设置' if api_key else '(未设置)'}")
+        print(f"MINIMAX_API_KEY: {'已设置' if api_key else '(未设置)'}")
         print(f"MINIMAX_TEXT_BASE_URL: {base_url}")
         print(f"MINIMAX_TEXT_MODEL: {model}")
 
         if not api_key:
-            print("\n❌ 缺少 MINIMAX_TOKEN_PLAN_KEY")
+            print("\n❌ 缺少 MINIMAX_API_KEY")
             return
 
         print("\n正在测试纯文本 ping...")
@@ -617,7 +617,7 @@ def cmd_check_ai_provider(args):
         env = client.check_environment()
 
         print(f"uvx 安装: {'✅' if env['uvx_exists'] else '❌ (未安装)'}")
-        print(f"MINIMAX_TOKEN_PLAN_KEY: {'已设置' if env['key_exists'] else '❌ (未设置)'}")
+        print(f"MINIMAX_API_KEY: {'已设置' if env['key_exists'] else '❌ (未设置)'}")
         print(f"MCP 图片理解: {'✅ 可用' if env['mcp_available'] else '⚠️ 需先启动 MCP 服务'}")
         print(f"可处理图片: {'✅' if env['can_process_images'] else '❌ 环境未就绪'}")
         print(f"支持格式: {', '.join(env['supported_formats'])}")
@@ -626,12 +626,12 @@ def cmd_check_ai_provider(args):
         if not env["can_process_images"]:
             missing = []
             if not env["key_exists"]:
-                missing.append("MINIMAX_TOKEN_PLAN_KEY")
+                missing.append("MINIMAX_API_KEY")
             if not env["uvx_exists"]:
                 missing.append("uvx")
             print(f"\n❌ 环境未就绪，缺少: {', '.join(missing)}")
             print("  安装 uvx: pip install uvx")
-            print("  配置 Key: export MINIMAX_TOKEN_PLAN_KEY=your_key")
+            print("  配置 Key: export MINIMAX_API_KEY=your_key")
             return
 
         print("\n✅ MiniMax-MCP 环境检查通过")

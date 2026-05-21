@@ -1,0 +1,90 @@
+[
+  {
+    "pattern_id": "142e4170df97",
+    "case_id": "case_0014",
+    "name": "策略_01",
+    "pattern_type": "strategy",
+    "description": "这是一张极简风格的视觉设计稿或策划案封面。页面以纯白色为背景，左侧分布着大字体的灰色无衬线文字“VISUAL IDENT | 品牌字体 考虑品牌字体需要适应品牌出现及运用场景，因此规范 字体仅限于电脑自适源字体，字体选择“微软雅黑”，其 中“M” | Online R65 G255 B0 Print PMS 375 C40 M0 Y100 K0 MF_Young Onl",
+    "source_fragment_ids": [
+      {
+        "fragment_id": "05ffdfc0ee53",
+        "layer": "text"
+      },
+      {
+        "fragment_id": "879bfcc04036",
+        "layer": "text"
+      },
+      {
+        "fragment_id": "ai-410c5d5d",
+        "layer": "vision"
+      }
+    ],
+    "fragment_count": 3,
+    "confidence_score": 0.8,
+    "quality_level": "medium",
+    "source_summary": "文本×2 | 视觉×1"
+  },
+  {
+    "pattern_id": "2d017c9153d6",
+    "case_id": "case_0014",
+    "name": "内容结构_01",
+    "pattern_type": "content_structure",
+    "description": "品牌字体 考虑品牌字体需要适应品牌出现及运用场景，因此规范 字体仅限于电脑自适源字体，字体选择“微软雅黑”，其 中“M”",
+    "source_fragment_ids": [
+      {
+        "fragment_id": "05ffdfc0ee53",
+        "layer": "text"
+      }
+    ],
+    "fragment_count": 1,
+    "confidence_score": 0.6,
+    "quality_level": "high",
+    "source_summary": "文本×1"
+  },
+  {
+    "pattern_id": "64f19abe5c94",
+    "case_id": "case_0014",
+    "name": "视觉方向_01",
+    "pattern_type": "visual_direction",
+    "description": "这是一张极简风格的视觉设计稿或策划案封面。页面以纯白色为背景，左侧分布着大字体的灰色无衬线文字“VISUAL IDENT | 品牌字体 考虑品牌字体需要适应品牌出现及运用场景，因此规范 字体仅限于电脑自适源字体，字体选择“微软雅黑”，其 中“M” | Online R65 G255 B0 Print PMS 375 C40 M0 Y100 K0 MF_Young Onl",
+    "source_fragment_ids": [
+      {
+        "fragment_id": "05ffdfc0ee53",
+        "layer": "text"
+      },
+      {
+        "fragment_id": "879bfcc04036",
+        "layer": "text"
+      },
+      {
+        "fragment_id": "bf0958886c30",
+        "layer": "text"
+      },
+      {
+        "fragment_id": "ai-410c5d5d",
+        "layer": "vision"
+      }
+    ],
+    "fragment_count": 4,
+    "confidence_score": 0.9,
+    "quality_level": "medium",
+    "source_summary": "文本×3 | 视觉×1"
+  },
+  {
+    "pattern_id": "89ddc4c4efe7",
+    "case_id": "case_0014",
+    "name": "执行方法_01",
+    "pattern_type": "execution_method",
+    "description": "恩 柏 斯 影 视 M+ F I L M S 恩 柏 斯 影 视 M+ F I L M S 香港德辅道西444-452号",
+    "source_fragment_ids": [
+      {
+        "fragment_id": "bf0958886c30",
+        "layer": "text"
+      }
+    ],
+    "fragment_count": 1,
+    "confidence_score": 0.6,
+    "quality_level": "high",
+    "source_summary": "文本×1"
+  }
+]

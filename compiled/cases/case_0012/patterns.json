@@ -1,0 +1,134 @@
+[
+  {
+    "pattern_id": "6d0750b88ff4",
+    "case_id": "case_0012",
+    "name": "策略_01",
+    "pattern_type": "strategy",
+    "description": "这是一张商务演示文稿的章节过渡页。背景为纯黑色，左侧放置了绿色的“PART”和白色的“02”大字标题，左上角有“BUYC | Creative content ：整体创意概...",
+    "source_fragment_ids": [
+      {
+        "fragment_id": "3241d52fcadd",
+        "layer": "text"
+      },
+      {
+        "fragment_id": "ai-73166de0",
+        "layer": "vision"
+      }
+    ],
+    "fragment_count": 2,
+    "confidence_score": 0.7,
+    "quality_level": "medium",
+    "source_summary": "文本×1 | 视觉×1"
+  },
+  {
+    "pattern_id": "405093ac6faa",
+    "case_id": "case_0012",
+    "name": "内容结构_01",
+    "pattern_type": "content_structure",
+    "description": "这是一张商务演示文稿的章节过渡页。背景为纯黑色，左侧放置了绿色的“PART”和白色的“02”大字标题，左上角有“BUYC | Creative content ：创意 VO...",
+    "source_fragment_ids": [
+      {
+        "fragment_id": "082b029cf431",
+        "layer": "text"
+      },
+      {
+        "fragment_id": "ai-73166de0",
+        "layer": "vision"
+      }
+    ],
+    "fragment_count": 2,
+    "confidence_score": 0.7,
+    "quality_level": "medium",
+    "source_summary": "文本×1 | 视觉×1"
+  },
+  {
+    "pattern_id": "2ee2dd798a76",
+    "case_id": "case_0012",
+    "name": "视觉方向_01",
+    "pattern_type": "visual_direction",
+    "description": "Creative content ：创意 开篇... | （配合她讲诉的旁白切换画面，做场景重现，旁白转化... | Creative content ：创意 EB...",
+    "source_fragment_ids": [
+      {
+        "fragment_id": "bf4a505402f7",
+        "layer": "text"
+      },
+      {
+        "fragment_id": "39b631647cb2",
+        "layer": "text"
+      },
+      {
+        "fragment_id": "db8a3067c879",
+        "layer": "text"
+      },
+      {
+        "fragment_id": "518c249a35c0",
+        "layer": "text"
+      },
+      {
+        "fragment_id": "e7f757340705",
+        "layer": "text"
+      },
+      {
+        "fragment_id": "516b6496b551",
+        "layer": "text"
+      },
+      {
+        "fragment_id": "bf9df33f1c0a",
+        "layer": "text"
+      },
+      {
+        "fragment_id": "5b1ce98602bb",
+        "layer": "text"
+      },
+      {
+        "fragment_id": "082b029cf431",
+        "layer": "text"
+      },
+      {
+        "fragment_id": "e8b550531e0d",
+        "layer": "text"
+      },
+      {
+        "fragment_id": "4f0d45716a7d",
+        "layer": "text"
+      },
+      {
+        "fragment_id": "b520deaddf8e",
+        "layer": "text"
+      },
+      {
+        "fragment_id": "ae0436f8d72a",
+        "layer": "text"
+      }
+    ],
+    "fragment_count": 13,
+    "confidence_score": 1.0,
+    "quality_level": "medium",
+    "source_summary": "文本×13"
+  },
+  {
+    "pattern_id": "603641675110",
+    "case_id": "case_0012",
+    "name": "受众洞察_01",
+    "pattern_type": "audience_insight",
+    "description": "Creative content ：整体创意概... | （配合她讲诉的旁白切换画面，做场景重现，旁白转化... | a1.b2_c3 Creative conten...",
+    "source_fragment_ids": [
+      {
+        "fragment_id": "3241d52fcadd",
+        "layer": "text"
+      },
+      {
+        "fragment_id": "39b631647cb2",
+        "layer": "text"
+      },
+      {
+        "fragment_id": "ae0436f8d72a",
+        "layer": "text"
+      }
+    ],
+    "fragment_count": 3,
+    "confidence_score": 0.8,
+    "quality_level": "medium",
+    "source_summary": "文本×3"
+  }
+]

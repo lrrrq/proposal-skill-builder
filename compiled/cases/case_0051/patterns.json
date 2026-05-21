@@ -1,0 +1,68 @@
+[
+  {
+    "pattern_id": "9421adca2039",
+    "case_id": "case_0051",
+    "name": "策略_01",
+    "pattern_type": "strategy",
+    "description": "C o n t en t s 创意概要 Crea... | Creative outline 创意概要 | Creative outline ：创意概要 ...",
+    "source_fragment_ids": [
+      {
+        "fragment_id": "318cf8993e53",
+        "layer": "text"
+      },
+      {
+        "fragment_id": "90a5bdd92167",
+        "layer": "text"
+      },
+      {
+        "fragment_id": "eb6a789a7d47",
+        "layer": "text"
+      },
+      {
+        "fragment_id": "433b95611059",
+        "layer": "text"
+      },
+      {
+        "fragment_id": "57dcc58beaf1",
+        "layer": "text"
+      },
+      {
+        "fragment_id": "efa1e7e525e5",
+        "layer": "text"
+      },
+      {
+        "fragment_id": "ad57ec0a0f46",
+        "layer": "text"
+      }
+    ],
+    "fragment_count": 7,
+    "confidence_score": 1.0,
+    "quality_level": "medium",
+    "source_summary": "文本×7"
+  },
+  {
+    "pattern_id": "1cc4417bdea7",
+    "case_id": "case_0051",
+    "name": "内容结构_01",
+    "pattern_type": "content_structure",
+    "description": "C o n t en t s 创意概要 Crea... | Creative outline 创意概要 | Creative outline ：创意概要 ...",
+    "source_fragment_ids": [
+      {
+        "fragment_id": "318cf8993e53",
+        "layer": "text"
+      },
+      {
+        "fragment_id": "90a5bdd92167",
+        "layer": "text"
+      },
+      {
+        "fragment_id": "eb6a789a7d47",
+        "layer": "text"
+      }
+    ],
+    "fragment_count": 3,
+    "confidence_score": 0.8,
+    "quality_level": "medium",
+    "source_summary": "文本×3"
+  }
+]

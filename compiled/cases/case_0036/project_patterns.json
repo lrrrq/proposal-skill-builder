@@ -1,0 +1,230 @@
+[
+  {
+    "project_pattern_id": "pp-2f93b0e7f2",
+    "case_id": "case_0036",
+    "title": "广东三新能源环保有限公司20周年庆宣传片创意概要0707",
+    "dataset": "prod",
+    "narrative_arc": {
+      "arc_segments": [
+        {
+          "segment": "开场",
+          "function": "建立基调、吸引注意",
+          "position": "opening"
+        },
+        {
+          "segment": "展开",
+          "function": "传递信息、建立关系",
+          "position": "middle"
+        },
+        {
+          "segment": "高潮",
+          "function": "强化记忆、推动决策",
+          "position": "climax"
+        },
+        {
+          "segment": "收尾",
+          "function": "明确行动、留下印象",
+          "position": "ending"
+        }
+      ],
+      "arc_completeness": 1.0,
+      "has_narrative_structure": true,
+      "narrative_depth_score": 1.0
+    },
+    "emotion_curve": {
+      "phases": [
+        {
+          "phase": "开场定调",
+          "emotion": "期待感",
+          "position": "opening",
+          "evidence": "定位策略 + 受众策略"
+        },
+        {
+          "phase": "内容展开",
+          "emotion": "沉浸感",
+          "position": "middle",
+          "evidence": "叙事策略 + 视觉策略"
+        },
+        {
+          "phase": "转化引爆",
+          "emotion": "行动感",
+          "position": "climax",
+          "evidence": "转化策略"
+        },
+        {
+          "phase": "落地执行",
+          "emotion": "确定感",
+          "position": "ending",
+          "evidence": "执行策略"
+        }
+      ],
+      "curve_score": 1.0,
+      "has_emotion_progression": true,
+      "climax_position": "middle"
+    },
+    "persuasion_flow": {
+      "flow": [
+        {
+          "step": 1,
+          "strategy_type": "positioning_strategy",
+          "name": "定位策略_01",
+          "description": "Creative outline  ：创意概要\n全片贯穿环保主题，以砥砺20载 同心向未来为核心概\n念，通过三段式的讲述 | Creative content "
+        },
+        {
+          "step": 2,
+          "strategy_type": "narrative_strategy",
+          "name": "叙事策略_01",
+          "description": "Creative content  ：创意内容（脚本）\n字幕：\n专业规范  精益求精\n配音旁白：\n严谨细致的工作流程、敬"
+        },
+        {
+          "step": 3,
+          "strategy_type": "visual_strategy",
+          "name": "视觉策略_01",
+          "description": "Creative outline  ：创意概要\n全片贯穿环保主题，以砥砺20载 同心向未来为核心概\n念，通过三段式的讲述 | ai_skip_0x7f3a9_p"
+        },
+        {
+          "step": 4,
+          "strategy_type": "audience_strategy",
+          "name": "受众策略_01",
+          "description": "Creative content  ：创意内容（脚本）\n字幕：\n严格管理  高效运营\n配音旁白：\n公司拥有一支素质优秀、"
+        },
+        {
+          "step": 5,
+          "strategy_type": "execution_strategy",
+          "name": "执行策略_01",
+          "description": "Creative content  ：创意内容（脚本）\n配音旁白：\n广东三新能源环保有限公司成立于2003年，是广州\n三 | Creative content "
+        },
+        {
+          "step": 6,
+          "strategy_type": "conversion_strategy",
+          "name": "转化策略_01",
+          "description": "通过行为引导和激励机制实现目标转化的策略"
+        }
+      ],
+      "coverage": 1.0,
+      "is_smooth": true,
+      "missing_types": [],
+      "flow_length": 6
+    },
+    "visual_progression": {
+      "progression": [
+        {
+          "stage": "视觉基调",
+          "description": "基于 1 个视觉方向 pattern",
+          "confidence": 1.0
+        },
+        {
+          "stage": "视觉策略",
+          "description": "包含 1 个视觉策略",
+          "confidence": 0.9
+        }
+      ],
+      "has_visual_progression": true,
+      "visual_diversity": 1,
+      "progression_score": 0.67
+    },
+    "information_density_curve": {
+      "density_phases": [
+        {
+          "phase": "开场",
+          "density": "低",
+          "reason": "建立基调，吸引注意"
+        },
+        {
+          "phase": "展开",
+          "density": "高",
+          "reason": "共 19 个 fragments，信息量大"
+        },
+        {
+          "phase": "收尾",
+          "density": "低",
+          "reason": "明确行动，减少认知负担"
+        }
+      ],
+      "total_fragments": 19,
+      "fragment_types": {
+        "short": 4,
+        "normal": 15
+      },
+      "density_score": 0.95
+    },
+    "climax_design": {
+      "climax_indicators": [
+        {
+          "indicator": "转化策略",
+          "description": "推动受众做出决定",
+          "strength": 1
+        },
+        {
+          "indicator": "视觉冲击",
+          "description": "强化记忆点",
+          "strength": 1
+        }
+      ],
+      "climax_position": "middle-late",
+      "has_clear_climax": true,
+      "climax_strength": 1.0
+    },
+    "emotional_release": {
+      "release_mechanisms": [
+        {
+          "mechanism": "行动号召",
+          "description": "明确的执行步骤，转化为实际行为",
+          "type": "action"
+        },
+        {
+          "mechanism": "情感收束",
+          "description": "故事收尾，留下情感印象",
+          "type": "emotion"
+        }
+      ],
+      "has_release": true,
+      "release_depth": 1.0
+    },
+    "strategic_sequence": {
+      "sequence": [
+        {
+          "step": 1,
+          "strategy_type": "positioning_strategy",
+          "name": "定位策略",
+          "confidence": 0.9
+        },
+        {
+          "step": 2,
+          "strategy_type": "audience_strategy",
+          "name": "受众策略",
+          "confidence": 0.9
+        },
+        {
+          "step": 3,
+          "strategy_type": "narrative_strategy",
+          "name": "叙事策略",
+          "confidence": 0.9
+        },
+        {
+          "step": 4,
+          "strategy_type": "visual_strategy",
+          "name": "视觉策略",
+          "confidence": 0.9
+        },
+        {
+          "step": 5,
+          "strategy_type": "conversion_strategy",
+          "name": "转化策略",
+          "confidence": 0.8
+        },
+        {
+          "step": 6,
+          "strategy_type": "execution_strategy",
+          "name": "执行策略",
+          "confidence": 0.9
+        }
+      ],
+      "completeness": 1.0,
+      "sequence_length": 6,
+      "is_complete": true
+    },
+    "overall_score": 95.0,
+    "analyzed_at": "2026-05-15T18:31:02.716998"
+  }
+]

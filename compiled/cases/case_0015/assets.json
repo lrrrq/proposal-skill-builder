@@ -1,0 +1,22 @@
+[
+  {
+    "asset_id": "asset-d29fbdf2",
+    "case_id": "case_0015",
+    "asset_type": "pdf_page_image",
+    "page_id": "case_0015_page_0001",
+    "page_number": 1,
+    "original_path": "/Applications/lrq/coding/proposal-skill-builder/source_proposals/accepted/Ryan名片设计.pdf",
+    "compiled_path": "/Applications/lrq/coding/proposal-skill-builder/compiled/cases/case_0015/page_images/page_001.png",
+    "stored_path": "/Applications/lrq/coding/proposal-skill-builder/compiled/cases/case_0015/page_images/page_001.png",
+    "filename": "page_001.png",
+    "mime_type": "image/png",
+    "width": 893.25,
+    "height": 1263.0,
+    "format": "PNG",
+    "source": "pdf_rendered_page",
+    "description_status": "completed",
+    "manual_description": "该图片是一张名片设计样稿，展示了“M+ FILMS (恩柏斯影视)”品牌的名片正反面设计。包含了两个版本的正面设计（分别对应不同职位：副导演和项目经理/总经理助理）以及一个统一的反面设计。设计以白色和鲜亮的绿色为主基调，整体风格简约现代。",
+    "needs_vision_review": true,
+    "source_text_length": 0
+  }
+]

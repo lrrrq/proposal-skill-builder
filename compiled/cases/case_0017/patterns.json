@@ -1,0 +1,213 @@
+[
+  {
+    "pattern_id": "61feab9aede3",
+    "case_id": "case_0017",
+    "name": "策略_01",
+    "pattern_type": "strategy",
+    "description": "这是一张带有品牌特色的新春策划案封面。背景采用了Teenie Weenie标志性的红黑格纹（Plaid）图案，营造出英伦 | 这是一张品牌策划案的目录页。左侧是一张带有复古学院风边框的人物海报，画面中三位模特穿着格纹西装和学院服饰，色调偏暖棕。中 | 这是一张TEENIE WEENIE品牌的广告创意脚本页面。左侧为黑色背景，用绿色和白色文字详细描述了镜头的画面需求和配音",
+    "source_fragment_ids": [
+      {
+        "fragment_id": "ai-60076011",
+        "layer": "vision"
+      },
+      {
+        "fragment_id": "ai-2c58e0dd",
+        "layer": "vision"
+      },
+      {
+        "fragment_id": "ai-e339ffb8",
+        "layer": "vision"
+      },
+      {
+        "fragment_id": "ai-53635b3f",
+        "layer": "vision"
+      },
+      {
+        "fragment_id": "ai-e7de9499",
+        "layer": "vision"
+      },
+      {
+        "fragment_id": "ai-a4fa5cbc",
+        "layer": "vision"
+      },
+      {
+        "fragment_id": "ai-b1cf487f",
+        "layer": "vision"
+      },
+      {
+        "fragment_id": "ai-6bc457a9",
+        "layer": "vision"
+      },
+      {
+        "fragment_id": "ai-1fdfce53",
+        "layer": "vision"
+      },
+      {
+        "fragment_id": "ai-b488dc3e",
+        "layer": "vision"
+      },
+      {
+        "fragment_id": "ai-6b0adaa4",
+        "layer": "vision"
+      },
+      {
+        "fragment_id": "ai-a8b38553",
+        "layer": "vision"
+      },
+      {
+        "fragment_id": "ai-540dcb1b",
+        "layer": "vision"
+      }
+    ],
+    "fragment_count": 13,
+    "confidence_score": 1.0,
+    "quality_level": "medium",
+    "source_summary": "视觉×13"
+  },
+  {
+    "pattern_id": "1cefc82c9382",
+    "case_id": "case_0017",
+    "name": "内容结构_01",
+    "pattern_type": "content_structure",
+    "description": "这是一张品牌策划案的目录页。左侧是一张带有复古学院风边框的人物海报，画面中三位模特穿着格纹西装和学院服饰，色调偏暖棕。中",
+    "source_fragment_ids": [
+      {
+        "fragment_id": "ai-2c58e0dd",
+        "layer": "vision"
+      }
+    ],
+    "fragment_count": 1,
+    "confidence_score": 0.6,
+    "quality_level": "high",
+    "source_summary": "视觉×1"
+  },
+  {
+    "pattern_id": "e1f8cf16fb90",
+    "case_id": "case_0017",
+    "name": "视觉方向_01",
+    "pattern_type": "visual_direction",
+    "description": "这是一张带有品牌特色的新春策划案封面。背景采用了Teenie Weenie标志性的红黑格纹（Plaid）图案，营造出英伦 | 这是一张品牌策划案的目录页。左侧是一张带有复古学院风边框的人物海报，画面中三位模特穿着格纹西装和学院服饰，色调偏暖棕。中 | 这是一张TEENIE WEENIE品牌的广告创意脚本页面。左侧为黑色背景，用绿色和白色文字详细描述了镜头的画面需求和配音",
+    "source_fragment_ids": [
+      {
+        "fragment_id": "3bb6d668df8c",
+        "layer": "text"
+      },
+      {
+        "fragment_id": "2c1087fa7420",
+        "layer": "text"
+      },
+      {
+        "fragment_id": "9830b2229a5b",
+        "layer": "text"
+      },
+      {
+        "fragment_id": "f7482b1a8cfa",
+        "layer": "text"
+      },
+      {
+        "fragment_id": "7f23ff44c5af",
+        "layer": "text"
+      },
+      {
+        "fragment_id": "079d87ee7bd9",
+        "layer": "text"
+      },
+      {
+        "fragment_id": "196793784995",
+        "layer": "text"
+      },
+      {
+        "fragment_id": "2b13a04ec4ae",
+        "layer": "text"
+      },
+      {
+        "fragment_id": "22b3b5c12a82",
+        "layer": "text"
+      },
+      {
+        "fragment_id": "a97a0f151549",
+        "layer": "text"
+      },
+      {
+        "fragment_id": "ee14426d50cf",
+        "layer": "text"
+      },
+      {
+        "fragment_id": "240fa3d717f4",
+        "layer": "text"
+      },
+      {
+        "fragment_id": "ai-60076011",
+        "layer": "vision"
+      },
+      {
+        "fragment_id": "ai-2c58e0dd",
+        "layer": "vision"
+      },
+      {
+        "fragment_id": "ai-e339ffb8",
+        "layer": "vision"
+      },
+      {
+        "fragment_id": "ai-53635b3f",
+        "layer": "vision"
+      },
+      {
+        "fragment_id": "ai-e7de9499",
+        "layer": "vision"
+      },
+      {
+        "fragment_id": "ai-a4fa5cbc",
+        "layer": "vision"
+      },
+      {
+        "fragment_id": "ai-b1cf487f",
+        "layer": "vision"
+      },
+      {
+        "fragment_id": "ai-8c77b03c",
+        "layer": "vision"
+      },
+      {
+        "fragment_id": "ai-0189ab70",
+        "layer": "vision"
+      },
+      {
+        "fragment_id": "ai-a83e674e",
+        "layer": "vision"
+      },
+      {
+        "fragment_id": "ai-6bc457a9",
+        "layer": "vision"
+      },
+      {
+        "fragment_id": "ai-1fdfce53",
+        "layer": "vision"
+      },
+      {
+        "fragment_id": "ai-bb78e65a",
+        "layer": "vision"
+      },
+      {
+        "fragment_id": "ai-b488dc3e",
+        "layer": "vision"
+      },
+      {
+        "fragment_id": "ai-6b0adaa4",
+        "layer": "vision"
+      },
+      {
+        "fragment_id": "ai-a8b38553",
+        "layer": "vision"
+      },
+      {
+        "fragment_id": "ai-540dcb1b",
+        "layer": "vision"
+      }
+    ],
+    "fragment_count": 29,
+    "confidence_score": 1.0,
+    "quality_level": "medium",
+    "source_summary": "文本×12 | 视觉×17"
+  }
+]

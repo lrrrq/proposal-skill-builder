@@ -76,14 +76,17 @@ def collect_evidence(patterns: List[Dict], fragments: List[Dict],
     source_layers = set()
 
     # 从 patterns 中收集
+    pattern_to_strategy = {
+        "strategy": "positioning_strategy",
+        "content_structure": "narrative_strategy",
+        "audience_insight": "audience_strategy",
+        "visual_direction": "visual_strategy",
+        "execution_method": "execution_strategy",
+    }
     for p in patterns:
         ptype = p.get("pattern_type", "")
         source_sum = p.get("source_summary", "")
-
-        # 类型映射
-        PATTERN_TO_STRATEGY
-
-        expected_strategy = type_to_strategy.get(ptype, "")
+        expected_strategy = pattern_to_strategy.get(ptype, "")
 
         if strategy_type == "conversion_strategy":
             # conversion_strategy 从所有 patterns 中检测关键词

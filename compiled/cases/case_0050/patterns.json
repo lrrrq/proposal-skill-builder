@@ -1,0 +1,663 @@
+[
+  {
+    "pattern_id": "53a9e36feebc",
+    "case_id": "case_0050",
+    "name": "策略_01",
+    "pattern_type": "strategy",
+    "description": "画面左侧展现了一台专业摄像机的近景，背景伴有深蓝色调的虚化光斑。右侧采用深蓝色色块，并装饰有细白线构成的同心圆几何纹样。 | 页面左侧是一张写实的摄影师工作照，展现了正在使用专业电影摄像机的背影，色调偏冷且带有电影质感。右侧是纯白背景，排列着简洁 | 背景是一张具有电影感的摄影机实拍图，采用浅景深效果，画面焦点在于手持云台上的相机。整体色调偏暗，点缀以鲜艳的荧光绿作为品",
+    "source_fragment_ids": [
+      {
+        "fragment_id": "9e9a75bb06e8",
+        "layer": "text"
+      },
+      {
+        "fragment_id": "769b69d6ed07",
+        "layer": "text"
+      },
+      {
+        "fragment_id": "2a08b6b0f498",
+        "layer": "text"
+      },
+      {
+        "fragment_id": "a975a54f62e9",
+        "layer": "text"
+      },
+      {
+        "fragment_id": "2c22013fcc8b",
+        "layer": "text"
+      },
+      {
+        "fragment_id": "ca21e45e7528",
+        "layer": "text"
+      },
+      {
+        "fragment_id": "296339186dd5",
+        "layer": "text"
+      },
+      {
+        "fragment_id": "4590a3b8a6cd",
+        "layer": "text"
+      },
+      {
+        "fragment_id": "8d775eaa83a3",
+        "layer": "text"
+      },
+      {
+        "fragment_id": "2fbf4183e67f",
+        "layer": "text"
+      },
+      {
+        "fragment_id": "71a45f84f3d7",
+        "layer": "text"
+      },
+      {
+        "fragment_id": "2bc8386aef6d",
+        "layer": "text"
+      },
+      {
+        "fragment_id": "f267a60b8297",
+        "layer": "text"
+      },
+      {
+        "fragment_id": "ai-57e2f0e4",
+        "layer": "vision"
+      },
+      {
+        "fragment_id": "ai-02a01b3b",
+        "layer": "vision"
+      },
+      {
+        "fragment_id": "ai-4c0e3d39",
+        "layer": "vision"
+      },
+      {
+        "fragment_id": "ai-b4c0f098",
+        "layer": "vision"
+      },
+      {
+        "fragment_id": "ai-d774da20",
+        "layer": "vision"
+      },
+      {
+        "fragment_id": "ai-8fa506c4",
+        "layer": "vision"
+      },
+      {
+        "fragment_id": "ai-be37f42e",
+        "layer": "vision"
+      },
+      {
+        "fragment_id": "ai-cda47b43",
+        "layer": "vision"
+      },
+      {
+        "fragment_id": "ai-6ba68d4b",
+        "layer": "vision"
+      },
+      {
+        "fragment_id": "ai-3286b98f",
+        "layer": "vision"
+      },
+      {
+        "fragment_id": "ai-0be4f13c",
+        "layer": "vision"
+      },
+      {
+        "fragment_id": "ai-b44b52d5",
+        "layer": "vision"
+      },
+      {
+        "fragment_id": "ai-ca975b2b",
+        "layer": "vision"
+      },
+      {
+        "fragment_id": "ai-fbbd4d67",
+        "layer": "vision"
+      },
+      {
+        "fragment_id": "ai-63d391c3",
+        "layer": "vision"
+      },
+      {
+        "fragment_id": "ai-08145ead",
+        "layer": "vision"
+      },
+      {
+        "fragment_id": "ai-019b7adf",
+        "layer": "vision"
+      },
+      {
+        "fragment_id": "ai-9c3a204e",
+        "layer": "vision"
+      },
+      {
+        "fragment_id": "ai-bb11aa89",
+        "layer": "vision"
+      },
+      {
+        "fragment_id": "ai-b02a5c40",
+        "layer": "vision"
+      },
+      {
+        "fragment_id": "ai-8e4292e1",
+        "layer": "vision"
+      },
+      {
+        "fragment_id": "ai-fb9c7c87",
+        "layer": "vision"
+      },
+      {
+        "fragment_id": "ai-f04ab92c",
+        "layer": "vision"
+      },
+      {
+        "fragment_id": "ai-3582f18f",
+        "layer": "vision"
+      },
+      {
+        "fragment_id": "ai-4c79e373",
+        "layer": "vision"
+      },
+      {
+        "fragment_id": "ai-d4720416",
+        "layer": "vision"
+      },
+      {
+        "fragment_id": "ai-0953a79c",
+        "layer": "vision"
+      },
+      {
+        "fragment_id": "ai-e113e990",
+        "layer": "vision"
+      },
+      {
+        "fragment_id": "ai-d5319e27",
+        "layer": "vision"
+      }
+    ],
+    "fragment_count": 42,
+    "confidence_score": 1.0,
+    "quality_level": "medium",
+    "source_summary": "文本×13 | 视觉×29"
+  },
+  {
+    "pattern_id": "92005dedc31d",
+    "case_id": "case_0050",
+    "name": "内容结构_01",
+    "pattern_type": "content_structure",
+    "description": "画面左侧展现了一台专业摄像机的近景，背景伴有深蓝色调的虚化光斑。右侧采用深蓝色色块，并装饰有细白线构成的同心圆几何纹样。 | 页面左侧是一张写实的摄影师工作照，展现了正在使用专业电影摄像机的背影，色调偏冷且带有电影质感。右侧是纯白背景，排列着简洁 | 页面采用深黑色背景，左侧为项目介绍文字，右侧是一张大图，展示了一名身穿蓝色T恤、戴帽子的摄影师正在操作专业摄影机。文字部",
+    "source_fragment_ids": [
+      {
+        "fragment_id": "296339186dd5",
+        "layer": "text"
+      },
+      {
+        "fragment_id": "ai-57e2f0e4",
+        "layer": "vision"
+      },
+      {
+        "fragment_id": "ai-02a01b3b",
+        "layer": "vision"
+      },
+      {
+        "fragment_id": "ai-b4c0f098",
+        "layer": "vision"
+      },
+      {
+        "fragment_id": "ai-8fa506c4",
+        "layer": "vision"
+      },
+      {
+        "fragment_id": "ai-be37f42e",
+        "layer": "vision"
+      },
+      {
+        "fragment_id": "ai-cda47b43",
+        "layer": "vision"
+      },
+      {
+        "fragment_id": "ai-6ba68d4b",
+        "layer": "vision"
+      },
+      {
+        "fragment_id": "ai-3286b98f",
+        "layer": "vision"
+      },
+      {
+        "fragment_id": "ai-0be4f13c",
+        "layer": "vision"
+      },
+      {
+        "fragment_id": "ai-b44b52d5",
+        "layer": "vision"
+      },
+      {
+        "fragment_id": "ai-ca975b2b",
+        "layer": "vision"
+      },
+      {
+        "fragment_id": "ai-fbbd4d67",
+        "layer": "vision"
+      },
+      {
+        "fragment_id": "ai-63d391c3",
+        "layer": "vision"
+      },
+      {
+        "fragment_id": "ai-08145ead",
+        "layer": "vision"
+      },
+      {
+        "fragment_id": "ai-019b7adf",
+        "layer": "vision"
+      },
+      {
+        "fragment_id": "ai-9c3a204e",
+        "layer": "vision"
+      },
+      {
+        "fragment_id": "ai-bb11aa89",
+        "layer": "vision"
+      },
+      {
+        "fragment_id": "ai-b02a5c40",
+        "layer": "vision"
+      },
+      {
+        "fragment_id": "ai-8e4292e1",
+        "layer": "vision"
+      },
+      {
+        "fragment_id": "ai-fb9c7c87",
+        "layer": "vision"
+      },
+      {
+        "fragment_id": "ai-f04ab92c",
+        "layer": "vision"
+      },
+      {
+        "fragment_id": "ai-4c79e373",
+        "layer": "vision"
+      },
+      {
+        "fragment_id": "ai-0953a79c",
+        "layer": "vision"
+      },
+      {
+        "fragment_id": "ai-e113e990",
+        "layer": "vision"
+      }
+    ],
+    "fragment_count": 25,
+    "confidence_score": 1.0,
+    "quality_level": "medium",
+    "source_summary": "文本×1 | 视觉×24"
+  },
+  {
+    "pattern_id": "efbfb12e29d0",
+    "case_id": "case_0050",
+    "name": "视觉方向_01",
+    "pattern_type": "visual_direction",
+    "description": "画面左侧展现了一台专业摄像机的近景，背景伴有深蓝色调的虚化光斑。右侧采用深蓝色色块，并装饰有细白线构成的同心圆几何纹样。 | 页面左侧是一张写实的摄影师工作照，展现了正在使用专业电影摄像机的背影，色调偏冷且带有电影质感。右侧是纯白背景，排列着简洁 | 背景是一张具有电影感的摄影机实拍图，采用浅景深效果，画面焦点在于手持云台上的相机。整体色调偏暗，点缀以鲜艳的荧光绿作为品",
+    "source_fragment_ids": [
+      {
+        "fragment_id": "9e9a75bb06e8",
+        "layer": "text"
+      },
+      {
+        "fragment_id": "769b69d6ed07",
+        "layer": "text"
+      },
+      {
+        "fragment_id": "2a08b6b0f498",
+        "layer": "text"
+      },
+      {
+        "fragment_id": "7f31e74a986e",
+        "layer": "text"
+      },
+      {
+        "fragment_id": "ai-57e2f0e4",
+        "layer": "vision"
+      },
+      {
+        "fragment_id": "ai-02a01b3b",
+        "layer": "vision"
+      },
+      {
+        "fragment_id": "ai-4c0e3d39",
+        "layer": "vision"
+      },
+      {
+        "fragment_id": "ai-b4c0f098",
+        "layer": "vision"
+      },
+      {
+        "fragment_id": "ai-d774da20",
+        "layer": "vision"
+      },
+      {
+        "fragment_id": "ai-8fa506c4",
+        "layer": "vision"
+      },
+      {
+        "fragment_id": "ai-be37f42e",
+        "layer": "vision"
+      },
+      {
+        "fragment_id": "ai-cda47b43",
+        "layer": "vision"
+      },
+      {
+        "fragment_id": "ai-6ba68d4b",
+        "layer": "vision"
+      },
+      {
+        "fragment_id": "ai-3286b98f",
+        "layer": "vision"
+      },
+      {
+        "fragment_id": "ai-0be4f13c",
+        "layer": "vision"
+      },
+      {
+        "fragment_id": "ai-b44b52d5",
+        "layer": "vision"
+      },
+      {
+        "fragment_id": "ai-ca975b2b",
+        "layer": "vision"
+      },
+      {
+        "fragment_id": "ai-fbbd4d67",
+        "layer": "vision"
+      },
+      {
+        "fragment_id": "ai-63d391c3",
+        "layer": "vision"
+      },
+      {
+        "fragment_id": "ai-08145ead",
+        "layer": "vision"
+      },
+      {
+        "fragment_id": "ai-019b7adf",
+        "layer": "vision"
+      },
+      {
+        "fragment_id": "ai-9c3a204e",
+        "layer": "vision"
+      },
+      {
+        "fragment_id": "ai-bb11aa89",
+        "layer": "vision"
+      },
+      {
+        "fragment_id": "ai-b02a5c40",
+        "layer": "vision"
+      },
+      {
+        "fragment_id": "ai-8e4292e1",
+        "layer": "vision"
+      },
+      {
+        "fragment_id": "ai-fb9c7c87",
+        "layer": "vision"
+      },
+      {
+        "fragment_id": "ai-f04ab92c",
+        "layer": "vision"
+      },
+      {
+        "fragment_id": "ai-3582f18f",
+        "layer": "vision"
+      },
+      {
+        "fragment_id": "ai-4c79e373",
+        "layer": "vision"
+      },
+      {
+        "fragment_id": "ai-d4720416",
+        "layer": "vision"
+      },
+      {
+        "fragment_id": "ai-0953a79c",
+        "layer": "vision"
+      },
+      {
+        "fragment_id": "ai-e113e990",
+        "layer": "vision"
+      },
+      {
+        "fragment_id": "ai-d5319e27",
+        "layer": "vision"
+      }
+    ],
+    "fragment_count": 33,
+    "confidence_score": 1.0,
+    "quality_level": "medium",
+    "source_summary": "文本×4 | 视觉×29"
+  },
+  {
+    "pattern_id": "867aee3bb2ee",
+    "case_id": "case_0050",
+    "name": "受众洞察_01",
+    "pattern_type": "audience_insight",
+    "description": "页面采用深黑色背景，左侧为项目介绍文字，右侧是一张大图，展示了一名身穿蓝色T恤、戴帽子的摄影师正在操作专业摄影机。文字部 | 这是一张名为“项目概述”的纪录片策划页面。背景为深黑色，点缀着荧光绿色的线条和文字。左侧是一张工作现场图，展示了一台专业 | 页面是一张深色背景的策划幻灯片。左侧为绿色和白色的文字叙述，主要说明后期制作的策略；右侧是一张高质量的实景照片，展示了一",
+    "source_fragment_ids": [
+      {
+        "fragment_id": "2c22013fcc8b",
+        "layer": "text"
+      },
+      {
+        "fragment_id": "8d775eaa83a3",
+        "layer": "text"
+      },
+      {
+        "fragment_id": "2fbf4183e67f",
+        "layer": "text"
+      },
+      {
+        "fragment_id": "f267a60b8297",
+        "layer": "text"
+      },
+      {
+        "fragment_id": "ai-b4c0f098",
+        "layer": "vision"
+      },
+      {
+        "fragment_id": "ai-d774da20",
+        "layer": "vision"
+      },
+      {
+        "fragment_id": "ai-8fa506c4",
+        "layer": "vision"
+      },
+      {
+        "fragment_id": "ai-be37f42e",
+        "layer": "vision"
+      },
+      {
+        "fragment_id": "ai-cda47b43",
+        "layer": "vision"
+      },
+      {
+        "fragment_id": "ai-6ba68d4b",
+        "layer": "vision"
+      },
+      {
+        "fragment_id": "ai-3286b98f",
+        "layer": "vision"
+      },
+      {
+        "fragment_id": "ai-0be4f13c",
+        "layer": "vision"
+      },
+      {
+        "fragment_id": "ai-b44b52d5",
+        "layer": "vision"
+      },
+      {
+        "fragment_id": "ai-ca975b2b",
+        "layer": "vision"
+      },
+      {
+        "fragment_id": "ai-fbbd4d67",
+        "layer": "vision"
+      },
+      {
+        "fragment_id": "ai-63d391c3",
+        "layer": "vision"
+      },
+      {
+        "fragment_id": "ai-08145ead",
+        "layer": "vision"
+      },
+      {
+        "fragment_id": "ai-019b7adf",
+        "layer": "vision"
+      },
+      {
+        "fragment_id": "ai-9c3a204e",
+        "layer": "vision"
+      },
+      {
+        "fragment_id": "ai-bb11aa89",
+        "layer": "vision"
+      },
+      {
+        "fragment_id": "ai-b02a5c40",
+        "layer": "vision"
+      },
+      {
+        "fragment_id": "ai-fb9c7c87",
+        "layer": "vision"
+      },
+      {
+        "fragment_id": "ai-f04ab92c",
+        "layer": "vision"
+      },
+      {
+        "fragment_id": "ai-4c79e373",
+        "layer": "vision"
+      },
+      {
+        "fragment_id": "ai-d4720416",
+        "layer": "vision"
+      },
+      {
+        "fragment_id": "ai-0953a79c",
+        "layer": "vision"
+      },
+      {
+        "fragment_id": "ai-e113e990",
+        "layer": "vision"
+      }
+    ],
+    "fragment_count": 27,
+    "confidence_score": 1.0,
+    "quality_level": "medium",
+    "source_summary": "文本×4 | 视觉×23"
+  },
+  {
+    "pattern_id": "7b348c517982",
+    "case_id": "case_0050",
+    "name": "执行方法_01",
+    "pattern_type": "execution_method",
+    "description": "页面左侧是一张写实的摄影师工作照，展现了正在使用专业电影摄像机的背影，色调偏冷且带有电影质感。右侧是纯白背景，排列着简洁 | 这是一张名为“项目概述”的纪录片策划页面。背景为深黑色，点缀着荧光绿色的线条和文字。左侧是一张工作现场图，展示了一台专业 | 页面左侧是一张写实风格的高质量摄影图，画面中一位年长的专业人士正坐在单人沙发上与两位背对镜头的访客（一男一女）交谈，环境",
+    "source_fragment_ids": [
+      {
+        "fragment_id": "a8a44847649e",
+        "layer": "text"
+      },
+      {
+        "fragment_id": "2a08b6b0f498",
+        "layer": "text"
+      },
+      {
+        "fragment_id": "71a45f84f3d7",
+        "layer": "text"
+      },
+      {
+        "fragment_id": "6e683410a13a",
+        "layer": "text"
+      },
+      {
+        "fragment_id": "861c629a399d",
+        "layer": "text"
+      },
+      {
+        "fragment_id": "86efb3dec9ca",
+        "layer": "text"
+      },
+      {
+        "fragment_id": "ai-02a01b3b",
+        "layer": "vision"
+      },
+      {
+        "fragment_id": "ai-d774da20",
+        "layer": "vision"
+      },
+      {
+        "fragment_id": "ai-be37f42e",
+        "layer": "vision"
+      },
+      {
+        "fragment_id": "ai-6ba68d4b",
+        "layer": "vision"
+      },
+      {
+        "fragment_id": "ai-0be4f13c",
+        "layer": "vision"
+      },
+      {
+        "fragment_id": "ai-ca975b2b",
+        "layer": "vision"
+      },
+      {
+        "fragment_id": "ai-fbbd4d67",
+        "layer": "vision"
+      },
+      {
+        "fragment_id": "ai-63d391c3",
+        "layer": "vision"
+      },
+      {
+        "fragment_id": "ai-019b7adf",
+        "layer": "vision"
+      },
+      {
+        "fragment_id": "ai-9c3a204e",
+        "layer": "vision"
+      },
+      {
+        "fragment_id": "ai-8e4292e1",
+        "layer": "vision"
+      },
+      {
+        "fragment_id": "ai-fb9c7c87",
+        "layer": "vision"
+      },
+      {
+        "fragment_id": "ai-f04ab92c",
+        "layer": "vision"
+      },
+      {
+        "fragment_id": "ai-3582f18f",
+        "layer": "vision"
+      },
+      {
+        "fragment_id": "ai-4c79e373",
+        "layer": "vision"
+      },
+      {
+        "fragment_id": "ai-e113e990",
+        "layer": "vision"
+      }
+    ],
+    "fragment_count": 22,
+    "confidence_score": 1.0,
+    "quality_level": "medium",
+    "source_summary": "文本×6 | 视觉×16"
+  }
+]

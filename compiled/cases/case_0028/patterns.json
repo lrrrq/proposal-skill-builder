@@ -1,0 +1,65 @@
+[
+  {
+    "pattern_id": "0d9286e5c190",
+    "case_id": "case_0028",
+    "name": "策略_01",
+    "pattern_type": "strategy",
+    "description": "项目计划书阅读指南 1 本计划书主要是面对写给有投资意向的投资人看，他（她）们一般情况下时间 金贵，因此本计划书的撰写原 | 项目概要 恩柏斯影视文化有限公司（以下简称M+）是一家致力于创作多元 影视文化的创新型机构。 M+拟通过对乐善二号创意园 | 项目核心成员 服务企业品牌 vivo, 宝洁，美...",
+    "source_fragment_ids": [
+      {
+        "fragment_id": "c508eee087b8",
+        "layer": "text"
+      },
+      {
+        "fragment_id": "4df64b12e53e",
+        "layer": "text"
+      },
+      {
+        "fragment_id": "7d06ac28ea7c",
+        "layer": "text"
+      },
+      {
+        "fragment_id": "54542b09cefe",
+        "layer": "text"
+      }
+    ],
+    "fragment_count": 4,
+    "confidence_score": 0.9,
+    "quality_level": "medium",
+    "source_summary": "文本×4"
+  },
+  {
+    "pattern_id": "efb8227f5908",
+    "case_id": "case_0028",
+    "name": "受众洞察_01",
+    "pattern_type": "audience_insight",
+    "description": "项目市场背景 现代都市人的工作，生活本就亚历山大，更随着新冠疫情的问题，国 际动荡的政治局势而变得更为焦虑。因此，展现慢",
+    "source_fragment_ids": [
+      {
+        "fragment_id": "fcac87b480a6",
+        "layer": "text"
+      }
+    ],
+    "fragment_count": 1,
+    "confidence_score": 0.6,
+    "quality_level": "high",
+    "source_summary": "文本×1"
+  },
+  {
+    "pattern_id": "d181eb9df5df",
+    "case_id": "case_0028",
+    "name": "执行方法_01",
+    "pattern_type": "execution_method",
+    "description": "财务部分 自投 前期预算总投入：5万 天台改造费用：2万 《在天台》单期节目制作费用：5000 x 3 《此时此刻》单期",
+    "source_fragment_ids": [
+      {
+        "fragment_id": "92cd31ff4c0f",
+        "layer": "text"
+      }
+    ],
+    "fragment_count": 1,
+    "confidence_score": 0.6,
+    "quality_level": "high",
+    "source_summary": "文本×1"
+  }
+]

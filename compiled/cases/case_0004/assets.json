@@ -1,6 +1,6 @@
 [
   {
-    "asset_id": "asset-7ceae867",
+    "asset_id": "asset-18ede7ec",
     "case_id": "case_0004",
     "asset_type": "pdf_page_image",
     "page_id": "case_0004_page_0001",
@@ -20,7 +20,7 @@
     "source_text_length": 124
   },
   {
-    "asset_id": "asset-b324d15a",
+    "asset_id": "asset-484ab179",
     "case_id": "case_0004",
     "asset_type": "pdf_page_image",
     "page_id": "case_0004_page_0002",
@@ -40,7 +40,7 @@
     "source_text_length": 110
   },
   {
-    "asset_id": "asset-114549a6",
+    "asset_id": "asset-9a182a78",
     "case_id": "case_0004",
     "asset_type": "pdf_page_image",
     "page_id": "case_0004_page_0003",
@@ -55,12 +55,12 @@
     "format": "PNG",
     "source": "pdf_rendered_page",
     "description_status": "completed",
+    "manual_description": "页面左侧占据约60%比例的是一张职场办公场景的照片，两名身着衬衫领带的男士正在桌前讨论文件，桌面上摆放着电脑、平板、手机及水杯。右侧为白色留白区域，居中偏上位置有蓝色标题和细微的装饰线条。整体构图简约、商业化。",
     "needs_vision_review": true,
-    "source_text_length": 14,
-    "manual_description": "页面左侧展示了一张高质量的职场照片，画面中两名穿着衬衫和领带的男士正在会议桌旁讨论，一人手持笔指着文件，另一人作思考状。背景是简约现代的办公空间。右侧为大面积留白，包含章节标题及装饰性线条。左上角有美的（Midea）品牌Logo及主题文字，右上角有页码标识。"
+    "source_text_length": 14
   },
   {
-    "asset_id": "asset-509278e2",
+    "asset_id": "asset-c9146c16",
     "case_id": "case_0004",
     "asset_type": "pdf_page_image",
     "page_id": "case_0004_page_0004",
@@ -77,10 +77,10 @@
     "description_status": "pending",
     "manual_description": "",
     "needs_vision_review": false,
-    "source_text_length": 684
+    "source_text_length": 652
   },
   {
-    "asset_id": "asset-3e137fd5",
+    "asset_id": "asset-68df37ec",
     "case_id": "case_0004",
     "asset_type": "pdf_page_image",
     "page_id": "case_0004_page_0005",
@@ -97,10 +97,10 @@
     "description_status": "pending",
     "manual_description": "",
     "needs_vision_review": false,
-    "source_text_length": 415
+    "source_text_length": 383
   },
   {
-    "asset_id": "asset-4b98802d",
+    "asset_id": "asset-b8d957b3",
     "case_id": "case_0004",
     "asset_type": "pdf_page_image",
     "page_id": "case_0004_page_0006",
@@ -120,7 +120,7 @@
     "source_text_length": 410
   },
   {
-    "asset_id": "asset-a9cc0ec7",
+    "asset_id": "asset-7f88499f",
     "case_id": "case_0004",
     "asset_type": "pdf_page_image",
     "page_id": "case_0004_page_0007",
@@ -140,7 +140,7 @@
     "source_text_length": 273
   },
   {
-    "asset_id": "asset-11a0d141",
+    "asset_id": "asset-a4be221e",
     "case_id": "case_0004",
     "asset_type": "pdf_page_image",
     "page_id": "case_0004_page_0008",
@@ -160,7 +160,7 @@
     "source_text_length": 290
   },
   {
-    "asset_id": "asset-f30fa629",
+    "asset_id": "asset-916a419e",
     "case_id": "case_0004",
     "asset_type": "pdf_page_image",
     "page_id": "case_0004_page_0009",
@@ -180,7 +180,7 @@
     "source_text_length": 574
   },
   {
-    "asset_id": "asset-a3652c33",
+    "asset_id": "asset-c10b7a37",
     "case_id": "case_0004",
     "asset_type": "pdf_page_image",
     "page_id": "case_0004_page_0010",
@@ -200,7 +200,7 @@
     "source_text_length": 417
   },
   {
-    "asset_id": "asset-6614f7b8",
+    "asset_id": "asset-ff7affc1",
     "case_id": "case_0004",
     "asset_type": "pdf_page_image",
     "page_id": "case_0004_page_0011",
@@ -217,10 +217,10 @@
     "description_status": "pending",
     "manual_description": "",
     "needs_vision_review": false,
-    "source_text_length": 302
+    "source_text_length": 270
   },
   {
-    "asset_id": "asset-7948ed44",
+    "asset_id": "asset-cd0073c3",
     "case_id": "case_0004",
     "asset_type": "pdf_page_image",
     "page_id": "case_0004_page_0012",
@@ -240,7 +240,7 @@
     "source_text_length": 345
   },
   {
-    "asset_id": "asset-cee8c727",
+    "asset_id": "asset-4af91440",
     "case_id": "case_0004",
     "asset_type": "pdf_page_image",
     "page_id": "case_0004_page_0013",
@@ -260,7 +260,7 @@
     "source_text_length": 401
   },
   {
-    "asset_id": "asset-0f2ee31e",
+    "asset_id": "asset-42acd899",
     "case_id": "case_0004",
     "asset_type": "pdf_page_image",
     "page_id": "case_0004_page_0014",
@@ -280,7 +280,7 @@
     "source_text_length": 344
   },
   {
-    "asset_id": "asset-0623c7b4",
+    "asset_id": "asset-ff9c0ef0",
     "case_id": "case_0004",
     "asset_type": "pdf_page_image",
     "page_id": "case_0004_page_0015",
@@ -300,7 +300,7 @@
     "source_text_length": 475
   },
   {
-    "asset_id": "asset-cedfc11d",
+    "asset_id": "asset-3f734d69",
     "case_id": "case_0004",
     "asset_type": "pdf_page_image",
     "page_id": "case_0004_page_0016",
@@ -320,7 +320,7 @@
     "source_text_length": 497
   },
   {
-    "asset_id": "asset-d0a45d71",
+    "asset_id": "asset-9bfb1216",
     "case_id": "case_0004",
     "asset_type": "pdf_page_image",
     "page_id": "case_0004_page_0017",
@@ -340,7 +340,7 @@
     "source_text_length": 407
   },
   {
-    "asset_id": "asset-bccf3234",
+    "asset_id": "asset-41491405",
     "case_id": "case_0004",
     "asset_type": "pdf_page_image",
     "page_id": "case_0004_page_0018",
@@ -357,10 +357,10 @@
     "description_status": "pending",
     "manual_description": "",
     "needs_vision_review": false,
-    "source_text_length": 364
+    "source_text_length": 332
   },
   {
-    "asset_id": "asset-42a7358e",
+    "asset_id": "asset-c6ed31db",
     "case_id": "case_0004",
     "asset_type": "pdf_page_image",
     "page_id": "case_0004_page_0019",
@@ -380,7 +380,7 @@
     "source_text_length": 410
   },
   {
-    "asset_id": "asset-e346f363",
+    "asset_id": "asset-a26b3f32",
     "case_id": "case_0004",
     "asset_type": "pdf_page_image",
     "page_id": "case_0004_page_0020",
@@ -400,7 +400,7 @@
     "source_text_length": 463
   },
   {
-    "asset_id": "asset-849318be",
+    "asset_id": "asset-325b6ad2",
     "case_id": "case_0004",
     "asset_type": "pdf_page_image",
     "page_id": "case_0004_page_0021",
@@ -420,7 +420,7 @@
     "source_text_length": 231
   },
   {
-    "asset_id": "asset-d70788e3",
+    "asset_id": "asset-78b1a28e",
     "case_id": "case_0004",
     "asset_type": "pdf_page_image",
     "page_id": "case_0004_page_0022",
@@ -440,7 +440,7 @@
     "source_text_length": 285
   },
   {
-    "asset_id": "asset-45f89089",
+    "asset_id": "asset-de3159e9",
     "case_id": "case_0004",
     "asset_type": "pdf_page_image",
     "page_id": "case_0004_page_0023",
@@ -460,7 +460,7 @@
     "source_text_length": 425
   },
   {
-    "asset_id": "asset-d931e017",
+    "asset_id": "asset-634b5e02",
     "case_id": "case_0004",
     "asset_type": "pdf_page_image",
     "page_id": "case_0004_page_0024",
@@ -477,10 +477,10 @@
     "description_status": "pending",
     "manual_description": "",
     "needs_vision_review": false,
-    "source_text_length": 559
+    "source_text_length": 527
   },
   {
-    "asset_id": "asset-933fd7f7",
+    "asset_id": "asset-6274ce43",
     "case_id": "case_0004",
     "asset_type": "pdf_page_image",
     "page_id": "case_0004_page_0025",
@@ -494,13 +494,13 @@
     "height": 833.25,
     "format": "PNG",
     "source": "pdf_rendered_page",
-    "description_status": "failed",
+    "description_status": "completed",
+    "manual_description": "页面采用极简主义设计，左侧是一张具有纵深感的摄影图片，画面主体是平行的金属质感垂直线条，呈现出一种现代建筑或高科技空间的氛围，左侧带有柔焦模糊效果。右侧为留白区域，居中显示蓝色的章节标题，下方配有绿灰双色的装饰线条。左上角有美的（Midea）Logo及“共生/进化”的主题文字，右上角标注页码24。",
     "needs_vision_review": true,
-    "source_text_length": 11,
-    "error_message": "VLM API 返回为空"
+    "source_text_length": 11
   },
   {
-    "asset_id": "asset-7877bc7f",
+    "asset_id": "asset-cc847818",
     "case_id": "case_0004",
     "asset_type": "pdf_page_image",
     "page_id": "case_0004_page_0026",
@@ -520,7 +520,7 @@
     "source_text_length": 309
   },
   {
-    "asset_id": "asset-cdb90a0f",
+    "asset_id": "asset-2a0c6b6f",
     "case_id": "case_0004",
     "asset_type": "pdf_page_image",
     "page_id": "case_0004_page_0027",
@@ -540,7 +540,7 @@
     "source_text_length": 371
   },
   {
-    "asset_id": "asset-f164247b",
+    "asset_id": "asset-96fbc32e",
     "case_id": "case_0004",
     "asset_type": "pdf_page_image",
     "page_id": "case_0004_page_0028",
@@ -555,12 +555,12 @@
     "format": "PNG",
     "source": "pdf_rendered_page",
     "description_status": "completed",
+    "manual_description": "页面左侧占据约二分之一比例的是一张专业摄像机组件的特写摄影图，背景虚化，展现出电影质感的工业美感。右侧为大面积留白区域，中央位置标有章节编号和标题。顶部有品牌Logo、主题文字以及页码。",
     "needs_vision_review": true,
-    "source_text_length": 10,
-    "manual_description": "页面左侧展示了一台装配完整的专业摄像机（带遮光罩、监视器和长焦镜头），背景为具有虚化效果的户外自然光场景。右侧为大面积留白区域，包含蓝色标题文字和极简的线条装饰。"
+    "source_text_length": 10
   },
   {
-    "asset_id": "asset-9340ea1e",
+    "asset_id": "asset-a94e176f",
     "case_id": "case_0004",
     "asset_type": "pdf_page_image",
     "page_id": "case_0004_page_0029",
@@ -580,7 +580,7 @@
     "source_text_length": 62
   },
   {
-    "asset_id": "asset-a2ec71d5",
+    "asset_id": "asset-79bbca93",
     "case_id": "case_0004",
     "asset_type": "pdf_page_image",
     "page_id": "case_0004_page_0030",
@@ -600,7 +600,7 @@
     "source_text_length": 70
   },
   {
-    "asset_id": "asset-629fd639",
+    "asset_id": "asset-6874b6d7",
     "case_id": "case_0004",
     "asset_type": "pdf_page_image",
     "page_id": "case_0004_page_0031",
@@ -620,7 +620,7 @@
     "source_text_length": 73
   },
   {
-    "asset_id": "asset-7f0d1ce4",
+    "asset_id": "asset-08370980",
     "case_id": "case_0004",
     "asset_type": "pdf_page_image",
     "page_id": "case_0004_page_0032",
@@ -640,7 +640,7 @@
     "source_text_length": 64
   },
   {
-    "asset_id": "asset-85dc243e",
+    "asset_id": "asset-f601ea9c",
     "case_id": "case_0004",
     "asset_type": "pdf_page_image",
     "page_id": "case_0004_page_0033",
@@ -660,7 +660,7 @@
     "source_text_length": 34
   },
   {
-    "asset_id": "asset-b702c2ce",
+    "asset_id": "asset-c3e5b85e",
     "case_id": "case_0004",
     "asset_type": "pdf_page_image",
     "page_id": "case_0004_page_0034",
@@ -680,7 +680,7 @@
     "source_text_length": 50
   },
   {
-    "asset_id": "asset-d58ba46e",
+    "asset_id": "asset-a8a0631c",
     "case_id": "case_0004",
     "asset_type": "pdf_page_image",
     "page_id": "case_0004_page_0035",
@@ -694,9 +694,9 @@
     "height": 833.25,
     "format": "PNG",
     "source": "pdf_rendered_page",
-    "description_status": "pending",
-    "manual_description": "",
-    "needs_vision_review": false,
-    "source_text_length": 31
+    "description_status": "completed",
+    "manual_description": "画面以深黑色为底，右侧点缀着流动的、具有科技感的蓝绿渐变色线条，如同波浪或光导纤维。线条中穿插着细小的金色光点，营造出深邃且富有动感的视觉效果。左侧是大字号的白色手写体“Thank you”，上方是美的（Midea）企业标识及中文口号“共生/进化”。",
+    "needs_vision_review": true,
+    "source_text_length": 0
   }
 ]
