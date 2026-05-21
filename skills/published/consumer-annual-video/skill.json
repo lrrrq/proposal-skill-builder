@@ -1,30 +1,28 @@
 {
-  "skill_id": "case_0004",
-  "display_name": "Case 0004",
-  "description": "从案例 case_0004 提炼的能力，包含 5 个 Patterns（31 文本片段 + 1 视觉片段）",
+  "skill_id": "consumer-annual-video",
+  "display_name": "Consumer Annual Video",
+  "description": "从案例 case_0012 提炼的能力，包含 4 个 Patterns（19 文本片段 + 1 视觉片段）",
   "status": "published",
   "dataset": "prod",
-  "quality_level": "silver",
+  "quality_level": "bronze",
   "callable": true,
   "source_cases": [
-    "case_0004"
+    "case_0012"
   ],
   "source_patterns": [
-    "9d0132880a82",
-    "e3c82a04eabd",
-    "30415bc0d9e0",
-    "b34582cee2b2",
-    "dfb161ea3b42"
+    "6d0750b88ff4",
+    "405093ac6faa",
+    "2ee2dd798a76",
+    "603641675110"
   ],
-  "source_fragments_count": 31,
+  "source_fragments_count": 19,
   "source_ai_fragments_count": 1,
   "source_strategies": [
-    "stg-5c2ade3d55",
-    "stg-4b55a3ac54",
-    "stg-80464cdd14",
-    "stg-b59fe00e68",
-    "stg-14a6fd8524",
-    "stg-7506e3d916"
+    "stg-3d26483c79",
+    "stg-9ace26e75f",
+    "stg-6eb8c144bf",
+    "stg-6aa69d15d3",
+    "stg-889be78207"
   ],
   "allowed_tasks": [
     "策略规划",
@@ -34,8 +32,8 @@
     "结构设计",
     "叙事框架"
   ],
-  "created_at": "2026-05-21T18:13:46.120517",
-  "updated_at": "2026-05-21T18:13:46.121033",
+  "created_at": "2026-05-21T18:13:46.389777",
+  "updated_at": "2026-05-21T18:13:46.389961",
   "version": "1.0",
   "output_template": {
     "version_type": "both_internal_and_client",

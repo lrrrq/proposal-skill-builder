@@ -784,7 +784,154 @@
         "叙事框架"
       ],
       "published_at": "2026-05-21T17:50:37.946657"
+    },
+    {
+      "skill_id": "case_0005",
+      "display_name": "Case 0005",
+      "status": "published",
+      "quality_level": "bronze",
+      "callable": true,
+      "path": "/Applications/lrq/coding/proposal-skill-builder/skills/published/case_0005",
+      "source_cases": [
+        "case_0005"
+      ],
+      "source_strategies": [
+        "922a43df4ddc"
+      ],
+      "allowed_tasks": [
+        "视觉设计",
+        "风格定义",
+        "画面构思"
+      ]
+    },
+    {
+      "skill_id": "case_0007",
+      "display_name": "Case 0007",
+      "status": "published",
+      "quality_level": "bronze",
+      "callable": true,
+      "path": "/Applications/lrq/coding/proposal-skill-builder/skills/published/case_0007",
+      "source_cases": [
+        "case_0007"
+      ],
+      "source_strategies": [
+        "stg-9764426b8d",
+        "stg-e550977518",
+        "stg-928f9d2be2"
+      ],
+      "allowed_tasks": [
+        "策略规划",
+        "品牌定位",
+        "差异化分析",
+        "视觉设计",
+        "风格定义",
+        "画面构思"
+      ]
+    },
+    {
+      "skill_id": "case_0012",
+      "display_name": "Case 0012",
+      "status": "published",
+      "quality_level": "bronze",
+      "callable": true,
+      "path": "/Applications/lrq/coding/proposal-skill-builder/skills/published/case_0012",
+      "source_cases": [
+        "case_0012"
+      ],
+      "source_strategies": [
+        "stg-3d26483c79",
+        "stg-9ace26e75f",
+        "stg-6eb8c144bf",
+        "stg-6aa69d15d3",
+        "stg-889be78207"
+      ],
+      "allowed_tasks": [
+        "策略规划",
+        "品牌定位",
+        "差异化分析",
+        "内容策划",
+        "结构设计",
+        "叙事框架"
+      ]
+    },
+    {
+      "skill_id": "case_0014",
+      "display_name": "Case 0014",
+      "status": "published",
+      "quality_level": "bronze",
+      "callable": true,
+      "path": "/Applications/lrq/coding/proposal-skill-builder/skills/published/case_0014",
+      "source_cases": [
+        "case_0014"
+      ],
+      "source_strategies": [
+        "stg-523c672a35",
+        "stg-9ccfb85f60",
+        "stg-549078cfdd",
+        "stg-1ffd28d378",
+        "stg-c31bc5f91a"
+      ],
+      "allowed_tasks": [
+        "策略规划",
+        "品牌定位",
+        "差异化分析",
+        "内容策划",
+        "结构设计",
+        "叙事框架"
+      ]
+    },
+    {
+      "skill_id": "m-plus-vi-design",
+      "display_name": "M Plus Vi Design",
+      "status": "published",
+      "quality_level": "bronze",
+      "callable": true,
+      "path": "/Applications/lrq/coding/proposal-skill-builder/skills/published/m-plus-vi-design",
+      "source_cases": [
+        "case_0014"
+      ],
+      "source_strategies": [
+        "stg-523c672a35",
+        "stg-9ccfb85f60",
+        "stg-549078cfdd",
+        "stg-1ffd28d378",
+        "stg-c31bc5f91a"
+      ],
+      "allowed_tasks": [
+        "策略规划",
+        "品牌定位",
+        "差异化分析",
+        "内容策划",
+        "结构设计",
+        "叙事框架"
+      ]
+    },
+    {
+      "skill_id": "consumer-annual-video",
+      "display_name": "Consumer Annual Video",
+      "status": "published",
+      "quality_level": "bronze",
+      "callable": true,
+      "path": "/Applications/lrq/coding/proposal-skill-builder/skills/published/consumer-annual-video",
+      "source_cases": [
+        "case_0012"
+      ],
+      "source_strategies": [
+        "stg-3d26483c79",
+        "stg-9ace26e75f",
+        "stg-6eb8c144bf",
+        "stg-6aa69d15d3",
+        "stg-889be78207"
+      ],
+      "allowed_tasks": [
+        "策略规划",
+        "品牌定位",
+        "差异化分析",
+        "内容策划",
+        "结构设计",
+        "叙事框架"
+      ]
     }
   ],
-  "updated_at": "2026-05-21T17:51:28.463512"
+  "updated_at": "2026-05-21T18:13:46.395350"
 }
