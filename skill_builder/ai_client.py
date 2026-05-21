@@ -6,6 +6,11 @@ import os
 from abc import ABC, abstractmethod
 from pathlib import Path
 
+from dotenv import load_dotenv
+
+# 加载 .env 文件
+load_dotenv()
+
 
 class AIClient(ABC):
     """AI 客户端抽象接口"""
@@ -57,7 +62,7 @@ class MiniMaxTextClient(AIClient):
     """
 
     def __init__(self, api_key: str = None, base_url: str = None, model: str = None):
-        self.api_key = api_key or os.environ.get("MINIMAX_TOKEN_PLAN_KEY", "")
+        self.api_key = api_key or os.environ.get("MINIMAX_API_KEY", "")
         self.base_url = base_url or os.environ.get("MINIMAX_TEXT_BASE_URL", "https://api.minimaxi.com/v1")
         self.model = model or os.environ.get("MINIMAX_TEXT_MODEL", "MiniMax-M2.7")
         self.client = None
@@ -132,7 +137,7 @@ class MiniMaxMCPClient(AIClient):
     Token Plan Key 可以直接使用，不需要 uvx 或 MCP 服务启动
 
     环境变量：
-      MINIMAX_TOKEN_PLAN_KEY：Token Plan 专属 Key
+      MINIMAX_API_KEY：Token Plan 专属 Key
       MINIMAX_API_HOST：API 主机（默认 https://api.minimaxi.com）
     """
 
@@ -140,7 +145,7 @@ class MiniMaxMCPClient(AIClient):
     MAX_FILE_SIZE = 20 * 1024 * 1024  # 20MB
 
     def __init__(self, api_key: str = None, base_url: str = None):
-        self.api_key = api_key or os.environ.get("MINIMAX_TOKEN_PLAN_KEY", "")
+        self.api_key = api_key or os.environ.get("MINIMAX_API_KEY", "")
         self.base_url = base_url or os.environ.get("MINIMAX_API_HOST", "https://api.minimaxi.com")
         self.session = None
         self._init_client()
@@ -186,7 +191,7 @@ class MiniMaxMCPClient(AIClient):
             return self._error_result(validation["error"])
 
         if not self.session:
-            return self._error_result("API 未初始化，请检查 MINIMAX_TOKEN_PLAN_KEY")
+            return self._error_result("API 未初始化，请检查 MINIMAX_API_KEY")
 
         default_prompt = prompt or PROMPT_VISION_ANALYSIS
 

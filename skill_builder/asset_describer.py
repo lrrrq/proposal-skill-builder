@@ -64,8 +64,12 @@ def generate_ai_fragment(asset_id: str, case_id: str, description_result: dict, 
         "fragment_type": "visual_summary",
         "raw_text": description_result.get("visual_summary", ""),
         "summary": (description_result.get("visual_summary", "") or "")[:120],
-        "detected_text": description_result.get("detected_text", ""),
-        "keywords": [],
+        "detected_text": description_result.get("detected_text", []),
+        "keywords": description_result.get("style_keywords", []),
+        "layout_summary": description_result.get("layout_summary", ""),
+        "strategy_hint": description_result.get("strategy_hint", ""),
+        "reusable_pattern": description_result.get("reusable_pattern", ""),
+        "confidence": description_result.get("confidence", 0.0),
         "quality_flags": ["ai_generated"],
     }
 
@@ -428,23 +432,53 @@ def generate_ai_fragments_for_case(case_id: str) -> Dict:
             val = desc.get(field, "")
             if val:
                 if isinstance(val, list):
-                    raw_parts.extend([v for v in val if v])
+                    for v in val:
+                        if isinstance(v, dict) and "description" in v:
+                            raw_parts.append(str(v["description"]))
+                        elif isinstance(v, str) and v.strip():
+                            raw_parts.append(v.strip())
                 elif isinstance(val, str) and val.strip():
                     raw_parts.append(val.strip())
+                elif isinstance(val, dict) and "description" in val:
+                    raw_parts.append(str(val["description"]))
         raw_text = " ".join(raw_parts)
 
+        def extract_str(val):
+            """Extract string from various formats"""
+            if isinstance(val, str) and val.strip():
+                return val.strip()
+            if isinstance(val, list):
+                for v in val:
+                    if isinstance(v, dict) and "description" in v:
+                        return str(v["description"]).strip()
+                    elif isinstance(v, str) and v.strip():
+                        return v.strip()
+            if isinstance(val, dict) and "description" in val:
+                return str(val["description"]).strip()
+            return ""
+
         # summary: 优先用 visual_summary 或 strategy_hint
-        summary = desc.get("visual_summary", "") or desc.get("strategy_hint", "") or raw_text[:200]
+        vs = extract_str(desc.get("visual_summary", ""))
+        sh = extract_str(desc.get("strategy_hint", ""))
+        summary = vs or sh or raw_text[:200]
 
         # keywords: 从 style_keywords + detected_text 提取
         keywords = []
         style_kw = desc.get("style_keywords", [])
         if isinstance(style_kw, list):
-            keywords.extend(style_kw)
+            for kw in style_kw:
+                if isinstance(kw, dict) and "description" in kw:
+                    keywords.append(str(kw["description"]))
+                elif isinstance(kw, str) and kw.strip():
+                    keywords.append(kw.strip())
         detected = desc.get("detected_text", [])
         if isinstance(detected, list):
-            keywords.extend([t for t in detected if t and len(t) < 20])
-        keywords = list(dict.fromkeys(keywords))[:10]  # 去重，保留最多10个
+            for t in detected:
+                if isinstance(t, dict) and "description" in t:
+                    keywords.append(str(t["description"]))
+                elif isinstance(t, str) and t and len(t) < 20:
+                    keywords.append(t)
+        keywords = list(dict.fromkeys(keywords))[:10]
 
         # quality_flags
         quality_flags = ["vision_generated"]
@@ -461,6 +495,12 @@ def generate_ai_fragments_for_case(case_id: str) -> Dict:
             "source_page_id": None,  # descriptions.json 不包含 page_id
             "raw_text": raw_text,
             "summary": summary[:300] if len(summary) > 300 else summary,
+            "detected_text": desc.get("detected_text", []),
+            "visual_summary": vs,
+            "layout_summary": extract_str(desc.get("layout_summary", "")),
+            "style_keywords": desc.get("style_keywords", []),
+            "strategy_hint": sh,
+            "reusable_pattern": extract_str(desc.get("reusable_pattern", "")),
             "keywords": keywords,
             "confidence": confidence,
             "quality_flags": quality_flags,

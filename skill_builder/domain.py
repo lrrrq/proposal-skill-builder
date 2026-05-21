@@ -2,21 +2,33 @@
 
 # Pattern Types
 PATTERN_TYPES = {
-    "strategy": ["目标", "目的", "策略", "定位", "核心", "价值", "品牌", "差异化", "优势"],
-    "content_structure": ["目录", "流程", "章节", "结构", "框架", "模块", "层次", "逻辑"],
-    "visual_direction": ["视觉", "风格", "画面", "色彩", "设计", "图形", "排版", "字体", "色调"],
-    "audience_insight": ["用户", "客户", "人群", "受众", "会员", "消费者", "目标群体", "画像"],
-    "execution_method": ["执行", "落地", "排期", "预算", "物料", "实施", "步骤", "时间节点", "资源"],
+    # Chinese + English keywords for bilingual support
+    "strategy": ["目标", "目的", "策略", "定位", "核心", "价值", "品牌", "差异化", "优势",
+                "strategy", "objective", "goal", "positioning", "core", "value", "brand", "advantage"],
+    "content_structure": ["目录", "流程", "章节", "结构", "框架", "模块", "层次", "逻辑",
+                         "contents", "toc", "outline", "structure", "chapter", "section", "flow"],
+    "visual_direction": ["视觉", "风格", "画面", "色彩", "设计", "图形", "排版", "字体", "色调",
+                         "visual", "style", "design", "color", "layout", "typography", "aesthetic"],
+    "audience_insight": ["用户", "客户", "人群", "受众", "会员", "消费者", "目标群体", "画像",
+                         "audience", "user", "customer", "consumer", "target", "demographic"],
+    "execution_method": ["执行", "落地", "排期", "预算", "物料", "实施", "步骤", "时间节点", "资源",
+                        "execution", "timeline", "budget", "deliverable", "schedule", "step"],
 }
 
 # Strategy Types
 STRATEGY_TYPES = {
-    "positioning_strategy": ["定位", "品牌", "差异化", "核心价值", "竞争优势", "战略"],
-    "audience_strategy": ["用户", "客户", "受众", "人群", "会员", "消费者", "目标群体", "画像"],
-    "narrative_strategy": ["叙事", "故事", "内容", "结构", "章节", "节奏", "弧线", "线索"],
-    "visual_strategy": ["视觉", "风格", "画面", "色彩", "设计", "图形", "排版", "色调", "留白"],
-    "execution_strategy": ["执行", "落地", "排期", "预算", "物料", "实施", "步骤", "时间节点"],
-    "conversion_strategy": ["转化", "传播", "会员", "销售", "报名", "邀约", "注册", "购买", "成交"],
+    "positioning_strategy": ["定位", "品牌", "差异化", "核心价值", "竞争优势", "战略",
+                             "positioning", "brand", "differentiation", "advantage"],
+    "audience_strategy": ["用户", "客户", "受众", "人群", "会员", "消费者", "目标群体", "画像",
+                         "audience", "user", "customer", "consumer", "target"],
+    "narrative_strategy": ["叙事", "故事", "内容", "结构", "章节", "节奏", "弧线", "线索",
+                          "narrative", "story", "content", "structure", "rhythm"],
+    "visual_strategy": ["视觉", "风格", "画面", "色彩", "设计", "图形", "排版", "色调", "留白",
+                       "visual", "style", "color", "design", "layout", "aesthetic"],
+    "execution_strategy": ["执行", "落地", "排期", "预算", "物料", "实施", "步骤", "时间节点",
+                          "execution", "timeline", "budget", "schedule"],
+    "conversion_strategy": ["转化", "传播", "会员", "销售", "报名", "邀约", "注册", "购买", "成交",
+                           "conversion", "sales", "registration", "purchase"],
 }
 
 # Pattern to Strategy mapping

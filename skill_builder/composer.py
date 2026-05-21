@@ -11,6 +11,7 @@ from typing import List, Dict, Optional
 from .config import Config
 from .db import get_connection
 from .utils import now_iso
+from .pattern_engine import clean_fragment_text
 
 
 def load_case_data(case_id: str) -> Dict:
@@ -542,7 +543,7 @@ def build_skill_md(data: Dict, skill_id: str, display_name: str, quality_level: 
             ">",
         ])
         for p in strategy_patterns[:2]:
-            desc = p.get("description", "")
+            desc = clean_fragment_text(p.get("description", ""))
             if desc:
                 lines.append(f"▶ {desc[:120]}")
         lines.append("")
@@ -629,7 +630,9 @@ def build_skill_md(data: Dict, skill_id: str, display_name: str, quality_level: 
         ">",
     ])
     for p in patterns[:5]:
-        lines.append(f"▶ **{p['name']}** (*{p['pattern_type']}*): {p.get('description', '')[:80]}...")
+        raw_desc = p.get('description', '')[:80]
+        cleaned = clean_fragment_text(raw_desc)
+        lines.append(f"▶ **{p['name']}** (*{p['pattern_type']}*): {cleaned}...")
     lines.append("")
 
     # 视觉方向
@@ -658,9 +661,25 @@ def build_skill_md(data: Dict, skill_id: str, display_name: str, quality_level: 
         "",
         "| 类型 | 数量 | 说明 |",
         "|------|------|------|",
-        "| 封面视觉 | 1张 | [占位符] |",
-        "| 风格示例 | 3张 | [占位符] |",
-        "| 版式示例 | 2张 | [占位符] |",
+        "| 封面视觉 | 1张 | 封面页视觉参考 |",
+        "| 风格示例 | 3张 | 风格页视觉参考 |",
+        "| 版式示例 | 2张 | 版式页视觉参考 |",
+        "",
+        "### 视觉资产清单",
+    ])
+
+    # 添加来自 AI 描述的 layout_summary 作为版式说明
+    layout_summaries = []
+    for af in ai_fragments[:6]:
+        layout = af.get("layout_summary", "")
+        if layout and len(layout) > 10:
+            # Keep full layout summary, no truncation
+            layout_summaries.append(layout)
+
+    for i, ls in enumerate(layout_summaries[:3]):
+        lines.append(f"**版式{i+1}**: {ls}")
+
+    lines.extend([
         "",
         "### 色彩规范",
     ])
@@ -698,7 +717,9 @@ def build_skill_md(data: Dict, skill_id: str, display_name: str, quality_level: 
             ">",
         ])
         for p in content_patterns[:2]:
-            lines.append(f"▶ {p.get('description', '')[:100]}")
+            desc = clean_fragment_text(p.get('description', ''))
+            if desc:
+                lines.append(f"▶ {desc[:100]}")
         lines.append("")
 
     # 受众洞察
@@ -710,7 +731,9 @@ def build_skill_md(data: Dict, skill_id: str, display_name: str, quality_level: 
             ">",
         ])
         for p in audience_patterns[:2]:
-            lines.append(f"▶ {p.get('description', '')[:100]}")
+            desc = clean_fragment_text(p.get('description', ''))
+            if desc:
+                lines.append(f"▶ {desc[:100]}")
         lines.append("")
 
     # 执行方法
@@ -722,7 +745,9 @@ def build_skill_md(data: Dict, skill_id: str, display_name: str, quality_level: 
             ">",
         ])
         for p in exec_patterns[:2]:
-            lines.append(f"▶ {p.get('description', '')[:100]}")
+            desc = clean_fragment_text(p.get('description', ''))
+            if desc:
+                lines.append(f"▶ {desc[:100]}")
         lines.append("")
 
     # 限制条件
@@ -771,11 +796,43 @@ def build_visual_strategy_section(patterns: List[Dict], ai_fragments: List[Dict]
 
     lines = ["## 视觉策略", ""]
 
-    if visual_patterns:
+    # Use AI fragments' layout_summary as primary visual strategy
+    layout_summaries = []
+    for af in ai_fragments:
+        ls = af.get("layout_summary", "")
+        if ls and len(ls) > 10:
+            layout_summaries.append(ls)
+
+    if layout_summaries:
+        for ls in layout_summaries[:3]:
+            lines.append(f"- {ls[:100]}")
+    elif visual_patterns:
         for p in visual_patterns[:2]:
-            desc = p.get("description", "")
+            desc = clean_fragment_text(p.get("description", ""))
             if desc:
-                lines.append(f"- {desc[:120]}")
+                first = desc.split("|")[0].strip()
+                if first:
+                    lines.append(f"- {first[:120]}")
+
+    # 收集可复用模式（从 AI fragment 的 reusable_pattern 提取）
+    reusable_patterns = []
+    for af in ai_fragments:
+        rp = af.get("reusable_pattern", "")
+        if rp and len(rp) > 5:
+            reusable_patterns.append(rp[:100])
+
+    if reusable_patterns:
+        lines.append("")
+        lines.append("### 可复用视觉模式")
+        # 去重
+        seen = set()
+        for rp in reusable_patterns:
+            rp_clean = rp.strip()
+            if rp_clean and rp_clean not in seen and len(rp_clean) > 10:
+                seen.add(rp_clean)
+                lines.append(f"- {rp_clean}")
+                if len(seen) >= 5:
+                    break
 
     keywords = []
     for af in ai_fragments:
@@ -929,6 +986,68 @@ def upsert_skill_db(skill_json: Dict) -> None:
     conn.close()
 
 
+def validate_case_skill_domain_match(case_id: str, skill_id: str, case_meta: Dict) -> Dict:
+    """
+    验证 case 的领域与 skill 的预期用途是否匹配
+
+    Returns:
+        {
+            "matches": bool,
+            "warnings": List[str],
+            "suggested_cases": List[str] (如果 matches=False)
+        }
+    """
+    # Skill ID 关键词映射
+    skill_domain_keywords = {
+        "hotel": ["酒店", "hotel", "威斯汀", "万怡", "W酒店", "ALSO HOTEL"],
+        "festival": ["节庆", "春节", "新年", "festival", "holiday"],
+        "annual": ["年会", "annual", "经销商", "美的"],
+        "gala": ["年会", "gala", "庆典", "晚宴"],
+        "brand": ["品牌", "brand", "KV", "视觉"],
+        "video": ["视频", "video", "短视频", "脚本"],
+        "luxury": ["奢华", "luxury", "高端", "奢侈"],
+    }
+
+    # 从 skill_id 提取领域关键词
+    skill_id_lower = skill_id.lower()
+    detected_domains = []
+    for domain, keywords in skill_domain_keywords.items():
+        if any(kw.lower() in skill_id_lower for kw in keywords):
+            detected_domains.append(domain)
+
+    if not detected_domains:
+        return {"matches": True, "warnings": [], "suggested_cases": []}
+
+    # 从 case meta 提取信息
+    case_title = case_meta.get("title", "").lower()
+    case_filename = case_meta.get("original_filename", "").lower()
+    case_text = (case_title + " " + case_filename).lower()
+
+    # 检查匹配
+    warnings = []
+    for domain in detected_domains:
+        domain_keywords = skill_domain_keywords.get(domain, [])
+        if not any(kw.lower() in case_text for kw in domain_keywords):
+            warnings.append(f"Skill '{skill_id}' 暗示 {domain} 领域，但 Case '{case_meta.get('title', case_id)}' 不包含相关关键词")
+
+    # 如果有警告，提供建议
+    suggested_cases = []
+    if warnings:
+        from .case_manager import list_cases
+        all_cases = list_cases(dataset="all")
+        for c in all_cases:
+            c_text = (c.get("title", "") + " " + c.get("original_filename", "")).lower()
+            if any(kw.lower() in c_text for kw in domain_keywords if domain in detected_domains):
+                suggested_cases.append(c.get("case_id"))
+
+    matches = len(warnings) == 0
+    return {
+        "matches": matches,
+        "warnings": warnings,
+        "suggested_cases": suggested_cases[:5]  # 最多5个建议
+    }
+
+
 def compose_skill_for_case(case_id: str, skill_id: str) -> Dict:
     """
     为 case 合成 draft Skill
@@ -944,6 +1063,7 @@ def compose_skill_for_case(case_id: str, skill_id: str) -> Dict:
             "skill_id": str,
             "quality_level": str,
             "output_dir": str,
+            "warnings": List[str] (如果有领域不匹配)
         }
     """
     # 加载 case 数据
@@ -958,6 +1078,16 @@ def compose_skill_for_case(case_id: str, skill_id: str) -> Dict:
     if data["compressed"] is None:
         return {"success": False, "message": f"Case 没有压缩后的 Fragments，请先运行 compress-fragments"}
 
+    # 验证领域匹配
+    domain_check = validate_case_skill_domain_match(case_id, skill_id, data["meta"])
+    if not domain_check["matches"]:
+        print(f"⚠️  领域不匹配警告:")
+        for w in domain_check["warnings"]:
+            print(f"   - {w}")
+        if domain_check["suggested_cases"]:
+            print(f"   建议使用: {', '.join(domain_check['suggested_cases'])}")
+        print()
+
     # 构建 Skill 内容
     content = build_skill_content(data, skill_id)
 
@@ -967,7 +1097,7 @@ def compose_skill_for_case(case_id: str, skill_id: str) -> Dict:
     # 更新数据库
     upsert_skill_db(content["skill_json"])
 
-    return {
+    result = {
         "success": True,
         "message": f"Skill 合成成功 (draft)",
         "skill_id": skill_id,
@@ -975,3 +1105,10 @@ def compose_skill_for_case(case_id: str, skill_id: str) -> Dict:
         "dataset": content["skill_json"]["dataset"],
         "output_dir": str(Config.DRAFT_DIR / skill_id),
     }
+
+    # 添加领域验证警告
+    if not domain_check["matches"]:
+        result["warnings"] = domain_check["warnings"]
+        result["suggested_cases"] = domain_check["suggested_cases"]
+
+    return result

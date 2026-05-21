@@ -9,6 +9,9 @@ from pathlib import Path
 
 import uuid
 
+# Import from pattern_engine to use clean_fragment_text
+from .pattern_engine import clean_fragment_text
+
 
 def generate_fragment_id() -> str:
     """生成短 fragment ID"""
@@ -54,7 +57,10 @@ def make_summary(text: str, max_length: int = 120) -> str:
     - 取前 max_length 个字符
     - 结尾加 ...
     """
-    text = text.strip()
+    # Clean boilerplate before summarizing
+    text = clean_fragment_text(text.strip())
+    if not text:
+        return ""
     if len(text) <= max_length:
         return text
     return text[:max_length].rstrip() + "..."
