@@ -117,7 +117,8 @@
         "内容策划",
         "结构设计",
         "叙事框架"
-      ]
+      ],
+      "published_at": "2026-05-21T17:51:28.420748"
     },
     {
       "skill_id": "case_0020",
@@ -144,7 +145,8 @@
         "内容策划",
         "结构设计",
         "叙事框架"
-      ]
+      ],
+      "published_at": "2026-05-21T17:51:28.446635"
     },
     {
       "skill_id": "case_0023",
@@ -171,7 +173,8 @@
         "内容策划",
         "结构设计",
         "叙事框架"
-      ]
+      ],
+      "published_at": "2026-05-21T17:51:28.454663"
     },
     {
       "skill_id": "case_0024",
@@ -198,7 +201,8 @@
         "内容策划",
         "结构设计",
         "叙事框架"
-      ]
+      ],
+      "published_at": "2026-05-21T17:51:28.428553"
     },
     {
       "skill_id": "case_0036",
@@ -225,7 +229,8 @@
         "内容策划",
         "结构设计",
         "叙事框架"
-      ]
+      ],
+      "published_at": "2026-05-21T17:51:28.412100"
     },
     {
       "skill_id": "case_0037",
@@ -252,7 +257,8 @@
         "内容策划",
         "结构设计",
         "叙事框架"
-      ]
+      ],
+      "published_at": "2026-05-21T17:50:37.758479"
     },
     {
       "skill_id": "case_0038",
@@ -279,7 +285,8 @@
         "内容策划",
         "结构设计",
         "叙事框架"
-      ]
+      ],
+      "published_at": "2026-05-21T17:50:37.792072"
     },
     {
       "skill_id": "case_0048",
@@ -306,7 +313,8 @@
         "内容策划",
         "结构设计",
         "叙事框架"
-      ]
+      ],
+      "published_at": "2026-05-21T17:50:37.882824"
     },
     {
       "skill_id": "case_0050",
@@ -361,7 +369,8 @@
         "内容策划",
         "结构设计",
         "叙事框架"
-      ]
+      ],
+      "published_at": "2026-05-21T17:51:28.462560"
     },
     {
       "skill_id": "documentary-planning",
@@ -374,12 +383,12 @@
         "case_0050"
       ],
       "source_strategies": [
-        "stg-5bdf52a450",
-        "stg-41723deda6",
-        "stg-8de2b9782c",
-        "stg-a117a04da3",
-        "stg-16b505b529",
-        "stg-5f5ea9877e"
+        "stg-8eb77fcc07",
+        "stg-fccc8bea67",
+        "stg-ced8299792",
+        "stg-46be469614",
+        "stg-fd9b1e919f",
+        "stg-4461af2c14"
       ],
       "allowed_tasks": [
         "策略规划",
@@ -388,7 +397,8 @@
         "内容策划",
         "结构设计",
         "叙事框架"
-      ]
+      ],
+      "published_at": "2026-05-21T17:50:37.916937"
     },
     {
       "skill_id": "sinopec-20anniversary",
@@ -590,12 +600,12 @@
         "case_0038"
       ],
       "source_strategies": [
-        "stg-1f6c56f391",
-        "stg-fe256cf36f",
-        "stg-63dd6163a6",
-        "stg-b83784c3d2",
-        "stg-e5d2fe7d3b",
-        "stg-0172af3174"
+        "stg-04a979dd28",
+        "stg-78665ecc72",
+        "stg-f2f5e81837",
+        "stg-99861a8cbe",
+        "stg-7d0c6c9083",
+        "stg-6bc43913bc"
       ],
       "allowed_tasks": [
         "策略规划",
@@ -604,7 +614,8 @@
         "内容策划",
         "结构设计",
         "叙事框架"
-      ]
+      ],
+      "published_at": "2026-05-21T17:50:37.839009"
     },
     {
       "skill_id": "tianthe-plaza-annual-review-v2",
@@ -617,12 +628,12 @@
         "case_0038"
       ],
       "source_strategies": [
-        "stg-1f6c56f391",
-        "stg-fe256cf36f",
-        "stg-63dd6163a6",
-        "stg-b83784c3d2",
-        "stg-e5d2fe7d3b",
-        "stg-0172af3174"
+        "stg-89ef9fc8b9",
+        "stg-291b2680b1",
+        "stg-296ec46d03",
+        "stg-868f6da612",
+        "stg-9d5d61f0f5",
+        "stg-cda49719ea"
       ],
       "allowed_tasks": [
         "策略规划",
@@ -631,7 +642,8 @@
         "内容策划",
         "结构设计",
         "叙事框架"
-      ]
+      ],
+      "published_at": "2026-05-21T17:50:37.687076"
     },
     {
       "skill_id": "tianthe-plaza-annual-review-v3",
@@ -644,12 +656,12 @@
         "case_0038"
       ],
       "source_strategies": [
-        "stg-1f6c56f391",
-        "stg-fe256cf36f",
-        "stg-63dd6163a6",
-        "stg-b83784c3d2",
-        "stg-e5d2fe7d3b",
-        "stg-0172af3174"
+        "stg-657890522e",
+        "stg-5f85e49011",
+        "stg-5a428467c5",
+        "stg-22474a51f0",
+        "stg-25d6794dc8",
+        "stg-54f3e6b803"
       ],
       "allowed_tasks": [
         "策略规划",
@@ -658,7 +670,8 @@
         "内容策划",
         "结构设计",
         "叙事框架"
-      ]
+      ],
+      "published_at": "2026-05-21T17:50:37.656091"
     },
     {
       "skill_id": "tianthe-plaza-annual-review-v4",
@@ -671,12 +684,12 @@
         "case_0038"
       ],
       "source_strategies": [
-        "stg-1f6c56f391",
-        "stg-fe256cf36f",
-        "stg-63dd6163a6",
-        "stg-b83784c3d2",
-        "stg-e5d2fe7d3b",
-        "stg-0172af3174"
+        "stg-29cfa53799",
+        "stg-b06497fba9",
+        "stg-586295290f",
+        "stg-7700c5f8eb",
+        "stg-68167003ab",
+        "stg-0b8abf3d85"
       ],
       "allowed_tasks": [
         "策略规划",
@@ -685,7 +698,8 @@
         "内容策划",
         "结构设计",
         "叙事框架"
-      ]
+      ],
+      "published_at": "2026-05-21T17:50:37.624267"
     },
     {
       "skill_id": "tianthe-plaza-annual-review-v5",
@@ -698,12 +712,12 @@
         "case_0038"
       ],
       "source_strategies": [
-        "stg-1f6c56f391",
-        "stg-fe256cf36f",
-        "stg-63dd6163a6",
-        "stg-b83784c3d2",
-        "stg-e5d2fe7d3b",
-        "stg-0172af3174"
+        "stg-29cfa53799",
+        "stg-b06497fba9",
+        "stg-586295290f",
+        "stg-7700c5f8eb",
+        "stg-68167003ab",
+        "stg-0b8abf3d85"
       ],
       "allowed_tasks": [
         "策略规划",
@@ -712,7 +726,8 @@
         "内容策划",
         "结构设计",
         "叙事框架"
-      ]
+      ],
+      "published_at": "2026-05-21T17:50:37.720421"
     },
     {
       "skill_id": "tianthe-plaza-annual-review-v6",
@@ -753,12 +768,12 @@
         "case_0048"
       ],
       "source_strategies": [
-        "stg-71e452672c",
-        "stg-782196f1cb",
-        "stg-dcfaf18603",
-        "stg-70c088eb4c",
-        "stg-934e395f57",
-        "stg-a53e5e57bd"
+        "stg-b22d24cf13",
+        "stg-efde5a553b",
+        "stg-17d4822b64",
+        "stg-f7c0889dec",
+        "stg-d0f3e4c27e",
+        "stg-c5fb4c65d8"
       ],
       "allowed_tasks": [
         "策略规划",
@@ -767,8 +782,9 @@
         "内容策划",
         "结构设计",
         "叙事框架"
-      ]
+      ],
+      "published_at": "2026-05-21T17:50:37.946657"
     }
   ],
-  "updated_at": "2026-05-21T17:50:25.108394"
+  "updated_at": "2026-05-21T17:51:28.463512"
 }
