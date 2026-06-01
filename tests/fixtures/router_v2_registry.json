@@ -1,0 +1,26 @@
+{
+  "allowed_skill_ids": [
+    "v2.w_hotel.brand",
+    "v2.w_hotel.video_strategy",
+    "v2.w_hotel.output_structure",
+    "v2.w_hotel.language_style"
+  ],
+  "skills": [
+    {
+      "skill_id": "v2.w_hotel.brand",
+      "path": "tests/fixtures/router_v2_skills/brand.json"
+    },
+    {
+      "skill_id": "v2.w_hotel.video_strategy",
+      "path": "tests/fixtures/router_v2_skills/video_strategy.json"
+    },
+    {
+      "skill_id": "v2.w_hotel.output_structure",
+      "path": "tests/fixtures/router_v2_skills/output_structure.json"
+    },
+    {
+      "skill_id": "v2.w_hotel.language_style",
+      "path": "tests/fixtures/router_v2_skills/language_style.json"
+    }
+  ]
+}

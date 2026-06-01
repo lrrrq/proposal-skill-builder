@@ -1,0 +1,29 @@
+{
+  "schema_version": "source_patterns.v2",
+  "source_files": [
+    {
+      "source_doc_id": "fixture001",
+      "source_file": "tests/fixtures/router_v2_source_excerpt.md"
+    }
+  ],
+  "patterns": [
+    {
+      "source_doc_id": "fixture001",
+      "source_file": "tests/fixtures/router_v2_source_excerpt.md",
+      "page_refs": [1],
+      "judgement_logic": "酒店节庆宣传片应把节日礼盒转译为可体验、可分享的生活方式场景。",
+      "proposal_flow": ["节日语境", "品牌转译", "场景体验", "预订转化"],
+      "brand_constraints": {
+        "avoid": ["节庆符号堆砌", "产品硬广摆拍"],
+        "prefer": ["酒店空间", "人物动态", "轻松社交"]
+      },
+      "pattern": ["生活方式转译", "空间承载情绪"],
+      "rules": {
+        "hard": ["不得直接复刻旧案例"],
+        "soft": ["颜色判断优先来自本次 brief"]
+      },
+      "applicable_when": ["W酒店节庆TVC"],
+      "not_applicable_when": ["非酒店发布会执行方案"]
+    }
+  ]
+}

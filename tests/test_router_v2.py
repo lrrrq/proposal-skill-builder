@@ -3,29 +3,21 @@ import tempfile
 import unittest
 from pathlib import Path
 
-from skill_builder.config import Config
 from skill_builder.router_v2 import (
     RouterV2,
     decompose_brief,
     resolve_constraints,
 )
-from skill_builder.source_knowledge_extractor import extract_source_knowledge_to_file
+
+
+FIXTURES_DIR = Path("tests/fixtures")
+ROUTER_REGISTRY = FIXTURES_DIR / "router_v2_registry.json"
+SOURCE_PATTERNS = FIXTURES_DIR / "router_v2_source_patterns.json"
 
 
 class RouterV2Test(unittest.TestCase):
-    @classmethod
-    def setUpClass(cls):
-        cls.tempdir = tempfile.TemporaryDirectory()
-        source_pdf = Config.ACCEPTED_DIR / "W酒店中秋创意概要M Films0705V1(2).pdf"
-        cls.source_patterns_path = Path(cls.tempdir.name) / "source_patterns.json"
-        extract_source_knowledge_to_file([source_pdf], cls.source_patterns_path)
-
-    @classmethod
-    def tearDownClass(cls):
-        cls.tempdir.cleanup()
-
     def router(self):
-        return RouterV2(source_patterns_path=self.source_patterns_path)
+        return RouterV2(registry_path=ROUTER_REGISTRY, source_patterns_path=SOURCE_PATTERNS)
 
     def test_decompose_brief_keeps_explicit_business_goal(self):
         brief = Path("tests/fixtures/w_hotel_tvc_brief.txt").read_text(encoding="utf-8")
