@@ -3,14 +3,30 @@ import tempfile
 import unittest
 from pathlib import Path
 
+from skill_builder.config import Config
 from skill_builder.router_v2 import (
     RouterV2,
     decompose_brief,
     resolve_constraints,
 )
+from skill_builder.source_knowledge_extractor import extract_source_knowledge_to_file
 
 
 class RouterV2Test(unittest.TestCase):
+    @classmethod
+    def setUpClass(cls):
+        cls.tempdir = tempfile.TemporaryDirectory()
+        source_pdf = Config.ACCEPTED_DIR / "W酒店中秋创意概要M Films0705V1(2).pdf"
+        cls.source_patterns_path = Path(cls.tempdir.name) / "source_patterns.json"
+        extract_source_knowledge_to_file([source_pdf], cls.source_patterns_path)
+
+    @classmethod
+    def tearDownClass(cls):
+        cls.tempdir.cleanup()
+
+    def router(self):
+        return RouterV2(source_patterns_path=self.source_patterns_path)
+
     def test_decompose_brief_keeps_explicit_business_goal(self):
         brief = Path("tests/fixtures/w_hotel_tvc_brief.txt").read_text(encoding="utf-8")
 
@@ -22,15 +38,15 @@ class RouterV2Test(unittest.TestCase):
         self.assertEqual(analysis["project_type"], "TVC")
         self.assertIn("土金色", analysis["explicit_forbidden"])
 
-    def test_constraints_treat_bad_gold_as_brief_constraint_not_global_ban(self):
+    def test_constraints_treat_bad_gold_as_current_brief_constraint_only(self):
         analysis = decompose_brief("广州W酒店TVC，业务目标是推广礼盒预订，不要土金色。")
 
         constraints = resolve_constraints(analysis, [])
 
         visual_rules = [item for item in constraints["constraints"] if item["type"] == "visual"]
         self.assertTrue(any(item["source"] == "brief" for item in visual_rules))
-        self.assertTrue(any("土味" in item["rule"] or "模板化" in item["rule"] for item in visual_rules))
-        self.assertTrue(any("香槟金" in item["allowed_alternatives"] for item in visual_rules))
+        self.assertTrue(any(item["rule"] == "避免土金色" for item in visual_rules))
+        self.assertTrue(any("本次 brief" in item["reason"] for item in visual_rules))
         self.assertFalse(any(item["rule"] == "禁止使用金色" for item in visual_rules))
 
     def test_constraints_treat_plain_gold_ban_as_current_brief_only(self):
@@ -39,7 +55,8 @@ class RouterV2Test(unittest.TestCase):
         constraints = resolve_constraints(analysis, [])
 
         visual_rules = [item for item in constraints["constraints"] if item["type"] == "visual"]
-        self.assertTrue(any("当前 brief" in item["rule"] for item in visual_rules))
+        self.assertTrue(any(item["rule"] == "避免金色" for item in visual_rules))
+        self.assertTrue(any("本次 brief" in item["reason"] for item in visual_rules))
         self.assertFalse(any(item["rule"] == "永久禁止金色" for item in visual_rules))
 
     def test_constraints_allow_confirmed_gold_accent(self):
@@ -57,7 +74,7 @@ class RouterV2Test(unittest.TestCase):
     def test_router_v2_uses_only_v2_registry_and_four_assets(self):
         brief = Path("tests/fixtures/w_hotel_tvc_brief.txt").read_text(encoding="utf-8")
 
-        result = RouterV2().route(brief)
+        result = self.router().route(brief)
 
         self.assertTrue(result["supported"])
         self.assertEqual(result["skill_ids"], [
@@ -68,12 +85,13 @@ class RouterV2Test(unittest.TestCase):
         ])
         self.assertEqual(len(result["context_packet"]["skills"]), 4)
         self.assertNotIn("luxury-hotel-festival", json.dumps(result, ensure_ascii=False))
+        self.assertNotIn("case_", json.dumps(result, ensure_ascii=False))
         self.assertIn("source_material", json.dumps(result["constraints"], ensure_ascii=False))
 
     def test_source_material_constraints_are_soft_candidate_evidence(self):
         brief = Path("tests/fixtures/w_hotel_tvc_brief.txt").read_text(encoding="utf-8")
 
-        result = RouterV2().route(brief)
+        result = self.router().route(brief)
 
         source_constraints = [
             item for item in result["constraints"]["constraints"]
@@ -81,11 +99,11 @@ class RouterV2Test(unittest.TestCase):
         ]
         self.assertTrue(source_constraints)
         self.assertTrue(all(item["strength"] == "soft" for item in source_constraints))
-        self.assertTrue(all("候选原始资料" in item["reason"] for item in source_constraints))
-        self.assertNotIn("case_0031", json.dumps(result, ensure_ascii=False))
+        self.assertTrue(all("source_doc_id" in item["reason"] for item in source_constraints))
+        self.assertNotIn("case_", json.dumps(result, ensure_ascii=False))
 
     def test_router_v2_rejects_unsupported_brief_without_fallback(self):
-        result = RouterV2().route("某汽车品牌发布会活动方案，需要完整执行规划。")
+        result = self.router().route("某汽车品牌发布会活动方案，需要完整执行规划。")
 
         self.assertFalse(result["supported"])
         self.assertIn("Phase 1", result["reason"])
@@ -93,7 +111,7 @@ class RouterV2Test(unittest.TestCase):
 
     def test_render_md_outputs_proposal_sections_without_ppt(self):
         brief = Path("tests/fixtures/w_hotel_tvc_brief.txt").read_text(encoding="utf-8")
-        result = RouterV2().route(brief)
+        result = self.router().route(brief)
 
         md = result["proposal_md"]
 
@@ -119,7 +137,7 @@ class RouterV2Test(unittest.TestCase):
         with tempfile.TemporaryDirectory() as tmpdir:
             output = Path(tmpdir) / "proposal.md"
 
-            result = RouterV2().route_to_file(brief, output)
+            result = self.router().route_to_file(brief, output)
 
             self.assertTrue(result["supported"])
             self.assertTrue(output.exists())

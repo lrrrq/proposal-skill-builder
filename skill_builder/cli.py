@@ -142,6 +142,11 @@ def main():
     route_v2_parser.add_argument("--brief-file", required=True, help="Brief 文本文件路径")
     route_v2_parser.add_argument("--output", required=True, help="MD 输出路径")
 
+    # extract-source-knowledge 命令
+    extract_source_parser = subparsers.add_parser("extract-source-knowledge", help="从 accepted 原始 PDF 提炼 V2 知识模式")
+    extract_source_parser.add_argument("--source-file", action="append", required=True, help="accepted 原始 PDF 路径，可重复传入")
+    extract_source_parser.add_argument("--output", required=True, help="source_patterns.json 输出路径")
+
     args = parser.parse_args()
 
     if args.command is None:
@@ -225,6 +230,9 @@ def main():
     elif args.command == "route-v2":
         from .commands import cmd_route_v2
         cmd_route_v2(args)
+    elif args.command == "extract-source-knowledge":
+        from .commands import cmd_extract_source_knowledge
+        cmd_extract_source_knowledge(args)
     else:
         parser.print_help()
         sys.exit(1)

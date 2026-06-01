@@ -15,6 +15,7 @@ from .config import Config
 
 
 V2_REGISTRY_PATH = Config.ROUTER_V2_REGISTRY_JSON
+SOURCE_PATTERNS_PATH = Config.KNOWLEDGE_DIR / "v2" / "w-hotel-tvc" / "source_patterns.json"
 SUPPORTED_BRAND_TERMS = ("W酒店", "w酒店", "W 酒店", "w hotel", "W Hotel")
 SUPPORTED_VIDEO_TERMS = ("TVC", "tvc", "宣传片", "短视频", "品牌片", "广告片")
 
@@ -154,14 +155,29 @@ def decompose_brief(brief: str) -> Dict[str, Any]:
 def _source_material_constraints(source_claims: List[Dict[str, Any]]) -> List[Dict[str, Any]]:
     constraints = []
     for claim in source_claims:
-        constraints.append({
-            "type": "strategy",
-            "rule": claim["claim"],
-            "source": "source_material",
-            "strength": "soft",
-            "reason": f"候选原始资料，需人工复核: {claim['evidence_source']} / {claim['case_id']} / {claim['page']}",
-            "allowed_alternatives": [],
-        })
+        if "judgement_logic" in claim:
+            reason = (
+                f"source_doc_id={claim['source_doc_id']}; "
+                f"source_file={claim['source_file']}; "
+                f"page_refs={','.join(str(page) for page in claim['page_refs'])}"
+            )
+            constraints.append({
+                "type": "strategy",
+                "rule": claim["judgement_logic"],
+                "source": "source_material",
+                "strength": "soft",
+                "reason": reason,
+                "allowed_alternatives": claim.get("pattern", []),
+            })
+        else:
+            constraints.append({
+                "type": "strategy",
+                "rule": claim["claim"],
+                "source": "source_material",
+                "strength": "soft",
+                "reason": f"候选原始资料，需人工复核: {claim['evidence_source']} / {claim.get('page', '')}",
+                "allowed_alternatives": [],
+            })
     return constraints
 
 
@@ -175,25 +191,6 @@ def resolve_constraints(
     forbidden_text = " ".join(analysis.get("explicit_forbidden", []))
     explicit_text = " ".join(analysis.get("explicit_constraints", []))
 
-    if "土金" in forbidden_text or "土味金" in forbidden_text:
-        constraints.append({
-            "type": "visual",
-            "rule": "禁用无依据、模板化、土味、春节礼盒式奢华金。",
-            "source": "brief",
-            "strength": "hard",
-            "reason": "用户 brief 明示不要土金色；解释为禁止低质金色模板，不是全局禁用金色。",
-            "allowed_alternatives": ["香槟金", "暖光", "局部金属点缀", "黑白灰配高亮点缀"],
-        })
-    elif "金色" in forbidden_text:
-        constraints.append({
-            "type": "visual",
-            "rule": "当前 brief 禁用金色系视觉，不把该要求扩展为永久规则。",
-            "source": "brief",
-            "strength": "hard",
-            "reason": "用户 brief 明示不要金色；该约束只适用于本次 brief。",
-            "allowed_alternatives": ["黑白灰", "冷暖自然光", "品牌参考片提取色"],
-        })
-
     if "金色点缀" in explicit_text or "金色点缀" in analysis.get("raw_brief", ""):
         constraints.append({
             "type": "visual",
@@ -205,13 +202,14 @@ def resolve_constraints(
         })
 
     for item in analysis.get("explicit_forbidden", []):
-        if "土金" not in item and item:
+        if item:
+            constraint_type = "visual" if any(term in item for term in ("色", "配色", "视觉", "风格")) else "strategy"
             constraints.append({
-                "type": "strategy",
+                "type": constraint_type,
                 "rule": f"避免{item}",
                 "source": "brief",
                 "strength": "hard",
-                "reason": "用户 brief 明示禁忌。",
+                "reason": "用户 brief 明示禁忌；该约束只适用于本次 brief。",
                 "allowed_alternatives": [],
             })
 
@@ -233,8 +231,9 @@ def resolve_constraints(
 class RouterV2:
     """Minimal Router V2 that only reads the V2 registry namespace."""
 
-    def __init__(self, registry_path: Path = V2_REGISTRY_PATH):
+    def __init__(self, registry_path: Path = V2_REGISTRY_PATH, source_patterns_path: Path = SOURCE_PATTERNS_PATH):
         self.registry_path = Path(registry_path)
+        self.source_patterns_path = Path(source_patterns_path)
         self.project_root = Config.PROJECT_ROOT
 
     def route(self, brief: str) -> Dict[str, Any]:
@@ -249,11 +248,12 @@ class RouterV2:
             }
 
         skills = self._load_v2_skills()
-        source_claims = self._collect_claims(skills)
-        constraints = resolve_constraints(analysis, source_claims)
+        source_patterns = self._load_source_patterns()
+        constraints = resolve_constraints(analysis, source_patterns)
         context_packet = {
             "brief_analysis": analysis,
             "skills": skills,
+            "source_patterns": source_patterns,
             "constraints": constraints,
         }
         proposal_md = self._render_md(context_packet)
@@ -292,10 +292,19 @@ class RouterV2:
                 continue
             skill_path = self.project_root / entry["path"]
             skill = json.loads(skill_path.read_text(encoding="utf-8"))
+            # V2 source evidence comes from knowledge/v2/source_patterns.json.
+            # Legacy claims in early V2 assets are ignored to avoid case_id leakage.
+            skill.pop("claims", None)
             loaded.append(skill)
         if [skill["skill_id"] for skill in loaded] != allowed:
             raise ValueError("Router V2 registry must load exactly the allowed skill set in order.")
         return loaded
+
+    def _load_source_patterns(self) -> List[Dict[str, Any]]:
+        if not self.source_patterns_path.exists():
+            return []
+        payload = json.loads(self.source_patterns_path.read_text(encoding="utf-8"))
+        return payload.get("patterns", [])
 
     def _collect_claims(self, skills: List[Dict[str, Any]]) -> List[Dict[str, Any]]:
         claims = []
@@ -306,8 +315,7 @@ class RouterV2:
     def _render_md(self, context_packet: Dict[str, Any]) -> str:
         analysis = context_packet["brief_analysis"]
         constraints = context_packet["constraints"]["constraints"]
-        skills = context_packet["skills"]
-        claims = self._collect_claims(skills)
+        source_patterns = context_packet.get("source_patterns", [])
 
         title = "# W酒店端午节TVC创意提案"
         lines = [
@@ -334,7 +342,7 @@ class RouterV2:
             "",
             "## 4. 创意命题",
             "- 让端午从礼盒回到一次城市里的短暂逃离。",
-            "- 创意不从龙舟、粽叶、金色包装出发，而从年轻家庭的周末情绪、酒店空间和轻盈夏日感出发。",
+            "- 创意不从传统符号和包装摆拍出发，而从年轻家庭的周末情绪、酒店空间和轻盈夏日感出发。",
             "",
             "## 5. 影片结构",
             "- 片头：城市热度与日常节奏，建立需要逃离的情绪。",
@@ -382,9 +390,11 @@ class RouterV2:
             "",
             "## 证据来源",
         ])
-        for claim in claims:
+        for pattern in source_patterns:
             lines.append(
-                f"- {claim['case_id']} / {claim['evidence_source']} / {claim['page']}：{claim['claim']}"
+                f"- {pattern['source_doc_id']} / {pattern['source_file']} / pages {','.join(str(page) for page in pattern['page_refs'])}：{pattern['judgement_logic']}"
             )
+        if not source_patterns:
+            lines.append("- 暂无 source_patterns.json；当前只输出 brief 拆解与动态约束。")
 
         return "\n".join(lines) + "\n"

@@ -1311,3 +1311,22 @@ def cmd_route_v2(args):
     print("✅ Router V2 已生成 MD 提案")
     print(f"Skill 数量: {len(result.get('skill_ids', []))}")
     print(f"输出: {result.get('output_path')}")
+
+
+def cmd_extract_source_knowledge(args):
+    """Extract V2 source patterns from original accepted PDF files."""
+    from .source_knowledge_extractor import SourceKnowledgeError, extract_source_knowledge_to_file
+
+    source_files = [Path(path) for path in args.source_file]
+    output_path = Path(args.output)
+
+    try:
+        result = extract_source_knowledge_to_file(source_files, output_path)
+    except SourceKnowledgeError as exc:
+        print(f"❌ {exc}")
+        return
+
+    print("✅ 已从原始 PDF 提炼 V2 知识模式")
+    print(f"源文件数: {len(result.get('source_files', []))}")
+    print(f"Pattern 数: {len(result.get('patterns', []))}")
+    print(f"输出: {output_path}")

@@ -19,7 +19,7 @@
 
 ## 4. 创意命题
 - 让端午从礼盒回到一次城市里的短暂逃离。
-- 创意不从龙舟、粽叶、金色包装出发，而从年轻家庭的周末情绪、酒店空间和轻盈夏日感出发。
+- 创意不从传统符号和包装摆拍出发，而从年轻家庭的周末情绪、酒店空间和轻盈夏日感出发。
 
 ## 5. 影片结构
 - 片头：城市热度与日常节奏，建立需要逃离的情绪。
@@ -37,21 +37,17 @@
 - 礼盒预订作为自然转化，不抢占影片第一主角。
 
 ## 8. 动态约束与禁忌
-- [brief / hard] 禁用无依据、模板化、土味、春节礼盒式奢华金。 理由：用户 brief 明示不要土金色；解释为禁止低质金色模板，不是全局禁用金色。 可替代：香槟金、暖光、局部金属点缀、黑白灰配高亮点缀。
-- [source_material / soft] W酒店相关宣传片应优先体现都市、时髦、社交、轻松能量，而不是泛高端酒店的厚重奢华。 理由：候选原始资料，需人工复核: source_proposals/accepted/W酒店中秋创意概要M Films0705V1(2).pdf / case_0018 / source_file
-- [source_material / soft] W酒店受众沟通应避免把节日直接处理成传统礼盒堆砌，应转译成城市生活方式和情绪场景。 理由：候选原始资料，需人工复核: source_proposals/accepted/W酒店中秋创意概要M_Films0705V1(2).pptx / case_0003 / source_file
-- [source_material / soft] 宣传片策划先拆商业目标、受众心理和参考片用途，再进入创意命题。 理由：候选原始资料，需人工复核: source_proposals/accepted/COURTYARD 万怡酒店（广州）宣传片创意策划概要M Films0331.pdf / case_0011 / source_file
-- [source_material / soft] 参考片不能只列片名，必须拆成参考什么、不参考什么、服务哪个创意判断。 理由：候选原始资料，需人工复核: source_proposals/accepted/【0416修改意见V1微调版】COURTYARD 万怡酒店（广州）宣传片创意策划概要M Films.pdf / case_0025 / source_file
-- [source_material / soft] 提案输出应按 Brief 摘要、关键判断、洞察、创意命题、影片结构、视觉参考、传播价值、约束禁忌组织。 理由：候选原始资料，需人工复核: source_proposals/accepted/广交会威斯汀酒店宣传短视频创意概要M Films0822.pdf / case_0037 / source_file
-- [source_material / soft] 语言应使用短句、画面感和情绪判断，避免空泛的高级感形容词堆叠。 理由：候选原始资料，需人工复核: source_proposals/accepted/W酒店中秋创意概要M Films0705V1(2).pdf / case_0018 / source_file
+- [brief / hard] 避免土金色 理由：用户 brief 明示禁忌；该约束只适用于本次 brief。
+- [source_material / soft] 节庆宣传片不应只堆传统符号，应把节日转译为品牌可拥有的都市生活方式、人物状态和空间体验。 理由：source_doc_id=219c63c8f471; source_file=source_proposals/accepted/W酒店中秋创意概要M Films0705V1(2).pdf; page_refs=3,4,5,6,7,8,9,10 可替代：节日生活方式转译、空间承载节日情绪、产品自然露出而非主角、参考片只取方法不取表皮。
+- [source_material / soft] 酒店品牌片需要先定义品牌角色与空间优势，再用人物身份、动线和镜头节奏把商务功能转成可感知的体验。 理由：source_doc_id=9d83796707a9; source_file=source_proposals/accepted/COURTYARD 万怡酒店（广州）宣传片创意策划概要M Films0331.pdf; page_refs=3,4,5,6,7,8,9,10 可替代：品牌定位先行、人物身份串联空间、设施转译为体验段落、参考片服务运镜和节奏。
+- [source_material / soft] 酒店品牌片需要先定义品牌角色与空间优势，再用人物身份、动线和镜头节奏把商务功能转成可感知的体验。 理由：source_doc_id=dcbfcbfe403c; source_file=source_proposals/accepted/【0416修改意见V1微调版】COURTYARD 万怡酒店（广州）宣传片创意策划概要M Films.pdf; page_refs=3,4,5,6,7,8,9,10 可替代：品牌定位先行、人物身份串联空间、设施转译为体验段落、参考片服务运镜和节奏。
+- [source_material / soft] 面向会展和商务旅行的酒店短视频，应把品牌理念、感官体验和商旅动线合并成沉浸式路径，而不是单点展示房间或会议设施。 理由：source_doc_id=8b8559e918ac; source_file=source_proposals/accepted/广交会威斯汀酒店宣传短视频创意概要M Films0822.pdf; page_refs=3,4,5,6,7,8,9,10 可替代：品牌理念变叙事主线、感官线索组织空间、商旅动线串联服务价值、技术镜头服务沉浸体验。
 
 ## 9. 待确认问题
 - 当前 brief 已足够进入 MD 方案评审；不进入 PPT/PDF。
 
 ## 证据来源
-- case_0018 / source_proposals/accepted/W酒店中秋创意概要M Films0705V1(2).pdf / source_file：W酒店相关宣传片应优先体现都市、时髦、社交、轻松能量，而不是泛高端酒店的厚重奢华。
-- case_0003 / source_proposals/accepted/W酒店中秋创意概要M_Films0705V1(2).pptx / source_file：W酒店受众沟通应避免把节日直接处理成传统礼盒堆砌，应转译成城市生活方式和情绪场景。
-- case_0011 / source_proposals/accepted/COURTYARD 万怡酒店（广州）宣传片创意策划概要M Films0331.pdf / source_file：宣传片策划先拆商业目标、受众心理和参考片用途，再进入创意命题。
-- case_0025 / source_proposals/accepted/【0416修改意见V1微调版】COURTYARD 万怡酒店（广州）宣传片创意策划概要M Films.pdf / source_file：参考片不能只列片名，必须拆成参考什么、不参考什么、服务哪个创意判断。
-- case_0037 / source_proposals/accepted/广交会威斯汀酒店宣传短视频创意概要M Films0822.pdf / source_file：提案输出应按 Brief 摘要、关键判断、洞察、创意命题、影片结构、视觉参考、传播价值、约束禁忌组织。
-- case_0018 / source_proposals/accepted/W酒店中秋创意概要M Films0705V1(2).pdf / source_file：语言应使用短句、画面感和情绪判断，避免空泛的高级感形容词堆叠。
+- 219c63c8f471 / source_proposals/accepted/W酒店中秋创意概要M Films0705V1(2).pdf / pages 3,4,5,6,7,8,9,10：节庆宣传片不应只堆传统符号，应把节日转译为品牌可拥有的都市生活方式、人物状态和空间体验。
+- 9d83796707a9 / source_proposals/accepted/COURTYARD 万怡酒店（广州）宣传片创意策划概要M Films0331.pdf / pages 3,4,5,6,7,8,9,10：酒店品牌片需要先定义品牌角色与空间优势，再用人物身份、动线和镜头节奏把商务功能转成可感知的体验。
+- dcbfcbfe403c / source_proposals/accepted/【0416修改意见V1微调版】COURTYARD 万怡酒店（广州）宣传片创意策划概要M Films.pdf / pages 3,4,5,6,7,8,9,10：酒店品牌片需要先定义品牌角色与空间优势，再用人物身份、动线和镜头节奏把商务功能转成可感知的体验。
+- 8b8559e918ac / source_proposals/accepted/广交会威斯汀酒店宣传短视频创意概要M Films0822.pdf / pages 3,4,5,6,7,8,9,10：面向会展和商务旅行的酒店短视频，应把品牌理念、感官体验和商旅动线合并成沉浸式路径，而不是单点展示房间或会议设施。
