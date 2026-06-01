@@ -8,6 +8,14 @@
 pip install -e .
 ```
 
+## 本地环境
+
+```bash
+cp .env.example .env
+```
+
+`.env` 只放本机密钥，不要提交到 Git。协作前后用 `git status --short --branch` 确认工作区状态；提交前用 `git diff --check` 检查换行和尾随空白。
+
 ## CLI 命令
 
 ### init - 初始化项目

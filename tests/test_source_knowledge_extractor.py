@@ -16,6 +16,7 @@ from skill_builder.source_knowledge_extractor import (
 W_HOTEL_PDF = Config.ACCEPTED_DIR / "W酒店中秋创意概要M Films0705V1(2).pdf"
 
 
+@unittest.skipUnless(W_HOTEL_PDF.exists(), "requires local source proposal fixture")
 class SourceKnowledgeExtractorTest(unittest.TestCase):
     def test_load_pdf_pages_from_original_pdf(self):
         pages = load_pdf_pages(W_HOTEL_PDF)

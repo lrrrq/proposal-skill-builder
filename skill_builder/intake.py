@@ -100,7 +100,7 @@ def process_file(filepath: Path, dataset: str = "prod") -> Dict:
             record_file(
                 file_id=generate_file_id(),
                 original_filename=filepath.name,
-                current_path=str(dest),
+                current_path=Config.project_path(dest),
                 sha256=sha256,
                 file_size=file_size,
                 mime_type=guess_mime_type(filepath),
@@ -118,7 +118,7 @@ def process_file(filepath: Path, dataset: str = "prod") -> Dict:
             record_file(
                 file_id=generate_file_id(),
                 original_filename=filepath.name,
-                current_path=str(dest),
+                current_path=Config.project_path(dest),
                 sha256=sha256,
                 file_size=file_size,
                 mime_type=guess_mime_type(filepath),
@@ -136,7 +136,7 @@ def process_file(filepath: Path, dataset: str = "prod") -> Dict:
         record_file(
             file_id=file_id,
             original_filename=filepath.name,
-            current_path=str(dest),
+            current_path=Config.project_path(dest),
             sha256=sha256,
             file_size=file_size,
             mime_type=guess_mime_type(filepath),

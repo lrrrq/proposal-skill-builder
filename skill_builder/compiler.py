@@ -137,7 +137,7 @@ def compile_image_case(case_id: str, file_path: Path, case_dir: Path) -> Dict:
         "case_id": case_id,
         "asset_type": "image",
         "file_name": file_path.name,
-        "stored_path": str(dest_path),
+        "stored_path": Config.project_path(dest_path),
         "width": width,
         "height": height,
         "format": img_format,
@@ -223,9 +223,9 @@ def compile_pdf_case(case_id: str, file_path: Path, case_dir: Path) -> Dict:
                 "asset_type": "pdf_page_image",
                 "page_id": page_id,
                 "page_number": page_number,
-                "original_path": str(file_path),
-                "compiled_path": str(page_image_path),
-                "stored_path": str(page_image_path),
+                "original_path": Config.project_path(file_path),
+                "compiled_path": Config.project_path(page_image_path),
+                "stored_path": Config.project_path(page_image_path),
                 "filename": f"page_{page_number:03d}.png",
                 "mime_type": "image/png",
                 "width": width,
@@ -262,7 +262,7 @@ def compile_pdf_case(case_id: str, file_path: Path, case_dir: Path) -> Dict:
             "text_content": text_lines,
             "text_length": text_length,
             "raw_text": text,
-            "image_path": str(page_image_path) if page_image_path else None,
+            "image_path": Config.project_path(page_image_path) if page_image_path else None,
             "has_text": has_text,
             "needs_vision_review": needs_vision_review,
             "summary": summary,
@@ -392,7 +392,7 @@ def compile_pptx_case(case_id: str, file_path: Path, case_dir: Path) -> Dict:
                         "asset_type": "pptx_slide_image",
                         "slide_number": slide_num,
                         "file_name": f"slide_{slide_num:03d}.png",
-                        "stored_path": str(page_image_path),
+                        "stored_path": Config.project_path(page_image_path),
                         "width": slide_width,
                         "height": slide_height,
                         "needs_vision_review": True,
@@ -454,7 +454,7 @@ def compile_case(case_id: str) -> Dict:
     if source_file is None:
         return {"success": False, "message": f"Case 未绑定文件: {case_id}"}
 
-    file_path = Path(source_file["current_path"])
+    file_path = Config.resolve_path(source_file["current_path"])
     ext = file_path.suffix.lower()
 
     # 检查文件格式
@@ -529,7 +529,7 @@ def compile_case(case_id: str) -> Dict:
     return {
         "success": True,
         "message": f"案例编译完成（状态: {result['status']}）",
-        "output_dir": str(case_dir),
+        "output_dir": Config.project_path(case_dir),
         "pages_count": len(result["pages"]),
         "fragments_count": len(result["fragments"]),
         "assets_count": len(result["assets"]),

@@ -123,7 +123,7 @@ def describe_assets_dry_run(case_id: str, assets: List[Dict], needs_vision: List
     for asset in needs_vision:
         asset_id = asset["asset_id"]
         stored_path = asset.get("stored_path")
-        path_exists = stored_path and Path(stored_path).exists()
+        path_exists = stored_path and Config.resolve_path(stored_path).exists()
 
         if path_exists:
             valid_count += 1
@@ -222,7 +222,7 @@ def describe_assets_for_case(case_id: str, provider: str = "mock", dry_run: bool
         if target_asset.get("description_status") != "pending":
             return {"success": False, "message": f"asset_id {asset_id} 状态不是 pending（当前: {target_asset.get('description_status')}）"}
 
-        if not target_asset.get("stored_path") or not Path(target_asset["stored_path"]).exists():
+        if not target_asset.get("stored_path") or not Config.resolve_path(target_asset["stored_path"]).exists():
             return {"success": False, "message": f"asset_id {asset_id} 路径无效或文件不存在"}
 
         # 只处理这一个
@@ -274,7 +274,9 @@ def describe_assets_for_case(case_id: str, provider: str = "mock", dry_run: bool
         asset_id = asset["asset_id"]
         stored_path = asset.get("stored_path")
 
-        if not stored_path or not Path(stored_path).exists():
+        image_path = Config.resolve_path(stored_path) if stored_path else None
+
+        if not image_path or not image_path.exists():
             failed_count += 1
             asset["description_status"] = "invalid"
             descriptions.append({
@@ -286,7 +288,7 @@ def describe_assets_for_case(case_id: str, provider: str = "mock", dry_run: bool
             continue
 
         # 调用 AI
-        result = ai_client.describe_image(stored_path)
+        result = ai_client.describe_image(str(image_path))
 
         # 记录描述结果
         desc_record = {

@@ -28,7 +28,7 @@ registry/
 ### 访问路径
 
 ```
-Base: /Applications/lrq/coding/proposal-skill-builder
+Base: .
 
 Registry:
   - registry/skill_registry.json  (Skill 注册表)

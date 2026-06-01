@@ -58,7 +58,7 @@ def create_backup(skill_id: str) -> Optional[str]:
 
     try:
         shutil.copytree(published_dir, backup_dir)
-        return str(backup_dir)
+        return Config.project_path(backup_dir)
     except Exception:
         return None
 
@@ -134,8 +134,8 @@ def publish_skill(skill_id: str) -> Dict:
     skill_json["status"] = "published"
     skill_json["callable"] = True
     skill_json["published_at"] = now_iso()
-    skill_json["source_path"] = str(draft_dir)
-    skill_json["published_path"] = str(published_dir)
+    skill_json["source_path"] = Config.project_path(draft_dir)
+    skill_json["published_path"] = Config.project_path(published_dir)
 
     # 保存
     with open(skill_json_path, "w", encoding="utf-8") as f:
@@ -156,7 +156,7 @@ def publish_skill(skill_id: str) -> Dict:
                 "status": "published",
                 "quality_level": skill_json.get("quality_level", "unknown"),
                 "callable": True,
-                "path": str(published_dir),
+                "path": Config.project_path(published_dir),
                 "source_cases": skill_json.get("source_cases", []),
                 "source_strategies": skill_json.get("source_strategies", []),
                 "allowed_tasks": skill_json.get("allowed_tasks", []),
@@ -172,7 +172,7 @@ def publish_skill(skill_id: str) -> Dict:
             "status": "published",
             "quality_level": skill_json.get("quality_level", "unknown"),
             "callable": True,
-            "path": str(published_dir),
+            "path": Config.project_path(published_dir),
             "source_cases": skill_json.get("source_cases", []),
             "source_strategies": skill_json.get("source_strategies", []),
             "allowed_tasks": skill_json.get("allowed_tasks", []),
@@ -261,8 +261,8 @@ def publish_skill(skill_id: str) -> Dict:
         "success": True,
         "message": "发布成功",
         "backup_path": backup_path,
-        "published_path": str(published_dir),
-        "report_path": str(report_path),
+        "published_path": Config.project_path(published_dir),
+        "report_path": Config.project_path(report_path),
         "warnings": warnings,
         "risk_items": risk_items,
     }

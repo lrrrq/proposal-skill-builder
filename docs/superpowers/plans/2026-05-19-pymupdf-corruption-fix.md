@@ -55,7 +55,7 @@ Replace with:
 
 - [ ] **Step 3: Test on case_0059**
 
-Run: `cd /Applications/lrq/coding/proposal-skill-builder && python3 -m skill_builder.cli compile-case case_0059`
+Run: `cd . && python3 -m skill_builder.cli compile-case case_0059`
 
 Expected: Success, check fragments.json for no `ai_skip_` content
 
@@ -213,7 +213,7 @@ if __name__ == "__main__":
 
 - [ ] **Step 2: Run on first 3 corrupted cases as test**
 
-Run: `cd /Applications/lrq/coding/proposal-skill-builder && python3 scripts/recompile_corrupted_cases.py 2>&1 | head -80`
+Run: `cd . && python3 scripts/recompile_corrupted_cases.py 2>&1 | head -80`
 
 Expected: See 3 cases being reprocessed, each step showing ✅ or ❌
 
@@ -234,7 +234,7 @@ git commit -m "feat: add script to reprocess corrupted cases"
 
 - [ ] **Step 1: Run full reprocess**
 
-Run: `cd /Applications/lrq/coding/proposal-skill-builder && python3 scripts/recompile_corrupted_cases.py`
+Run: `cd . && python3 scripts/recompile_corrupted_cases.py`
 
 Expected: Processing 49 cases, each 4 steps
 

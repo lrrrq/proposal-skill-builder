@@ -4,6 +4,7 @@
 
 from pathlib import Path
 import os
+from typing import Union
 
 
 class Config:
@@ -86,3 +87,20 @@ class Config:
             cls.OUTPUTS_DIR,
             cls.REPORTS_DIR,
         ]
+
+    @classmethod
+    def project_path(cls, path: Union[Path, str]) -> str:
+        """Return a repo-relative POSIX path when the path is inside the project."""
+        p = Path(path)
+        try:
+            return p.resolve().relative_to(cls.PROJECT_ROOT.resolve()).as_posix()
+        except ValueError:
+            return str(p)
+
+    @classmethod
+    def resolve_path(cls, path: Union[Path, str]) -> Path:
+        """Resolve repo-relative stored paths against the current project root."""
+        p = Path(path)
+        if p.is_absolute():
+            return p
+        return cls.PROJECT_ROOT / p

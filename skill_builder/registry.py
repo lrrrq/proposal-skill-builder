@@ -222,7 +222,7 @@ class SkillRegistry:
                     "status": skill_json.get("status", "published"),
                     "quality_level": skill_json.get("quality_level", "unknown"),
                     "callable": skill_json.get("callable", True),
-                    "path": str(Config.PUBLISHED_DIR / skill_id),
+                    "path": Config.project_path(Config.PUBLISHED_DIR / skill_id),
                     "source_cases": skill_json.get("source_cases", []),
                     "source_strategies": skill_json.get("source_strategies", []),
                     "allowed_tasks": skill_json.get("allowed_tasks", []),
