@@ -54,6 +54,7 @@ Thumbs.db
 
 # Agent Runs
 .claude/runs/current/
+.codegraph/
 
 # Test Artifacts
 skills/draft/test-skill/

@@ -40,10 +40,12 @@ class Config:
     DRAFT_DIR = SKILLS_DIR / "draft"
     PUBLISHED_DIR = SKILLS_DIR / "published"
     QUARANTINE_DIR = SKILLS_DIR / "quarantine"
+    V2_SKILLS_DIR = SKILLS_DIR / "v2"
 
     # 注册表
     REGISTRY_DIR = PROJECT_ROOT / "registry"
     SKILL_REGISTRY_JSON = REGISTRY_DIR / "skill_registry.json"
+    ROUTER_V2_REGISTRY_JSON = REGISTRY_DIR / "router_v2_registry.json"
 
     # 输出
     OUTPUTS_DIR = PROJECT_ROOT / "outputs"
@@ -79,6 +81,7 @@ class Config:
             cls.DRAFT_DIR,
             cls.PUBLISHED_DIR,
             cls.QUARANTINE_DIR,
+            cls.V2_SKILLS_DIR,
             cls.REGISTRY_DIR,
             cls.OUTPUTS_DIR,
             cls.REPORTS_DIR,

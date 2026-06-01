@@ -1,0 +1,26 @@
+{
+  "skill_id": "v2.w_hotel.output_structure",
+  "responsibility": "output",
+  "claims": [
+    {
+      "claim": "提案输出应按 Brief 摘要、关键判断、洞察、创意命题、影片结构、视觉参考、传播价值、约束禁忌组织。",
+      "evidence_source": "source_proposals/accepted/广交会威斯汀酒店宣传短视频创意概要M Films0822.pdf",
+      "case_id": "case_0037",
+      "page": "source_file",
+      "confidence": "medium",
+      "applies_when": ["酒店短视频", "客户预览方案"],
+      "does_not_apply_when": ["只需要内部执行排期"]
+    }
+  ],
+  "sections": [
+    "Brief 摘要",
+    "关键判断",
+    "核心洞察",
+    "创意命题",
+    "影片结构",
+    "视觉与参考方向",
+    "传播价值",
+    "动态约束与禁忌",
+    "待确认问题"
+  ]
+}

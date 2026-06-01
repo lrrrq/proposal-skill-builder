@@ -137,6 +137,11 @@ def main():
     batchval_parser.add_argument("--limit", type=int, default=0,
                                help="最多处理数量（默认不限制）")
 
+    # route-v2 命令
+    route_v2_parser = subparsers.add_parser("route-v2", help="运行 Router V2 最小闭环")
+    route_v2_parser.add_argument("--brief-file", required=True, help="Brief 文本文件路径")
+    route_v2_parser.add_argument("--output", required=True, help="MD 输出路径")
+
     args = parser.parse_args()
 
     if args.command is None:
@@ -217,6 +222,9 @@ def main():
     elif args.command == "batch-validation":
         from .commands import cmd_batch_validation
         cmd_batch_validation(args)
+    elif args.command == "route-v2":
+        from .commands import cmd_route_v2
+        cmd_route_v2(args)
     else:
         parser.print_help()
         sys.exit(1)

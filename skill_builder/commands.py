@@ -1287,3 +1287,27 @@ def cmd_batch_validation(args):
     report_path.parent.mkdir(parents=True, exist_ok=True)
     report_path.write_text("\n".join(report_lines), encoding="utf-8")
     print(f"\n报告已保存: {report_path}")
+
+
+def cmd_route_v2(args):
+    """Run Router V2 minimal loop and write an MD proposal."""
+    from .router_v2 import RouterV2
+
+    brief_path = Path(args.brief_file)
+    if not brief_path.exists():
+        print(f"❌ Brief 文件不存在: {brief_path}")
+        return
+
+    brief = brief_path.read_text(encoding="utf-8")
+    output_path = Path(args.output)
+    result = RouterV2().route_to_file(brief, output_path)
+
+    if not result.get("supported"):
+        print("⚠️ Router V2 当前不支持该 brief")
+        print(result.get("reason", ""))
+        print(result.get("next_action", ""))
+        return
+
+    print("✅ Router V2 已生成 MD 提案")
+    print(f"Skill 数量: {len(result.get('skill_ids', []))}")
+    print(f"输出: {result.get('output_path')}")

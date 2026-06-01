@@ -1,0 +1,21 @@
+{
+  "skill_id": "v2.w_hotel.language_style",
+  "responsibility": "language_style",
+  "claims": [
+    {
+      "claim": "语言应使用短句、画面感和情绪判断，避免空泛的高级感形容词堆叠。",
+      "evidence_source": "source_proposals/accepted/W酒店中秋创意概要M Films0705V1(2).pdf",
+      "case_id": "case_0018",
+      "page": "source_file",
+      "confidence": "medium",
+      "applies_when": ["创意概念", "影片结构", "提案标题"],
+      "does_not_apply_when": ["合同、预算、执行排期"]
+    }
+  ],
+  "avoid_words": ["赋能", "打造", "构建", "尊贵奢华", "高端大气"],
+  "style_rules": [
+    "标题短，优先有画面和情绪。",
+    "每段只服务一个判断。",
+    "不要把策略写成大段 Word 式说明。"
+  ]
+}

@@ -1,0 +1,24 @@
+{
+  "skill_id": "v2.w_hotel.video_strategy",
+  "responsibility": "strategy",
+  "claims": [
+    {
+      "claim": "宣传片策划先拆商业目标、受众心理和参考片用途，再进入创意命题。",
+      "evidence_source": "source_proposals/accepted/COURTYARD 万怡酒店（广州）宣传片创意策划概要M Films0331.pdf",
+      "case_id": "case_0011",
+      "page": "source_file",
+      "confidence": "medium",
+      "applies_when": ["酒店宣传片", "TVC", "短视频策划"],
+      "does_not_apply_when": ["仅需执行拍摄清单"]
+    },
+    {
+      "claim": "参考片不能只列片名，必须拆成参考什么、不参考什么、服务哪个创意判断。",
+      "evidence_source": "source_proposals/accepted/【0416修改意见V1微调版】COURTYARD 万怡酒店（广州）宣传片创意策划概要M Films.pdf",
+      "case_id": "case_0025",
+      "page": "source_file",
+      "confidence": "medium",
+      "applies_when": ["用户给出参考片", "需要视觉方向"],
+      "does_not_apply_when": ["无参考片且用户不需要参考规划"]
+    }
+  ]
+}
