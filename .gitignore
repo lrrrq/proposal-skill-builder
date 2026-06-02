@@ -54,6 +54,19 @@ Thumbs.db
 
 # Agent Runs
 .claude/runs/current/
+.claude/scheduled_tasks.json
+.claude/scheduled_tasks.lock
+.codegraph/
+
+# Local data and generated artifacts
+data/
+source_proposals/
+compiled/
+knowledge/
+skills/
+registry/
+outputs/
+reports/
 
 # Test Artifacts
 skills/draft/test-skill/
