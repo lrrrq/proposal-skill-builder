@@ -1,7 +1,7 @@
 # Environment (contains secrets)
 .env
-.env.local
-.env.production
+.env.*
+!.env.example
 
 # Python
 __pycache__/
