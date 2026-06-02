@@ -1,5 +1,18 @@
 # Proposal Skill Builder - 工程规则
 
+## 跨平台接手入口
+
+本仓库的规则文档必须支持 OpenClaw、Claude、ChatGPT、Codex 或其他执行平台接手。任何新执行者在修改代码或生成方案前，应先读取以下文档，避免依赖单一模型、单一平台或单次对话上下文：
+
+1. `docs/PROJECT_HANDOFF.md`：项目目标、系统边界、模块职责、交接说明
+2. `docs/CURRENT_STATE.md`：当前阶段、冻结范围、下一步任务
+3. `docs/RUNTIME_PROTOCOL.md`：brief 到 Router、Assembler、Writer、Checker 的运行协议
+4. `docs/SKILL_SCHEMA.md`：Skill 类型、Metadata 字段、职责边界
+5. `docs/PATTERN_SCHEMA.md`：Pattern 字段、触发条件、禁用条件、质量标准
+6. `docs/VALIDATION_PROTOCOL.md`：Runtime Checker、gold sample、输出验收标准
+
+如果对话上下文与仓库文档冲突，除非用户明确要求更新规则，否则以仓库文档为准。当前项目应优先补齐 runtime 调度、上下文组装和校验协议，不应继续把 OpenClaw 扩成全职责 Agent。
+
 ## 项目定位
 
 **离线 Skill 资产编译器 + Registry 资产准备器**
@@ -132,13 +145,13 @@ cli.py → commands.py → [db.py, config.py, utils.py]
 | Phase 1 | Foundation CLI（intake + compile-case）| ✅ 完成 | 无 |
 | Phase 2 | Vision Layer（describe-assets + ai_fragments）| ✅ 完成 | 无 |
 | Phase 3 | Strategy Layer（build-strategies + StrategyUnit）| ✅ 完成 | 无 |
-| Phase 3.5 | Knowledge Quality Consolidation（Fragment Compression）| 🔄 当前 | 无 |
-| Phase 4 | Skill Asset Hardening | ⏳ 待开始 | 无 |
+| Phase 3.5 | Knowledge Quality Consolidation（Fragment Compression）| ✅ 完成 | 无 |
+| Phase 4 | Skill Asset Hardening + Runtime Validation Preparation | 🔄 当前 | 无 |
 | Phase 5 | Publish + Registry | ❌ 禁止当前实现 | publish-skill, route |
 | Phase 6 | OpenClaw Integration Support | ❌ 禁止当前实现 | 在线接入 |
 
-### Phase 3.5 当前任务
-**Fragment Compression**：压缩短文本/重复/低信息 fragments，提升 Pattern 质量
+### Phase 4 当前任务
+**Runtime Validation Preparation**：补齐 Skill Metadata、Pattern Schema、Runtime Router、Context Assembler、Runtime Checker 与 gold sample 校准机制。
 
 ### Phase 6 说明
 OpenClaw Integration Support 只提供：
@@ -244,7 +257,8 @@ python3 -m skill_builder.cli check-ai-provider --provider minimax-mcp
 
 ### 当前阶段允许
 
-- ✅ **compress-fragments**：Phase 3.5 当前任务
+- ✅ **compress-fragments**：Phase 3.5 已完成
+- ✅ **runtime-validation-prep**：Phase 4 当前任务
 - ✅ **compose-skill**：生成 draft Skill
 - ✅ **check-skill**：质量检查
 - ✅ **build-strategies**：StrategyUnit 提取
