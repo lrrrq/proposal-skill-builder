@@ -1,57 +1,45 @@
 # 工具适配说明
 
-本 skill 是通用 agent skill，不绑定 OpenClaw、Codex 或任何单一工具。工具只影响执行深度，不影响核心流程。
+工具只影响执行深度，不影响核心流程。**OpenClaw 是默认推荐路径**（如有）。
 
-## 无工具环境
+## 无工具环境（默认 fallback）
 
-如果当前 agent 不能读取文件、找图、生成图片或创建 PPT：
+agent 不能读取文件、找图、生图、生成 PPT：
 
-- 输出参考提炼。
-- 输出完整中文策划正文 `content`。
-- 输出 PPT 页面结构 `slides`。
-- 输出视觉资产规划。
-- 标注哪些素材需要用户后续补充。
+- 交付完整 `content` + `slides` + 视觉规划
+- 标注哪些素材需要用户后续补充
 
-## 文件读取工具
+## 有工具环境
 
-如果可以读取 PDF、PPT、docx、图片或网页：
+按可用工具按需触发：
 
-- 优先读取原始参考资料。
-- 保留来源摘要。
-- 不要只依赖用户转述，除非无法访问原文件。
+### 文件读取
 
-## 图片搜索工具
+- 优先读取原始参考资料（PDF / PPT / docx / 图片 / 网页）
+- 保留来源摘要
 
-如果可以搜索图片：
+### 图片搜索
 
-- 用于 `reference_image`。
-- 搜索结果只作为 moodboard 或风格参考。
-- 除非用户提供授权来源，不要把搜索图默认写成最终商用素材。
+- 用于 `reference_image` 来源标注
+- 搜索结果只做 moodboard / 风格参考
+- 商用授权必须用户明确提供
 
-## 图片生成工具
+### AI 生图
 
-如果可以 AI 生图：
+- 仅在用户明确需要成品或任务需要视觉落地时生成
+- `ai_prompt` 必含 brand-style-pack 中的 `visual_motifs` + colors
+- 不生成真实品牌 logo / 可读文字 / 未授权人物肖像
 
-- 仅在用户明确需要成品 PPT、主视觉草图、空间概念图或当前任务需要视觉落地时生成。
-- 生成前确认每张图的 `ai_prompt`、用途和比例。
-- 不生成真实品牌 logo、可读文字或未授权人物肖像。
+### PPT 生成
 
-## PPT 工具
+- 必须同时传 `content` 和 `slides`
+- 不要只传 `slides` 或 image prompts（容易得 content-poor deck）
 
-如果可以生成 PPT：
+### OpenClaw 链路（推荐默认）
 
-- 先确认 `content` 和 `slides` 都存在。
-- `content` 用于正文、页面文案和讲述逻辑。
-- `slides` 用于页序、版式、视觉建议和图片规划。
-- 不要只把 `slides` 或 image prompts 传入生成器，否则容易得到 content-poor deck。
+如有 OpenClaw 风格的 proposal/PPT generator：
 
-## OpenClaw 风格链路
-
-OpenClaw 只是可选环境，不是唯一执行路径。
-
-如果当前链路有 OpenClaw 风格的 proposal/PPT generator：
-
-- 确认生成 dict 同时包含 `content` 和 `slides`。
-- PPT 出站装配时同时传正文 sections 和 slides。
-- 视觉图像可来自品牌素材、参考图或 AI 生图，但必须标注来源和用途。
-- 如果生成结果只有图片提示词或页面标题，判定为失败并回到正文生成步骤。
+- 走 OpenClaw 路径（首选）
+- 生成 dict 同时含 `content` + `slides`
+- 视觉图像可来自品牌素材 / 参考图 / AI 生图，**必须标注 source**
+- 生成结果只有图片提示词或页面标题 → 判定失败，回到正文生成
