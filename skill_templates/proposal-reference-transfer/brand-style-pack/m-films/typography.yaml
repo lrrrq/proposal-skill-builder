@@ -1,0 +1,45 @@
+brand: m-films
+version: 0.1.0
+
+# M Films 字体系统 - 基于 VI 手册第 2 页官方规范
+
+systems:
+  digital:
+    primary: "微软雅黑"
+    m_letter: "微软雅黑 Bold"
+    other_text: "微软雅黑 Light"
+    fallback: "system-ui, -apple-system, sans-serif"
+    note: 数字/系统环境字体，跨平台显示一致
+
+  print:
+    primary: "冬青黑体旧字形 W3 (Hiragino Kaku Gothic Std W3)"
+    fallback: "微软雅黑 Light"
+    note: 印刷/广告公宣/在线传播
+
+  poster:
+    headline: "极宽、极厚重的扩展变形无衬线（如 Montserrat Black Extended 类）"
+    note: 海报主视觉专用，2024 龙年 KV 大量使用
+
+sizes:
+  title:
+    pt: 36-48
+    weight: Bold
+  subtitle:
+    pt: 24-36
+    weight: Medium
+  body:
+    pt: 16-20
+    weight: Regular
+  caption:
+    pt: 12-14
+    weight: Light
+
+rules:
+  - "中文字间距较大（尤其 Logo 下方中文）"
+  - "英文常使用分两行或分多列排版（M+ / FILMS 分开）"
+  - "数字与英文混排时，数字通常加粗"
+
+paper:
+  ice_white: 200g
+  super_white_smooth: 250g
+  note: VI 手册第 6 页名片刻纸规范

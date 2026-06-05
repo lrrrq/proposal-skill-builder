@@ -1,0 +1,49 @@
+brand: m-films
+version: 0.1.0
+last_verified: 2026-06-05
+
+# M Films 品牌色 - 基于 VI 手册第 3 页（MF VI P3）官方规范
+# 在线 RGB / 印刷 PMS 双轨制
+
+primary:
+  - name: MF Green
+    hex: "#41FF00"
+    rgb: [65, 255, 0]
+    pantone: "PMS 375"
+    usage: brand identification, M letter in logo, key CTA, critical emphasis
+    note: 5-year consistent brand DNA (2020-2025 一贯)
+
+secondary:
+  - name: MF Silvery Gray
+    hex: "#75787B"
+    rgb: [117, 120, 123]
+    pantone: "Cool Gray 9C"
+    usage: secondary text, captions, decorative lines
+
+  - name: MF Young
+    hex: "#FFFF1E"
+    rgb: [255, 255, 30]
+    pantone: "PMS 3945"
+    usage: festival accents, key labels
+
+  - name: MF Blk
+    hex: "#000000"
+    usage: text main, background base
+
+forbidden:
+  - note: no大面积 warm tones (gold, orange, traditional Chinese red)
+  - note: no滥用 of fluorescent colors (only brand green allowed)
+  - note: no大面积 gradients
+  - note: no traditional Chinese symbol stacking (lanterns, opera masks)
+
+context_overrides:
+  - context: festival_card
+    boost: iridescent accents (rainbow metallic effect)
+  - context: recruitment
+    allow:
+      - 3D character
+      - iridescent
+      - internet_slang_copy
+  - context: client_brand_override
+    action: fully switch to client brand palette
+    rule: "client_palette > m_films_default"
