@@ -4,10 +4,14 @@
 
 ## 图片来源优先级
 
-1. `brand_asset`：用户或品牌已有素材，如 logo、产品图、KV、门店/场地、过往活动照片。
-2. `reference_image`：参考图、moodboard、案例图，用于说明风格方向，不默认商用。
-3. `ai_generated`：AI 生成概念图、主视觉草图、空间想象、分镜场景。
-4. `no_image`：这一页不需要图片，可用文字、图表、流程或留白。
+按 brand-style-pack 优先（**不凭空搜图**）：
+
+1. `brand_asset`：`brand-style-pack/<company>/assets/` 已有素材（logo、产品图、KV、门店/场地、过往活动照片）
+2. `reference_image`：`brand-style-pack/<company>/reference_images/` 风格参考图
+3. `ai_generated`：AI 生成概念图，prompt 含 pack 中的 visual_motifs
+4. `no_image`：策略页、流程页、表格页，可用文字、图表或留白
+
+**默认不从公网搜图**——除非 pack 中确实没有对应素材，且 brief 明确要求新参考。
 
 ## 每页 visual 字段
 
@@ -15,31 +19,68 @@
 visual:
   role: "主视觉 / 氛围图 / 案例参考 / 空间示意 / 流程图 / 信息图"
   source_type: "brand_asset | reference_image | ai_generated | no_image"
-  reference_query: "如需找参考图，写中文或英文搜索关键词"
-  ai_prompt: "如需 AI 生图，写完整提示词"
+  source_path: "brand-style-pack/m-films/reference_images/03_cinematic.png"  # source_type 非 no_image 时必填
+  reference_query: "如需在 pack 外找参考图，写搜索关键词"
+  ai_prompt: "如需 AI 生图，写完整提示词（必含 pack 中的 visual_motifs）"
   composition: "主体、前景、中景、背景、视角、构图关系"
-  style_constraints: "品牌色、材质、光线、人物、空间、摄影或插画风格"
+  style_constraints: "品牌色、材质、光线、人物、空间、摄影或插画风格（从 pack 引用）"
   avoid: "不要出现的元素、错误品牌语义、错误 logo、错误文字"
-  aspect_ratio: "16:9"
+  aspect_ratio: "16:9"  # 海报 9:16, 微信 1:1, KV 16:9
   usage_note: "品牌授权素材 / 参考图 / AI 概念图 / 待用户确认素材"
 ```
 
 ## 选择规则
 
-- 有明确品牌素材时，优先使用 `brand_asset`。
-- 需要说明方向但没有最终素材时，使用 `reference_image`。
-- 需要不存在的概念画面、空间想象或主视觉草图时，使用 `ai_generated`。
-- 策略页、流程页、表格页不强行配图，可使用 `no_image`。
+- pack 中有明确品牌素材 → 优先 `brand_asset`
+- pack 中有对应风格参考图 → `reference_image`
+- 需要不存在的概念画面、空间想象或主视觉草图 → `ai_generated`（**prompt 必含 pack 的 visual_motifs**）
+- 策略页、流程页、表格页不强行配图 → `no_image`
+
+## M Films visual_motifs（AI 生图必含）
+
+> 来自 M Films 49 策划案 + 5 年设计资产生成的视觉语料。
+
+```yaml
+m-films:
+  cinematography:
+    - long_exposure_light_painting      # 长曝光光绘
+    - low_saturation_dramatic_lighting  # 低饱和度戏剧光
+    - motion_blur_dynamic                # 动态模糊
+    - high_contrast_chiaroscuro          # 高对比度明暗对照
+  typography:
+    - ultra_extended_bold                # 极宽扩展粗体
+    - calligraphy_meets_sans_serif      # 书法 × 无衬线混搭
+  geometric_motifs:
+    - circle_seal                        # 圆形印章
+    - x_cross_marker                     # X 形准星
+    - hex_grid_pattern                   # 六边形蜂巢
+    - horizontal_division_block          # 水平分隔色块
+  forbidden_in_ai_prompt:
+    - 奢华金
+    - 大面积暖色调
+    - 渐变色滥用
+    - 传统中国风符号堆砌
+```
 
 ## AI 生图 prompt 要求
 
-- 写清主体、场景、构图、光线、色彩、材质、情绪和用途。
-- 避免要求生成真实品牌 logo、可读文字或未授权人物肖像。
-- 如果是品牌相关画面，用“品牌色系、品牌气质、视觉约束”描述，不伪造商标。
-- 默认比例为 `16:9`，除非用户要求海报、KV 或社媒图。
+- 必含主体、场景、构图、光线、色彩、材质、情绪、用途
+- 必含 brand-style-pack 中的 visual_motifs
+- 必含 pack 中的 colors（hex 优先）
+- 避免要求生成真实品牌 logo / 可读文字 / 未授权人物肖像
+- 默认 `16:9`（海报 9:16 / 微信 1:1 / KV 16:9 可调）
 
 ## 参考图要求
 
-- 参考图只用于 moodboard、方向判断和客户沟通。
-- 不要把参考图当最终商用图，除非用户明确提供授权。
-- 搜索词要具体到场景、风格、材质、空间或镜头语言。
+- 参考图只用于 moodboard、方向判断和客户沟通
+- **不要把参考图当最终商用图**，除非用户明确提供授权
+- pack 中有 → 直接引用；pack 中无 → 询问用户（见 SKILL.md 询问机制）
+- 搜索词要具体到场景、风格、材质、空间或镜头语言
+
+## 跨公司复用
+
+换公司时**只换 brand-style-pack**，visual 字段的 source_path 自动指向新 pack：
+
+- `brand-style-pack/m-films/reference_images/...`
+- `brand-style-pack/eth-corp/reference_images/...`（举例）
+- 同一 skill 模板，不同公司视觉
