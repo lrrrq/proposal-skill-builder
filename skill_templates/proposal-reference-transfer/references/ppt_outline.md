@@ -47,11 +47,34 @@ slides:
       - "内容要点 1"
       - "内容要点 2"
       - "内容要点 3"
-    visual_suggestion: "M Films 视觉语料（如有）：长曝光 / 扩展粗体 / 圆形印章"
+    visual_suggestion: "画面、图表、空间、案例或影像建议"
     speaker_note: "讲述备注"
-    header_business_categories: ["PR VIDEOS", "TVC BRANDING VIDEOS", "DOCUMENTARY"]
-    footer: "M+FILMS Logo + Copyright"
+    # 4 段式对应 page_template.yaml 的 6 段进度条：
+    #   0 = 封面/项目理解
+    #   1 = 创意背景
+    #   2 = 创意概要
+    #   3 = 创意脚本-模块一/二
+    #   4 = 创意脚本-模块三/参考片
+    #   5 = 视觉调性/收束
+    # 在 4 段式提案中只点亮 4 个高亮段（0/2/3/5），2/4 灰显
+    progress_segment: 0   # 0-5
+    chapter: "cover"     # cover | background | summary | script | reference
 ```
+
+## 4 段式 → 6 段进度条映射
+
+按 `brand-style-pack/<company>/page_template.yaml` 的 `progress_bar.segments=6` 渲染时：
+
+| 4 段式章节 | `chapter` 字段 | `progress_segment` | 进度条状态 |
+|-----------|----------------|-------------------|-----------|
+| 封面 | `cover` | 0 | active |
+| 创意背景 | `background` | 1 | inactive |
+| 创意概要 | `summary` | 2 | active |
+| 创意脚本-模块一/二 | `script` | 3 | active |
+| 创意脚本-模块三/参考片 | `script` / `reference` | 4 | inactive |
+| 视觉调性/收束 | `reference` | 5 | active |
+
+**渲染要求**：每页 PPT 必须输出 `progress_segment` 字段，否则进度条会缺位（这是 v0.2 实测暴露的"进度条字段未在 slides 中"问题，已修复）。
 
 ## M Films 4 段式页序（默认）
 

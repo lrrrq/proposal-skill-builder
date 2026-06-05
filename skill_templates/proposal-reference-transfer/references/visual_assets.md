@@ -77,6 +77,30 @@ m-films:
 - pack 中有 → 直接引用；pack 中无 → 询问用户（见 SKILL.md 询问机制）
 - 搜索词要具体到场景、风格、材质、空间或镜头语言
 
+## reference_images 缺失时的降级机制（v0.2 修复）
+
+> v0.2 实测发现：`brand-style-pack/m-films/reference_images/` 目录尚未填充真实素材。
+> skill 必须明确"pack 中无 reference_images 时怎么走"，否则下游 agent 会卡住。
+
+按以下优先级降级：
+
+1. **检查 pack 路径**：`brand-style-pack/<company>/reference_images/`
+   - 存在且有图片 → 直接引用（`source_type: reference_image`）
+   - 不存在 / 为空 → 走第 2 步
+2. **降级到 brand_asset**：检查 `brand-style-pack/<company>/assets/` 是否有可作参考的素材
+   - 有 → `source_type: brand_asset`（用 KV / 案例图 / 门店照作风格参考）
+   - 没有 → 走第 3 步
+3. **降级到 ai_generated**：用 pack 中的 `visual_motifs` + `colors` 生成概念图
+   - prompt 必含 `m-films.visual_motifs` 中的 2-3 个 motifs
+   - prompt 必含 `m-films.colors` 中的主色 hex
+   - `usage_note: "AI 概念图 - 需客户确认，非最终商用素材"`
+4. **询问用户**（见 SKILL.md 询问机制）：让用户选择
+   - (a) 跳过该页图片（`no_image`）
+   - (b) 用 M Films 历史 49 策划案 PDF 中找相似场景（`source_path: source_proposals/accepted/<case>.pdf`）
+   - (c) 等用户后续补素材
+
+**强制要求**：当 source_type = `reference_image` 但 pack 中无对应文件时，**agent 必须在输出中标注 `reference_images_missing: true`** 并触发降级流程。禁止假装引用了一个不存在的文件。
+
 ## 跨公司复用
 
 换公司时**只换 brand-style-pack**，visual 字段的 source_path 自动指向新 pack：
