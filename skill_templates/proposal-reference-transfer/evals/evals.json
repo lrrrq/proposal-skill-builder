@@ -1,0 +1,132 @@
+{
+  "skill_name": "proposal-reference-transfer",
+  "evals": [
+    {
+      "id": 1,
+      "category": "通用 brief 迁移",
+      "prompt": "参考这份年度盛会策划，帮我为一个新的消费电子品牌发布会生成一份中文策划方案，并给出可做成 PPT 的页面结构和每页图片建议。",
+      "expected_output": "输出参考策划提炼、新 brief 理解、完整中文策划正文、PPT 页面结构、视觉资产规划和最终校验；图片建议应区分品牌素材、参考图、AI 生图或无需图片。",
+      "files": [],
+      "must_contain": [
+        "content",
+        "slides",
+        "M Films 4 段式骨架（创意背景/创意概要/创意脚本/参考片）",
+        "客户品牌强度评估结果"
+      ],
+      "must_not_contain": [
+        "prompt-only",
+        "赋能/焕新/沉浸式升级"
+      ]
+    },
+    {
+      "id": 2,
+      "category": "品牌错配检测",
+      "prompt": "我有一份高端商务酒店的活动方案，想参考它给一个年轻潮流酒店做开业派对策划。请先判断哪些能复用，再输出新方案和 PPT 大纲。",
+      "expected_output": "明确指出商务酒店语义不能直接套用到年轻潮流酒店；保留可迁移策略方法，重写品牌语气、视觉方向和内容模块；输出完整正文和 slide-ready 结构。",
+      "files": [],
+      "must_contain": [
+        "品牌错配判断",
+        "可迁移 vs 不可迁移 二分",
+        "重写后的品牌语气"
+      ],
+      "must_not_contain": [
+        "奢华金",
+        "传统中国风符号堆砌"
+      ]
+    },
+    {
+      "id": 3,
+      "category": "防 prompt-only",
+      "prompt": "参考这个案例直接生成一份 PPT 成品方案。需要有正文，不要只有图片 prompt；如果要配图，可以找参考图或 AI 生图。",
+      "expected_output": "先保证 content 和 slides 同时存在，再规划 PPT 图片流程；最终校验应检查不是 prompt-only 输出，并说明哪些图是参考图、AI 概念图或待确认素材。",
+      "files": [],
+      "must_contain": [
+        "完整 content 正文（不是只有标题/大纲）",
+        "图片 source 标注（brand_asset / reference_image / ai_generated）"
+      ]
+    },
+    {
+      "id": 4,
+      "category": "M Films 真实业务-中端客户",
+      "prompt": "帮我参考 W 酒店的中秋活动策划案，给一个中国中端连锁酒店品牌（亚朵 / 桔子水晶类）做一份中秋活动策划，要求风格是 M+FILMS 出的。",
+      "expected_output": "M Films 4 段式（创意背景/创意概要/创意脚本/参考片）；每页 PPT 含硬 DNA（页码+业务范畴+对角 Logo）；视觉规划从 brand-style-pack 取，注明 source；调性是荧光绿+极简+现代+电影感，**不是奢华金+暖色调**。",
+      "files": [],
+      "must_contain": [
+        "M+FILMS",
+        "PR VIDEOS",
+        "TVC BRANDING VIDEOS",
+        "DOCUMENTARY",
+        "客户 Logo 右上角",
+        "M+FILMS Logo 右下角"
+      ],
+      "must_not_contain": [
+        "奢华金 #C9A962",
+        "大面积暖色调"
+      ]
+    },
+    {
+      "id": 5,
+      "category": "M Films 真实业务-国际奢侈客户（让位场景）",
+      "prompt": "我要给蔡司光学（ZEISS）做 180 周年揭幕视频策划，要求克制——客户品牌极强，不能用 M Films 默认风格喧宾夺主。",
+      "expected_output": "识别客户品牌强度为 extreme_high；M Films 视觉极度克制：使用 'M Production' / 'Presented by M+FILMS' 缩写形式，不显式放完整 Logo；不在客户页眉/页脚强加业务范畴三件套；用客户色板（蔡司蓝）覆盖 pack 默认。",
+      "files": [],
+      "must_contain": [
+        "client_brand_strength: extreme_high",
+        "Presented by",
+        "客户色板覆盖"
+      ],
+      "must_not_contain": [
+        "荧光绿 #41FF00 作为主色",
+        "全套 M Films 硬 DNA"
+      ]
+    },
+    {
+      "id": 6,
+      "category": "M Films 真实业务-节日场景",
+      "prompt": "给 OPPO Find X9 × 汪苏泷演唱会做个短视频策划案。主题是品牌×明星的合作，预算 50 万。",
+      "expected_output": "识别客户品牌强度 medium（中国科技）；M Films 视觉中度注入：抽象 M 元素 + 绿色装饰线 + 垂直半透明条纹；4 段式骨架；Pasted reference 检测通过（新 brief 没有任何 OPPO 旧 case 文字泄漏）。",
+      "files": [],
+      "must_contain": [
+        "O-ttraction 主题相关",
+        "汪苏泷 演唱会 元素",
+        "M Films 4 段式"
+      ],
+      "must_not_contain": [
+        "OPPO×汪苏泷 旧 case 中提到的具体客户名（除 OPPO 和汪苏泷外）"
+      ]
+    },
+    {
+      "id": 7,
+      "category": "失败模式-奢华金误用",
+      "prompt": "给一个奢侈品手表品牌做品牌发布会策划。",
+      "expected_output": "识别客户品牌强度 high（高端品牌）；正确处理：M Films 主张强 + 客户色板覆盖 M Films 默认。**不应**因为客户是奢侈品就自动用奢华金 #C9A962 当主色（M Films 视觉不是奢华金）。如要在 AI 生图中出现金属感，应使用 '暖色金属光泽' 描述而非奢华金。",
+      "files": [],
+      "must_contain": [
+        "客户品牌 vs M Films 默认的区分",
+        "M Films 视觉不是奢华金"
+      ],
+      "must_not_contain": [
+        "奢华金 #C9A962",
+        "高端定制",
+        "传统中国风"
+      ]
+    },
+    {
+      "id": 8,
+      "category": "失败模式-pasted reference 污染",
+      "prompt": "我刚做了 OPPO×汪苏泷演唱会短视频策划案，现在再做一个 VIVO X200 × 周杰伦的演唱会策划。",
+      "expected_output": "检测到客户从 OPPO 切换到 VIVO；确保 VIVO 输出中不出现 OPPO、汪苏泷、Find X9 等旧 case 文字；策略方法可迁移（品牌×明星合作），但品牌词、客户名、活动名必须全部重写为 VIVO / 周杰伦 / X200。",
+      "files": [],
+      "must_contain": [
+        "VIVO",
+        "周杰伦",
+        "X200"
+      ],
+      "must_not_contain": [
+        "OPPO",
+        "汪苏泷",
+        "Find X9"
+      ]
+    }
+  ]
+}

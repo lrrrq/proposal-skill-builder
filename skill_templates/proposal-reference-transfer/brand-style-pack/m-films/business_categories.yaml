@@ -1,0 +1,31 @@
+brand: m-films
+version: 0.1.0
+note: 业务范畴三件套 - M Films 提案页眉硬签名
+
+three_categories:
+  - PR VIDEOS
+  - TVC BRANDING VIDEOS
+  - DOCUMENTARY
+
+usage:
+  position: page_header_right_top
+  layout: vertical_list
+  default: visible
+  hide_when:
+    client_brand_strength: extreme_high
+    note: "客户品牌极强时（如蔡司）不强制放，但其他场景默认都放"
+
+placement_position_in_visual_field:
+  order:
+    - page_number        # 最顶
+    - vertical_green_line # 装饰
+    - m_films_text        # 品牌名
+    - PR VIDEOS          # 业务 1
+    - TVC BRANDING VIDEOS # 业务 2
+    - DOCUMENTARY         # 业务 3
+
+why_three_categories:
+  - PR VIDEOS: M Films 的核心业务
+  - TVC BRANDING VIDEOS: M Films 的核心业务
+  - DOCUMENTARY: M Films 的核心业务
+  note: "这是 M Films 提案的硬签名 - 缺一不可"
