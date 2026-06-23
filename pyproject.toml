@@ -33,7 +33,9 @@ classifiers = [
 # runtime dependencies, not build dependencies. The CLI itself does not require
 # them to start; they are only needed for specific parser backends. Install them
 # explicitly if your workflow needs PDF / PPTX / image handling.
-dependencies = []
+dependencies = [
+    "python-dotenv>=1.0",  # required: ai_client.py reads .env via dotenv.load_dotenv()
+]
 
 [project.optional-dependencies]
 pdf = ["pymupdf>=1.23"]
