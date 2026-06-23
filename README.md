@@ -9,6 +9,8 @@
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
 [![Python](https://img.shields.io/badge/python-3.9%20%7C%203.10%20%7C%203.11%20%7C%203.12-blue)](https://www.python.org)
 [![Platforms](https://img.shields.io/badge/platforms-macOS%20%7C%20Linux%20%7C%20Windows-lightgrey)](https://github.com/)
+[![Tests](https://github.com/lrrrq/proposal-skill-builder/actions/workflows/test.yml/badge.svg)](https://github.com/lrrrq/proposal-skill-builder/actions/workflows/test.yml)
+[![Release](https://img.shields.io/github/v/release/lrrrq/proposal-skill-builder)](https://github.com/lrrrq/proposal-skill-builder/releases)
 
 ---
 
