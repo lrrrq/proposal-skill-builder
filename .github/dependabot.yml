@@ -1,0 +1,24 @@
+version: 2
+updates:
+  - package-ecosystem: "pip"
+    directory: "/"
+    schedule:
+      interval: "weekly"
+      day: "monday"
+    commit-message:
+      prefix: "deps"
+    labels:
+      - "dependencies"
+    # Don't auto-bump python-dotenv etc. — let humans review because we
+    # have explicit version pins in pyproject.toml for known-good ranges.
+    open-pull-requests-limit: 5
+    groups:
+      python-dotenv:
+        patterns:
+          - "python-dotenv"
+      dev-deps:
+        dependency-type: "development"
+    ignore:
+      # Major bumps need human review
+      - dependency-name: "*"
+        update-types: ["version-update:semver-major"]
