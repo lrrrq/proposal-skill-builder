@@ -49,12 +49,17 @@ class PathConfigTest(unittest.TestCase):
         self.assertEqual(Config.DB_PATH.parent, Config.DATA_DIR)
         self.assertEqual(Config.DB_PATH.name, "skill_builder.db")
 
-    def test_db_path_does_not_leak_secrets(self) -> None:
-        # Sanity: the DB path we expose in the public module must not contain
-        # an absolute user-specific home directory (e.g. /Users/lrq/...).
-        # It is allowed to contain the workspace dir, but never the user's
-        # personal home outside the workspace.
-        self.assertNotIn(str(Path.home()), str(Config.DB_PATH))
+    def test_db_path_is_inside_project_root(self) -> None:
+        # DB_PATH must be a descendant of PROJECT_ROOT — this is the only
+        # invariant we actually need. (We previously tried to assert that
+        # the path did not contain the user's home directory, but on
+        # GitHub Actions runners the checkout lands at
+        # $HOME/work/<repo>/<repo>/, so PROJECT_ROOT legitimately lives
+        # under $HOME. That assertion was wrong and broke CI.)
+        self.assertTrue(
+            str(Config.DB_PATH).startswith(str(Config.PROJECT_ROOT) + str(Path("/")))
+            or Config.DB_PATH.parent == Config.PROJECT_ROOT / "data"
+        )
 
 
 class DatabaseInitTest(unittest.TestCase):
