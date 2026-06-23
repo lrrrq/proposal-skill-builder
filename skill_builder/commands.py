@@ -3,7 +3,22 @@
 """
 
 import argparse
+import sys
 from pathlib import Path
+
+# Reconfigure stdout/stderr to UTF-8 on Windows. Windows Python defaults
+# stdout to the active console code page (cp936 / cp1252), which means
+# any print() with non-ASCII characters raises UnicodeEncodeError. The
+# reconfigure API exists on Python 3.7+; on macOS/Linux it's a no-op
+# because UTF-8 is already the default.
+for _stream in (sys.stdout, sys.stderr):
+    try:
+        _stream.reconfigure(encoding="utf-8", errors="replace")
+    except (AttributeError, ValueError):
+        # reconfigure isn't available (e.g. sys.stdout replaced by a test
+        # harness), or already closed. Skip silently — the CLI will fall
+        # back to whatever the runtime gives us.
+        pass
 
 from .config import Config
 from .db import init_db, get_stats
