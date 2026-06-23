@@ -119,6 +119,26 @@ def main():
     # repair-registry 命令
     subparsers.add_parser("repair-registry", help="修复 filesystem 和 JSON registry 之间的 drift")
 
+    # inspect-source-drift 命令
+    inspect_drift_parser = subparsers.add_parser(
+        "inspect-source-drift",
+        help="检查 source_files 表与 filesystem 之间的 drift（只读）",
+    )
+    inspect_drift_parser.add_argument("--dataset", default="all",
+                                      choices=["all", "prod", "test"],
+                                      help="数据集筛选（默认 all）")
+
+    # repair-source-drift 命令
+    repair_drift_parser = subparsers.add_parser(
+        "repair-source-drift",
+        help="修复 source_files 表的 drift（默认 dry-run，需 --apply 才落库）",
+    )
+    repair_drift_parser.add_argument("--dataset", default="all",
+                                     choices=["all", "prod", "test"],
+                                     help="数据集筛选（默认 all）")
+    repair_drift_parser.add_argument("--apply", action="store_true",
+                                     help="真正写入 error_message（默认只报告）")
+
     # case-readiness 命令
     readiness_parser = subparsers.add_parser("case-readiness", help="检查案例是否适合进入 Skill 生成")
     readiness_parser.add_argument("case_id", help="Case ID (如 case_0001)")
@@ -205,6 +225,12 @@ def main():
     elif args.command == "repair-registry":
         from .commands import cmd_repair_registry
         cmd_repair_registry(args)
+    elif args.command == "inspect-source-drift":
+        from .commands import cmd_inspect_source_drift
+        cmd_inspect_source_drift(args)
+    elif args.command == "repair-source-drift":
+        from .commands import cmd_repair_source_drift
+        cmd_repair_source_drift(args)
     elif args.command == "test-skill-reuse":
         from .commands import cmd_test_skill_reuse
         cmd_test_skill_reuse(args)

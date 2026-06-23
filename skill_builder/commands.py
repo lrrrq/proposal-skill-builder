@@ -1287,3 +1287,65 @@ def cmd_batch_validation(args):
     report_path.parent.mkdir(parents=True, exist_ok=True)
     report_path.write_text("\n".join(report_lines), encoding="utf-8")
     print(f"\n报告已保存: {report_path}")
+
+
+def cmd_inspect_source_drift(args):
+    """inspect-source-drift 命令"""
+    from .drift_check import inspect_source_drift
+
+    result = inspect_source_drift(dataset=args.dataset)
+    print("=" * 60)
+    print("Source Files Drift Inspection")
+    print("=" * 60)
+    print(f"   dataset:   {result['dataset']}")
+    print(f"   scanned:   {result['total_scanned']} rows")
+    print(f"   missing:   {result['missing_count']} files")
+    print(f"   scanned_at: {result['scanned_at']}")
+    print()
+
+    if result["missing_count"] == 0:
+        print("   无 drift")
+        return
+
+    print(f"## Missing on disk ({result['missing_count']})")
+    print()
+    print(f"   {'file_id':14s} {'case_id':12s} {'status':10s} filename")
+    print(f"   {'-'*14} {'-'*12} {'-'*10} {'-'*40}")
+    for m in result["missing"]:
+        print(f"   {m['file_id']:14s} {(m['case_id'] or '-'):12s} "
+              f"{m['status']:10s} {m['original_filename']}")
+
+
+def cmd_repair_source_drift(args):
+    """repair-source-drift 命令"""
+    from .drift_check import repair_source_drift
+
+    dry_run = not args.apply
+    result = repair_source_drift(dataset=args.dataset, dry_run=dry_run)
+
+    print("=" * 60)
+    print("Source Files Drift Repair")
+    print("=" * 60)
+    print(f"   dataset:    {result['dataset']}")
+    print(f"   mode:       {'DRY-RUN (no DB writes)' if result['dry_run'] else 'APPLY (writing error_message)'}")
+    print(f"   missing:    {result['missing_count']}")
+    print(f"   would_mark: {result['would_mark']}")
+    print(f"   marked:     {result['marked']}")
+    if result['marked_at']:
+        print(f"   marked_at:  {result['marked_at']}")
+    print()
+
+    if result["missing_count"] == 0:
+        print("   无 drift，无需修复")
+        return
+
+    if result["dry_run"]:
+        print("   ⚠️ 这是 DRY-RUN，没有写入数据库。")
+        print("   确认无误后，加 --apply 参数真正写入 error_message。")
+    else:
+        print(f"   ✅ 已更新 {result['marked']} 条 source_files.error_message")
+        print()
+        print("   后续建议：")
+        print("   1. 重新 intake: 把源文件放回 staging/ 然后跑 intake")
+        print("   2. 重跑 compile-case <case_id> 重建 fragments.json")
+        print("   3. 如果文件本身已无法恢复，可考虑 mark-case-dataset 把它挪到 test 数据集")
