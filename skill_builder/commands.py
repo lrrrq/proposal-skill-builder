@@ -708,6 +708,41 @@ def cmd_publish_skill(args):
                 print(f"   - {item}")
 
 
+def cmd_release_skill(args):
+    """release-skill 命令 - 推到外部 skill 仓"""
+    from pathlib import Path
+    from .release_skill import release_skill
+
+    source = Path(args.source) if args.source else None
+
+    result = release_skill(
+        skill_id=args.skill_id,
+        repo=args.repo,
+        version=args.version,
+        source=source,
+        apply=args.apply,
+        verbose=args.verbose,
+    )
+
+    # 输出 plan(总是输出,dry-run 时的主要信息)
+    plan = result.get("plan", [])
+    if plan:
+        for line in plan:
+            print(line)
+        print()
+
+    if result["success"]:
+        if result.get("pushed"):
+            print(f"\n{result['message']}")
+            print(f"   repo: {result['repo']}")
+            print(f"   version: {result['version']}")
+        else:
+            print(f"\n{result['message']}")
+    else:
+        print(f"\n{result['message']}")
+        sys.exit(1)
+
+
 def cmd_inspect_registry(args):
     """inspect-registry 命令"""
     from .publisher import inspect_registry

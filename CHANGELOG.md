@@ -18,6 +18,23 @@ and this project adheres to [Semantic Versioning](https://semver.org/).
   any platform.
 - `.github/workflows/test.yml` — CI matrix over `ubuntu-latest`,
   `macos-latest`, `windows-latest` × Python 3.9-3.12.
+- **`release-skill <skill_id>` CLI command**: push a published skill to an
+  external skill repository (e.g. `lrrrq/proposal-skill`), with automatic
+  `git tag` and `skill_registry.json` sync. Defaults to dry-run; pass
+  `--apply` to actually push. Required args: `--version vX.Y.Z`. Optional
+  args: `--repo` (default `lrrrq/proposal-skill`), `--source` (default
+  `Config.PUBLISHED_DIR/<skill_id>`), `--verbose`.
+- `skill_builder/git_pusher.py` — thin wrapper around `gh` CLI that
+  clones the target repo into a temp work dir, syncs source files
+  (preserving `.git`, `README.md`, `.gitignore`, `docs/`), merges
+  `registry/skill_registry.json`, commits, tags, and pushes. Cleans
+  up the work dir on exit. Sets `http.postBuffer 524288000` to handle
+  the brand-style-pack reference images (the ~2 MB push case that
+  bit us during the v0.3.1 release).
+- `skill_builder/release_skill.py` — orchestrates the release flow,
+  validates the `vX.Y.Z` version, refuses to overwrite an existing
+  remote tag, and surfaces `GitPusherError` as a friendly failure
+  message.
 
 ### Fixed
 - `office_converter.find_libreoffice_executable`: added Windows candidates

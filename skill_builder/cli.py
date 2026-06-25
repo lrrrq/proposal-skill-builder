@@ -113,6 +113,23 @@ def main():
     publish_parser = subparsers.add_parser("publish-skill", help="发布 draft Skill 到 published")
     publish_parser.add_argument("skill_id", help="Skill ID (如 luxury-hotel-festival)")
 
+    # release-skill 命令
+    release_parser = subparsers.add_parser(
+        "release-skill",
+        help="把已 publish 的 skill 推到外部 skill 仓(自动 tag + 同步 registry,默认 dry-run)",
+    )
+    release_parser.add_argument("skill_id", help="Skill ID (如 proposal-reference-transfer)")
+    release_parser.add_argument("--repo", default="lrrrq/proposal-skill",
+                                help="目标仓库 (默认 lrrrq/proposal-skill)")
+    release_parser.add_argument("--version", required=True,
+                                help="版本号 (vX.Y.Z,例如 v0.3.2),必填")
+    release_parser.add_argument("--source", default=None,
+                                help="源目录 (默认 Config.PUBLISHED_DIR/<skill_id>)")
+    release_parser.add_argument("--apply", action="store_true",
+                                help="真推(默认 dry-run,只输出计划不修改)")
+    release_parser.add_argument("--verbose", action="store_true",
+                                help="详细输出 git/gh 命令")
+
     # inspect-registry 命令
     inspect_parser = subparsers.add_parser("inspect-registry", help="检查 registry 健康度")
 
@@ -219,6 +236,9 @@ def main():
     elif args.command == "publish-skill":
         from .commands import cmd_publish_skill
         cmd_publish_skill(args)
+    elif args.command == "release-skill":
+        from .commands import cmd_release_skill
+        cmd_release_skill(args)
     elif args.command == "inspect-registry":
         from .commands import cmd_inspect_registry
         cmd_inspect_registry(args)
