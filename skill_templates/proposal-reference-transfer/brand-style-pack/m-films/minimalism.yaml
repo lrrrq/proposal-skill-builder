@@ -1,0 +1,116 @@
+# M Films 极简度控制（v0.2 新增字段）
+#
+# 来源: reports/huayuquan-doc-2026-07/skill-v0.2-changelog-confirmed.md §4 经验 4
+# 适用: 所有 M Films 风格的 PPT
+#
+# 控制 M Films 视觉装饰的克制度, mid 是默认 (中端 B2B + 创始人 IP 强).
+
+minimalism_level:
+  description: |
+    控制 M Films 视觉装饰克制度. 不同取值对应不同的装饰元素渲染策略.
+    mid 是默认 (适配中端 B2B 客户如桦语泉).
+  values:
+    low:
+      label: 低克制度 (装饰全开)
+      typical_clients: [地产, 企业, 中端客户]
+      strategy: |
+        完整 DNA + 业务范畴三件套 + sidebar + 页码 + tagline.
+        适合需要展示服务商能力的场景.
+    mid:
+      label: 中克制度 (默认, 克制品牌感)
+      typical_clients: [中国科技, 美妆, 中端 B2B, 创始人 IP 强]
+      strategy: |
+        抽象 M 元素 + 绿色装饰线主导.
+        隐去 sidebar + 页码 + 客户 Logo 占位文字.
+        收尾页不堆服务商 metadata.
+        适合"做减法"的克制品牌感.
+    high:
+      label: 高克制度 (极度克制)
+      typical_clients: [高端酒店, 高端服饰, Snowpeak, 蔡司, TEENIE WEENIE]
+      strategy: |
+        仅 logo + 章节切换绿条.
+        不显式 sidebar + 业务范畴.
+        用 "M Production" 缩写代替 "M + FILMS".
+        适合"低调奢华"客户.
+  default: mid
+  override_how: |
+    在 brand-style-pack/<company>/brand.yaml 或 pack 根文件里设
+    minimalism_level: low | mid | high.
+    skill 渲染时按此值决定装饰元素开关.
+
+# 配套的装饰元素开关表
+elements_by_level:
+  sidebar:
+    low: show
+    mid: hide
+    high: hide
+  page_number_badge:
+    low: show
+    mid: hide
+    high: hide
+  client_logo_placeholder_text:
+    low: show
+    mid: hide
+    high: hide
+  tagline_pr_videos:
+    low: show
+    mid: hide
+    high: hide
+  business_categories_trio:
+    low: show
+    mid: show
+    high: hide
+  m_plus_films_logo:
+    low: show_full  # 完整 "M + FILMS" 16pt
+    mid: show_full
+    high: show_abbreviated  # 缩写 "M Production" 8pt
+  decoration_bars:
+    low: show_6_same_green
+    mid: show_1_plus_3_gradient  # 1 主条 + 3 次条 (1.0, 0.6, 0.3)
+    high: show_1_main_only
+
+# 实战参考
+case_examples:
+  huayuquan_2026_06_12:
+    brief: 桦语泉《一树一泉》品牌创始人纪录片拍摄提案
+    level: mid  # 用户实际微调 v2 后的效果 = mid
+    what_user_cut_in_v2:
+      - 右上角 sidebar (PR VIDEOS / TVC BRANDING / DOCUMENTARY) — 实际老资历是改用 GROUP 形式保留 (v0.3 修正)
+      - 每页页码 badge
+      - Slide 1 客户 Logo placeholder 文字
+      - Slide 18 PR VIDEOS tagline
+    what_user_added_in_v2:
+      - Slide 18 "Thank you" 手写体 PNG (作为 client_supplied_image slot)
+
+  # v0.3 落地 (2026-06-24): 桦语泉案例真实改的细节
+  huayuquan_v0_3_landed:
+    brief: |
+      桦语泉案例 v0.3: 把老资历实际改的内容学到 skill 里.
+      之前 v0.2 的总结有错 — 老资历没全删右侧 sidebar, 是改用 GROUP 形式.
+      v0.3 真实改动:
+    actual_changes_per_user_teacher:
+      # 真正删的 (老资历 vs v1 deck.pptx)
+      cut:
+        - "底部 6 段进度条 (progress bar)"
+        - "底部 'M+' + 'FILMS' 双行 logo"
+        - "封底 (Slide 18) 'PR VIDEOS · TVC BRANDING VIDEOS · DOCUMENTARY' 副标题"
+        - "右下 '客户 Logo' 占位文字 (Slide 1)"
+        - "任何 'ai_skip_*' / 'parse_error' 中间产物 (老资历漏掉的, 我们不能复刻)"
+      # 改形式的 (老资历重组成 GROUP)
+      reorganized:
+        - "右上 sidebar 'M / FILMS / PR VIDEOS / TVC BRANDING / DOCUMENTARY' 5 行 → 改用 GROUP(6) 包装成单 shape"
+        - "页码: 老资历 GROUP 内页码是 '内容页序号' (01-16), 不是 '总页码' (02-17)"
+      # 加的
+      added:
+        - "Slide 18 'Thank you' 手写体 PNG (client_supplied_image slot, 300KB PNG)"
+        - "Slide 18 'M + FILMS' 单行 + 'Copyright @ M +FILMS . All Right Reserved' 右下角"
+        - "Slide 1 (封面) 'M + FILMS' 单行 + Copyright 右下角"
+      # 字体
+      typography:
+        - "python-pptx 字体名: 'Microsoft YaHei' → '微软雅黑' (中文名, 字距更舒服)"
+        - "footer 字体: '微软雅黑 Light' 6pt, 颜色 #75787B (MF_GRAY)"
+    hard_rules:
+      - "M Films 桦语泉风格 PPT 渲染时必须用 '微软雅黑' (中文), 不能 'Microsoft YaHei' (英文)"
+      - "封底/封面加 'M + FILMS' 单行 + Copyright 单行, 字体微软雅黑 Light 8pt, 颜色 MF_GRAY"
+      - "任何 add_text 调用都用纯静态字符串, 不允许 AI 中间产物 (防乱码)"
+      - "封底必加 thank_you.png (300KB PNG, hand-written style)"

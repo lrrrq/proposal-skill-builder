@@ -1,0 +1,97 @@
+# 占位符命名规范（v0.2）
+
+> **来源**：`reports/huayuquan-doc-2026-07/skill-v0.2-changelog-confirmed.md §2.M-2`
+> **适用**：所有 PPT 占位图（placeholder / AI 生成未替换 / 兜底图）的 filename + alt text
+
+---
+
+## 1. 禁词列表（FORBIDDEN）
+
+以下字符 / 模式**禁止**出现在占位图 filename + alt text 中：
+
+| 禁词 | 原因 |
+|------|------|
+| `ai_skip_*` | python-pptx 会把 filename 当 alt text 渲染为可见文字框 |
+| `0x[0-9a-f]{4,}` | 看起来像 Python 内存地址，被误读为可见文字 |
+| `parse_error` / `error_*` | 暗示实现 bug，影响专业感 |
+| `tmp_*` / `temp_*` | 不语义，无法追溯 |
+| `placeholder_*` | 过于通用，无法定位具体场景 |
+
+**根因**：python-pptx 在某些场景下会把图片的 filename 或 descr 字段渲染为独立文字框，导致 PPT 上多出诡异的 6pt 微软雅黑 Light 文字（实战案例：`ai_skip_0x7f3a9_parse_error_rnd`）。
+
+---
+
+## 2. 推荐命名规范
+
+**模式**：`placeholder_<scene>_<page>_<descriptor>.png`
+
+| 段 | 说明 | 示例 |
+|----|------|------|
+| `placeholder` | 固定前缀 | `placeholder` |
+| `<scene>` | 场景缩写 | `kv` / `cover` / `factory` / `supermarket` / `interview` / `end` |
+| `<page>` | 对应 PPT 页码 | `p1` / `p3` / `p15` |
+| `<descriptor>` | 场景描述 | `main_visual` / `factory_gmpc` / `supermarket_shelf` |
+
+**完整示例**：
+- `placeholder_kv_p7_main_visual.png`
+- `placeholder_factory_p4_gmpc_cleanroom.png`
+- `placeholder_supermarket_p3_us_shelf.png`
+- `placeholder_end_p18_thanks_placeholder.png`
+
+---
+
+## 3. 强制 alt text 设置
+
+每张 `add_picture()` 调用必须设置 `alt_text`：
+
+```python
+from pptx import Presentation
+
+prs = Presentation()
+slide = prs.slides.add_slide(prs.slide_layouts[6])
+
+# ✅ 正确：设置有意义 alt_text
+picture = slide.shapes.add_picture(
+    'placeholder_factory_p4_gmpc_cleanroom.png',
+    Inches(5.20), Inches(1.40),
+    width=Inches(4.5), height=Inches(2.5)
+)
+picture.alt_text = 'placeholder_factory_p4_gmpc_cleanroom'
+
+# ❌ 错误：alt_text 为空字符串
+picture2 = slide.shapes.add_picture(
+    'ai_skip_0x7f3a9.png',  # filename 含禁词
+    Inches(5.20), Inches(1.40),
+    width=Inches(4.5), height=Inches(2.5)
+)
+# picture2.alt_text = ''  # 禁止空 alt
+```
+
+---
+
+## 4. 验证脚本
+
+```bash
+# 检查 PPTX 内是否有禁词
+unzip -p <pptx> ppt/slides/*.xml | \
+  grep -E 'ai_skip_|0x[0-9a-f]{4,}|parse_error' | \
+  wc -l
+# 期望: 0
+```
+
+---
+
+## 5. 历史教训（实战 case）
+
+`reports/huayuquan-doc-2026-07/` 实战 run 里，v1 deck 的 Slide 1 + Slide 18 各多出一段 6pt 微软雅黑 Light 的诡异文字：
+
+```
+文本: ai_skip_0x7f3a9_parse_error_rnd
+字号: 6pt
+字体: 微软雅黑 Light
+位置: (7.25, 4.83) / (7.13, 4.69)（logo 下方）
+```
+
+**根因**：v1 `gen_assets.py` 中 PIL 占位图的内部变量名（带 `0x7f3a9` 哈希后缀）被 python-pptx 当成 alt text 渲染到独立文字框。
+
+**修复**：按本规范命名 + 强制 alt text，下次跑不会再出。
