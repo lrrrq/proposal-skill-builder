@@ -1,0 +1,64 @@
+# M Films 客户供给图片插槽（v0.2 新增字段）
+#
+# 来源: reports/huayuquan-doc-2026-07/skill-v0.2-changelog-confirmed.md §4 经验 5
+# 适用: 所有 PPT
+#
+# 预留 2 个图片插槽, skill 渲染占位符, 用户在 PowerPoint 里手动替换.
+# skill 不预知这类"情感化收尾"或"客户 logo",但可以预留插槽.
+
+client_supplied_image:
+  description: |
+    客户在 PowerPoint 里手动替换的图片插槽.
+    skill 渲染占位符 (灰色矩形 + 文字标签),
+    不强行预设图片 (因为客户手工做的素材往往不可通用).
+
+  slots:
+    closing_image_slot:
+      label: 收尾情感图
+      purpose: |
+        收尾页的情感元素, 如 "Thank you" 手写体 PNG,
+        客户手工做的手写体 / 品牌情感符号.
+      position: 收尾页居中偏右 (示例坐标: (4.09, 2.58))
+      size: 2.6 x 1.2 inch (740x338 px)
+      skill_renders: |
+        灰色矩形 + 文字 "[closing_image_slot] - 用户手动替换".
+        不强行预设图片.
+      user_replaces_via: |
+        在 PowerPoint 里删除占位符,
+        插入 "Insert > Pictures > From File" 选 PNG/JPG.
+      reference_case: huayuquan_2026_06_12 (用户加的图片 28.png)
+
+    client_logo_slot:
+      label: 客户品牌 logo
+      purpose: |
+        客户官方 logo (如桦语泉 logo), 用于封面右上角 + 收尾页.
+        skill 不渲染占位文字, 用户自己加 logo.
+      position: 封面右上角 (示例坐标: (9.20, 0.30))
+      size: 0.7 x 0.4 inch
+      skill_renders: |
+        不渲染任何占位文字, 完全空着.
+        避免 v1 那种"客户 Logo" 灰色文字被用户直接删掉的尴尬.
+      user_replaces_via: |
+        在 PowerPoint 里 "Insert > Pictures > From File" 选 PNG/SVG.
+      reference_case: huayuquan_2026_06_12 (用户没加 logo, slot 留空)
+
+  # skill 行为规范
+  skill_behavior:
+    on_placeholder:
+      - 渲染半透明灰色矩形 + 文字标签 (closing_image_slot)
+      - 完全空着 (client_logo_slot)
+    on_artifact:
+      - 在 run_manifest.md 里记录 slot 是否被用户替换
+      - 在 diff_report.md 里记录 slot 替换的视觉变化
+    on_missing_user_supplied:
+      - 不报错 (slot 是可选的)
+      - 在 PPT 末尾留一行 small gray text "[client_supplied_image slot: 用户未替换]"
+
+  # 与 minimalism_level 的联动
+  interaction_with_minimalism:
+    mid: |
+      mid 级别默认不渲染 client_logo_slot 占位文字.
+      closing_image_slot 渲染占位符 (用户可选替换).
+    high: |
+      high 级别完全不渲染 client_logo_slot.
+      closing_image_slot 由用户决定是否替换.

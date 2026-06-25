@@ -1,0 +1,62 @@
+brand: m-films
+version: 0.1.0
+note: 按客户类型的视觉克制度 - 基于 49 个策划案章节统计
+
+# 客户类型 → M Films 视觉克制度
+restraint_by_client_type:
+  # 国际五星酒店
+  international_luxury_hotel:
+    restraint: high
+    examples: [万怡, 威斯汀, W 酒店, 瑰丽]
+    m_films_strategy: 主张强，全 DNA 注入
+
+  # 国际科技/工业
+  international_industrial:
+    restraint: extreme_high
+    examples: [蔡司, 徕卡, 哈苏]
+    m_films_strategy: 极度克制，用 "Presented by M Production" 缩写，让位客户品牌
+
+  # 中国科技
+  chinese_tech:
+    restraint: medium
+    examples: [OPPO, 美的, 华为, 比亚迪]
+    m_films_strategy: 中度，抽象 M 元素 + 绿色装饰线
+
+  # 中国时尚
+  chinese_fashion:
+    restraint: extreme_high
+    examples: [TEENIE WEENIE, 江南布衣]
+    m_films_strategy: 极度克制，让位给客户品牌情感诉求
+
+  # 中国高端服饰
+  chinese_high_end_apparel:
+    restraint: high
+    examples: [比音勒芬, 报喜鸟]
+    m_films_strategy: 主张强，所有元素都用
+
+  # 中国户外/生活方式
+  chinese_outdoor_lifestyle:
+    restraint: high
+    examples: [Snowpeak, 始祖鸟]
+    m_films_strategy: 主张强，绿色横线主导
+
+  # 中端酒店
+  mid_range_hotel:
+    restraint: high
+    examples: [亚朵, 桔子水晶, 全季]
+    m_films_strategy: 主张强，全 DNA 注入
+
+  # 地产文旅
+  real_estate_tourism:
+    restraint: high
+    examples: [万达文旅, 长隆]
+    m_films_strategy: 主张强，需 M Films 调性补位
+
+  # 一般企业 B2B
+  general_enterprise:
+    restraint: high
+    examples: [美的, 比亚迪, 中小企业]
+    m_films_strategy: 主张强，全 DNA 注入
+
+# 决策原则
+decision_principle: "M Films 视觉注入的克制度 ≈ 客户品牌强度的反比"

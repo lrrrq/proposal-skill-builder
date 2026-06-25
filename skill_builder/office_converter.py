@@ -10,24 +10,41 @@ from typing import Optional
 
 def find_libreoffice_executable() -> Optional[Path]:
     """
-    查找 LibreOffice 可执行文件
+    查找 LibreOffice 可执行文件（跨平台）
 
     Returns:
         Path 或 None
+
+    Cross-platform note
+    -------------------
+    On macOS the binary lives inside an .app bundle, on Linux it's usually
+    under /usr/bin or /opt, and on Windows it's under Program Files.
+    ``shutil.which`` is portable, so we trust PATH first and only fall
+    back to platform-specific absolute paths if PATH lookup fails.
     """
     candidates = [
+        # PATH-resolved names — work on every platform when LibreOffice is
+        # installed system-wide (Homebrew apt, choco, scoop, etc.).
         "soffice",
+        "soffice.exe",
         "libreoffice",
-        "/Applications/LibreOffice.app/Contents/MacOS/soffice",
-        "/usr/bin/soffice",
+        "libreoffice.exe",
+        # Platform-specific absolute paths as last resort.
+        "/Applications/LibreOffice.app/Contents/MacOS/soffice",          # macOS GUI install
+        "/usr/bin/soffice",                                              # Debian/Ubuntu
         "/usr/bin/libreoffice",
-        "/opt/homebrew/bin/soffice",
+        "/opt/homebrew/bin/soffice",                                     # Homebrew (Apple Silicon)
         "/opt/homebrew/bin/libreoffice",
+        "/usr/local/bin/soffice",                                        # Homebrew (Intel)
+        "/usr/local/bin/libreoffice",
+        r"C:\Program Files\LibreOffice\program\soffice.exe",             # Windows default
+        r"C:\Program Files (x86)\LibreOffice\program\soffice.exe",       # Windows 32-bit
     ]
 
     for candidate in candidates:
-        if shutil.which(candidate):
-            return Path(shutil.which(candidate))
+        found = shutil.which(candidate)
+        if found:
+            return Path(found)
 
     return None
 
@@ -65,6 +82,8 @@ def convert_pptx_to_pdf(input_path: Path, output_dir: Path) -> Optional[Path]:
             ],
             capture_output=True,
             text=True,
+            encoding="utf-8",
+            errors="replace",
             timeout=120,  # 2分钟超时
         )
 

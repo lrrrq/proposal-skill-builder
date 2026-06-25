@@ -1,0 +1,64 @@
+brand: m-films
+version: 0.1.0
+note: PPT 页眉/页脚硬 DNA - 基于 49 个 M Films 真实策划案调研
+
+# 页眉（右上角，自上而下）
+header:
+  right_top:
+    - type: page_number
+      content: "{page}"
+    - type: vertical_green_line
+      width: 1px
+      color: "#41FF00"
+    - type: m_films_text
+      content: "M + FILMS"
+      m_letter_color: "#41FF00"
+      other_text_color: "#75787B"
+    - type: business_categories
+      list: ["PR VIDEOS", "TVC BRANDING VIDEOS", "DOCUMENTARY"]
+      layout: vertical_list
+
+# 页脚（右下角）
+footer:
+  right_bottom:
+    - type: m_films_logo
+      m_letter_color: "#41FF00"
+      file: "brand-style-pack/m-films/logo/m-films-primary-dark-bg.png"  # 占位
+    - type: copyright
+      content: "Copyright @ M+FILMS. All Right Reserved"
+      color: "#75787B"
+      font_size: "10pt"
+
+# 对角 Logo 关系（封面必含，硬规矩）
+diagonal_logo_relationship:
+  client: top_right
+  m_films: bottom_right
+  note: "M Films 提案的硬规矩 - 客户 Logo 永远在右上，M+FILMS 永远在右下"
+
+# 章节切换页（每个 4 段的开篇页）
+chapter_section_page:
+  title_color: "#41FF00"
+  title_size: "60-80pt"
+  title_weight: "Bold"
+  title_under_block:
+    type: "horizontal_green_bar"
+    height: "8-12px"
+    color: "#41FF00"
+  background: "#000000"
+  note: "章节切换必含，是 M Films 提案的视觉锚点"
+
+# 进度条（页脚右下，标识项目当前阶段）
+progress_bar:
+  position: bottom_right_or_bottom_left
+  segments: 6
+  inactive_color: "#75787B"
+  active_color: "#41FF00"
+  note: "项目阶段标识：概念/拍摄/后期 等"
+
+# 业务范畴三件套（按客户类型可隐藏）
+business_categories_3_set:
+  list: ["PR VIDEOS", "TVC BRANDING VIDEOS", "DOCUMENTARY"]
+  default: visible
+  hide_when:
+    client_brand_strength: extreme_high
+    note: "客户品牌极强时（如蔡司），不强制放业务范畴三件套"

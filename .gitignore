@@ -54,6 +54,21 @@ Thumbs.db
 
 # Agent Runs
 .claude/runs/current/
+.claude/scheduled_tasks.json
+.claude/scheduled_tasks.lock
+.codegraph/
+.mavis/
+.opencode/
+
+# Local data and generated artifacts
+data/
+source_proposals/
+compiled/
+knowledge/
+skills/
+registry/
+outputs/
+reports/
 
 # Test Artifacts
 skills/draft/test-skill/
@@ -72,3 +87,17 @@ skills/published/*__backup_*/
 
 # Publish Reports
 reports/publish_*.md
+
+# Local runtime state
+state/
+
+# Node tooling (this is a Python project, npm artifacts are dev-only)
+node_modules/
+package-lock.json
+package.json
+
+# Matrix MCP generated media at project root
+matrix-media-*.png
+
+# uv (project is stdlib-only, lock file is dev-only)
+uv.lock

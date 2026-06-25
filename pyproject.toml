@@ -1,17 +1,53 @@
 [build-system]
-requires = ["setuptools>=61.0"]
+requires = ["setuptools>=68", "wheel"]
 build-backend = "setuptools.build_meta"
 
 [project]
-name = "skill-builder"
-version = "0.1.0"
-description = "离线 AI 辅助案例编译系统"
-requires-python = ">=3.10"
-dependencies = [
-    "pymupdf",
-    "pillow",
-    "python-pptx",
+name = "proposal-skill-builder"
+version = "0.3.0"
+description = "Offline CLI that compiles historical proposal cases into a reusable Skill Registry — cross-platform."
+readme = "README.md"
+requires-python = ">=3.9"
+license = { text = "MIT" }
+authors = [
+    { name = "proposal-skill-builder contributors" },
 ]
+keywords = ["proposal", "skill-registry", "case-compiler", "offline-cli", "sqlite"]
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Intended Audience :: Developers",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: MacOS",
+    "Operating System :: POSIX :: Linux",
+    "Operating System :: Microsoft :: Windows",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Programming Language :: Python :: 3 :: Only",
+    "Topic :: Software Development :: Libraries :: Python Modules",
+    "Topic :: Office/Business :: Financial :: Investment",
+]
+# Standard library only by design. pymupdf / pillow / python-pptx are optional
+# runtime dependencies, not build dependencies. The CLI itself does not require
+# them to start; they are only needed for specific parser backends. Install them
+# explicitly if your workflow needs PDF / PPTX / image handling.
+dependencies = [
+    "python-dotenv>=1.0",  # required: ai_client.py reads .env via dotenv.load_dotenv()
+]
+
+[project.optional-dependencies]
+pdf = ["pymupdf>=1.23"]
+image = ["pillow>=10.0"]
+pptx = ["python-pptx>=0.6.21"]
+all = ["pymupdf>=1.23", "pillow>=10.0", "python-pptx>=0.6.21"]
+dev = ["pytest>=7.0"]
+
+[project.urls]
+Homepage = "https://github.com/lrrrq/proposal-skill-builder"
+Issues = "https://github.com/lrrrq/proposal-skill-builder/issues"
+Changelog = "https://github.com/lrrrq/proposal-skill-builder/blob/main/CHANGELOG.md"
 
 [project.scripts]
 skill-builder = "skill_builder.cli:main"
@@ -19,3 +55,7 @@ skill-builder = "skill_builder.cli:main"
 [tool.setuptools.packages.find]
 where = ["."]
 include = ["skill_builder*"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+python_files = ["test_*.py"]

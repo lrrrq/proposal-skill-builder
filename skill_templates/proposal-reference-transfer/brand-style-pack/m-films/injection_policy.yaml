@@ -1,0 +1,70 @@
+brand: m-films
+version: 0.1.0
+note: 3 层克制注入模型 - 基于 49 个 M Films 真实策划案调研
+
+# L1 基础身份层：100% 注入（never remove）
+L1_baseline:
+  restraint: "never_remove"
+  elements:
+    - name: m_films_logo_bottom_right
+      position: bottom_right
+      note: M+FILMS Logo + M 字母必为品牌绿
+    - name: copyright_footer
+      content: "Copyright @ M+FILMS. All Right Reserved"
+    - name: business_categories_3_set
+      list: ["PR VIDEOS", "TVC BRANDING VIDEOS", "DOCUMENTARY"]
+      position: page_header_right_top
+    - name: client_logo_top_right
+      position: top_right
+      note: 客户 Logo 必在右上，与 M+FILMS 右下形成对角
+
+# L2 持续在场层：90% 注入（usually keep）
+L2_persistent:
+  restraint: "usually_keep"
+  elements:
+    - name: m_films_header_right_top
+      content: "页码 + 垂直绿短线 + M+FILMS + 业务范畴三件套"
+    - name: brand_green_accent_lines
+      color: "#41FF00"
+      use: 装饰线 / 进度条 / 强调元素
+    - name: vertical_gray_cyan_strip_left
+      use: 内容页左侧装饰条（M Films 提案常出现）
+    - name: chapter_section_green_horizontal_block
+      use: 章节切换页（4 段式每个段开头）
+    - name: page_footer_progress_bar
+      segments: "4-6"
+      highlight: "green"
+      use: 项目阶段标识
+
+# L3 视觉基因层：按客户品牌强度克制
+L3_genetic:
+  restraint: "by_client_strength"
+  elements:
+    - name: giant_extended_typography
+      use: 章节大标题（极宽扩展粗体）
+    - name: cinematic_long_exposure_photo
+      use: 主视觉（长曝光光绘/动态模糊/低饱和度）
+    - name: geometric_minimal_lines
+      use: 几何线稿（圆形印章/六边形/X 形准星）
+    - name: iridescent_3d_characters
+      use: 2024 后年轻化场景（招聘/节日）
+  
+  by_client_strength:
+    strong_client_brand: "subtle"  # 蔡司/TEENIE WEENIE 类 - 让位
+    weak_client_brand: "prominent"  # 地产/企业/中端 - M Films 主张
+    medium_client_brand: "balanced"  # OPPO/中国科技 - 中度
+
+# 客户品牌强度等级
+client_brand_strength_levels:
+  - level: extreme_high
+    typical: 蔡司 / TEENIE WEENIE / 国际奢侈
+    m_films_strategy: "极度克制：用 'M Production' 缩写、不显式 Logo、不放业务范畴三件套"
+  - level: high
+    typical: 高端酒店 / 高端服饰 / Snowpeak
+    m_films_strategy: "主张强：全 DNA 注入 + 绿色装饰线主导"
+  - level: medium
+    typical: 中国科技（OPPO/美的）
+    m_films_strategy: "中度：抽象 M 元素 + 绿色装饰线"
+  - level: low
+    typical: 地产 / 企业 / 中端客户
+    m_films_strategy: "全开：完整 DNA + 业务范畴"
